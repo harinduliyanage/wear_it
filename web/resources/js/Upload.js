@@ -15,6 +15,10 @@ $(document).on('click', '#close-preview', function(){
         }
     );    
 });
+$('input-file-preview').on('click',function (){
+    var a=$('input-file-preview').val();
+    alert(a);
+});
 
 $(function() {
     // Create the close button

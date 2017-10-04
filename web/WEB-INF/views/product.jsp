@@ -1,34 +1,32 @@
 <%-- 
-    Document   : index
-    Created on : Oct 4, 2017, 2:01:51 PM
+    Document   : product
+    Created on : Oct 4, 2017, 7:35:49 PM
     Author     : Harindu.sul
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
-<link href="resources/css/css-a/bootstrap.css" rel="stylesheet" type="text/css"/>
+<head>
+<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Products :: w3layouts</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
-<!--theme-style-->	
-<link href="resources/css/css-a/style.css" rel="stylesheet" type="text/css"/>
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Shopin Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndroId Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--theme-style-->	
-<link href="resources/css/css-a/style4.css" rel="stylesheet" type="text/css"  media="all" />
+<!--theme-style-->
+<link href="css/style4.css" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
-<script src="resources/js/js-a/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery.min.js"></script>
 <!--- start-rate---->
-<script src="resources/js/js-a/jstarbox.js" type="text/javascript"></script>
-	
-        <link href="resources/css/css-a/jstarbox.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
+<script src="js/jstarbox.js"></script>
+	<link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
 		<script type="text/javascript">
-                            
 			jQuery(function() {
 			jQuery('.starbox').each(function() {
 				var starbox = jQuery(this);
@@ -50,7 +48,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 		</script>
 <!---//End-rate---->
-
+<link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
 <!--header-->
@@ -66,8 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 		<div class="col-sm-5 col-md-offset-2  header-login">
 					<ul >
-						<li><a href="WEB-INF/views/login.jsp"></a></li>
-                                                
+						<li><a href="login.html">Login</a></li>
 						<li><a href="register.html">Register</a></li>
 						<li><a href="checkout.html">Checkout</a></li>
 					</ul>
@@ -269,9 +266,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!----->
 
 						<!---pop-up-box---->					  
-			
-                        <link href="resources/css/css-a/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
-                        <script src="resources/js/js-a/jquery.magnific-popup.js" type="text/javascript"></script>
+			<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+			<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 			<!---//pop-up-box---->
 			<div id="small-dialog" class="mfp-hide">
 				<div class="search-top">
@@ -305,83 +301,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>	
 </div>
 <!--banner-->
-<div class="banner">
-<div class="container">
-<section class="rw-wrapper">
-				<h1 class="rw-sentence">
-					<span>Fashion &amp; Beauty</span>
-					<div class="rw-words rw-words-1">
-						<span>Beautiful Designs</span>
-						<span>Sed ut perspiciatis</span>
-						<span> Totam rem aperiam</span>
-						<span>Nemo enim ipsam</span>
-						<span>Temporibus autem</span>
-						<span>intelligent systems</span>
-					</div>
-					<div class="rw-words rw-words-2">
-						<span>We denounce with right</span>
-						<span>But in certain circum</span>
-						<span>Sed ut perspiciatis unde</span>
-						<span>There are many variation</span>
-						<span>The generated Lorem Ipsum</span>
-						<span>Excepteur sint occaecat</span>
-					</div>
-				</h1>
-			</section>
-			</div>
+<div class="banner-top">
+	<div class="container">
+		<h1>Products</h1>
+		<em></em>
+		<h2><a href="index.html">Home</a><label>/</label>Products</h2>
+	</div>
 </div>
 	<!--content-->
-		<div class="content">
+		<div class="product">
 			<div class="container">
-				<div class="content-top">
-					<div class="col-md-6 col-md">
-						<div class="col-1">
-						 <a href="single.html" class="b-link-stroke b-animate-go  thickbox">
-		   <img src="images/pi.jpg" class="img-responsive" alt=""/><div class="b-wrapper1 long-img"><p class="b-animate b-from-right    b-delay03 ">Lorem ipsum</p><label class="b-animate b-from-right    b-delay03 "></label><h3 class="b-animate b-from-left    b-delay03 ">Trendy</h3></div></a>
-
-							<!---<a href="single.html"><img src="images/pi.jpg" class="img-responsive" alt=""></a>-->
-						</div>
-						<div class="col-2">
-							<span>Hot Deal</span>
-							<h2><a href="single.html">Luxurious &amp; Trendy</a></h2>
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-							<a href="single.html" class="buy-now">Buy Now</a>
-						</div>
-					</div>
-					<div class="col-md-6 col-md1">
-						<div class="col-3">
-							<a href="single.html"><img src="images/pi1.jpg" class="img-responsive" alt="">
-							<div class="col-pic">
-								<p>Lorem Ipsum</p>
-								<label></label>
-								<h5>For Men</h5>
-							</div></a>
-						</div>
-						<div class="col-3">
-							<a href="single.html"><img src="images/pi2.jpg" class="img-responsive" alt="">
-							<div class="col-pic">
-								<p>Lorem Ipsum</p>
-								<label></label>
-								<h5>For Kids</h5>
-							</div></a>
-						</div>
-						<div class="col-3">
-							<a href="single.html"><img src="images/pi3.jpg" class="img-responsive" alt="">
-							<div class="col-pic">
-								<p>Lorem Ipsum</p>
-								<label></label>
-								<h5>For Women</h5>
-							</div></a>
-						</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<!--products-->
-			<div class="content-mid">
-				<h3>Trending Items</h3>
-				<label class="line"></label>
+			<div class="col-md-9">
 				<div class="mid-popular">
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
+					<div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 					<div class="pro-img">
 						<img src="images/pc.jpg" class="img-responsive" alt="">
@@ -413,7 +345,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
+					<div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 					<div class="pro-img">
 						<img src="images/pc1.jpg" class="img-responsive" alt="">
@@ -445,7 +377,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
+					<div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 					<div class="pro-img">
 						<img src="images/pc2.jpg" class="img-responsive" alt="">
@@ -477,7 +409,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
+						<div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 					<div class="pro-img">
 						<img src="images/pc3.jpg" class="img-responsive" alt="">
@@ -509,10 +441,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
-					<div class="clearfix"></div>
-				</div>
-								<div class="mid-popular">
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
+					<div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 					<div class="pro-img">
 						<img src="images/pc4.jpg" class="img-responsive" alt="">
@@ -544,7 +473,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
+					<div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 					<div class="pro-img">
 						<img src="images/pc5.jpg" class="img-responsive" alt="">
@@ -576,7 +505,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
+					
+					<div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 					<div class="pro-img">
 						<img src="images/pc6.jpg" class="img-responsive" alt="">
@@ -608,7 +538,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
+					<div class="col-md-4 item-grid1 simpleCart_shelfItem">
 					<div class=" mid-pop">
 					<div class="pro-img">
 						<img src="images/pc7.jpg" class="img-responsive" alt="">
@@ -640,11 +570,164 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 					</div>
 					</div>
+					<div class="col-md-4 item-grid1 simpleCart_shelfItem">
+					<div class=" mid-pop">
+					<div class="pro-img">
+						<img src="images/pc.jpg" class="img-responsive" alt="">
+						<div class="zoom-icon ">
+						<a class="picture" href="images/pc.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
+						<a href="single.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+						</div>
+						</div>
+						<div class="mid-1">
+						<div class="women">
+						<div class="women-top">
+							<span>Women</span>
+							<h6><a href="single.html">At vero eos</a></h6>
+							</div>
+							<div class="img item_add">
+								<a href="#"><img src="images/ca.png" alt=""></a>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+							<div class="mid-2">
+								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+								  <div class="block">
+									<div class="starbox small ghosting"> </div>
+								</div>
+								
+								<div class="clearfix"></div>
+							</div>
+							
+						</div>
+					</div>
+					</div>
 					<div class="clearfix"></div>
 				</div>
 			</div>
+			<div class="col-md-3 product-bottom">
+			<!--categories-->
+				<div class=" rsidebar span_1_of_left">
+						<h4 class="cate">Categories</h4>
+							 <ul class="menu-drop">
+							<li class="item1"><a href="#">Men </a>
+								<ul class="cute">
+									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
+									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
+									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
+								</ul>
+							</li>
+							<li class="item2"><a href="#">Women </a>
+								<ul class="cute">
+									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
+									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
+									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
+								</ul>
+							</li>
+							<li class="item3"><a href="#">Kids</a>
+								<ul class="cute">
+									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
+									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
+									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
+								</ul>
+							</li>
+							<li class="item4"><a href="#">Accessories</a>
+								<ul class="cute">
+									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
+									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
+									<li class="subitem3"><a href="product.html">Automatic Fails</a></li>
+								</ul>
+							</li>
+									
+							<li class="item4"><a href="#">Shoes</a>
+								<ul class="cute">
+									<li class="subitem1"><a href="product.html">Cute Kittens </a></li>
+									<li class="subitem2"><a href="product.html">Strange Stuff </a></li>
+									<li class="subitem3"><a href="product.html">Automatic Fails </a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				<!--initiate accordion-->
+						<script type="text/javascript">
+							$(function() {
+							    var menu_ul = $('.menu-drop > li > ul'),
+							           menu_a  = $('.menu-drop > li > a');
+							    menu_ul.hide();
+							    menu_a.click(function(e) {
+							        e.preventDefault();
+							        if(!$(this).hasClass('active')) {
+							            menu_a.removeClass('active');
+							            menu_ul.filter(':visible').slideUp('normal');
+							            $(this).addClass('active').next().stop(true,true).slideDown('normal');
+							        } else {
+							            $(this).removeClass('active');
+							            $(this).next().stop(true,true).slideUp('normal');
+							        }
+							    });
+							
+							});
+						</script>
+<!--//menu-->
+ <section  class="sky-form">
+					<h4 class="cate">Discounts</h4>
+					 <div class="row row1 scroll-pane">
+						 <div class="col col-4">
+								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Upto - 10% (20)</label>
+						 </div>
+						 <div class="col col-4">
+								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>40% - 50% (5)</label>
+								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>30% - 20% (7)</label>
+								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>10% - 5% (2)</label>
+								<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Other(50)</label>
+						 </div>
+					 </div>
+				 </section> 				 				 
+				 
+					
+					 <!---->
+					 <section  class="sky-form">
+						<h4 class="cate">Type</h4>
+							<div class="row row1 scroll-pane">
+								<div class="col col-4">
+									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Sofa Cum Beds (30)</label>
+								</div>
+								<div class="col col-4">
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Bags  (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Caps & Hats (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Jackets & Coats   (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Jeans  (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Shirts   (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Sunglasses  (30)</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Swimwear  (30)</label>
+								</div>
+							</div>
+				   </section>
+				   		<section  class="sky-form">
+						<h4 class="cate">Brand</h4>
+							<div class="row row1 scroll-pane">
+								<div class="col col-4">
+									<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Roadstar</label>
+								</div>
+								<div class="col col-4">
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Levis</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Persol</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Nike</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Edwin</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox" ><i></i>New Balance</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Paul Smith</label>
+									<label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Ray-Ban</label>
+								</div>
+							</div>
+				   </section>		
+		</div>
+			<div class="clearfix"></div>
+			</div>
+				<!--products-->
+			
 			<!--//products-->
-			<!--brand-->
+		<!--brand-->
+		<div class="container">
 			<div class="brand">
 				<div class="col-md-3 brand-grid">
 					<img src="images/ic.png" class="img-responsive" alt="">
@@ -660,12 +743,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="clearfix"></div>
 			</div>
-			<!--//brand-->
 			</div>
+			<!--//brand-->
+			
 			
 		</div>
 	<!--//content-->
-	<!--//footer-->
+		<!--//footer-->
 	<div class="footer">
 	<div class="footer-middle">
 				<div class="container">
@@ -719,26 +803,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><img src="images/f2.png" class="img-responsive" alt=""></a></li>
 						<li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
 					</ul>
-                                    <p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/amandi-imasha-7427a6145/">Amandi Imasha</a></strong> </p>
+					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/amandi-imasha-7427a6145/">Amandi Imasha</a></strong> </p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
 		<!--//footer-->
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/simpleCart.min.js"> </script>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+	<script src="js/simpleCart.min.js"> </script>
 <!-- slide -->
 <script src="js/bootstrap.min.js"></script>
-<!--light-box-files -->
-                <script src="resources/js/js-a/jquery.chocolat.js" type="text/javascript"></script>
+ <!--light-box-files -->
+		<script src="js/jquery.chocolat.js"></script>
+		<link rel="stylesheet" href="css/chocolat.css" type="text/css" media="screen" charset="utf-8">
 		<!--light-box-files -->
-                <link href="resources/css/css-a/chocolat.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" charset="utf-8">
 		$(function() {
 			$('a.picture').Chocolat();
 		});
 		</script>
-
-
 </body>
-</html>
+</html> 
