@@ -8,16 +8,20 @@ package com.ijse.wearit.dao.custom.impl;
 import com.ijse.wearit.dao.custom.ItemDAO;
 import com.ijse.wearit.model.Item;
 import java.util.List;
+import org.hibernate.Session;
 
 /**
  *
  * @author ABC
  */
 public class ItemDAOImpl implements ItemDAO{
+    
+    @Autowired
+    SessionFactory sessionFactory;
 
     @Override
     public boolean add(Item t) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        sessionFactory.getCurrentSession().save(t); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
