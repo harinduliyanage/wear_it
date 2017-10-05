@@ -7,8 +7,10 @@ package com.ijse.wearit.dao.custom.impl;
 
 import com.ijse.wearit.dao.custom.ItemDAO;
 import com.ijse.wearit.model.Item;
+import java.io.Serializable;
 import java.util.List;
-import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
@@ -21,27 +23,36 @@ public class ItemDAOImpl implements ItemDAO{
 
     @Override
     public boolean add(Item t) throws Exception {
-        sessionFactory.getCurrentSession().save(t); //To change body of generated methods, choose Tools | Templates.
+        Serializable save = sessionFactory.getCurrentSession().save(t); 
+         return (save!=null);
     }
 
     @Override
     public boolean update(Item t) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       sessionFactory.getCurrentSession().update(t);
+       return true;
     }
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Item search =(Item) sessionFactory.getCurrentSession().load(Item.class, id);
+        if (search!=null) {
+            sessionFactory.getCurrentSession().delete(search);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
     public Item search(Integer id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (Item) sessionFactory.getCurrentSession().load(Item.class, id);
     }
 
     @Override
     public List<Item> getAll() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Item> list=sessionFactory.getCurrentSession().createCriteria(Item.class).list();
+        return list;
     }
     
 }
