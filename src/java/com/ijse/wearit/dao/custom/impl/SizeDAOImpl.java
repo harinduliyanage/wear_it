@@ -31,22 +31,30 @@ public class SizeDAOImpl implements SizeDAO{
 
     @Override
     public boolean update(Size t) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       sessionFactory.getCurrentSession().update(t);
+       return true;
     }
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Size size=(Size)sessionFactory.getCurrentSession().load(Size.class, id);
+        if (size!=null) {
+            sessionFactory.getCurrentSession().delete(size);
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
     public Size search(Integer id) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (Size)sessionFactory.getCurrentSession().load(Size.class, id);
     }
 
     @Override
     public List<Size> getAll() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       List<Size> sizeList = sessionFactory.getCurrentSession().createCriteria(Size.class).list();
+       return sizeList;
     }
     
 }
