@@ -26,7 +26,7 @@ import javax.persistence.Transient;
     @AssociationOverride(name = "primaryKey.item",
         joinColumns = @JoinColumn(name = "ITEM_ID")) })
 public class ItemDetails implements Serializable{
-    private ItemDetailsId primeryKey=new ItemDetailsId();
+    private ItemDetailsId primaryKey=new ItemDetailsId();
     
     //additonal feelds
     private String unitPrice;
@@ -34,14 +34,14 @@ public class ItemDetails implements Serializable{
     
     @EmbeddedId
     public ItemDetailsId getPrimeryKey() {
-        return primeryKey;
+        return primaryKey;
     }
 
     /**
      * @param primeryKey the primeryKey to set
      */
     public void setPrimeryKey(ItemDetailsId primeryKey) {
-        this.primeryKey = primeryKey;
+        this.primaryKey = primeryKey;
     }
     @Transient  
     public Item getItem(){
@@ -61,7 +61,7 @@ public class ItemDetails implements Serializable{
     /**
      * @return the categoryId
      */
-    @Transient  
+    //@Transient  
     public String getCategoryName() {
         return getPrimeryKey().getItem().getCategory().getName();
     }
@@ -76,9 +76,9 @@ public class ItemDetails implements Serializable{
     /**
      * @return the path
      */
-    @Transient  
+    //@Transient  
     public String getPath() {
-        return primeryKey.getItem().getPath();
+        return primaryKey.getItem().getPath();
     }
 
     /**
@@ -101,7 +101,7 @@ public class ItemDetails implements Serializable{
     public void setUnitPrice(String unitPrice) {
         this.unitPrice = unitPrice;
     }
-    @Transient  
+    //@Transient  
     public String getDescription(){
         return getPrimeryKey().getItem().getDescription();
     }
