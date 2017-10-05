@@ -7,7 +7,6 @@ package com.ijse.wearit.controller;
 
 import com.ijse.wearit.dto.SizeDTO;
 import com.ijse.wearit.service.custom.SizeService;
-import com.ijse.wearit.service.custom.impl.SizeServiceImpl;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +35,11 @@ public class SizeController {
             Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return "Error";
+    }
+    
+    @RequestMapping(value = "/wish")
+    public String getWishList(){ 
+        return "wishlist";
     }
     
 }

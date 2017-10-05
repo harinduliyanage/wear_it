@@ -9,10 +9,12 @@
 <html>
 <head>
 <title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Wishlist :: w3layouts</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<c:url value='../../resources/css/css-a/lol.css'/>" rel="stylesheet" type="text/css"/>
+
+<link href="../../resources/css/css-a/bootstrap.css" rel="stylesheet" type="text/css"/>
 <!-- Custom Theme files -->
 <!--theme-style-->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="../../resources/css/css-a/style.css" rel="stylesheet" type="text/css" media="all"/>
 <!--//theme-style-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,12 +22,13 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--theme-style-->
-<link href="css/style4.css" rel="stylesheet" type="text/css" media="all" />	
+<link href="../../resources/css/css-a/style4.css" rel="stylesheet" type="text/css"  media="all" />
 <!--//theme-style-->
-<script src="js/jquery.min.js"></script>
+<script src="../../resources/js/js-a/jquery.min.js" type="text/javascript"></script>
 <!--- start-rate---->
-<script src="js/jstarbox.js"></script>
-	<link rel="stylesheet" href="css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+<script src="../../resources/js/js-a/jstarbox.js" type="text/javascript"></script>
+<link href="../../resources/css/css-a/jstarbox.css" rel="stylesheet" type="text/css"/>
+	
 		<script type="text/javascript">
 			jQuery(function() {
 			jQuery('.starbox').each(function() {
@@ -264,8 +267,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!----->
 
 						<!---pop-up-box---->					  
-			<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
-			<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+			
+                                                <link href="../../resources/css/css-a/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+                        <script src="../../resources/js/js-a/jquery.magnific-popup.js" type="text/javascript"></script>
 			<!---//pop-up-box---->
 			<div id="small-dialog" class="mfp-hide">
 				<div class="search-top">
@@ -395,10 +399,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!--//footer-->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-	<script src="js/simpleCart.min.js"> </script>
+        <script src="../../resources/js/js-a/simpleCart.min.js" type="text/javascript"></script>
+	
 <!-- slide -->
-<script src="js/bootstrap.min.js"></script>
+<script src="../../resources/js/bootstrap.min.js" type="text/javascript"></script>
  
 </body>
 </html>
