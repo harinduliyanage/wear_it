@@ -5,11 +5,12 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Wishlist :: w3layouts</title>
-<link href="<c:url value='../../resources/css/css-a/lol.css'/>" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="<c:url value="resources/css/css-a//bootstrap.min.css" />" media="all" />
 
 <link href="../../resources/css/css-a/bootstrap.css" rel="stylesheet" type="text/css"/>
 <!-- Custom Theme files -->
