@@ -463,7 +463,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><img src="images/f2.png" class="img-responsive" alt=""></a></li>
 						<li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
 					</ul>
-					<p class="footer-class">&copy; 2016 Shopin. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/amandi-imasha-7427a6145/">Amandi Imasha</a></strong> </p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
