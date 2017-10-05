@@ -42,4 +42,9 @@ public class SizeController {
         return "wishlist";
     }
     
+    @RequestMapping(value = "/cart")
+    public String getCart(){ 
+        return "ShoppingCart";
+    }
+    
 }
