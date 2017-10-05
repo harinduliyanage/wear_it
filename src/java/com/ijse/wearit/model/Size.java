@@ -20,17 +20,18 @@ public class Size implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer sizeID;
+    private Integer id;
+    private String SizeinAsia;
     private String sizeUK;
     private String sizeUS;
     private String sizeEU;
 
     public Integer getSizeID() {
-        return sizeID;
+        return id;
     }
 
     public void setSizeID(Integer sizeID) {
-        this.sizeID = sizeID;
+        this.id = sizeID;
     }
 
     public String getSizeUK() {
@@ -55,6 +56,20 @@ public class Size implements Serializable{
 
     public void setSizeEU(String sizeEU) {
         this.sizeEU = sizeEU;
+    }
+
+    /**
+     * @return the SizeinAsia
+     */
+    public String getSizeinAsia() {
+        return SizeinAsia;
+    }
+
+    /**
+     * @param SizeinAsia the SizeinAsia to set
+     */
+    public void setSizeinAsia(String SizeinAsia) {
+        this.SizeinAsia = SizeinAsia;
     }
   
 }
