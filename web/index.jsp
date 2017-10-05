@@ -25,7 +25,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="resources/js/js-a/jquery.min.js" type="text/javascript"></script>
 <!--- start-rate---->
 <script src="resources/js/js-a/jstarbox.js" type="text/javascript"></script>
-	
+<link href="resources/css/css-a/flexslider.css" rel="stylesheet" type="text/css"/>
+<link href="resources/css/css-a/form.css" rel="stylesheet" type="text/css"/>
         <link href="resources/css/css-a/jstarbox.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8"/>
 		<script type="text/javascript">
                             
@@ -58,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 		<div class="head">
 			<div class=" logo">
-				<a href="index.html"><img src="resources/images/logo.png" alt=""/></a>	
+				<a href="index"><img src="resources/images/logo.png" alt=""/></a>	
                                 
 			</div>
 		</div>
@@ -67,10 +68,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 		<div class="col-sm-5 col-md-offset-2  header-login">
 					<ul >
-						<li><a href="WEB-INF/views/login.jsp"></a></li>
+						<li><a href="login"></a></li>
                                                 
-						<li><a href="register.html">Register</a></li>
-						<li><a href="checkout.html">Checkout</a></li>
+						<li><a href="register">Register</a></li>
+						<li><a href="checkout">Checkout</a></li>
 					</ul>
 				</div>
 				
@@ -108,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
-            <li><a class="color" href="index.html">Home</a></li>
+            <li><a class="color" href="http://localhost:8084/wear_it_1.2/">Home</a></li>
             
     		<li class="dropdown mega-dropdown active">
 			    <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>				
@@ -118,10 +119,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="h_nav">
 								<h4>Submenu1</h4>
 									<ul>
-										<li><a href="product.html">Accessories</a></li>
-										<li><a href="product.html">Bags</a></li>
-										<li><a href="product.html">Caps & Hats</a></li>
-										<li><a href="product.html">Hoodies & Sweatshirts</a></li>
+										<li><a href="product">Accessories</a></li>
+										<li><a href="product">Bags</a></li>
+										<li><a href="product">Caps & Hats</a></li>
+										<li><a href="product">Hoodies & Sweatshirts</a></li>
 										
 									</ul>	
 							</div>							
@@ -130,12 +131,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="h_nav">
 								<h4>Submenu2</h4>
 								<ul>
-										<li><a href="product.html">Jackets & Coats</a></li>
-										<li><a href="product.html">Jeans</a></li>
-										<li><a href="product.html">Jewellery</a></li>
-										<li><a href="product.html">Jumpers & Cardigans</a></li>
-										<li><a href="product.html">Leather Jackets</a></li>
-										<li><a href="product.html">Long Sleeve T-Shirts</a></li>
+										<li><a href="product">Jackets & Coats</a></li>
+										<li><a href="product">Jeans</a></li>
+										<li><a href="product">Jewellery</a></li>
+										<li><a href="product">Jumpers & Cardigans</a></li>
+										<li><a href="product">Leather Jackets</a></li>
+										<li><a href="product">Long Sleeve T-Shirts</a></li>
 									</ul>	
 							</div>							
 						</div>
@@ -143,12 +144,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="h_nav">
 								<h4>Submenu3</h4>
 									<ul>
-										<li><a href="product.html">Shirts</a></li>
-										<li><a href="product.html">Shoes, Boots & Trainers</a></li>
-										<li><a href="product.html">Sunglasses</a></li>
-										<li><a href="product.html">Sweatpants</a></li>
-										<li><a href="product.html">Swimwear</a></li>
-										<li><a href="product.html">Trousers & Chinos</a></li>
+										<li><a href="product">Shirts</a></li>
+										<li><a href="product">Shoes, Boots & Trainers</a></li>
+										<li><a href="product">Sunglasses</a></li>
+										<li><a href="product">Sweatpants</a></li>
+										<li><a href="product">Swimwear</a></li>
+										<li><a href="product">Trousers & Chinos</a></li>
 										
 									</ul>	
 								
@@ -271,7 +272,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!----->
 
 						<!---pop-up-box---->					  
-			
+                                                <link href="resources/css/css-a/jstarbox.css" rel="stylesheet" type="text/css"/>
                         <link href="resources/css/css-a/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
                         <script src="resources/js/js-a/jquery.magnific-popup.js" type="text/javascript"></script>
 			<!---//pop-up-box---->
@@ -741,7 +742,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$('a.picture').Chocolat();
 		});
 		</script>
-
+                <script src="resources/js/js-a/classie.js" type="text/javascript"></script>
 
 </body>
 </html>
