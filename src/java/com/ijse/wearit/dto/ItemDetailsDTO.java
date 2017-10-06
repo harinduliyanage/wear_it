@@ -63,13 +63,14 @@ public class ItemDetailsDTO {
         this.qtyOnHand = qtyOnHand;
     }
 
-    public <any> getShoppingCartDetails() {
+    public Set<ShoppingCartDetailsDTO> getShoppingCartDetails() {
         return shoppingCartDetails;
     }
 
-    public void setShoppingCartDetails(<any> shoppingCartDetails) {
+    public void setShoppingCartDetails(Set<ShoppingCartDetailsDTO> shoppingCartDetails) {
         this.shoppingCartDetails = shoppingCartDetails;
     }
+
     
     
 }
