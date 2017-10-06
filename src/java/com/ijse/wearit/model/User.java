@@ -25,14 +25,13 @@ public class User {
     private String password;
     private String customerFirstName;
     private String customerLastName;
-    private String customerAddress;
-    private String customerEmail;
-    private String contactNo;
-    private String creditCardInfo;
+    private String customerEmail; 
     
     @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
     private ShoppingCart shoppingCart;
 
+    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
+    private ShippingInfo shippinInfo;
     
     public Integer getUserID() {
         return userID;
@@ -74,14 +73,7 @@ public class User {
         this.customerLastName = customerLastName;
     }
 
-    public String getCustomerAddress() {
-        return customerAddress;
-    }
-
-    public void setCustomerAddress(String customerAddress) {
-        this.customerAddress = customerAddress;
-    }
-
+    
     public String getCustomerEmail() {
         return customerEmail;
     }
@@ -90,19 +82,14 @@ public class User {
         this.customerEmail = customerEmail;
     }
 
-    public String getContactNo() {
-        return contactNo;
+    public ShippingInfo getShippinInfo() {
+        return shippinInfo;
     }
 
-    public void setContactNo(String contactNo) {
-        this.contactNo = contactNo;
-    }
-
-    public String getCreditCardInfo() {
-        return creditCardInfo;
-    }
-
-    public void setCreditCardInfo(String creditCardInfo) {
-        this.creditCardInfo = creditCardInfo;
+    /**
+     * @param shippinInfo the shippinInfo to set
+     */
+    public void setShippinInfo(ShippingInfo shippinInfo) {
+        this.shippinInfo = shippinInfo;
     }
 }
