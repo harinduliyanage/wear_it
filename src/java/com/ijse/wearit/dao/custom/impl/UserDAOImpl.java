@@ -5,8 +5,8 @@
  */
 package com.ijse.wearit.dao.custom.impl;
 
-import com.ijse.wearit.dao.custom.SizeDAO;
-import com.ijse.wearit.model.Size;
+import com.ijse.wearit.dao.custom.UserDAO;
+import com.ijse.wearit.model.User;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.SessionFactory;
@@ -15,31 +15,31 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author Harindu.sul
+ * @author ABC
  */
 @Repository
-public class SizeDAOImpl implements SizeDAO{
+public class UserDAOImpl implements UserDAO{
 
     @Autowired
     private SessionFactory sessionFactory;
     
     @Override
-    public boolean add(Size t) throws Exception {
+    public boolean add(User t) throws Exception {
         Serializable save = sessionFactory.getCurrentSession().save(t);
         return (save!=null);
     }
 
     @Override
-    public boolean update(Size t) throws Exception {
-       sessionFactory.getCurrentSession().update(t);
-       return true;
+    public boolean update(User t) throws Exception {
+        sessionFactory.getCurrentSession().update(t);
+        return true;
     }
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        Size size=(Size)sessionFactory.getCurrentSession().load(Size.class, id);
-        if (size!=null) {
-            sessionFactory.getCurrentSession().delete(size);
+        User search = (User)sessionFactory.getCurrentSession().load(User.class, id);
+        if(search != null){
+            sessionFactory.getCurrentSession().delete(search);
             return true;
         }else{
             return false;
@@ -47,14 +47,14 @@ public class SizeDAOImpl implements SizeDAO{
     }
 
     @Override
-    public Size search(Integer id) throws Exception {
-        return (Size)sessionFactory.getCurrentSession().load(Size.class, id);
+    public User search(Integer id) throws Exception {
+        return (User)sessionFactory.getCurrentSession().load(User.class, id);
     }
 
     @Override
-    public List<Size> getAll() throws Exception {
-       List<Size> sizeList = sessionFactory.getCurrentSession().createCriteria(Size.class).list();
-       return sizeList;
+    public List<User> getAll() throws Exception {
+        List<User> users = sessionFactory.getCurrentSession().createCriteria(User.class).list();
+        return users;
     }
     
 }
