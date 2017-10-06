@@ -5,13 +5,12 @@
  */
 package com.ijse.wearit.dto;
 
-import org.springframework.stereotype.Component;
+import java.io.Serializable;
 
 /**
  *
  * @author ABC
  */
-@Component
-public class ShoppingCartDetailsDTO extends SuperDTO{
+public class SuperDTO implements Serializable{
     
 }

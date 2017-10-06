@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @author ABC
  */
 @Component
-public class ItemDetailsDTO {
+public class ItemDetailsDTO extends SuperDTO{
 
     private Integer id;
     private SizeDTO sizeDTO;

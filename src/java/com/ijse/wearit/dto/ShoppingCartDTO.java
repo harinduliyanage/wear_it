@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @author ABC
  */
 @Component
-public class ShoppingCartDTO {
+public class ShoppingCartDTO extends SuperDTO{
     private Integer id;
     private String addedDate;
     private UserDTO userDTO;

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @author ABC
  */
 @Component
-public class ShippingInfoDTO {
+public class ShippingInfoDTO extends SuperDTO{
     private Integer id;
     private String FName;
     private String LName;

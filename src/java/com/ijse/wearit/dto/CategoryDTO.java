@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @author Harindu.sul
  */
 @Component
-public class CategoryDTO {
+public class CategoryDTO extends SuperDTO{
     private Integer id;
     private String name;
     private Set<ItemDTO> itemsDTO;

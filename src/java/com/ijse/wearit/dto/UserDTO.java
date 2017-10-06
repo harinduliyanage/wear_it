@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @author ABC
  */
 @Component
-public class UserDTO {
+public class UserDTO extends SuperDTO{
     private Integer userID;
     private String userName;
     private String password;

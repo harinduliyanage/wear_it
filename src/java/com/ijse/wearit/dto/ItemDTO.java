@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @author Harindu.sul
  */
 @Component
-public class ItemDTO {
+public class ItemDTO extends SuperDTO{
     private Integer id;
     private String description;
     private String path;
