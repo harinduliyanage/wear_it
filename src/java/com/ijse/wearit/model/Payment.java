@@ -18,7 +18,7 @@ import javax.persistence.ManyToOne;
  * @author Harindu.sul
  */
 @Entity
-class Payment  implements Serializable{
+public class Payment  implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)        
