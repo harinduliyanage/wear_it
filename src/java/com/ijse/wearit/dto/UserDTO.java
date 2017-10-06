@@ -3,37 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ijse.wearit.model;
+package com.ijse.wearit.dto;
 
-import java.io.Serializable;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import org.springframework.stereotype.Component;
 
 /**
  *
- * @author Harindu.sul
+ * @author ABC
  */
-@Entity
-public class User implements Serializable{
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+@Component
+public class UserDTO extends SuperDTO{
     private Integer userID;
     private String userName;
     private String password;
     private String customerFirstName;
     private String customerLastName;
-    private String customerEmail; 
-    
-    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
-    private ShoppingCart shoppingCart;
+    private String customerEmail;
+    private ShoppingCartDTO shoppingCartDTO;
+    private ShippingInfoDTO shippinInfoDTO;
 
-    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
-    private ShippingInfo shippinInfo;
-    
     public Integer getUserID() {
         return userID;
     }
@@ -74,7 +62,6 @@ public class User implements Serializable{
         this.customerLastName = customerLastName;
     }
 
-    
     public String getCustomerEmail() {
         return customerEmail;
     }
@@ -83,14 +70,21 @@ public class User implements Serializable{
         this.customerEmail = customerEmail;
     }
 
-    public ShippingInfo getShippinInfo() {
-        return shippinInfo;
+    public ShoppingCartDTO getShoppingCartDTO() {
+        return shoppingCartDTO;
     }
 
-    /**
-     * @param shippinInfo the shippinInfo to set
-     */
-    public void setShippinInfo(ShippingInfo shippinInfo) {
-        this.shippinInfo = shippinInfo;
+    public void setShoppingCartDTO(ShoppingCartDTO shoppingCartDTO) {
+        this.shoppingCartDTO = shoppingCartDTO;
     }
+
+    public ShippingInfoDTO getShippinInfoDTO() {
+        return shippinInfoDTO;
+    }
+
+    public void setShippinInfoDTO(ShippingInfoDTO shippinInfoDTO) {
+        this.shippinInfoDTO = shippinInfoDTO;
+    }
+    
+    
 }

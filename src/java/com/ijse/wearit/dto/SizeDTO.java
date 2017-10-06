@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @author Harindu.sul
  */
 @Component
-public class SizeDTO {
+public class SizeDTO extends SuperDTO{
     private Integer sizeID;
     private String sizeUK;
     private String sizeUS;

@@ -5,11 +5,16 @@
  */
 package com.ijse.wearit.model;
 
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -17,24 +22,27 @@ import javax.persistence.OneToOne;
  * @author Harindu.sul
  */
 @Entity
-public class ShoppingCart {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class ShoppingCart implements Serializable{
     private Integer id;
     private String addedDate;
-    
-    @OneToOne(cascade = CascadeType.ALL)
     private User user;
+    private int numberOfItems;
+    private double total;
+    
+    private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
 
-    public ShoppingCart() {
+    ShoppingCart() {
     }
-
-    public Integer getShoppingcartID() {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "CART_ID")
+    public Integer getID() {
         return id;
     }
 
-    public void setShoppingcartID(Integer shoppingcartID) {
-        this.id = shoppingcartID;
+    public void setID(Integer id) {
+        this.id = id;
     }
 
     public String getAddedDate() {
@@ -45,12 +53,54 @@ public class ShoppingCart {
         this.addedDate = addedDate;
     }
 
+    @OneToOne(cascade = CascadeType.ALL)
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+    }
+    
+    @OneToMany(mappedBy = "primaryKey.shoppingCart",cascade = CascadeType.ALL)
+    public Set<ShoppingCartDetails> getShoppingCartDetails() {
+        return shoppingCartDetails;
+    }
+ 
+    public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
+        this.shoppingCartDetails = shoppingCartDetailses;
+    }
+     
+    public void addShoppingCartDetail(ShoppingCartDetails shoppingCartDetail) {
+        this.shoppingCartDetails.add(shoppingCartDetail);
+    }  
+
+    /**
+     * @return the numberOfItems
+     */
+    public int getNumberOfItems() {
+        return numberOfItems;
+    }
+
+    /**
+     * @param numberOfItems the numberOfItems to set
+     */
+    public void setNumberOfItems(int numberOfItems) {
+        this.numberOfItems = numberOfItems;
+    }
+
+    /**
+     * @return the total
+     */
+    public double getTotal() {
+        return total;
+    }
+
+    /**
+     * @param total the total to set
+     */
+    public void setTotal(double total) {
+        this.total = total;
     }
     
 }

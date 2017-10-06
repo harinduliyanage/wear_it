@@ -5,11 +5,14 @@
  */
 package com.ijse.wearit.dto;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author Harindu.sul
  */
-public class ItemDTO {
+@Component
+public class ItemDTO extends SuperDTO{
     private Integer id;
     private String description;
     private String path;

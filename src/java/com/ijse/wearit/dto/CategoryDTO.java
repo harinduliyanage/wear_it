@@ -7,15 +7,17 @@ package com.ijse.wearit.dto;
 
 import com.ijse.wearit.model.Item;
 import java.util.Set;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Harindu.sul
  */
-public class CategoryDTO {
+@Component
+public class CategoryDTO extends SuperDTO{
     private Integer id;
     private String name;
-    private Set<Item> items;
+    private Set<ItemDTO> itemsDTO;
 
     /**
      * @return the id
@@ -45,18 +47,14 @@ public class CategoryDTO {
         this.name = name;
     }
 
-    /**
-     * @return the items
-     */
-    public Set<Item> getItems() {
-        return items;
+    public Set<ItemDTO> getItemsDTO() {
+        return itemsDTO;
     }
 
-    /**
-     * @param items the items to set
-     */
-    public void setItems(Set<Item> items) {
-        this.items = items;
+    public void setItemsDTO(Set<ItemDTO> itemsDTO) {
+        this.itemsDTO = itemsDTO;
     }
+
+    
     
 }

@@ -6,12 +6,12 @@
 package com.ijse.wearit.dao.custom;
 
 import com.ijse.wearit.dao.SuperDAO;
-import com.ijse.wearit.model.ShippingInfo;
+import com.ijse.wearit.model.Orders;
 
 /**
  *
  * @author ABC
  */
-public interface ShippingInfoDAO extends SuperDAO<ShippingInfo>{
-   
+public interface OrdersDAO extends SuperDAO<Orders>{
+    
 }

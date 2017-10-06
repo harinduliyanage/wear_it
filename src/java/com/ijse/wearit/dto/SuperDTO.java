@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ijse.wearit.dao.custom;
+package com.ijse.wearit.dto;
 
-import com.ijse.wearit.dao.SuperDAO;
-import com.ijse.wearit.model.ShippingInfo;
+import java.io.Serializable;
 
 /**
  *
  * @author ABC
  */
-public interface ShippingInfoDAO extends SuperDAO<ShippingInfo>{
-   
+public class SuperDTO implements Serializable{
+    
 }
