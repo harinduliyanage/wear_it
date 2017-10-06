@@ -13,5 +13,5 @@ import com.ijse.wearit.model.ShippingInfo;
  * @author ABC
  */
 public interface ShippingInfoDAO extends SuperDAO<ShippingInfo>{
-    
+   
 }
