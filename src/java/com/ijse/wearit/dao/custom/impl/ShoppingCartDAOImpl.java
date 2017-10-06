@@ -21,7 +21,7 @@ import org.springframework.stereotype.Repository;
 public class ShoppingCartDAOImpl implements ShoppingCartDAO{
     
     @Autowired
-    SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     @Override
     public boolean add(ShoppingCart t) throws Exception {
