@@ -18,6 +18,8 @@ public class ShoppingCartDTO {
     private Integer id;
     private String addedDate;
     private UserDTO userDTO;
+    private int numberOfItems;
+    private double total;
     
     private Set<ShoppingCartDetailsDTO> shoppingCartDetails = new HashSet<ShoppingCartDetailsDTO>();
 
@@ -43,6 +45,22 @@ public class ShoppingCartDTO {
 
     public void setUserDTO(UserDTO userDTO) {
         this.userDTO = userDTO;
+    }
+
+    public int getNumberOfItems() {
+        return numberOfItems;
+    }
+
+    public void setNumberOfItems(int numberOfItems) {
+        this.numberOfItems = numberOfItems;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 
     public Set<ShoppingCartDetailsDTO> getShoppingCartDetails() {
