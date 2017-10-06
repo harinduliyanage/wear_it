@@ -5,10 +5,13 @@
  */
 package com.ijse.wearit.dto;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author Harindu.sul
  */
+@Component
 public class ItemDTO {
     private Integer id;
     private String description;

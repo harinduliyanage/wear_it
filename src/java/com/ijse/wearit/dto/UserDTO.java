@@ -5,10 +5,13 @@
  */
 package com.ijse.wearit.dto;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author ABC
  */
+@Component
 public class UserDTO {
     private Integer userID;
     private String userName;
