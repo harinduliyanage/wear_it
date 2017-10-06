@@ -6,13 +6,18 @@
 package com.ijse.wearit.model;
 
 import java.io.Serializable;
-import javax.persistence.AssociationOverride;
-import javax.persistence.AssociationOverrides;
-import javax.persistence.EmbeddedId;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /**
  *
@@ -20,107 +25,107 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "ITEM_DETAILS")
-@AssociationOverrides({
-    @AssociationOverride(name = "primaryKey.size",
-        joinColumns = @JoinColumn(name = "SIZE_ID")),
-    @AssociationOverride(name = "primaryKey.item",
-        joinColumns = @JoinColumn(name = "ITEM_ID")) })
 public class ItemDetails implements Serializable{
-    private ItemDetailsId primaryKey=new ItemDetailsId();
     
+    private Integer id;
+    private Size size;
+    private Item item;
     //additonal feelds
-    private String unitPrice;
-    private String qtyOnHand;
+    private double unitPrice;
+    private int qtyOnHand;
+    private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
     
-    @EmbeddedId
-    public ItemDetailsId getPrimeryKey() {
-        return primaryKey;
+    ItemDetails(){
+        
     }
-
-    /**
-     * @param primeryKey the primeryKey to set
-     */
-    public void setPrimeryKey(ItemDetailsId primeryKey) {
-        this.primaryKey = primeryKey;
-    }
-    @Transient  
-    public Item getItem(){
-        return getPrimeryKey().getItem();
-    }
-    public void setItem(Item item){
-        getPrimeryKey().setItem(item);
-    }
-    @Transient  
-    public Size getSize(){
-        return getPrimeryKey().getSize();
-    }
-    public void setSize(Size size){
-        getPrimeryKey().setSize(size);
-    }
-
-    /**
-     * @return the categoryId
-     */
-    //@Transient  
-    public String getCategoryName() {
-        return getPrimeryKey().getItem().getCategory().getName();
-    }
-
-    /**
-     * @param categoryId the categoryId to set
-     */
-    public void setCategoryName(String category) {
-        getPrimeryKey().getItem().getCategory().setName(category);
-    }
-
-    /**
-     * @return the path
-     */
-    //@Transient  
-    public String getPath() {
-        return primaryKey.getItem().getPath();
-    }
-
-    /**
-     * @param path the path to set
-     */
-    public void setPath(String path) {
-        getPrimeryKey().getItem().setPath(path);
-    }
-
-    /**
-     * @return the unitPrice
-     */
-    public String getUnitPrice() {
+    
+    
+    public double getUnitPrice() {
         return unitPrice;
     }
 
     /**
      * @param unitPrice the unitPrice to set
      */
-    public void setUnitPrice(String unitPrice) {
+    public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
-    //@Transient  
-    public String getDescription(){
-        return getPrimeryKey().getItem().getDescription();
-    }
-    
-    public void setDescription(String des){
-        getPrimeryKey().getItem().setDescription(des);
-    }
+   
 
     /**
      * @return the qtyOnHand
      */
-    public String getQtyOnHand() {
+    public int getQtyOnHand() {
         return qtyOnHand;
     }
 
     /**
      * @param qtyOnHand the qtyOnHand to set
      */
-    public void setQtyOnHand(String qtyOnHand) {
+    public void setQtyOnHand(int qtyOnHand) {
         this.qtyOnHand = qtyOnHand;
+    }
+
+    /**
+     * @return the id
+     */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ITEMDETAILS_ID")
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the size
+     */
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "SIZE_ID")  
+    public Size getSize() {
+        return size;
+    }
+
+    /**
+     * @param size the size to set
+     */
+    public void setSize(Size size) {
+        this.size = size;
+    }
+
+    /**
+     * @return the item
+     */
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ITEM_ID")  
+    public Item getItem() {
+        return item;
+    }
+
+    /**
+     * @param item the item to set
+     */
+    public void setItem(Item item) {
+        this.item = item;
+    }
+    
+    @OneToMany(mappedBy = "primaryKey.itemDetails",
+            cascade = CascadeType.ALL)
+    public Set<ShoppingCartDetails> getShoppingCartDetails() {
+        return shoppingCartDetails;
+    }
+ 
+    public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
+        this.shoppingCartDetails = shoppingCartDetailses;
+    }
+     
+    public void addShoppingCartDetails(ShoppingCartDetails shoppingCartDetails) {
+        this.shoppingCartDetails.add(shoppingCartDetails);
     }
 }
