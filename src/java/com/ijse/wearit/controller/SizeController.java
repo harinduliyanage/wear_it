@@ -6,6 +6,7 @@
 package com.ijse.wearit.controller;
 
 import com.ijse.wearit.dto.SizeDTO;
+import com.ijse.wearit.model.Size;
 import com.ijse.wearit.service.custom.SizeService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,12 +26,12 @@ public class SizeController {
     
     @RequestMapping(value = "/addNewSize")
     public String addNewSize(){
-        SizeDTO sizeDTO = new SizeDTO();
-        sizeDTO.setSizeEU("48");
-        sizeDTO.setSizeUK("10");
-        sizeDTO.setSizeUS("8");
+        Size size = new Size();
+        size.setSizeEU("48");
+        size.setSizeUK("10");
+        size.setSizeUS("8");
         try {
-            boolean add = sizeService.add(sizeDTO);
+            boolean add = sizeService.add(size);
         } catch (Exception ex) {
             Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
