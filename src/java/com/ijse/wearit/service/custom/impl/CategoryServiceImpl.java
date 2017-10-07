@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class CategoryServiceImpl implements CategoryService{
     
     @Autowired
-    CategoryDAO categoryDAOImpl;
+    private CategoryDAO categoryDAOImpl;
 
     @Override
     public boolean add(Category t) throws Exception {

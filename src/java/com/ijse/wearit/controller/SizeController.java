@@ -5,7 +5,6 @@
  */
 package com.ijse.wearit.controller;
 
-import com.ijse.wearit.dto.SizeDTO;
 import com.ijse.wearit.model.Size;
 import com.ijse.wearit.service.custom.SizeService;
 import java.util.logging.Level;

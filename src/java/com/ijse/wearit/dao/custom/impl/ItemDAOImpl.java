@@ -21,7 +21,7 @@ import org.springframework.stereotype.Repository;
 public class ItemDAOImpl implements ItemDAO{
     
     @Autowired
-    SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     @Override
     public boolean add(Item t) throws Exception {
