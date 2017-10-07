@@ -29,7 +29,7 @@ public class ShoppingCart implements Serializable{
     
     private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
 
-    public ShoppingCart() {
+    ShoppingCart() {
     }
     
     @Id
@@ -60,17 +60,16 @@ public class ShoppingCart implements Serializable{
         this.user = user;
     }
     
-    @OneToMany(mappedBy = "primaryKey.shoppingcart",
-            cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "primaryKey.shoppingCart",cascade = CascadeType.ALL)
     public Set<ShoppingCartDetails> getShoppingCartDetails() {
         return shoppingCartDetails;
     }
  
-    public void setUserGroups(Set<ShoppingCartDetails> shoppingCartDetailses) {
+    public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
         this.shoppingCartDetails = shoppingCartDetailses;
     }
      
-    public void addUserGroup(ShoppingCartDetails shoppingCartDetail) {
+    public void addShoppingCartDetail(ShoppingCartDetails shoppingCartDetail) {
         this.shoppingCartDetails.add(shoppingCartDetail);
     }  
     
