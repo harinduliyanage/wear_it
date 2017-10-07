@@ -24,7 +24,7 @@ public class Size implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String size;
+    private String size;//Xs,S,M,L,XL
     private String sizeUK;
     private String sizeUS;
     private String sizeEU;
@@ -80,17 +80,17 @@ public class Size implements Serializable{
     }
 
     /**
-     * @return the SizeinAsia
-     */
-    public String getSizeinAsia() {
-        return size;
-    }
-
-    /**
      * @param SizeinAsia the SizeinAsia to set
      */
     public void setSize(String size) {
         this.size = size;
+    }
+
+    /**
+     * @return the size
+     */
+    public String getSize() {
+        return size;
     }
   
 }
