@@ -27,12 +27,12 @@ public class Order implements Serializable {
     private String orderDate;
     private double orderAmount;
     private double discount;
+    //@OneToOne(cascade = CascadeType.ALL)
+//    private DeliverShedule deliverShedule;
     @OneToOne(cascade = CascadeType.ALL)
-    private ShippingInfo shippingInfo;
-    @OneToOne(cascade = CascadeType.ALL)
-    private PaymentMethod paymentMethod;
+    private Payment payment;
     
-    @OneToMany(mappedBy = "order")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "order")
     private Set<OrderDetails> orderDetails;
 
     /**
@@ -94,30 +94,30 @@ public class Order implements Serializable {
     /**
      * @return the shippingInfo
      */
-    public ShippingInfo getShippingInfo() {
-        return shippingInfo;
-    }
-
-    /**
-     * @param shippingInfo the shippingInfo to set
-     */
-    
-    public void setShippingInfo(ShippingInfo shippingInfo) {
-        this.shippingInfo = shippingInfo;
-    }
+//    public DeliverShedule getDeliverShedule() {
+//        return deliverShedule;
+//    }
+//
+//    /**
+//     * @param shippingInfo the shippingInfo to set
+//     */
+//    
+//    public void setDeliverShedule(DeliverShedule deliverShedule) {
+//        this.deliverShedule = deliverShedule;
+//    }
 
     /**
      * @return the paymentMethod
      */
-    public PaymentMethod getPaymentMethod() {
-        return paymentMethod;
+    public Payment getPayment() {
+        return payment;
     }
 
     /**
      * @param paymentMethod the paymentMethod to set
      */
     public void setPaymentMethod(PaymentMethod paymentMethod) {
-        this.paymentMethod = paymentMethod;
+        this.payment = payment;
     }
 
     /**
