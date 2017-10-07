@@ -34,13 +34,13 @@ public class ShoppingCart implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "USER_ID")
-    public Integer getShoppingcartID() {
+    @Column(name = "CART_ID")
+    public Integer getID() {
         return id;
     }
 
-    public void setShoppingcartID(Integer shoppingcartID) {
-        this.id = shoppingcartID;
+    public void setID(Integer id) {
+        this.id = id;
     }
 
     public String getAddedDate() {
