@@ -6,10 +6,13 @@
 package com.ijse.wearit.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -21,16 +24,34 @@ public class Size implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String SizeinAsia;
+    private String size;
     private String sizeUK;
     private String sizeUS;
     private String sizeEU;
+    
+    @OneToMany(mappedBy = "size")
+    Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
 
-    public Integer getSizeID() {
+    public Size() {
+    }
+    
+    public void addItemDetails(Set<ItemDetails> itemDetails){
+        this.itemDetails=itemDetails;
+    }
+    
+    public Set<ItemDetails> getItemDetails(){
+        return this.itemDetails;
+    }
+    
+    public void addToItemDetail(ItemDetails itemDetails){
+        this.itemDetails.add(itemDetails);
+    }
+
+    public Integer getID() {
         return id;
     }
 
-    public void setSizeID(Integer sizeID) {
+    public void setID(Integer sizeID) {
         this.id = sizeID;
     }
 
@@ -62,14 +83,14 @@ public class Size implements Serializable{
      * @return the SizeinAsia
      */
     public String getSizeinAsia() {
-        return SizeinAsia;
+        return size;
     }
 
     /**
      * @param SizeinAsia the SizeinAsia to set
      */
-    public void setSizeinAsia(String SizeinAsia) {
-        this.SizeinAsia = SizeinAsia;
+    public void setSize(String size) {
+        this.size = size;
     }
   
 }
