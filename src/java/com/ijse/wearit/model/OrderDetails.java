@@ -5,6 +5,7 @@
  */
 package com.ijse.wearit.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,8 +21,8 @@ public class OrderDetails {
      @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
      private Integer id;
-     @ManyToOne
-     private Order order;
+     @ManyToOne(cascade = CascadeType.ALL)
+     private Orders order;
      private int orderQty;
      private String description;
      private int itemDetailsID;
@@ -85,14 +86,14 @@ public class OrderDetails {
     /**
      * @return the order
      */
-    public Order getOrder() {
+    public Orders getOrder() {
         return order;
     }
 
     /**
      * @param order the order to set
      */
-    public void setOrder(Order order) {
+    public void setOrder(Orders order) {
         this.order = order;
     }
     
