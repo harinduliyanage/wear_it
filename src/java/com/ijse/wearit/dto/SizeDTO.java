@@ -17,7 +17,23 @@ public class SizeDTO extends SuperDTO{
     private String sizeUK;
     private String sizeUS;
     private String sizeEU;
+    private String size;//Xs,S,M,L,XL
 
+    public SizeDTO(Integer sizeID, String sizeUK, String sizeUS, String sizeEU, String size) {
+        this.sizeID = sizeID;
+        this.sizeUK = sizeUK;
+        this.sizeUS = sizeUS;
+        this.sizeEU = sizeEU;
+        this.size = size;
+    }
+
+    public SizeDTO() {
+        
+    }
+
+    public String getSize() {
+        return size;
+    }
     public Integer getSizeID() {
         return sizeID;
     }
@@ -48,6 +64,14 @@ public class SizeDTO extends SuperDTO{
 
     public void setSizeEU(String sizeEU) {
         this.sizeEU = sizeEU;
+    }
+
+
+    /**
+     * @param size the size to set
+     */
+    public void setSize(String size) {
+        this.size = size;
     }
   
 }
