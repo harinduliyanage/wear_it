@@ -5,6 +5,7 @@
  */
 package com.ijse.wearit.model;
 
+import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ import javax.persistence.OneToOne;
  * @author Harindu.sul
  */
 @Entity
-public class ShippingInfo {
+public class ShippingInfo implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)        
     private Integer id;
@@ -32,6 +33,10 @@ public class ShippingInfo {
     
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
+    
+    ShippingInfo(){
+        
+    }
 
     /**
      * @return the FName
