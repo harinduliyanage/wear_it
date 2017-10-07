@@ -5,6 +5,7 @@
  */
 package com.ijse.wearit.model;
 
+import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +18,7 @@ import javax.persistence.OneToOne;
  * @author Harindu.sul
  */
 @Entity
-public class ShoppingCart {
+public class ShoppingCart implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
