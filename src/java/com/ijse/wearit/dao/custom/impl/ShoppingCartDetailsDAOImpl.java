@@ -11,11 +11,13 @@ import java.io.Serializable;
 import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author ABC
  */
+@Repository
 public class ShoppingCartDetailsDAOImpl implements ShoppingCartDetailsDAO{
     
     @Autowired
