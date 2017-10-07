@@ -6,13 +6,17 @@
 package com.ijse.wearit.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -29,6 +33,7 @@ public class ItemDetails implements Serializable{
     //additonal feelds
     private double unitPrice;
     private int qtyOnHand;
+    private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
     
     ItemDetails(){
         
@@ -66,6 +71,7 @@ public class ItemDetails implements Serializable{
      */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ITEMDETAILS_ID")
     public Integer getId() {
         return id;
     }
@@ -107,5 +113,19 @@ public class ItemDetails implements Serializable{
      */
     public void setItem(Item item) {
         this.item = item;
+    }
+    
+    @OneToMany(mappedBy = "primaryKey.itemDetails",
+            cascade = CascadeType.ALL)
+    public Set<ShoppingCartDetails> getShoppingCartDetails() {
+        return shoppingCartDetails;
+    }
+ 
+    public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
+        this.shoppingCartDetails = shoppingCartDetailses;
+    }
+     
+    public void addShoppingCartDetails(ShoppingCartDetails shoppingCartDetails) {
+        this.shoppingCartDetails.add(shoppingCartDetails);
     }
 }
