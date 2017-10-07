@@ -5,9 +5,9 @@
  */
 package com.ijse.wearit.service.custom.impl;
 
-import com.ijse.wearit.dao.custom.SizeDAO;
-import com.ijse.wearit.model.Size;
-import com.ijse.wearit.service.custom.SizeService;
+import com.ijse.wearit.dao.custom.ItemDAO;
+import com.ijse.wearit.model.Item;
+import com.ijse.wearit.service.custom.ItemService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,34 +19,34 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional
-public class SizeServiceImpl implements SizeService{
+public class ItemServiceImpl  implements ItemService{
     
     @Autowired
-    SizeDAO sizeDAOImpl;
+    ItemDAO itemDAOImpl;
 
     @Override
-    public boolean add(Size t) throws Exception {
-        return sizeDAOImpl.add(t);
+    public boolean add(Item t) throws Exception {
+        return itemDAOImpl.add(t);
     }
 
     @Override
-    public boolean update(Size t) throws Exception {
-        return sizeDAOImpl.update(t);
+    public boolean update(Item t) throws Exception {
+        return itemDAOImpl.update(t);
     }
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        return sizeDAOImpl.delete(id);
+       return itemDAOImpl.delete(id);
     }
 
     @Override
-    public Size search(Integer id) throws Exception {
-        return sizeDAOImpl.search(id);
+    public Item search(Integer id) throws Exception {
+        return itemDAOImpl.search(id);
     }
 
     @Override
-    public List<Size> getAll() throws Exception {
-        return sizeDAOImpl.getAll();
+    public List<Item> getAll() throws Exception {
+        return itemDAOImpl.getAll();
     }
     
 }

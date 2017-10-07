@@ -34,7 +34,7 @@ public class Item implements Serializable{
     @OneToMany(mappedBy = "item")
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
     
-    Item(){
+    public Item(){
         
     }
     
