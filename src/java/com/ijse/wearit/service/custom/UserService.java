@@ -12,6 +12,6 @@ import com.ijse.wearit.service.SuperService;
  *
  * @author ABC
  */
-public interface UserService extends SuperService<UserService>{
+public interface UserService extends SuperService<User>{
     
 }
