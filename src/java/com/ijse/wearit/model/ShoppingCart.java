@@ -26,6 +26,8 @@ public class ShoppingCart implements Serializable{
     private Integer id;
     private String addedDate;
     private User user;
+    private int numberOfItems;
+    private double total;
     
     private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
 
@@ -72,5 +74,33 @@ public class ShoppingCart implements Serializable{
     public void addShoppingCartDetail(ShoppingCartDetails shoppingCartDetail) {
         this.shoppingCartDetails.add(shoppingCartDetail);
     }  
+
+    /**
+     * @return the numberOfItems
+     */
+    public int getNumberOfItems() {
+        return numberOfItems;
+    }
+
+    /**
+     * @param numberOfItems the numberOfItems to set
+     */
+    public void setNumberOfItems(int numberOfItems) {
+        this.numberOfItems = numberOfItems;
+    }
+
+    /**
+     * @return the total
+     */
+    public double getTotal() {
+        return total;
+    }
+
+    /**
+     * @param total the total to set
+     */
+    public void setTotal(double total) {
+        this.total = total;
+    }
     
 }
