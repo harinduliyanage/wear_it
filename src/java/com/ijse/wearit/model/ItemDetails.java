@@ -35,7 +35,7 @@ public class ItemDetails implements Serializable{
     private int qtyOnHand;
     private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
     
-    ItemDetails(){
+    public ItemDetails(){
         
     }
     
