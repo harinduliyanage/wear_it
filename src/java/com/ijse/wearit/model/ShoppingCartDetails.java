@@ -27,6 +27,8 @@ import javax.persistence.Transient;
 public class ShoppingCartDetails {
     private ShoppingCartDetailCompositeId primaryKey = new ShoppingCartDetailCompositeId();
     
+    private int orderQty;
+    
     @EmbeddedId
     public ShoppingCartDetailCompositeId getPrimaryKey() {
         return primaryKey;
@@ -66,6 +68,26 @@ public class ShoppingCartDetails {
  
     public void setPath(String path) {
         getPrimaryKey().getItemDetails().getItem().setPath(path);
+    }
+    public double getUnitPrice(){
+       return getPrimaryKey().getItemDetails().getUnitPrice();
+    }
+    public void setUnitPrice(double unitPrice){
+        getPrimaryKey().getItemDetails().setUnitPrice(unitPrice);
+    }
+
+    /**
+     * @return the orderQty
+     */
+    public int getOrderQty() {
+        return orderQty;
+    }
+
+    /**
+     * @param orderQty the orderQty to set
+     */
+    public void setOrderQty(int orderQty) {
+        this.orderQty = orderQty;
     }
     
 }
