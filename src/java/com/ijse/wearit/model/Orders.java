@@ -100,7 +100,7 @@ public class Orders implements Serializable {
     /**
      * @param paymentMethod the paymentMethod to set
      */
-    public void setPaymentMethod(PaymentMethod paymentMethod) {
+    public void setPayment(Payment payment) {
         this.payment = payment;
     }
 
