@@ -5,13 +5,13 @@
  */
 package com.ijse.wearit.service.custom;
 
-import com.ijse.wearit.dto.CategoryDTO;
+import com.ijse.wearit.model.Category;
 import com.ijse.wearit.service.SuperService;
 
 /**
  *
  * @author Harindu.sul
  */
-public interface CategoryService extends SuperService<CategoryDTO>{
+public interface CategoryService extends SuperService<Category>{
     
 }

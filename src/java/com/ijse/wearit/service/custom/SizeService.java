@@ -5,13 +5,13 @@
  */
 package com.ijse.wearit.service.custom;
 
-import com.ijse.wearit.dto.SizeDTO;
+import com.ijse.wearit.model.Size;
 import com.ijse.wearit.service.SuperService;
 
 /**
  *
  * @author Harindu.sul
  */
-public interface SizeService extends SuperService<SizeDTO>{
+public interface SizeService extends SuperService<Size>{
     
 }

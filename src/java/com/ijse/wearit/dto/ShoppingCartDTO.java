@@ -20,10 +20,13 @@ public class ShoppingCartDTO extends SuperDTO{
     private UserDTO userDTO;
     private int numberOfItems;
     private double total;
+;
     
     private Set<ShoppingCartDetailsDTO> shoppingCartDetails = new HashSet<ShoppingCartDetailsDTO>();
+    
 
     public Integer getId() {
+       
         return id;
     }
 
