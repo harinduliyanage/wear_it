@@ -34,14 +34,14 @@ public class Item implements Serializable{
     private String description;
     private String path;
     
-    @OneToMany(mappedBy = "item")      
+    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER)      
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
     
     public Item(){
         
     }
     
-    @ManyToOne(optional = true)
+    @ManyToOne(optional = true,fetch = FetchType.EAGER)
     @JoinColumn(name="Category_id",nullable=false)
     private Category category;
 

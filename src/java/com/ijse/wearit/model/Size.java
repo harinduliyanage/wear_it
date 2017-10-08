@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,7 +30,7 @@ public class Size implements Serializable{
     private String sizeUS;
     private String sizeEU;
     
-    @OneToMany(mappedBy = "size")
+    @OneToMany(mappedBy = "size",fetch = FetchType.EAGER)
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
 
     public Size() {

@@ -9,8 +9,9 @@ import com.ijse.wearit.dao.custom.SizeDAO;
 import com.ijse.wearit.model.Size;
 import java.io.Serializable;
 import java.util.List;
-import org.hibernate.Query;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -60,16 +61,10 @@ public class SizeDAOImpl implements SizeDAO {
 
     @Override
     public Size getSizeByName(String size) throws Exception {
-        String hql = "from Size where size = '" + size + "'";
-        Query query = (Query)sessionFactory.getCurrentSession().createQuery(hql);
-        List<Size> listSize = query.list();
-        
-        for (Size s : listSize) {
-            if(s.getSize().equalsIgnoreCase(size)){
-               return s;  
-            }
-        }
-        return null;
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(Size.class);
+        c2.add(Restrictions.le("size", size));
+        c2.setMaxResults(1);
+        Size z = (Size) c2.uniqueResult();
+        return z;
     }
-
 }

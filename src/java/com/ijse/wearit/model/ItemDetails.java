@@ -11,6 +11,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -87,7 +88,7 @@ public class ItemDetails implements Serializable{
     /**
      * @return the size
      */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "SIZE_ID")  
     public Size getSize() {
         return size;
@@ -103,7 +104,7 @@ public class ItemDetails implements Serializable{
     /**
      * @return the item
      */
-    @ManyToOne(cascade = CascadeType.ALL,optional = true)
+    @ManyToOne(cascade = CascadeType.ALL,optional = true,fetch = FetchType.EAGER)
     @JoinColumn(name = "ITEM_ID")  
     public Item getItem() {
         return item;
