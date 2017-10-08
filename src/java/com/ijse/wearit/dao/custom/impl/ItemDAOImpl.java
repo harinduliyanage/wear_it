@@ -9,6 +9,8 @@ import com.ijse.wearit.dao.custom.ItemDAO;
 import com.ijse.wearit.model.Item;
 import java.io.Serializable;
 import java.util.List;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -55,6 +57,26 @@ public class ItemDAOImpl implements ItemDAO{
     public List<Item> getAll() throws Exception {
         List<Item> list=sessionFactory.getCurrentSession().createCriteria(Item.class).list();
         return list;
+    }
+
+    @Override
+    public Item getItemByDescription(String description) throws Exception {
+        String hql = "from Item where description = '" + description + "'";
+      
+        
+        //Session session = sessionFactory.openSession();
+        Query query = (Query)sessionFactory.getCurrentSession().createQuery(hql);
+        List<Item> listItem = query.list();
+        
+        for (Item i : listItem) {
+            if(i.getDescription().equalsIgnoreCase(description)){
+               
+                //session.close();
+               return i;  
+            }
+        }
+        //session.close();
+        return null;
     }
     
 }

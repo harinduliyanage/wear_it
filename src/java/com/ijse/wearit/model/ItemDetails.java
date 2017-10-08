@@ -15,6 +15,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -102,7 +103,7 @@ public class ItemDetails implements Serializable{
     /**
      * @return the item
      */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL,optional = true)
     @JoinColumn(name = "ITEM_ID")  
     public Item getItem() {
         return item;
@@ -123,9 +124,5 @@ public class ItemDetails implements Serializable{
  
     public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
         this.shoppingCartDetails = shoppingCartDetailses;
-    }
-     
-    public void addShoppingCartDetails(ShoppingCartDetails shoppingCartDetails) {
-        this.shoppingCartDetails.add(shoppingCartDetails);
     }
 }

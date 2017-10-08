@@ -9,6 +9,8 @@ import com.ijse.wearit.dao.custom.CategoryDAO;
 import com.ijse.wearit.model.Category;
 import java.io.Serializable;
 import java.util.List;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -55,6 +57,25 @@ public class CategoryDAOImpl implements CategoryDAO{
     public List<Category> getAll() throws Exception {
         List<Category> categorys = sessionFactory.getCurrentSession().createCriteria(Category.class).list();
         return categorys;
+    }
+
+    @Override
+    public Category getCategoryByName(String name) throws Exception {
+          String hql = "from Category where name = '" + name + "'";
+      
+        
+        //Session session = sessionFactory.openSession();
+        Query query = (Query)sessionFactory.getCurrentSession().createQuery(hql);
+        List<Category> listCategory = query.list();
+        
+        for (Category s : listCategory) {
+            if(s.getName().equalsIgnoreCase(name)){
+                //session.close();
+               return s;  
+            }
+        }
+        //session.close();
+        return null;
     }
     
 }

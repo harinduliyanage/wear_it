@@ -13,5 +13,5 @@ import com.ijse.wearit.service.SuperService;
  * @author Harindu.sul
  */
 public interface ItemService extends SuperService<Item>{
-    
+    public Item getItemByDescription(String description)throws Exception;
 }

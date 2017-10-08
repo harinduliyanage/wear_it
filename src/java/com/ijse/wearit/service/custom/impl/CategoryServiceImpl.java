@@ -48,5 +48,10 @@ public class CategoryServiceImpl implements CategoryService{
     public List<Category> getAll() throws Exception {
         return categoryDAOImpl.getAll();
     }
+
+    @Override
+    public Category getCategoryByName(String name) throws Exception {
+        return categoryDAOImpl.getCategoryByName(name);
+    }
     
 }

@@ -13,5 +13,6 @@ import com.ijse.wearit.service.SuperService;
  * @author Harindu.sul
  */
 public interface CategoryService extends SuperService<Category>{
+    public Category getCategoryByName(String name)throws Exception;
     
 }

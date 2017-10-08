@@ -48,5 +48,10 @@ public class ItemServiceImpl  implements ItemService{
     public List<Item> getAll() throws Exception {
         return itemDAOImpl.getAll();
     }
+
+    @Override
+    public Item getItemByDescription(String description) throws Exception {
+        return itemDAOImpl.getItemByDescription(description);
+    }
     
 }

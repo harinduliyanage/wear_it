@@ -13,5 +13,7 @@ import com.ijse.wearit.model.Size;
  * @author Harindu.sul
  */
 public interface SizeDAO extends SuperDAO<Size>{
+    public Size getSizeByName(String name)throws Exception;
     
 }
+//innako poddak...........

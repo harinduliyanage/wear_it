@@ -13,5 +13,6 @@ import com.ijse.wearit.model.Item;
  * @author Harindu.sul
  */
 public interface ItemDAO extends SuperDAO<Item>{
+    public Item getItemByDescription(String description)throws Exception;
     
 }

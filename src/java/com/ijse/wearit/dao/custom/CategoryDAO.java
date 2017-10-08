@@ -13,5 +13,5 @@ import com.ijse.wearit.model.Category;
  * @author ABC
  */
 public interface CategoryDAO extends SuperDAO<Category>{
-    
+    public Category getCategoryByName(String name)throws Exception;
 }

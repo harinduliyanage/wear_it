@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Error
-    Created on : Oct 4, 2017, 2:18:29 PM
-    Author     : Harindu.sul
+    Document   : test
+    Created on : Oct 8, 2017, 12:37:04 AM
+    Author     : ABC
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello Error</h1>
+        <h1>Hello Test!</h1>
     </body>
 </html>

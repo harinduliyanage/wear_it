@@ -116,10 +116,5 @@ public class Orders implements Serializable {
      */
     public void setOrderDetails(Set<OrderDetails> orderDetails) {
         this.orderDetails = orderDetails;
-    }
-    public void addOrderDetails(OrderDetails orderDetails) {
-        this.orderDetails.add(orderDetails);
-    }
-    
-    
+    } 
 }

@@ -6,6 +6,7 @@
 package com.ijse.wearit.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Category  implements Serializable{
     private String name;
     
     @OneToMany(mappedBy = "category")
-    private Set<Item> items;
+    private Set<Item> items = new HashSet<Item>();
 
     /**
      * @return the Categoryid

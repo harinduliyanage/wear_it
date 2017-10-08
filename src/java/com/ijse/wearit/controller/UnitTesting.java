@@ -5,10 +5,15 @@
  */
 package com.ijse.wearit.controller;
 
+import com.ijse.wearit.model.Category;
+import com.ijse.wearit.model.Item;
+import com.ijse.wearit.model.ItemDetails;
 import com.ijse.wearit.model.Size;
+import com.ijse.wearit.service.custom.CategoryService;
+import com.ijse.wearit.service.custom.ItemDetailsService;
+import com.ijse.wearit.service.custom.ItemService;
 import com.ijse.wearit.service.custom.SizeService;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,31 +24,124 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class UnitTesting {
-    
+
     @Autowired
-    private SizeService serviceImpl;
-    
+    private SizeService sizeService;
+    @Autowired
+    private ItemDetailsService itemDetailsService;
+    @Autowired
+    private CategoryService categoryService;
+    @Autowired
+    private ItemService itemService;
+
     @RequestMapping(value = "/test")
-    public String navSome(){
-        //test model <3
+    public String navSome() throws Exception {
+        //test Size model
+//////////        Size size = new Size();
+//////////        size.setSize("M");
+//////////        size.setSizeEU("42");
+//////////        size.setSizeUK("12");
+//////////        size.setSizeUS("10");
+
         Size size = new Size();
-        size.setSize("XS");
-        size.setSizeEU("32");
-        size.setSizeUK("10");
-        size.setSizeUS("8");
-        boolean add =false;
-        try {
+        size.setSize("XL");
+        size.setSizeEU("66");
+        size.setSizeUK("22");
+        size.setSizeUS("12");
+        sizeService.add(size);
+        
+        ItemDetails itemDetails = new ItemDetails();
+        itemDetails.setQtyOnHand(10);
+        itemDetails.setUnitPrice(1200);
+        
+        Category category = categoryService.getCategoryByName("Party");
+        int categoryID = category.getCategoryid();
+        //List<Item> itemList = (List<Item>) category.getItems();
+        
+        List<Item> itemList = itemService.getAll();
+        
+        for(Item searchItem : itemList){
+            if(searchItem.getCategory().getCategoryid().equals(categoryID)){
+                System.out.println("YYYYYYYYYYYYYYYYYYYYYYYYYYY");
             
-            add=serviceImpl.add(size);
-            System.out.println(add);
-        } catch (Exception ex) {
-            Logger.getLogger(UnitTesting.class.getName()).log(Level.SEVERE, null, ex);
+                if(searchItem.getDescription().equalsIgnoreCase("Frock")){
+                    System.out.println("PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
+        //Item item = itemService.getItemByDescription("Frock");
+        searchItem.getItemDetails().add(itemDetails);
+        itemDetails.setItem(searchItem);
+        //itemService.
+                }
+                }
         }
-            if(add){
-        return "Success";
-        }else{
+        
+        //itemService.add(item);
+        
+        itemDetails.setSize(size);
+        
+        boolean ifAdded = false;
+        ifAdded = itemDetailsService.add(itemDetails);
+        
+        
+        
+       
+
+        System.out.println("*****************************");
+        
+        try {
+
+        } catch (Exception ex) {
+            System.out.println(ex + "---------------------------");
+            System.out.println(ex + "---------------------------");
+            System.out.println(ex + "---------------------------");
+            System.out.println(ex + "---------------------------");
+        }
+        if (ifAdded) {
+            return "Success";
+        } else {
             return "Error";
         }
     }
-    
+
 }
+/*
+Category categoryByName = categoryService.getCategoryByName("Sport");
+if(categoryByName!=null){
+                
+                item.setCategory(categoryByName);
+                add=itemService.add(item);
+                System.out.println(categoryByName.getCategoryid()+""+categoryByName.getName());
+            }
+*/
+
+
+
+//        boolean ifAdded = false;
+//        //Create New Category
+//        Category category1 = new Category();
+//        category1.setName("Party");
+//        categoryService.add(category1);
+//        //Create New Item
+//        Item item = new Item();
+//        item.setDescription("Frock");
+//        item.setPath("Image/Frock/frock.jpg");
+//        item.setCategory(category1);
+//        category1.getItems().add(item);
+//        itemService.add(item);
+//        //create Size
+//        Size size = new Size();
+//        size.setSize("S");
+//        size.setSizeEU("22");
+//        size.setSizeUK("12");
+//        size.setSizeUS("10");
+//        sizeService.add(size);
+//        //create ItemDetails
+//        ItemDetails itemDetails = new ItemDetails();
+//        itemDetails.setQtyOnHand(5);
+//        itemDetails.setUnitPrice(100.00);
+//        itemDetails.setItem(item);
+//        itemDetails.setSize(size);
+//        item.getItemDetails().add(itemDetails);
+//        size.getItemDetails().add(itemDetails);
+//        //itemDetailsService.add(itemDetails);
+//        
+//        ifAdded = itemDetailsService.add(itemDetails);
