@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class ItemServiceImpl  implements ItemService{
     
     @Autowired
-    ItemDAO itemDAOImpl;
+    private ItemDAO itemDAOImpl;
 
     @Override
     public boolean add(Item t) throws Exception {

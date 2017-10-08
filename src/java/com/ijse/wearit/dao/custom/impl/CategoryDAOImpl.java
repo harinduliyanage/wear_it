@@ -21,7 +21,7 @@ import org.springframework.stereotype.Repository;
 public class CategoryDAOImpl implements CategoryDAO{
     
     @Autowired
-    SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     @Override
     public boolean add(Category t) throws Exception {

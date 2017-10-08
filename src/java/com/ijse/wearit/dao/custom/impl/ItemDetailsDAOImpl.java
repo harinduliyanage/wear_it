@@ -22,7 +22,7 @@ import org.springframework.stereotype.Repository;
 public class ItemDetailsDAOImpl implements ItemDetailsDAO{
     
     @Autowired
-    SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
     
     @Override
     public boolean add(ItemDetails t) throws Exception {
