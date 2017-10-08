@@ -16,4 +16,3 @@ public interface SizeDAO extends SuperDAO<Size>{
     public Size getSizeByName(String name)throws Exception;
     
 }
-//innako poddak...........

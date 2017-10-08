@@ -34,14 +34,14 @@ public class Item implements Serializable{
     private String description;
     private String path;
     
-    @OneToMany//(mappedBy = "item")      
+    @OneToMany(mappedBy = "item")      
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
     
     public Item(){
         
     }
     
-    @ManyToOne(optional = true) //(fetch = FetchType.LAZY)//meka hari giya araka tikak balannako
+    @ManyToOne(optional = true)
     @JoinColumn(name="Category_id",nullable=false)
     private Category category;
 
@@ -55,7 +55,7 @@ public class Item implements Serializable{
     /**
      * @return the itemCode
      */
-    public Integer getItemCode() {//me balanna lamayo
+    public Integer getItemCode() {
         return id;
     }
 

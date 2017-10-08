@@ -10,7 +10,6 @@ import com.ijse.wearit.model.Category;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Query;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -61,21 +60,14 @@ public class CategoryDAOImpl implements CategoryDAO{
 
     @Override
     public Category getCategoryByName(String name) throws Exception {
-          String hql = "from Category where name = '" + name + "'";
-      
-        
-        //Session session = sessionFactory.openSession();
+        String hql = "from Category where name = '" + name + "'";
         Query query = (Query)sessionFactory.getCurrentSession().createQuery(hql);
         List<Category> listCategory = query.list();
-        
         for (Category s : listCategory) {
             if(s.getName().equalsIgnoreCase(name)){
-                //session.close();
                return s;  
             }
         }
-        //session.close();
         return null;
-    }
-    
+    } 
 }
