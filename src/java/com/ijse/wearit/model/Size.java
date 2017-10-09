@@ -52,8 +52,8 @@ public class Size implements Serializable{
         return id;
     }
 
-    public void setID(Integer sizeID) {
-        this.id = sizeID;
+    public void setID(Integer id) {
+        this.id = id;
     }
 
     public String getSizeUK() {
@@ -80,16 +80,12 @@ public class Size implements Serializable{
         this.sizeEU = sizeEU;
     }
 
-    /**
-     * @param SizeinAsia the SizeinAsia to set
-     */
+    
     public void setSize(String size) {
         this.size = size;
     }
 
-    /**
-     * @return the size
-     */
+    
     public String getSize() {
         return size;
     }
