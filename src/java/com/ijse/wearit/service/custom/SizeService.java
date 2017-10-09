@@ -13,5 +13,5 @@ import com.ijse.wearit.service.SuperService;
  * @author Harindu.sul
  */
 public interface SizeService extends SuperService<Size>{
-    
+    public Size getSizeByName(String size)throws Exception;
 }

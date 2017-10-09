@@ -70,10 +70,7 @@ public class ShoppingCart implements Serializable{
     public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
         this.shoppingCartDetails = shoppingCartDetailses;
     }
-     
-    public void addShoppingCartDetail(ShoppingCartDetails shoppingCartDetail) {
-        this.shoppingCartDetails.add(shoppingCartDetail);
-    }  
+   
 
     /**
      * @return the numberOfItems

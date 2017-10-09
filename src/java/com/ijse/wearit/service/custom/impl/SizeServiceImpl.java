@@ -48,5 +48,10 @@ public class SizeServiceImpl implements SizeService{
     public List<Size> getAll() throws Exception {
         return sizeDAOImpl.getAll();
     }
+
+    @Override
+    public Size getSizeByName(String size) throws Exception {
+        return sizeDAOImpl.getSizeByName(size);
+    }
     
 }

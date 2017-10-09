@@ -9,7 +9,9 @@ import com.ijse.wearit.dao.custom.ItemDAO;
 import com.ijse.wearit.model.Item;
 import java.io.Serializable;
 import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,30 +20,30 @@ import org.springframework.stereotype.Repository;
  * @author ABC
  */
 @Repository
-public class ItemDAOImpl implements ItemDAO{
-    
+public class ItemDAOImpl implements ItemDAO {
+
     @Autowired
     private SessionFactory sessionFactory;
 
     @Override
     public boolean add(Item t) throws Exception {
-        Serializable save = sessionFactory.getCurrentSession().save(t); 
-         return (save!=null);
+        Serializable save = sessionFactory.getCurrentSession().save(t);
+        return (save != null);
     }
 
     @Override
     public boolean update(Item t) throws Exception {
-       sessionFactory.getCurrentSession().update(t);
-       return true;
+        sessionFactory.getCurrentSession().update(t);
+        return true;
     }
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        Item search =(Item) sessionFactory.getCurrentSession().load(Item.class, id);
-        if (search!=null) {
+        Item search = (Item) sessionFactory.getCurrentSession().load(Item.class, id);
+        if (search != null) {
             sessionFactory.getCurrentSession().delete(search);
             return true;
-        }else{
+        } else {
             return false;
         }
     }
@@ -53,8 +55,16 @@ public class ItemDAOImpl implements ItemDAO{
 
     @Override
     public List<Item> getAll() throws Exception {
-        List<Item> list=sessionFactory.getCurrentSession().createCriteria(Item.class).list();
+        List<Item> list = sessionFactory.getCurrentSession().createCriteria(Item.class).list();
         return list;
     }
-    
+
+    @Override
+    public Item getItemByDescription(String description) throws Exception {
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(Item.class);
+        c2.add(Restrictions.le("description", description));
+        c2.setMaxResults(1);
+        Item i = (Item) c2.uniqueResult();
+        return i;
+    }
 }

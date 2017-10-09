@@ -22,31 +22,31 @@ import org.springframework.transaction.annotation.Transactional;
 public class ShoppingCartDetailsServiceImpl implements ShoppingCartDetailsService{
 
     @Autowired
-    private ShoppingCartDetailsDAO cartDetailsDAOImpl;
+    private ShoppingCartDetailsDAO shoppingCartDetailsDAOImpl;
     
     @Override
     public boolean add(ShoppingCartDetails t) throws Exception {
-        return cartDetailsDAOImpl.add(t);
+        return shoppingCartDetailsDAOImpl.add(t);
     }
 
     @Override
     public boolean update(ShoppingCartDetails t) throws Exception {
-        return cartDetailsDAOImpl.update(t);
+        return shoppingCartDetailsDAOImpl.update(t);
     }
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        return cartDetailsDAOImpl.delete(id);
+        return shoppingCartDetailsDAOImpl.delete(id);
     }
 
     @Override
     public ShoppingCartDetails search(Integer id) throws Exception {
-        return cartDetailsDAOImpl.search(id);
+        return shoppingCartDetailsDAOImpl.search(id);
     }
 
     @Override
     public List<ShoppingCartDetails> getAll() throws Exception {
-        return cartDetailsDAOImpl.getAll();
+        return shoppingCartDetailsDAOImpl.getAll();
     }
     
 }
