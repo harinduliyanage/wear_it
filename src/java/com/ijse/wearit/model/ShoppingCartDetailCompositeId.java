@@ -15,7 +15,7 @@ import javax.persistence.ManyToOne;
  * @author Harindu.sul
  */
 @Embeddable
-class ShoppingCartDetailCompositeId  implements Serializable{
+public class ShoppingCartDetailCompositeId  implements Serializable{
     private ShoppingCart shoppingCart;
     private ItemDetails itemDetals;
 
