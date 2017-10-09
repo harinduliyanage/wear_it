@@ -62,7 +62,7 @@ public class CategoryDAOImpl implements CategoryDAO {
     @Override
     public Category getCategoryByName(String name) throws Exception {
         Criteria c2 = sessionFactory.getCurrentSession().createCriteria(Category.class);
-        c2.add(Restrictions.le("name", name));
+        c2.add(Restrictions.eq("name", name));
         c2.setMaxResults(1);
         Category category = (Category) c2.uniqueResult();
         return category;
