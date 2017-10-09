@@ -30,7 +30,7 @@ public class Sizes implements Serializable{
     private String sizeUS;
     private String sizeEU;
     
-    @OneToMany(mappedBy = "sizes",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "sizes",fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
 
     public Sizes() {
