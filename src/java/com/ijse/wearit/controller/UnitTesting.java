@@ -79,39 +79,36 @@ public class UnitTesting {
 //        casual.getItems().add(item);
 //        //itemService.add(item);
 //        //search Size//
-//        Sizes size1 = sizeService.getSizeByName("M");
-//        Sizes size2 = sizeService.getSizeByName("S");
-//        Sizes size3 = sizeService.getSizeByName("XS");
+//        Sizes size11 = sizeService.getSizeByName("M");
+//        Sizes size22 = sizeService.getSizeByName("S");
+//        Sizes size33 = sizeService.getSizeByName("XS");
 //        
 //        //create ItemDetails 1
 //        ItemDetails itemDetails1 = new ItemDetails();
 //        itemDetails1.setQtyOnHand(5);
-//        //itemDetails1.setId(1);
 //        itemDetails1.setUnitPrice(750.00);
 //        itemDetails1.setItem(item);
-//        itemDetails1.setSizes(size1);
+//        itemDetails1.setSizes(size11);
 //        item.getItemDetails().add(itemDetails1);
-//        size1.getItemDetails().add(itemDetails1);
+//        size11.getItemDetails().add(itemDetails1);
 //        
 //        //create ItemDetails 2
 //        ItemDetails itemDetails2 = new ItemDetails();
 //        itemDetails2.setQtyOnHand(12);
-//        //itemDetails2.setId(2);
 //        itemDetails2.setUnitPrice(1250.00);
 //        itemDetails2.setItem(item);
-//        itemDetails2.setSizes(size2);
+//        itemDetails2.setSizes(size22);
 //        item.getItemDetails().add(itemDetails2);
-//        size2.getItemDetails().add(itemDetails2);
+//        size22.getItemDetails().add(itemDetails2);
 //        
 //        //create ItemDetails 3
 //        ItemDetails itemDetails3 = new ItemDetails();
 //        itemDetails3.setQtyOnHand(8);
-//        //itemDetails3.setId(3);
 //        itemDetails3.setUnitPrice(1150.00);
 //        itemDetails3.setItem(item);
-//        itemDetails3.setSizes(size3);
+//        itemDetails3.setSizes(size33);
 //        item.getItemDetails().add(itemDetails3);
-//        size3.getItemDetails().add(itemDetails3);
+//        size33.getItemDetails().add(itemDetails3);
 //        
 //        Set<ItemDetails> all=new HashSet<ItemDetails>();
 //        all.add(itemDetails3);
