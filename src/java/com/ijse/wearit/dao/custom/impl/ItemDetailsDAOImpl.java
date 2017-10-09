@@ -6,11 +6,14 @@
 package com.ijse.wearit.dao.custom.impl;
 
 import com.ijse.wearit.dao.custom.ItemDetailsDAO;
+import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
 import java.io.Serializable;
 import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -58,6 +61,14 @@ public class ItemDetailsDAOImpl implements ItemDetailsDAO{
     public List<ItemDetails> getAll() throws Exception {
         List<ItemDetails> itemDetailsList = sessionFactory.getCurrentSession().createCriteria(ItemDetails.class).list();
         return  itemDetailsList;
+    }
+
+    @Override
+    public List<ItemDetails> searchByItemID(Integer itemId) {
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ItemDetails.class);
+        c2.add(Restrictions.eq("ITEM_ID", itemId));
+        List<ItemDetails> list = c2.list();
+        return list;
     }
     
 }
