@@ -8,6 +8,7 @@ package com.ijse.wearit.model;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -20,40 +21,27 @@ import javax.persistence.OneToMany;
  * @author Harindu.sul
  */
 @Entity
-public class Size implements Serializable{
-    
+public class Sizes implements Serializable{ 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    private String size;//Xs,S,M,L,XL
+    private String sizes;//Xs,S,M,L,XL
     private String sizeUK;
     private String sizeUS;
     private String sizeEU;
     
-    @OneToMany(mappedBy = "size",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "sizes",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
 
-    public Size() {
+    public Sizes() {
     }
     
-    public void addItemDetails(Set<ItemDetails> itemDetails){
+    public void setItemDetails(Set<ItemDetails> itemDetails){
         this.itemDetails=itemDetails;
     }
     
     public Set<ItemDetails> getItemDetails(){
         return this.itemDetails;
-    }
-    
-    public void addToItemDetail(ItemDetails itemDetails){
-        this.itemDetails.add(itemDetails);
-    }
-
-    public Integer getID() {
-        return id;
-    }
-
-    public void setID(Integer sizeID) {
-        this.id = sizeID;
     }
 
     public String getSizeUK() {
@@ -80,18 +68,23 @@ public class Size implements Serializable{
         this.sizeEU = sizeEU;
     }
 
-    /**
-     * @param SizeinAsia the SizeinAsia to set
-     */
-    public void setSize(String size) {
-        this.size = size;
+    
+    public void setSizes(String sizes) {
+        this.sizes = sizes;
     }
 
-    /**
-     * @return the size
-     */
-    public String getSize() {
-        return size;
+    public String getSizes() {
+        return sizes;
+    }
+
+    
+    public Integer getId() {
+        return id;
+    }
+
+    
+    public void setId(Integer id) {
+        this.id = id;
     }
   
 }

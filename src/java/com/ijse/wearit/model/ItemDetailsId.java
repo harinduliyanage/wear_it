@@ -16,21 +16,21 @@ import javax.persistence.ManyToOne;
  */
 @Embeddable
 class ItemDetailsId  implements Serializable{
-    private Size size;
+    private Sizes size;
     private Item item;
 
     /**
      * @return the size
      */
     @ManyToOne(cascade = CascadeType.ALL)
-    public Size getSize() {
+    public Sizes getSize() {
         return size;
     }
 
     /**
      * @param size the size to set
      */
-    public void setSize(Size size) {
+    public void setSize(Sizes size) {
         this.size = size;
     }
 

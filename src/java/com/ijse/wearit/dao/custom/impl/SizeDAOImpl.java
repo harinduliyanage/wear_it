@@ -6,7 +6,7 @@
 package com.ijse.wearit.dao.custom.impl;
 
 import com.ijse.wearit.dao.custom.SizeDAO;
-import com.ijse.wearit.model.Size;
+import com.ijse.wearit.model.Sizes;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -26,20 +26,20 @@ public class SizeDAOImpl implements SizeDAO {
     private SessionFactory sessionFactory;
 
     @Override
-    public boolean add(Size t) throws Exception {
+    public boolean add(Sizes t) throws Exception {
         Serializable save = sessionFactory.getCurrentSession().save(t);
         return (save != null);
     }
 
     @Override
-    public boolean update(Size t) throws Exception {
+    public boolean update(Sizes t) throws Exception {
         sessionFactory.getCurrentSession().update(t);
         return true;
     }
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        Size size = (Size) sessionFactory.getCurrentSession().load(Size.class, id);
+        Sizes size = (Sizes) sessionFactory.getCurrentSession().load(Sizes.class, id);
         if (size != null) {
             sessionFactory.getCurrentSession().delete(size);
             return true;
@@ -49,22 +49,22 @@ public class SizeDAOImpl implements SizeDAO {
     }
 
     @Override
-    public Size search(Integer id) throws Exception {
-        return (Size) sessionFactory.getCurrentSession().load(Size.class, id);
+    public Sizes search(Integer id) throws Exception {
+        return (Sizes) sessionFactory.getCurrentSession().load(Sizes.class, id);
     }
 
     @Override
-    public List<Size> getAll() throws Exception {
-        List<Size> sizeList = sessionFactory.getCurrentSession().createCriteria(Size.class).list();
+    public List<Sizes> getAll() throws Exception {
+        List<Sizes> sizeList = sessionFactory.getCurrentSession().createCriteria(Sizes.class).list();
         return sizeList;
     }
 
     @Override
-    public Size getSizeByName(String size) throws Exception {
-        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(Size.class);
-        c2.add(Restrictions.le("size", size));
+    public Sizes getSizeByName(String size) throws Exception {
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(Sizes.class);
+        c2.add(Restrictions.le("sizes", size));
         c2.setMaxResults(1);
-        Size z = (Size) c2.uniqueResult();
+        Sizes z = (Sizes) c2.uniqueResult();
         return z;
     }
 }

@@ -6,13 +6,13 @@
 package com.ijse.wearit.dao.custom;
 
 import com.ijse.wearit.dao.SuperDAO;
-import com.ijse.wearit.model.Size;
+import com.ijse.wearit.model.Sizes;
 
 /**
  *
  * @author Harindu.sul
  */
-public interface SizeDAO extends SuperDAO<Size>{
-    public Size getSizeByName(String name)throws Exception;
+public interface SizeDAO extends SuperDAO<Sizes>{
+    public Sizes getSizeByName(String name)throws Exception;
     
 }

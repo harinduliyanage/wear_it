@@ -30,7 +30,7 @@ import javax.persistence.Table;
 public class ItemDetails implements Serializable{
     
     private Integer id;
-    private Size size;
+    private Sizes sizes;
     private Item item;
     //additonal feelds
     private double unitPrice;
@@ -85,20 +85,16 @@ public class ItemDetails implements Serializable{
         this.id = id;
     }
 
-    /**
-     * @return the size
-     */
+    
     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
-    @JoinColumn(name = "SIZE_ID")  
-    public Size getSize() {
-        return size;
+    @JoinColumn(name = "SIZES_ID")  
+    public Sizes getSizes() {
+        return sizes;
     }
 
-    /**
-     * @param size the size to set
-     */
-    public void setSize(Size size) {
-        this.size = size;
+    
+    public void setSizes(Sizes sizes) {
+        this.sizes = sizes;
     }
 
     /**
