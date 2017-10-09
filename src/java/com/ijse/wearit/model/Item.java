@@ -40,7 +40,7 @@ public class Item implements Serializable{
         
     }
     
-    @ManyToOne(optional = true,fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @ManyToOne(optional = true,fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     @JoinColumn(name="Category_id",nullable=false)
     private Category category;
 

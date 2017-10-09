@@ -5,7 +5,7 @@
  */
 package com.ijse.wearit.controller;
 
-import com.ijse.wearit.model.Size;
+import com.ijse.wearit.model.Sizes;
 import com.ijse.wearit.service.custom.SizeService;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +25,7 @@ public class SizeController {
     
     @RequestMapping(value = "/addNewSize")
     public String addNewSize(){
-        Size size = new Size();
+        Sizes size = new Sizes();
         size.setSizeEU("48");
         size.setSizeUK("10");
         size.setSizeUS("8");
@@ -37,9 +37,9 @@ public class SizeController {
         return "Error";
     }
     
-    @RequestMapping(value = "/wish")
+    @RequestMapping(value = "/item")
     public String getWishList(){ 
-        return "wishlist";
+        return "admin";
     }
     
     @RequestMapping(value = "/cart")

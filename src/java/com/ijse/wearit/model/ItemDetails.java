@@ -86,7 +86,7 @@ public class ItemDetails implements Serializable{
     }
 
     
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     @JoinColumn(name = "SIZES_ID")  
     public Sizes getSizes() {
         return sizes;

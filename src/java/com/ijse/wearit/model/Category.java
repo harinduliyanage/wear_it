@@ -29,7 +29,7 @@ public class Category  implements Serializable{
     private Integer id;
     private String name;
     
-    @OneToMany(mappedBy = "category",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "category",fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     private Set<Item> items = new HashSet<Item>();
 
     /**

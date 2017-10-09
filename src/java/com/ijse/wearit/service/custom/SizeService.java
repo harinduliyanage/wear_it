@@ -5,13 +5,13 @@
  */
 package com.ijse.wearit.service.custom;
 
-import com.ijse.wearit.model.Size;
+import com.ijse.wearit.model.Sizes;
 import com.ijse.wearit.service.SuperService;
 
 /**
  *
  * @author Harindu.sul
  */
-public interface SizeService extends SuperService<Size>{
-    public Size getSizeByName(String size)throws Exception;
+public interface SizeService extends SuperService<Sizes>{
+    public Sizes getSizeByName(String size)throws Exception;
 }

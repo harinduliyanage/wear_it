@@ -5,11 +5,16 @@
  */
 package com.ijse.wearit.controller;
 
+import com.ijse.wearit.model.Category;
 import com.ijse.wearit.model.Item;
+import com.ijse.wearit.model.ItemDetails;
+import com.ijse.wearit.model.Sizes;
 import com.ijse.wearit.service.custom.CategoryService;
 import com.ijse.wearit.service.custom.ItemDetailsService;
 import com.ijse.wearit.service.custom.ItemService;
 import com.ijse.wearit.service.custom.SizeService;
+import java.util.HashSet;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,54 +36,109 @@ public class UnitTesting {
     private ItemService itemService;
 
     @RequestMapping(value = "/test")
-    public String navSome() throws Exception {
-        //test Size model
-//////////        Size size = new Size();
-//////////        size.setSize("M");
-//////////        size.setSizeEU("42");
-//////////        size.setSizeUK("12");
-//////////        size.setSizeUS("10");
-
-        boolean ifDeleted = false;
-        //Create New Category
-//        Category category1 = new Category();
-//        category1.setName("Casual");
-//        categoryService.add(category1);
-        
-        // Search Item id by given description
-        Item searchItem = itemService.getItemByDescription("SSDress");
-        System.out.println(searchItem.getDescription() + "  #######################");
-        
-        //man hodai kiyanooooooo beeeeee :p :) hodaiiiii hodaiiiiii.... bt like eken wede unata baba eka wage deka 3k thibboth, anika like eka start ekai end ekai mark karala nethi nisa e kella mulata thiyena ewath search wela enna puluwan. max result  1 dila thiyena nisa eka break karoth hodaii o.
-        //oooo...eka aththa.. meken enneth 1st ekada danne ne.. ehenm hoyanna ona category id1i item description1i 2ma pass karala return 1 ganna ..... ehema karanna api id eka danne nene modayo id eka dannawanam araken search karanne nene api eka aulak ne , aulak thiyenam methana 2k enna one ne
-        //itin item1k delete karanakota mona category1ke mona item1da delete karanna ona kiyl balanan epai.ekata mulin category name1ken category id 1 aran methanata category id1i item description1i pass karanna puluanne..//
-        //item ekenne ganne api category eka
-        // neee ,uin category1//ehema be
-        // Get All Item Details
-//        List<ItemDetails> itemDetailsList = itemDetailsService.getAll();
-        // Get One By One
-//        for(ItemDetails itemDetails : itemDetailsList){
-        // Search By Item Code
-//            if(itemDetails.getItem().getItemCode().equals(itemCode)){
-        // Delete One By One Item Details
-//                ifDeleted = itemDetailsService.delete(itemDetails.getId());
-//                System.out.println(ifDeleted + "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-//            }
-//        }
-        
-        
-
+    public String navSome(){
         System.out.println("*****************************");
+        System.out.println("*****************************");
+        System.out.println("*****************************");
+         boolean result = false;
 
-        try {
+         try {
+//         Category category2 = new Category();
+//         category2.setName("Office wear");
+//         categoryService.add(category2);
+//         Category category = new Category();
+//         category.setName("New Arrivals");
+//         categoryService.add(category);
+//         Category category3 = new Category();
+//         category3.setName("Casual");
+//         categoryService.add(category3);
+//        Sizes size = new Sizes();
+//        size.setSizes("XS");
+//        size.setSizeEU("28");
+//        size.setSizeUK("10");
+//        size.setSizeUS("8");
+//        sizeService.add(size);
+//        Sizes size2 = new Sizes();
+//        size2.setSizes("S");
+//        size2.setSizeEU("30");
+//        size2.setSizeUK("12");
+//        size2.setSizeUS("10");
+//        sizeService.add(size2);
+//        Sizes size3 = new Sizes();
+//        size3.setSizes("M");
+//        size3.setSizeEU("32");
+//        size3.setSizeUK("12");
+//        size3.setSizeUS("14");
+//        sizeService.add(size3);
+//        //Create New Item
+//        Item item = new Item();
+//        item.setDescription("Short top");
+//        item.setPaths("Image/Tops/crop_tops.jpg");
+//        Category casual = categoryService.getCategoryByName("Casual");
+//        item.setCategory(casual);
+//        casual.getItems().add(item);
+//        //itemService.add(item);
+//        //search Size//
+//        Sizes size11 = sizeService.getSizeByName("M");
+//        Sizes size22 = sizeService.getSizeByName("S");
+//        Sizes size33 = sizeService.getSizeByName("XS");
+//        
+//        //create ItemDetails 1
+//        ItemDetails itemDetails1 = new ItemDetails();
+//        itemDetails1.setQtyOnHand(5);
+//        itemDetails1.setUnitPrice(750.00);
+//        itemDetails1.setItem(item);
+//        itemDetails1.setSizes(size11);
+//        item.getItemDetails().add(itemDetails1);
+//        size11.getItemDetails().add(itemDetails1);
+//        
+//        //create ItemDetails 2
+//        ItemDetails itemDetails2 = new ItemDetails();
+//        itemDetails2.setQtyOnHand(12);
+//        itemDetails2.setUnitPrice(1250.00);
+//        itemDetails2.setItem(item);
+//        itemDetails2.setSizes(size22);
+//        item.getItemDetails().add(itemDetails2);
+//        size22.getItemDetails().add(itemDetails2);
+//        
+//        //create ItemDetails 3
+//        ItemDetails itemDetails3 = new ItemDetails();
+//        itemDetails3.setQtyOnHand(8);
+//        itemDetails3.setUnitPrice(1150.00);
+//        itemDetails3.setItem(item);
+//        itemDetails3.setSizes(size33);
+//        item.getItemDetails().add(itemDetails3);
+//        size33.getItemDetails().add(itemDetails3);
+//        
+//        Set<ItemDetails> all=new HashSet<ItemDetails>();
+//        all.add(itemDetails3);
+//        all.add(itemDetails2);
+//        all.add(itemDetails1);
+//        
+//        item.setItemDetails(all);
+//         result=itemService.add(item);
+            Item itemByDescription = itemService.getItemByDescription("Short top");
+            result=itemService.delete(itemByDescription.getItemCode());
+        
+     
+        
 
+
+        
+             
+//             
+             
+        System.out.println("*****************************");
+        System.out.println("*****************************");
+        System.out.println("*****************************");
         } catch (Exception ex) {
-            System.out.println(ex + "---------------------------");
-            System.out.println(ex + "---------------------------");
-            System.out.println(ex + "---------------------------");
-            System.out.println(ex + "---------------------------");
+            System.out.println("----------------    exeption here=   "+ex + "---------------------------");
+            System.out.println("----------------    exeption here=   "+ex + "---------------------------");
+            System.out.println("----------------    exeption here=   "+ex + "---------------------------");
+            System.out.println("----------------    exeption here=   "+ex + "---------------------------");
+            
         }
-        if (ifDeleted) {
+        if (result) {
             return "Success";
         } else {
             return "Error";
