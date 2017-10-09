@@ -11,10 +11,12 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -35,7 +37,7 @@ public class ItemDetails implements Serializable{
     private int qtyOnHand;
     private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
     
-    ItemDetails(){
+    public ItemDetails(){
         
     }
     
@@ -86,7 +88,7 @@ public class ItemDetails implements Serializable{
     /**
      * @return the size
      */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JoinColumn(name = "SIZE_ID")  
     public Size getSize() {
         return size;
@@ -102,7 +104,7 @@ public class ItemDetails implements Serializable{
     /**
      * @return the item
      */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL,optional = true,fetch = FetchType.EAGER)
     @JoinColumn(name = "ITEM_ID")  
     public Item getItem() {
         return item;
@@ -123,9 +125,5 @@ public class ItemDetails implements Serializable{
  
     public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
         this.shoppingCartDetails = shoppingCartDetailses;
-    }
-     
-    public void addShoppingCartDetails(ShoppingCartDetails shoppingCartDetails) {
-        this.shoppingCartDetails.add(shoppingCartDetails);
     }
 }

@@ -21,7 +21,7 @@ import org.springframework.stereotype.Repository;
 public class PaymentDAOImpl implements PaymentDAO{
     
     @Autowired
-    SessionFactory sessionFactory;
+    private SessionFactory sessionFactory;
 
     @Override
     public boolean add(Payment t) throws Exception {

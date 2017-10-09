@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class CategoryServiceImpl implements CategoryService{
     
     @Autowired
-    CategoryDAO categoryDAOImpl;
+    private CategoryDAO categoryDAOImpl;
 
     @Override
     public boolean add(Category t) throws Exception {
@@ -47,6 +47,11 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public List<Category> getAll() throws Exception {
         return categoryDAOImpl.getAll();
+    }
+
+    @Override
+    public Category getCategoryByName(String name) throws Exception {
+        return categoryDAOImpl.getCategoryByName(name);
     }
     
 }

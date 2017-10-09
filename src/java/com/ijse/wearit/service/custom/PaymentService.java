@@ -5,14 +5,13 @@
  */
 package com.ijse.wearit.service.custom;
 
-import com.ijse.wearit.model.Category;
+import com.ijse.wearit.model.Payment;
 import com.ijse.wearit.service.SuperService;
 
 /**
  *
- * @author Harindu.sul
+ * @author ABC
  */
-public interface CategoryService extends SuperService<Category>{
-    public Category getCategoryByName(String name)throws Exception;
+public interface PaymentService extends SuperService<Payment>{
     
 }

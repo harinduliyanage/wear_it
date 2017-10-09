@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ijse.wearit.dao.custom;
+package com.ijse.wearit.service.custom;
 
-import com.ijse.wearit.dao.SuperDAO;
-import com.ijse.wearit.model.Item;
+import com.ijse.wearit.model.Orders;
+import com.ijse.wearit.service.SuperService;
 
 /**
  *
  * @author Harindu.sul
  */
-public interface ItemDAO extends SuperDAO<Item>{
-    public Item getItemByDescription(String description)throws Exception;
+public interface OrdersService extends SuperService<Orders>{
     
 }

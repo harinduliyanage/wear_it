@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,27 +32,23 @@ public class Item implements Serializable{
     private String description;
     private String path;
     
-    @OneToMany(mappedBy = "item")
+    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER)      
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
     
     public Item(){
         
     }
     
-    @ManyToOne
+    @ManyToOne(optional = true,fetch = FetchType.EAGER)
     @JoinColumn(name="Category_id",nullable=false)
     private Category category;
 
-    public void addItemDetails(Set<ItemDetails> itemDetails){
+    public void setItemDetails(Set<ItemDetails> itemDetails){
         this.itemDetails=itemDetails;
     }
     
     public Set<ItemDetails> getItemDetails(){
         return this.itemDetails;
-    }
-    
-    public void addToItemDetail(ItemDetails itemDetails){
-        this.itemDetails.add(itemDetails);
     }
     /**
      * @return the itemCode

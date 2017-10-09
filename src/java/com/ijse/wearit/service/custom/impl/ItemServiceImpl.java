@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class ItemServiceImpl  implements ItemService{
     
     @Autowired
-    ItemDAO itemDAOImpl;
+    private ItemDAO itemDAOImpl;
 
     @Override
     public boolean add(Item t) throws Exception {
@@ -47,6 +47,11 @@ public class ItemServiceImpl  implements ItemService{
     @Override
     public List<Item> getAll() throws Exception {
         return itemDAOImpl.getAll();
+    }
+
+    @Override
+    public Item getItemByDescription(String description) throws Exception {
+        return itemDAOImpl.getItemByDescription(description);
     }
     
 }
