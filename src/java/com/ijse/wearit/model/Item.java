@@ -8,6 +8,7 @@ package com.ijse.wearit.model;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -30,16 +31,16 @@ public class Item implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String description;
-    private String path;
+    private String paths;
     
-    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER)      
+    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER,cascade = CascadeType.ALL)      
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
     
     public Item(){
         
     }
     
-    @ManyToOne(optional = true,fetch = FetchType.EAGER)
+    @ManyToOne(optional = true,fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinColumn(name="Category_id",nullable=false)
     private Category category;
 
@@ -81,15 +82,15 @@ public class Item implements Serializable{
     /**
      * @return the path
      */
-    public String getPath() {
-        return path;
+    public String getPaths() {
+        return paths;
     }
 
     /**
      * @param path the path to set
      */
-    public void setPath(String path) {
-        this.path = path;
+    public void setPaths(String path) {
+        this.paths = path;
     }
 
     /**
