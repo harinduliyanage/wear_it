@@ -62,7 +62,7 @@ public class ItemDAOImpl implements ItemDAO {
     @Override
     public Item getItemByDescription(String description) throws Exception {
         Criteria c2 = sessionFactory.getCurrentSession().createCriteria(Item.class);
-        c2.add(Restrictions.le("description", description));
+        c2.add(Restrictions.eq("description",description));
         c2.setMaxResults(1);
         Item i = (Item) c2.uniqueResult();
         return i;

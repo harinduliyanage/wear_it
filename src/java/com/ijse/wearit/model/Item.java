@@ -8,7 +8,6 @@ package com.ijse.wearit.model;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,7 +17,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import org.hibernate.annotations.Columns;
 
 /**
  *
@@ -45,7 +43,7 @@ public class Item implements Serializable{
     @JoinColumn(name="Category_id",nullable=false)
     private Category category;
 
-    public void addItemDetails(Set<ItemDetails> itemDetails){
+    public void setItemDetails(Set<ItemDetails> itemDetails){
         this.itemDetails=itemDetails;
     }
     

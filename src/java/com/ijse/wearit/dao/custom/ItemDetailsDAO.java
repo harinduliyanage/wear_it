@@ -7,11 +7,12 @@ package com.ijse.wearit.dao.custom;
 
 import com.ijse.wearit.dao.SuperDAO;
 import com.ijse.wearit.model.ItemDetails;
+import java.util.List;
 
 /**
  *
  * @author ABC
  */
 public interface ItemDetailsDAO extends SuperDAO<ItemDetails>{
-    
+    public List<ItemDetails> searchByItemID(Integer itemId);
 }
