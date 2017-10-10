@@ -62,7 +62,7 @@ public class SizeDAOImpl implements SizeDAO {
     @Override
     public Sizes getSizeByName(String size) throws Exception {
         Criteria c2 = sessionFactory.getCurrentSession().createCriteria(Sizes.class);
-        c2.add(Restrictions.le("sizes", size));
+        c2.add(Restrictions.eq("sizes", size));
         c2.setMaxResults(1);
         Sizes z = (Sizes) c2.uniqueResult();
         return z;
