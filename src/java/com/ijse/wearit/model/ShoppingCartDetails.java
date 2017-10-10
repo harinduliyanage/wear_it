@@ -63,11 +63,11 @@ public class ShoppingCartDetails {
     }
     
     public String getPath() {
-        return getPrimaryKey().getItemDetails().getItem().getPath();
+        return getPrimaryKey().getItemDetails().getItem().getPaths();
     }
  
     public void setPath(String path) {
-        getPrimaryKey().getItemDetails().getItem().setPath(path);
+        getPrimaryKey().getItemDetails().getItem().setPaths(path);
     }
     public double getUnitPrice(){
        return getPrimaryKey().getItemDetails().getUnitPrice();
