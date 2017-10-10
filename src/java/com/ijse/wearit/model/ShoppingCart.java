@@ -11,6 +11,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,7 +32,7 @@ public class ShoppingCart implements Serializable{
     
     private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
 
-    ShoppingCart() {
+    public ShoppingCart() {
     }
     
     @Id
@@ -49,11 +50,11 @@ public class ShoppingCart implements Serializable{
         return addedDate;
     }
 
-    public void setAddedDate(String addedDate) {
+    public void setAddedDate(String addedDate) { 
         this.addedDate = addedDate;
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER,optional = true)
     public User getUser() {
         return user;
     }
@@ -62,7 +63,7 @@ public class ShoppingCart implements Serializable{
         this.user = user;
     }
     
-    @OneToMany(mappedBy = "primaryKey.shoppingCart",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "primaryKey.shoppingCart",cascade = CascadeType.PERSIST,orphanRemoval = true,fetch = FetchType.EAGER)
     public Set<ShoppingCartDetails> getShoppingCartDetails() {
         return shoppingCartDetails;
     }
@@ -71,31 +72,18 @@ public class ShoppingCart implements Serializable{
         this.shoppingCartDetails = shoppingCartDetailses;
     }
    
-
-    /**
-     * @return the numberOfItems
-     */
     public int getNumberOfItems() {
         return numberOfItems;
     }
 
-    /**
-     * @param numberOfItems the numberOfItems to set
-     */
     public void setNumberOfItems(int numberOfItems) {
         this.numberOfItems = numberOfItems;
     }
 
-    /**
-     * @return the total
-     */
     public double getTotal() {
         return total;
     }
 
-    /**
-     * @param total the total to set
-     */
     public void setTotal(double total) {
         this.total = total;
     }
