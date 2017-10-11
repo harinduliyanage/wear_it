@@ -16,6 +16,6 @@ import com.ijse.wearit.service.SuperService;
  */
 public interface ItemDetailsService extends SuperService<ItemDetails>{
 
-    public boolean getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;
+    public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;
     
 }
