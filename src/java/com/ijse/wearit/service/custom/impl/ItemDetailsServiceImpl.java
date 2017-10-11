@@ -6,7 +6,9 @@
 package com.ijse.wearit.service.custom.impl;
 
 import com.ijse.wearit.dao.custom.ItemDetailsDAO;
+import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
+import com.ijse.wearit.model.Sizes;
 import com.ijse.wearit.service.custom.ItemDetailsService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +49,11 @@ public class ItemDetailsServiceImpl implements ItemDetailsService{
     @Override
     public List<ItemDetails> getAll() throws Exception {
         return itemDetailsDAOImpl.getAll();
+    }
+
+    @Override
+    public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item) throws Exception {
+        return itemDetailsDAOImpl.getItemDetailsBySizeAndItem(sizeByName,item);
     }
     
 }
