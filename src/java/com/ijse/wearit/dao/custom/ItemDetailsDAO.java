@@ -6,7 +6,9 @@
 package com.ijse.wearit.dao.custom;
 
 import com.ijse.wearit.dao.SuperDAO;
+import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
+import com.ijse.wearit.model.Sizes;
 import java.util.List;
 
 /**
@@ -15,4 +17,5 @@ import java.util.List;
  */
 public interface ItemDetailsDAO extends SuperDAO<ItemDetails>{
     public List<ItemDetails> searchByItemID(Integer itemId);
+    public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;
 }
