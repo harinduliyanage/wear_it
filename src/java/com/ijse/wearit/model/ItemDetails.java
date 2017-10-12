@@ -35,12 +35,26 @@ public class ItemDetails implements Serializable{
     //additonal feelds
     private double unitPrice;
     private int qtyOnHand;
+    
     private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
     
-    public ItemDetails(){
-        
+    public ItemDetails(){    
     }
     
+    public void addShoppingCartDetail(ShoppingCartDetails shoppingCartDetails){
+        this.shoppingCartDetails.add(shoppingCartDetails);
+    }
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "ITEMDETAILS_ID")
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     
     public double getUnitPrice() {
         return unitPrice;
@@ -56,17 +70,6 @@ public class ItemDetails implements Serializable{
 
     public void setQtyOnHand(int qtyOnHand) {
         this.qtyOnHand = qtyOnHand;
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ITEMDETAILS_ID")
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
