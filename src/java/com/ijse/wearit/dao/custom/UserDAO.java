@@ -13,5 +13,5 @@ import com.ijse.wearit.model.User;
  * @author ABC
  */
 public interface UserDAO extends SuperDAO<User>{
-    
+    public User getUserByUserName(String userName)throws Exception;
 }

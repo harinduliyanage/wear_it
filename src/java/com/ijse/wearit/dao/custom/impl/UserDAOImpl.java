@@ -9,7 +9,9 @@ import com.ijse.wearit.dao.custom.UserDAO;
 import com.ijse.wearit.model.User;
 import java.io.Serializable;
 import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -55,6 +57,15 @@ public class UserDAOImpl implements UserDAO{
     public List<User> getAll() throws Exception {
         List<User> users = sessionFactory.getCurrentSession().createCriteria(User.class).list();
         return users;
+    }
+
+    @Override
+    public User getUserByUserName(String userName) throws Exception {
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(User.class);
+        c2.add(Restrictions.eq("userName", userName));
+        c2.setMaxResults(1);
+        User z = (User) c2.uniqueResult();
+        return z;
     }
     
 }

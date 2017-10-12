@@ -13,5 +13,5 @@ import com.ijse.wearit.service.SuperService;
  * @author ABC
  */
 public interface UserService extends SuperService<User>{
-    
+    public  User getUserByNam(String userName)throws Exception;
 }

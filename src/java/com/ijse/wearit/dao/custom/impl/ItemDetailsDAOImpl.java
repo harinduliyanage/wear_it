@@ -8,6 +8,7 @@ package com.ijse.wearit.dao.custom.impl;
 import com.ijse.wearit.dao.custom.ItemDetailsDAO;
 import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
+import com.ijse.wearit.model.Sizes;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -69,6 +70,14 @@ public class ItemDetailsDAOImpl implements ItemDetailsDAO{
         c2.add(Restrictions.eq("ITEM_ID", itemId));
         List<ItemDetails> list = c2.list();
         return list;
+    }
+
+    @Override
+    public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item) throws Exception {
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ItemDetails.class);
+        c2.add(Restrictions.eq("sizes", sizeByName));
+        c2.add(Restrictions.eq("item", item));
+        return (ItemDetails) c2.uniqueResult();
     }
     
 }

@@ -8,6 +8,7 @@ package com.ijse.wearit.model;
 import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,10 +29,10 @@ public class User implements Serializable{
     private String customerLastName;
     private String customerEmail; 
     
-    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = true)
     private ShoppingCart shoppingCart;
 
-    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = true)
     private ShippingInfo shippinInfo;
     
     public Integer getUserID() {
@@ -74,7 +75,6 @@ public class User implements Serializable{
         this.customerLastName = customerLastName;
     }
 
-    
     public String getCustomerEmail() {
         return customerEmail;
     }
@@ -87,10 +87,15 @@ public class User implements Serializable{
         return shippinInfo;
     }
 
-    /**
-     * @param shippinInfo the shippinInfo to set
-     */
     public void setShippinInfo(ShippingInfo shippinInfo) {
         this.shippinInfo = shippinInfo;
+    }
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
 }

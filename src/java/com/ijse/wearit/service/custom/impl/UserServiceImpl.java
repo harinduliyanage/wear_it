@@ -48,5 +48,10 @@ public class UserServiceImpl implements UserService{
     public List<User> getAll() throws Exception {
         return userDAOImpl.getAll();
     }
+
+    @Override
+    public User getUserByNam(String userName) throws Exception {
+        return userDAOImpl.getUserByUserName(userName);
+    }
     
 }

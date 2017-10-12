@@ -8,6 +8,7 @@ package com.ijse.wearit.model;
 import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Embeddable;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
 /**
@@ -15,14 +16,18 @@ import javax.persistence.ManyToOne;
  * @author Harindu.sul
  */
 @Embeddable
-class ShoppingCartDetailCompositeId  implements Serializable{
+public class ShoppingCartDetailCompositeId  implements Serializable{
     private ShoppingCart shoppingCart;
     private ItemDetails itemDetals;
+    
+    public ShoppingCartDetailCompositeId(){
+        
+    }
 
     /**
      * @return the shoppingCart
      */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     public ShoppingCart getShoppingCart() {
         return shoppingCart;
     }
@@ -37,7 +42,7 @@ class ShoppingCartDetailCompositeId  implements Serializable{
     /**
      * @return the itemDetails
      */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     public ItemDetails getItemDetails() {
         return itemDetals;
     }

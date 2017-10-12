@@ -45,32 +45,19 @@ public class ItemDetails implements Serializable{
     public double getUnitPrice() {
         return unitPrice;
     }
-
-    /**
-     * @param unitPrice the unitPrice to set
-     */
+    
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
     }
    
-
-    /**
-     * @return the qtyOnHand
-     */
     public int getQtyOnHand() {
         return qtyOnHand;
     }
 
-    /**
-     * @param qtyOnHand the qtyOnHand to set
-     */
     public void setQtyOnHand(int qtyOnHand) {
         this.qtyOnHand = qtyOnHand;
     }
 
-    /**
-     * @return the id
-     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ITEMDETAILS_ID")
@@ -78,37 +65,26 @@ public class ItemDetails implements Serializable{
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(Integer id) {
         this.id = id;
     }
 
-    
     @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     @JoinColumn(name = "SIZES_ID")  
     public Sizes getSizes() {
         return sizes;
     }
 
-    
     public void setSizes(Sizes sizes) {
         this.sizes = sizes;
     }
 
-    /**
-     * @return the item
-     */
     @ManyToOne(cascade = CascadeType.ALL,optional = true,fetch = FetchType.EAGER)
     @JoinColumn(name = "ITEM_ID")  
     public Item getItem() {
         return item;
     }
 
-    /**
-     * @param item the item to set
-     */
     public void setItem(Item item) {
         this.item = item;
     }
