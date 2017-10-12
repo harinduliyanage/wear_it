@@ -5,7 +5,9 @@
  */
 package com.ijse.wearit.service.custom;
 
+import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
+import com.ijse.wearit.model.Sizes;
 import com.ijse.wearit.service.SuperService;
 
 /**
@@ -13,5 +15,7 @@ import com.ijse.wearit.service.SuperService;
  * @author Harindu.sul
  */
 public interface ItemDetailsService extends SuperService<ItemDetails>{
+
+    public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;
     
 }

@@ -5,11 +5,8 @@
  */
 package com.ijse.wearit.controller;
 
-import com.ijse.wearit.model.Category;
 import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
-import com.ijse.wearit.model.ShippingInfo;
-import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.ShoppingCartDetailCompositeId;
 import com.ijse.wearit.model.ShoppingCartDetails;
 import com.ijse.wearit.model.Sizes;
@@ -21,7 +18,6 @@ import com.ijse.wearit.service.custom.ShoppingCartDetailsService;
 import com.ijse.wearit.service.custom.ShoppingCartService;
 import com.ijse.wearit.service.custom.SizeService;
 import com.ijse.wearit.service.custom.UserService;
-import java.util.HashSet;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -133,64 +129,58 @@ public class UnitTesting {
 //        
 //        item.setItemDetails(all);
 //        result=itemService.add(item);
-//            //Create User
-//            User user = new User();
-//            user.setCustomerFirstName("Kamal");
-//            user.setCustomerLastName("De silva");
-//            user.setCustomerEmail("Kamal@gmail.com");
-//            user.setUserName("kamal");
-//            user.setPassword("kamal1234");
-//            
-//            
-//            //create shipping info
-//            ShippingInfo shippingInfo = new ShippingInfo();
-//            shippingInfo.setAddressLine1("No20/2 2st Lane");
-//            shippingInfo.setPostalCode("80562");
-//            shippingInfo.setFName("Kamal");
-//            shippingInfo.setLName("De Silva");
-//            shippingInfo.setCity("Mathara");
-//            shippingInfo.setContry("Sri Lanka");
-//            shippingInfo.setContactNum("07762655");
-//            
-//            //set user to shipping info
-//            shippingInfo.setUser(user);
-//            //set shipping  to user
-//            user.setShippinInfo(shippingInfo);
-//            
-//            
-//            //Create ShoppingCart
-//            ShoppingCart cart = new ShoppingCart();
-//            cart.setAddedDate("2017/10/11");
-//            cart.setNumberOfItems(0);
-//            cart.setTotal(0.00);
-//            
-//            user.setShoppingCart(cart);
-//            cart.setUser(user);
-           // result = userService.add(user);
-            User search = userService.getUserByNam("kamal");
-           /// System.out.println("====================        "+search.getUserID()+"      "+search.getCustomerFirstName()+"  "+search.getCustomerEmail());
+            //Create User
+////            User user = new User();
+////            user.setCustomerFirstName("Kamal");
+////            user.setCustomerLastName("De silva");
+////            user.setCustomerEmail("Kamal@gmail.com");
+////            user.setUserName("kamal");
+////            user.setPassword("kamal1234");
+////            
+////            
+////            //create shipping info
+////            ShippingInfo shippingInfo = new ShippingInfo();
+////            shippingInfo.setAddressLine1("No20/2 2st Lane");
+////            shippingInfo.setPostalCode("80562");
+////            shippingInfo.setFName("Kamal");
+////            shippingInfo.setLName("De Silva");
+////            shippingInfo.setCity("Mathara");
+////            shippingInfo.setContry("Sri Lanka");
+////            shippingInfo.setContactNum("07762655");
+////            
+////            //set user to shipping info
+////            shippingInfo.setUser(user);
+////            //set shipping  to user
+////            user.setShippinInfo(shippingInfo);
+////            
+////            
+////            //Create ShoppingCart
+////            ShoppingCart cart = new ShoppingCart();
+////            cart.setAddedDate("2017/10/11");
+////            cart.setNumberOfItems(0);
+////            cart.setTotal(0.00);
+////            
+////            user.setShoppingCart(cart);
+////            cart.setUser(user);
+////            result = userService.add(user);
+
+           User search = userService.getUserByNam("kamal");
+  /*          /// System.out.println("====================        "+search.getUserID()+"      "+search.getCustomerFirstName()+"  "+search.getCustomerEmail());
             //result=userService.delete(search.getUserID());
-            
-            
-            
+*/
+ 
             //add Shopping Cart Details to shopping cart
-            ShoppingCartDetails shoppingCartDetails = new ShoppingCartDetails();
-            ShoppingCartDetailCompositeId shoppingCartDetailCompositeId = new ShoppingCartDetailCompositeId();
+            ShoppingCartDetails shoppingCartDetail = new ShoppingCartDetails();
+            ShoppingCartDetailCompositeId primeryKey = new ShoppingCartDetailCompositeId();
             Item item = itemService.getItemByDescription("Short top");
-            Set<ItemDetails> itemDetailsList = item.getItemDetails();
-            Set<ShoppingCartDetails> shoppingCartDetailsesSet=new HashSet<ShoppingCartDetails>();/* wede wenawa weradida balanna*/
-            
-            for (ItemDetails itemDetails : itemDetailsList) {
-                shoppingCartDetailCompositeId.setItemDetails(itemDetails);
-                shoppingCartDetailCompositeId.setShoppingCart(search.getShoppingCart());
-                shoppingCartDetails.setPrimaryKey(shoppingCartDetailCompositeId);
-                shoppingCartDetails.setOrderQty(2);
-                shoppingCartDetailsesSet.add(shoppingCartDetails);
-                
-            }
-            search.getShoppingCart().setShoppingCartDetails(shoppingCartDetailsesSet);
-            result=userService.update(search);
-            
+            Sizes sizeByName = sizeService.getSizeByName("M");
+            ItemDetails itemDetail = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName,item);
+            primeryKey.setItemDetails(itemDetail);
+            primeryKey.setShoppingCart(search.getShoppingCart());
+            shoppingCartDetail.setPrimaryKey(primeryKey);
+            shoppingCartDetail.setOrderQty(1);
+            search.getShoppingCart().getShoppingCartDetails().add(shoppingCartDetail);
+            result=userService.update(search);          
             
 //            
             //=userService.add(user);
@@ -250,7 +240,7 @@ public class UnitTesting {
 //            result=itemService.delete(itemByDescription.getItemCode());//eke item code eken mn item eka delete karanawa
 //            //item eke thiyena item details list ekath delte wenawa ithin :)
 
-//me ahannako chuttak.. man awata balannewath nehe nikanwath...**ithin metto mn awa kiuwamane pennuwe eka kiss ekak ewala athi ..hari itin a unata man denne lap1 gawata awe..ethakotath balanna ona// hariiiii oya diha balanne nethuwam mn , pissu mehe enoooo.. haaaaaaa...
+
 /*
 Ummmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
 mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
