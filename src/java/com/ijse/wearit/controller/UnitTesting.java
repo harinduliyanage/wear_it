@@ -5,8 +5,11 @@
  */
 package com.ijse.wearit.controller;
 
+import com.ijse.wearit.model.Category;
 import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
+import com.ijse.wearit.model.ShippingInfo;
+import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.ShoppingCartDetailCompositeId;
 import com.ijse.wearit.model.ShoppingCartDetails;
 import com.ijse.wearit.model.Sizes;
@@ -18,6 +21,7 @@ import com.ijse.wearit.service.custom.ShoppingCartDetailsService;
 import com.ijse.wearit.service.custom.ShoppingCartService;
 import com.ijse.wearit.service.custom.SizeService;
 import com.ijse.wearit.service.custom.UserService;
+import java.util.HashSet;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -164,49 +168,39 @@ public class UnitTesting {
 ////            cart.setUser(user);
 ////            result = userService.add(user);
 
-           User search = userService.getUserByNam("kamal");
-  /*          /// System.out.println("====================        "+search.getUserID()+"      "+search.getCustomerFirstName()+"  "+search.getCustomerEmail());
+            User search = userService.getUserByNam("kamal");
+            System.out.println(search.getCustomerLastName());
+/*          /// System.out.println("====================        "+search.getUserID()+"      "+search.getCustomerFirstName()+"  "+search.getCustomerEmail());
             //result=userService.delete(search.getUserID());
 */
- 
             //add Shopping Cart Details to shopping cart
-            ShoppingCartDetails shoppingCartDetail = new ShoppingCartDetails();
-            ShoppingCartDetailCompositeId primeryKey = new ShoppingCartDetailCompositeId();
             Item item = itemService.getItemByDescription("Short top");
+            System.out.println(item.getDescription() + ")))))))))))))))))))))))))))))))))))))))");
             Sizes sizeByName = sizeService.getSizeByName("M");
+            System.out.println(sizeByName.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
             ItemDetails itemDetail = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName,item);
-            primeryKey.setItemDetails(itemDetail);
-            primeryKey.setShoppingCart(search.getShoppingCart());
-            shoppingCartDetail.setPrimaryKey(primeryKey);
-            shoppingCartDetail.setOrderQty(1);
-            search.getShoppingCart().getShoppingCartDetails().add(shoppingCartDetail);
-            result=userService.update(search);          
+            System.out.println(itemDetail.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
+            ShoppingCart shoppingCart = cartService.search(1);
+            System.out.println(shoppingCart.getAddedDate() + ")))))))))))))))))))))))))))))))))))))))");
+            //ShoppingCartDetailCompositeId primeryKey = new ShoppingCartDetailCompositeId();
+            //primeryKey.setItemDetails(itemDetail);
+            //primeryKey.setShoppingCart(search.getShoppingCart());
+            ShoppingCartDetails shoppingCartDetail = new ShoppingCartDetails();
+            //shoppingCartDetail.setPrimaryKey(primeryKey);
+            shoppingCartDetail.setShoppingCart(shoppingCart);
+            shoppingCartDetail.setItemDetails(itemDetail);
+            shoppingCartDetail.setOrderQty(5);
+            shoppingCart.addShoppingCartDetail(shoppingCartDetail);
+            //cartDetailsService.add(shoppingCartDetail);
+            //search.getShoppingCart().getShoppingCartDetails().add(shoppingCartDetail);
+            result=cartService.add(shoppingCart);
+ 
+/*            ShoppingCartDetails byItemDetailId = cartDetailsService.getByOrderQty(2);
+            System.out.println(byItemDetailId.getOrderQty()+"))))))))))))))))))))))))))))))");
+*/
+
             
-//            
-            //=userService.add(user);
-////////            User search = userService.search(1);
-////////                result=userService.delete(search.getUserID());
-            
-           
-//            cart
-//            cartService.add(cart);
-//            ShoppingCartDetailCompositeId id = new ShoppingCartDetailCompositeId();
-//            id.setShoppingCart(shoppingCart);
-//            id.setItemDetails(itemDetails);
-//
-//            //Create ShoppingCart Details
-//            ShoppingCartDetails shopingCartDetails = new ShoppingCartDetails();
-//            shopingCartDetails.setPrimaryKey(id);
-//            shopingCartDetails.setUnitPrice(0);
-//            shopingCartDetails.setDescription(description);
-//            shopingCartDetails.setOrderQty(0);
-//            shopingCartDetails.setPath(path);
-//            
-//
-//            user.addUserGroup(userGroup);
-//
-//            session.save(user);
-//
+/////////////////////////////////////////////////////////////////////////////////            
 //            // this user is obtained from the database with ID 40
 //            User user = (User) session.get(User.class, new Long(40));
 //

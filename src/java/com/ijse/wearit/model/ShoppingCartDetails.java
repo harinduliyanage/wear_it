@@ -38,6 +38,7 @@ public class ShoppingCartDetails implements Serializable{
     public void setPrimaryKey(ShoppingCartDetailCompositeId primaryKey) {
         this.primaryKey = primaryKey;
     }
+    
     @Transient
     public ShoppingCart getShoppingCart() {
         return getPrimaryKey().getShoppingCart();
@@ -55,27 +56,28 @@ public class ShoppingCartDetails implements Serializable{
     public void setItemDetails(ItemDetails itemDetails) {
         getPrimaryKey().setItemDetails(itemDetails);
     }
-    public String getDescription() {
-        return getPrimaryKey().getItemDetails().getItem().getDescription();
-    }
- 
-    public void setDescription(String description) {
-        getPrimaryKey().getItemDetails().getItem().setDescription(description);
-    }
     
-    public String getPath() {
-        return getPrimaryKey().getItemDetails().getItem().getPaths();
-    }
- 
-    public void setPath(String path) {
-        getPrimaryKey().getItemDetails().getItem().setPaths(path);
-    }
-    public double getUnitPrice(){
-       return getPrimaryKey().getItemDetails().getUnitPrice();
-    }
-    public void setUnitPrice(double unitPrice){
-        getPrimaryKey().getItemDetails().setUnitPrice(unitPrice);
-    }
+//    public String getDescription() {
+//        return getPrimaryKey().getItemDetails().getItem().getDescription();
+//    }
+// 
+//    public void setDescription(String description) {
+//        getPrimaryKey().getItemDetails().getItem().setDescription(description);
+//    }
+//    
+//    public String getPath() {
+//        return getPrimaryKey().getItemDetails().getItem().getPaths();
+//    }
+// 
+//    public void setPath(String path) {
+//        getPrimaryKey().getItemDetails().getItem().setPaths(path);
+//    }
+//    public double getUnitPrice(){
+//       return getPrimaryKey().getItemDetails().getUnitPrice();
+//    }
+//    public void setUnitPrice(double unitPrice){
+//        getPrimaryKey().getItemDetails().setUnitPrice(unitPrice);
+//    }
 
     /**
      * @return the orderQty

@@ -48,7 +48,8 @@ public class ShoppingCartDAOImpl implements ShoppingCartDAO{
 
     @Override
     public ShoppingCart search(Integer id) throws Exception {
-        return (ShoppingCart)sessionFactory.getCurrentSession().load(ShoppingCart.class, id);
+        ShoppingCart shoppingCart = (ShoppingCart) sessionFactory.getCurrentSession().get(ShoppingCart.class, id);
+        return shoppingCart;
     }
 
     @Override

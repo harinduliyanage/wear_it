@@ -48,5 +48,16 @@ public class ShoppingCartDetailsServiceImpl implements ShoppingCartDetailsServic
     public List<ShoppingCartDetails> getAll() throws Exception {
         return shoppingCartDetailsDAOImpl.getAll();
     }
+
+    @Override
+    public ShoppingCartDetails getByItemDetail(Integer id) throws Exception  {
+        return shoppingCartDetailsDAOImpl.getByItemDetail(id);
+    }
+
+    @Override
+    public ShoppingCartDetails getByOrderQty(Integer orderQty) throws Exception {
+        return  shoppingCartDetailsDAOImpl.getByOrderQty(orderQty);
+    }
+
     
 }
