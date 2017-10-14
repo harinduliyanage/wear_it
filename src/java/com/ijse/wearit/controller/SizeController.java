@@ -5,13 +5,23 @@
  */
 package com.ijse.wearit.controller;
 
+import com.ijse.wearit.dto.SizeDTO;
 import com.ijse.wearit.model.Sizes;
+import com.ijse.wearit.model.Status;
 import com.ijse.wearit.service.custom.SizeService;
+import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import sun.misc.IOUtils;
 
 /**
  *
@@ -23,28 +33,56 @@ public class SizeController {
     @Autowired
     SizeService sizeService;
     
-    @RequestMapping(value = "/addNewSize")
-    public String addNewSize(){
-        Sizes size = new Sizes();
-        size.setSizeEU("48");
-        size.setSizeUK("10");
-        size.setSizeUS("8");
-        try {
-            boolean add = sizeService.add(size);
-        } catch (Exception ex) {
-            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return "Error";
+    @RequestMapping(value = "/addNewSize",method = RequestMethod.POST)
+    public @ResponseBody Status addNewSize12(HttpServletRequest request){
+//        Sizes size = new Sizes();
+//        size.setSizeEU("40");
+//        size.setSizeUK("8");
+//        size.setSizeUS("6");
+//        size.setSizes("XSXXX");
+//        try {
+//            boolean add = sizeService.add(size);
+//        } catch (Exception ex) {
+//            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+
+//        }
+            doSomething(request);
+        
+    
+        Status status = new Status(200, "ok", "added Successfull..");
+        System.out.println("called...........//" +request.getParameter("size"));
+        return status;
     }
     
-    @RequestMapping(value = "/item")
+    public void doSomething(HttpServletRequest request) {
+//        try {
+//            String jsonBody;
+//            // do stuff
+//            //jsonBody = IOUtils.toString( request.getInputStream());
+//        } catch (IOException ex) {
+//            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+    }
+    
+    @RequestMapping(value = "/admin")
     public String getWishList(){ 
         return "admin";
     }
+
+    @RequestMapping(value = "/size")
+    public String getSizeWindow(){ 
+        return "addNewSize";
+    }
     
-    @RequestMapping(value = "/cart")
-    public String getCart(){ 
-        return "ShoppingCart";
+    @RequestMapping(value = "/getAllSizes" , method = RequestMethod.GET)
+    public @ResponseBody List<Sizes>  getAllSizes(){ 
+        try {
+            List<Sizes> all = sizeService.getAll();
+            return all;
+        } catch (Exception ex) {
+            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
     
 }

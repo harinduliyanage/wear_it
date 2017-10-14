@@ -13,14 +13,14 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class SizeDTO extends SuperDTO{
-    private Integer sizeID;
+    private String size;
     private String sizeUK;
     private String sizeUS;
     private String sizeEU;
-    private String size;//Xs,S,M,L,XL
+    
 
-    public SizeDTO(Integer sizeID, String sizeUK, String sizeUS, String sizeEU, String size) {
-        this.sizeID = sizeID;
+    public SizeDTO(String size,String sizeUK, String sizeUS, String sizeEU ) {
+        
         this.sizeUK = sizeUK;
         this.sizeUS = sizeUS;
         this.sizeEU = sizeEU;
@@ -33,13 +33,6 @@ public class SizeDTO extends SuperDTO{
 
     public String getSize() {
         return size;
-    }
-    public Integer getSizeID() {
-        return sizeID;
-    }
-
-    public void setSizeID(Integer sizeID) {
-        this.sizeID = sizeID;
     }
 
     public String getSizeUK() {
