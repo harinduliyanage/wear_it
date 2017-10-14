@@ -9,7 +9,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
+<title>single</title>
+<link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
 <link href="<c:url value="resources/css/css-a/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
