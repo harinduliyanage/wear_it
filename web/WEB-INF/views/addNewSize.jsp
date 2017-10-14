@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Size Manage</title>
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.css" />" media="all" />

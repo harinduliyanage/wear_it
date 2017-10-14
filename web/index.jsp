@@ -9,7 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-<title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+        <link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
+<title>Home</title>
 <link href="resources/css/css-a/bootstrap.css" rel="stylesheet" type="text/css"/>
 <!-- Custom Theme files -->
 <!--theme-style-->	
@@ -348,9 +349,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col-2">
 							<span>Hot Deal</span>
-							<h2><a href="single.html">Luxurious &amp; Trendy</a></h2>
+							<h2><a href="single">Luxurious &amp; Trendy</a></h2>
 							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-							<a href="single.html" class="buy-now">Buy Now</a>
+							<a href="single" class="buy-now">Buy Now</a>
 						</div>
 					</div>
 					<div class="col-md-6 col-md1">
@@ -745,6 +746,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 		</script>
                 <script src="<c:url value="resources/js/js-a/classie.js" />" type="text/javascript"></script>
-
+                <!-- WhatsHelp.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            facebook: "wearyourownstorys/?ref=page_internal", // Facebook page ID
+            company_logo_url: "//scontent.xx.fbcdn.net/v/t1.0-1/p50x50/22552778_1989154664707640_6925793142617653314_n.png?oh=4d49540b2ac89984e245f34be6063ef2&oe=5A81E171", // URL of company logo (png, jpg, gif)
+            greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
+            call_to_action: "Message us", // Call to action
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /WhatsHelp.io widget -->
 </body>
 </html>

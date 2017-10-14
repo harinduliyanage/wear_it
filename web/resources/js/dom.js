@@ -4,7 +4,7 @@ $('#add-New-Size-btn').click(function (){
     alert(sizes);
     $.ajax({
       type: 'POST',
-      url : "/wear_it_1.2/addNewSize",
+      url : "/wear_it_1.2/addNewSize/sizes='"+sizes+"'",
       contentType: 'application/json',
       dataType: 'json',
       data: (sizes),
