@@ -92,8 +92,8 @@ public class ItemDetails implements Serializable{
         this.item = item;
     }
     
-    @OneToMany(mappedBy = "primaryKey.itemDetails",
-            cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "itemDetails",
+            cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     public Set<ShoppingCartDetails> getShoppingCartDetails() {
         return shoppingCartDetails;
     }
