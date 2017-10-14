@@ -10,7 +10,7 @@
 <html>
 <head>
 <title>Shopin A Ecommerce Category Flat Bootstrap Responsive Website Template | Products :: w3layouts</title>
-<link href="<c:url value="resources/css/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />
+<link href="<c:url value="resources/css/css-a/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
 <link href="<c:url value="resources/css/css-a/style.css" />" rel="stylesheet" type="text/css" media="all" />	
