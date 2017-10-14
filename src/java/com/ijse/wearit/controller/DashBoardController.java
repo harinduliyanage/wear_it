@@ -30,4 +30,25 @@ public class DashBoardController {
     public String get404(){
         return "404";
     }
+    @RequestMapping("/login")
+    public String getLigin(){
+        return "login";
+    }
+    @RequestMapping("/product")
+    public String getProduct(){
+        return "product";
+    }
+    @RequestMapping("/wishlist")
+    public String getWishList(){
+        return "wishlist";
+    }
+    @RequestMapping("/typo")
+    public String getTypo(){
+        return "typo";
+    }
+    @RequestMapping("/register")
+    public String getRegister(){
+        return "register";
+    }
+    
 }
