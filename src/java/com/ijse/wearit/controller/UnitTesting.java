@@ -85,14 +85,14 @@ public class UnitTesting {
         size3.setSizeEU("32");
         size3.setSizeUK("12");     
         size3.setSizeUS("14");
-        sizeService.add(size3);
+        sizeService.add(size3); // 
         //Create New Item
-        Item item = new Item();
-        item.setDescription("Short top");
-        item.setPaths("Image/Tops/crop_tops.jpg");
-        Category casual = categoryService.getCategoryByName("Casual");
-        item.setCategory(casual);
-        casual.getItems().add(item);
+//        Item item = new Item();
+//        item.setDescription("Short top");
+//        item.setPaths("Image/Tops/crop_tops.jpg");
+//        Category casual = categoryService.getCategoryByName("Casual");
+//        item.setCategory(casual);
+//        casual.getItems().add(item);
 //        
 //        //search Size//
 //        Sizes size11 = sizeService.getSizeByName("M");
