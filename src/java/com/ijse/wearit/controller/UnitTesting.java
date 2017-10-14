@@ -59,40 +59,40 @@ public class UnitTesting {
         boolean result = false;
 
         try {
-//         Category category2 = new Category();
-//         category2.setName("Office wear");
-//         categoryService.add(category2);
-//         Category category = new Category();
-//         category.setName("New Arrivals");
-//         categoryService.add(category);
-//         Category category3 = new Category();
-//         category3.setName("Casual");
-//         categoryService.add(category3);
-//        Sizes size = new Sizes();
-//        size.setSizes("XS");
-//        size.setSizeEU("28");
-//        size.setSizeUK("10");
-//        size.setSizeUS("8");
-//        sizeService.add(size);
-//        Sizes size2 = new Sizes();
-//        size2.setSizes("S");
-//        size2.setSizeEU("30");
-//        size2.setSizeUK("12");
-//        size2.setSizeUS("10");
-//        sizeService.add(size2);
-//        Sizes size3 = new Sizes();
-//        size3.setSizes("M");
-//        size3.setSizeEU("32");
-//        size3.setSizeUK("12");     
-//        size3.setSizeUS("14");
-//        sizeService.add(size3);
-//        //Create New Item
-//        Item item = new Item();
-//        item.setDescription("Short top");
-//        item.setPaths("Image/Tops/crop_tops.jpg");
-//        Category casual = categoryService.getCategoryByName("Casual");
-//        item.setCategory(casual);
-//        casual.getItems().add(item);//like cart
+         Category category2 = new Category();
+         category2.setName("Office wear");
+         categoryService.add(category2);
+         Category category = new Category();
+         category.setName("New Arrivals");
+         categoryService.add(category);
+         Category category3 = new Category();
+         category3.setName("Casual");
+         categoryService.add(category3);
+        Sizes size = new Sizes();
+        size.setSizes("XS");
+        size.setSizeEU("28");
+        size.setSizeUK("10");
+        size.setSizeUS("8");
+        sizeService.add(size);
+        Sizes size2 = new Sizes();
+        size2.setSizes("S");
+        size2.setSizeEU("30");
+        size2.setSizeUK("12");
+        size2.setSizeUS("10");
+        sizeService.add(size2);
+        Sizes size3 = new Sizes();
+        size3.setSizes("M");
+        size3.setSizeEU("32");
+        size3.setSizeUK("12");     
+        size3.setSizeUS("14");
+        sizeService.add(size3);
+        //Create New Item
+        Item item = new Item();
+        item.setDescription("Short top");
+        item.setPaths("Image/Tops/crop_tops.jpg");
+        Category casual = categoryService.getCategoryByName("Casual");
+        item.setCategory(casual);
+        casual.getItems().add(item);
 //        
 //        //search Size//
 //        Sizes size11 = sizeService.getSizeByName("M");
@@ -168,32 +168,32 @@ public class UnitTesting {
 ////            cart.setUser(user);
 ////            result = userService.add(user);
 
-            User search = userService.getUserByNam("kamal");
-            System.out.println(search.getCustomerLastName());
+//            User search = userService.getUserByNam("kamal");
+//            System.out.println(search.getCustomerLastName());
 /*          /// System.out.println("====================        "+search.getUserID()+"      "+search.getCustomerFirstName()+"  "+search.getCustomerEmail());
             //result=userService.delete(search.getUserID());
 */
             //add Shopping Cart Details to shopping cart
-            Item item = itemService.getItemByDescription("Short top");
-            System.out.println(item.getDescription() + ")))))))))))))))))))))))))))))))))))))))");
-            Sizes sizeByName = sizeService.getSizeByName("M");
-            System.out.println(sizeByName.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
-            ItemDetails itemDetail = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName,item);
-            System.out.println(itemDetail.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
-            ShoppingCart shoppingCart = cartService.search(1);
-            System.out.println(shoppingCart.getAddedDate() + ")))))))))))))))))))))))))))))))))))))))");
-            //ShoppingCartDetailCompositeId primeryKey = new ShoppingCartDetailCompositeId();
-            //primeryKey.setItemDetails(itemDetail);
-            //primeryKey.setShoppingCart(search.getShoppingCart());
-            ShoppingCartDetails shoppingCartDetail = new ShoppingCartDetails();
-            //shoppingCartDetail.setPrimaryKey(primeryKey);
-            shoppingCartDetail.setShoppingCart(shoppingCart);
-            shoppingCartDetail.setItemDetails(itemDetail);
-            shoppingCartDetail.setOrderQty(5);
-            shoppingCart.addShoppingCartDetail(shoppingCartDetail);
-            //cartDetailsService.add(shoppingCartDetail);
-            //search.getShoppingCart().getShoppingCartDetails().add(shoppingCartDetail);
-            result=cartService.add(shoppingCart);
+    //            Item item = itemService.getItemByDescription("Short top");
+    //            System.out.println(item.getDescription() + ")))))))))))))))))))))))))))))))))))))))");
+    //            Sizes sizeByName = sizeService.getSizeByName("M");
+    //            System.out.println(sizeByName.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
+    //            ItemDetails itemDetail = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName,item);
+    //            System.out.println(itemDetail.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
+    //            ShoppingCart shoppingCart = cartService.search(1);
+    //            System.out.println(shoppingCart.getAddedDate() + ")))))))))))))))))))))))))))))))))))))))");
+    //            //ShoppingCartDetailCompositeId primeryKey = new ShoppingCartDetailCompositeId();
+    //            //primeryKey.setItemDetails(itemDetail);
+    //            //primeryKey.setShoppingCart(search.getShoppingCart());
+    //            ShoppingCartDetails shoppingCartDetail = new ShoppingCartDetails();
+    //            //shoppingCartDetail.setPrimaryKey(primeryKey);
+    //            shoppingCartDetail.setShoppingCart(shoppingCart);
+    //            shoppingCartDetail.setItemDetails(itemDetail);
+    //            shoppingCartDetail.setOrderQty(5);
+    //            //shoppingCart.addShoppingCartDetail(shoppingCartDetail);
+    //            //cartDetailsService.add(shoppingCartDetail);
+    //            //search.getShoppingCart().getShoppingCartDetails().add(shoppingCartDetail);
+    //            result=cartDetailsService.add(shoppingCartDetail);
  
 /*            ShoppingCartDetails byItemDetailId = cartDetailsService.getByOrderQty(2);
             System.out.println(byItemDetailId.getOrderQty()+"))))))))))))))))))))))))))))))");

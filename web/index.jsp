@@ -4,6 +4,7 @@
     Author     : Harindu.sul
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -362,7 +363,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div></a>
 						</div>
 						<div class="col-3">
-							<a href="single.html"><img src="iresources/images/pi2.jpg" class="img-responsive" alt="">
+							<a href="single.html"><img src="resources/images/pi2.jpg" class="img-responsive" alt="">
 							<div class="col-pic">
 								<p>Lorem Ipsum</p>
 								<label></label>
@@ -647,7 +648,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</div>
 			</div>
-			<!--//products-->
+			<!--//products--><!--> look here</-->
 			<!--brand-->
 			<div class="brand">
 				<div class="col-md-3 brand-grid">
@@ -730,19 +731,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!--//footer-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/simpleCart.min.js"> </script>
+<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
+
 <!-- slide -->
-<script src="js/bootstrap.min.js"></script>
+<script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
 <!--light-box-files -->
-                <script src="resources/js/js-a/jquery.chocolat.js" type="text/javascript"></script>
+                <script src="<c:url value="resources/js/js-a/jquery.chocolat.js" />" type="text/javascript"></script>
 		<!--light-box-files -->
-                <link href="resources/css/css-a/chocolat.css" rel="stylesheet" type="text/css"/>
+                <link href="<c:url value="resources/css/css-a/chocolat.css" />" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" charset="utf-8">
 		$(function() {
 			$('a.picture').Chocolat();
 		});
 		</script>
-                <script src="resources/js/js-a/classie.js" type="text/javascript"></script>
+                <script src="<c:url value="resources/js/js-a/classie.js" />" type="text/javascript"></script>
 
 </body>
 </html>
