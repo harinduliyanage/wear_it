@@ -29,7 +29,7 @@ public class SizeController {
     @Autowired
     SizeService sizeService;
     
-    @RequestMapping(value = "/addNewSize",method = RequestMethod.POST,consumes = "*/*")
+    @RequestMapping(value = "/addNewSize",method = RequestMethod.POST)
     public @ResponseBody Status addNewSize12(HttpServletRequest request,@RequestParam("sizes") String sizes){//methana param dala ne eka nisa call wenawa
 //        Sizes size = new Sizes();
 //        size.setSizeEU("40");
@@ -46,7 +46,7 @@ public class SizeController {
         
     
         Status status = new Status(200, "ok", "added Successfull..");
-        System.out.println("called...........//" +request.getParameter("size"));
+        System.out.println("called...........//" +sizes);
         return status;
     }
     
