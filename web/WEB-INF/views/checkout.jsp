@@ -9,6 +9,7 @@
 <html>
 <head>
 <title>Check Out</title>
+<link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
 <link href="<c:url value="resources/css/css-a/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -297,6 +298,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>	
 	</div>	
 </div>
+                        
+                        <div><img class="img-responsive active" src="<c:url value="resources/images/BPH-checkout-banner.jpg" />"/></div>                        
 <!--banner-->
 <div class="banner-top">
 	<div class="container">

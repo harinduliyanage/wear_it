@@ -9,7 +9,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Check Out</title>
+<title>Page Not found</title>
+<link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
 <link href="<c:url value="resources/css/css-a/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -298,13 +299,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>	
 	</div>	
 </div>
+                        
 <!--banner-->
+<div><img src="<c:url value="resources/images/404-banner-slice.png" />" class="img-responsive active "/></div>
 <div class="banner-top">
-	<div class="container">
-		<h1>404</h1>
-		<em></em>
-		<h2><a href="index.jsp">Home</a><label>/</label>404</h2>
-	</div>
 </div>
 <!--login-->
 	<div class="container">

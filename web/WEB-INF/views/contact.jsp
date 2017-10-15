@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
 <title>Contact Us</title>
 <link href="<c:url value="resources/css/css-a/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
@@ -108,7 +109,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
            <li class="dropdown mega-dropdown active">
 			    <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>				
 				<div class="dropdown-menu ">
-                    <div class="menu-top">
+                                    <div class="menu-top">
 						<div class="col1">
 							<div class="h_nav">
 								<h4>Submenu1</h4>
@@ -243,6 +244,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </nav>
 			</div>
+                                                
 			<div class="col-sm-2 search-right">
 				<ul class="heart">
 				<li>
@@ -300,11 +302,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>	
 </div>
 <!--banner-->
+<div><img src="<c:url value="resources/images/96ce26e7c7bac771f13274cbd66e5dac.jpg" />" class="img-responsive active "/></div>
 	<div class="banner-top">
+           
 	<div class="container">
 		<h1>Contact</h1>
 		<em></em>
-		<h2><a href="index.jsp">Home</a><label>/</label>Contact</h2>
+                
+               
 	</div>
 </div>	
 		

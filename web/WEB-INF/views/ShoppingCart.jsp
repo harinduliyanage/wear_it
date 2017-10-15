@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cart</title>
+        <link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
 <!--        <script src="../../resources/js/bootstrap.js" type="text/javascript"></script>
         <script src="../../resources/js/bootstrap.min.js" type="text/javascript"></script>-->
         <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/bootstrap.css" />" media="all" />
