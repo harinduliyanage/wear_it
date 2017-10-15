@@ -22,4 +22,8 @@ public class DashBoardController {
     public String getContact(){
         return "contact";
     }
+    @RequestMapping("/checkout")
+    public String getCheckOut(){
+        return "checkout";
+    }
 }
