@@ -395,7 +395,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 
 <!--//login-->
-<!--brand-->
+                <!--brand-->
 		<div class="container">
 			<div class="brand">
 				<div class="col-md-3 brand-grid">

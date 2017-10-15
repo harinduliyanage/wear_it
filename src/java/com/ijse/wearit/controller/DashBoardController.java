@@ -26,4 +26,8 @@ public class DashBoardController {
     public String getCheckOut(){
         return "checkout";
     }
+    @RequestMapping("/404")
+    public String get404(){
+        return "404";
+    }
 }
