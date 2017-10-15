@@ -407,7 +407,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <script type="text/javascript">
     (function () {
         var options = {
-            facebook: "1989154614707645", // Facebook page ID
+            facebook: "wearyourownstorys/?ref=page_internal", // Facebook page ID
             company_logo_url: "//scontent.xx.fbcdn.net/v/t1.0-1/p50x50/22552778_1989154664707640_6925793142617653314_n.png?oh=4d49540b2ac89984e245f34be6063ef2&oe=5A81E171", // URL of company logo (png, jpg, gif)
             greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
             call_to_action: "Message us", // Call to action
