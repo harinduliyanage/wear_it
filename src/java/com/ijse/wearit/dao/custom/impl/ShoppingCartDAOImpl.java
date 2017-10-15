@@ -9,7 +9,9 @@ import com.ijse.wearit.dao.custom.ShoppingCartDAO;
 import com.ijse.wearit.model.ShoppingCart;
 import java.io.Serializable;
 import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -37,7 +39,7 @@ public class ShoppingCartDAOImpl implements ShoppingCartDAO{
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        ShoppingCart search = (ShoppingCart)sessionFactory.getCurrentSession().load(ShoppingCart.class, id);
+        ShoppingCart search = (ShoppingCart)sessionFactory.getCurrentSession().get(ShoppingCart.class, id);
         if(search != null){
             sessionFactory.getCurrentSession().delete(search);
             return true;
@@ -48,7 +50,11 @@ public class ShoppingCartDAOImpl implements ShoppingCartDAO{
 
     @Override
     public ShoppingCart search(Integer id) throws Exception {
-        return (ShoppingCart)sessionFactory.getCurrentSession().load(ShoppingCart.class, id);
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ShoppingCart.class);
+        c2.add(Restrictions.eq("id", id));
+        c2.setMaxResults(1);
+        ShoppingCart z = (ShoppingCart) c2.uniqueResult();
+        return z;
     }
 
     @Override

@@ -35,6 +35,10 @@ public class ShoppingCart implements Serializable{
     public ShoppingCart() {
     }
     
+    public void addShoppingCartDetail(ShoppingCartDetails shoppingCartDetails){
+        this.shoppingCartDetails.add(shoppingCartDetails);
+    }
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "CART_ID")
@@ -53,24 +57,6 @@ public class ShoppingCart implements Serializable{
     public void setAddedDate(String addedDate) { 
         this.addedDate = addedDate;
     }
-
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER,optional = true)
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-    
-    @OneToMany(mappedBy = "primaryKey.shoppingCart",cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER)
-    public Set<ShoppingCartDetails> getShoppingCartDetails() {
-        return shoppingCartDetails;
-    }
- 
-    public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
-        this.shoppingCartDetails = shoppingCartDetailses;
-    }
    
     public int getNumberOfItems() {
         return numberOfItems;
@@ -86,6 +72,24 @@ public class ShoppingCart implements Serializable{
 
     public void setTotal(double total) {
         this.total = total;
+    }
+    
+    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER,optional = true)
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
+    @OneToMany(mappedBy = "shoppingCart",cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
+    public Set<ShoppingCartDetails> getShoppingCartDetails() {
+        return shoppingCartDetails;
+    }
+ 
+    public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
+        this.shoppingCartDetails = shoppingCartDetailses;
     }
     
 }

@@ -13,5 +13,6 @@ import com.ijse.wearit.service.SuperService;
  * @author ABC
  */
 public interface ShoppingCartDetailsService extends SuperService<ShoppingCartDetails>{
-    
+    public ShoppingCartDetails getByItemDetail(Integer id) throws Exception ;
+    public ShoppingCartDetails getByOrderQty(Integer orderQty) throws Exception ;
 }

@@ -8,9 +8,16 @@ package com.ijse.wearit.model;
 import java.io.Serializable;
 import javax.persistence.AssociationOverride;
 import javax.persistence.AssociationOverrides;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -20,62 +27,77 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "SHOPPINGCART_DETAILS")
-@AssociationOverrides({
-    @AssociationOverride(name = "primaryKey.shoppingCart",
-        joinColumns = @JoinColumn(name = "CART_ID")),
-    @AssociationOverride(name = "primaryKey.itemDetails",
-        joinColumns = @JoinColumn(name = "ITEMDETAILS_ID")) })
 public class ShoppingCartDetails implements Serializable{
-    private ShoppingCartDetailCompositeId primaryKey = new ShoppingCartDetailCompositeId();
+    //private ShoppingCartDetailCompositeId primaryKey = new ShoppingCartDetailCompositeId();
+    private int id;
+    private ShoppingCart shoppingCart;
+    private ItemDetails itemDetails;
     
     private int orderQty;
     
-    @EmbeddedId
-    public ShoppingCartDetailCompositeId getPrimaryKey() {
-        return primaryKey;
+//    @EmbeddedId
+//    public ShoppingCartDetailCompositeId getPrimaryKey() {
+//        return primaryKey;
+//    }
+// 
+//    public void setPrimaryKey(ShoppingCartDetailCompositeId primaryKey) {
+//        this.primaryKey = primaryKey;
+//    }
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "CART_DETAILS_ID")
+    public int getId() {
+        return id;
     }
- 
-    public void setPrimaryKey(ShoppingCartDetailCompositeId primaryKey) {
-        this.primaryKey = primaryKey;
-    }
-    @Transient
-    public ShoppingCart getShoppingCart() {
-        return getPrimaryKey().getShoppingCart();
-    }
- 
-    public void setShoppingCart(ShoppingCart shoppingCart) {
-        getPrimaryKey().setShoppingCart(shoppingCart);
-    }
- 
-    @Transient
-    public ItemDetails getItemDetails() {
-        return getPrimaryKey().getItemDetails();
-    }
- 
-    public void setItemDetails(ItemDetails itemDetails) {
-        getPrimaryKey().setItemDetails(itemDetails);
-    }
-    public String getDescription() {
-        return getPrimaryKey().getItemDetails().getItem().getDescription();
-    }
- 
-    public void setDescription(String description) {
-        getPrimaryKey().getItemDetails().getItem().setDescription(description);
+
+    public void setId(int id) {
+        this.id = id;
     }
     
-    public String getPath() {
-        return getPrimaryKey().getItemDetails().getItem().getPaths();
+    @ManyToOne(cascade = CascadeType.ALL,optional = true,fetch = FetchType.EAGER)
+    @JoinColumn(name = "SHOPPINGCART_ID",nullable=false)
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
     }
- 
-    public void setPath(String path) {
-        getPrimaryKey().getItemDetails().getItem().setPaths(path);
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
     }
-    public double getUnitPrice(){
-       return getPrimaryKey().getItemDetails().getUnitPrice();
+
+    @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
+    @JoinColumn(name = "ITEM_DETAILS_ID")
+    public ItemDetails getItemDetails() {
+        return itemDetails;
     }
-    public void setUnitPrice(double unitPrice){
-        getPrimaryKey().getItemDetails().setUnitPrice(unitPrice);
+
+    public void setItemDetails(ItemDetails itemDetails) {
+        this.itemDetails = itemDetails;
     }
+    
+    
+    
+//    public String getDescription() {
+//        return getPrimaryKey().getItemDetails().getItem().getDescription();
+//    }
+// 
+//    public void setDescription(String description) {
+//        getPrimaryKey().getItemDetails().getItem().setDescription(description);
+//    }
+//    
+//    public String getPath() {
+//        return getPrimaryKey().getItemDetails().getItem().getPaths();
+//    }
+// 
+//    public void setPath(String path) {
+//        getPrimaryKey().getItemDetails().getItem().setPaths(path);
+//    }
+//    public double getUnitPrice(){
+//       return getPrimaryKey().getItemDetails().getUnitPrice();
+//    }
+//    public void setUnitPrice(double unitPrice){
+//        getPrimaryKey().getItemDetails().setUnitPrice(unitPrice);
+//    }
 
     /**
      * @return the orderQty

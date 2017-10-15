@@ -13,5 +13,6 @@ import com.ijse.wearit.model.ShoppingCartDetails;
  * @author ABC
  */
 public interface ShoppingCartDetailsDAO extends SuperDAO<ShoppingCartDetails>{
-    
+    public ShoppingCartDetails getByItemDetail(Integer id) throws Exception ;
+    public ShoppingCartDetails getByOrderQty(Integer orderQty) throws Exception ;
 }

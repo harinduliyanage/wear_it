@@ -9,7 +9,9 @@ import com.ijse.wearit.dao.custom.ShoppingCartDetailsDAO;
 import com.ijse.wearit.model.ShoppingCartDetails;
 import java.io.Serializable;
 import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -37,7 +39,7 @@ public class ShoppingCartDetailsDAOImpl implements ShoppingCartDetailsDAO{
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        ShoppingCartDetails search = (ShoppingCartDetails)sessionFactory.getCurrentSession().load(ShoppingCartDetails.class, id);
+        ShoppingCartDetails search = (ShoppingCartDetails)sessionFactory.getCurrentSession().get(ShoppingCartDetails.class, id);
         if(search != null){
             sessionFactory.getCurrentSession().delete(search);
             return true;
@@ -48,7 +50,8 @@ public class ShoppingCartDetailsDAOImpl implements ShoppingCartDetailsDAO{
 
     @Override
     public ShoppingCartDetails search(Integer id) throws Exception {
-        return (ShoppingCartDetails)sessionFactory.getCurrentSession().load(ShoppingCartDetails.class, id);
+        ShoppingCartDetails shoppingCartDetails = (ShoppingCartDetails)sessionFactory.getCurrentSession().get(ShoppingCartDetails.class, id);
+        return shoppingCartDetails;
     }
 
     @Override
@@ -56,5 +59,23 @@ public class ShoppingCartDetailsDAOImpl implements ShoppingCartDetailsDAO{
         List<ShoppingCartDetails> shoppingCartDetailses = sessionFactory.getCurrentSession().createCriteria(ShoppingCartDetails.class).list();
         return shoppingCartDetailses;
     }
-    
+
+    @Override
+    public ShoppingCartDetails getByItemDetail(Integer id) throws Exception {
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ShoppingCartDetails.class);
+        c2.add(Restrictions.eq("ITEMDETAILS_ID", id));//eka nisa ara description ekai size ekai e tika cmt anin karala e deka methenta parse karan search karanam hari baba apata wena karanna deyak ne id ekak nethi nisa mekata
+        c2.setMaxResults(1);
+        ShoppingCartDetails z = (ShoppingCartDetails) c2.uniqueResult();
+        return z;
+    }
+
+    @Override
+    public ShoppingCartDetails getByOrderQty(Integer orderQty) throws Exception {
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ShoppingCartDetails.class);
+        c2.add(Restrictions.eq("orderQty", orderQty));//eka nisa ara description ekai size ekai e tika cmt anin karala e deka methenta parse karan search karanam hari baba apata wena karanna deyak ne id ekak nethi nisa mekata
+        c2.setMaxResults(1);
+        ShoppingCartDetails z = (ShoppingCartDetails) c2.uniqueResult();
+        return z;
+    }
+
 }

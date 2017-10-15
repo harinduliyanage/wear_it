@@ -42,7 +42,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 
     @Override
     public ShoppingCart search(Integer id) throws Exception {
-        return shoppingCartDAOImpl.search(id);
+        ShoppingCart shoppingCart = shoppingCartDAOImpl.search(id);
+        return shoppingCart;
     }
 
     @Override

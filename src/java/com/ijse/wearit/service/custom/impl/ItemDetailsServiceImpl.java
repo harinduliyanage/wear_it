@@ -53,7 +53,8 @@ public class ItemDetailsServiceImpl implements ItemDetailsService{
 
     @Override
     public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item) throws Exception {
-        return itemDetailsDAOImpl.getItemDetailsBySizeAndItem(sizeByName,item);
+        ItemDetails itemDetails = itemDetailsDAOImpl.getItemDetailsBySizeAndItem(sizeByName,item);
+        return itemDetails;
     }
     
 }
