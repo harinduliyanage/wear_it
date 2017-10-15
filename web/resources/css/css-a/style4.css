@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'Ubuntu-Regular';
-    src:url(resources/fonts/Ubuntu-Regular.ttf) format('truetype');
+    src:url('http://localhost:8084/wear_it_1.2/resources/fonts/Ubuntu-Regular.ttf') format('truetype');
 }
 @font-face{
 	font-family:'Oxygen-Regular';
-	src:url(resources/fonts/Oxygen-Regular.ttf) format('truetype');
+	src:url('http://localhost:8084/wear_it_1.2/resources/fonts/Oxygen-Regular.ttf') format('truetype');
 }
 .rw-wrapper{
 	position: relative;

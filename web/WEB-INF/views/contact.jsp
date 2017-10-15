@@ -164,7 +164,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>							
 						</div>
                                                 <div class="col1 col5">
-						<img src="<c:url value="resources/css/css-a/style4.css" />" class="img-responsive" alt="">
+						<img src="<c:url value="resources/images/me.png" />" class="img-responsive" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div>                  
@@ -242,8 +242,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </ul>
      </div><!-- /.navbar-collapse -->
 
-</nav>
-			</div>
+    </nav>
+</div>
                                                 
 			<div class="col-sm-2 search-right">
 				<ul class="heart">
@@ -303,16 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--banner-->
 <div><img src="<c:url value="resources/images/96ce26e7c7bac771f13274cbd66e5dac.jpg" />" class="img-responsive active "/></div>
-	<div class="banner-top">
-           
-	<div class="container">
-		<h1>Contact</h1>
-		<em></em>
-                
-               
-	</div>
-</div>	
-		
+	
 			<div class="contact">
 					
 				<div class="contact-form">

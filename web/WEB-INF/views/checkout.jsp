@@ -9,7 +9,7 @@
 <html>
 <head>
 <title>Check Out</title>
-<link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
+<script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
 <link href="<c:url value="resources/css/css-a/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -27,7 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--- start-rate---->
 <script src="<c:url value="resources/js/js-a/jstarbox.js" />"></script>
 	<link rel="stylesheet" href="<c:url value="resources/css/css-a/jstarbox.css" />" type="text/css" media="screen" charset="utf-8" />
-			<script type="text/javascript">
+		<script type="text/javascript">
 			jQuery(function() {
 			jQuery('.starbox').each(function() {
 				var starbox = jQuery(this);
@@ -56,8 +56,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 		<div class="head">
 			<div class=" logo">
-				<a href="index.jsp"><img src="<c:url value="resources/images/log.png" />" alt=""></a>	
-                        </div>
+				<a href="index.jsp"><img src="images/logo.png" alt=""></a>	
+			</div>
 		</div>
 	</div>
 	<div class="header-top">
@@ -105,10 +105,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
             <li><a class="color" href="index.jsp">Home</a></li>
-            <li class="dropdown mega-dropdown active">
+           <li class="dropdown mega-dropdown active">
 			    <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>				
 				<div class="dropdown-menu ">
-                    <div class="menu-top">
+                                    <div class="menu-top">
 						<div class="col1">
 							<div class="h_nav">
 								<h4>Submenu1</h4>
@@ -162,7 +162,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</ul>	
 							</div>							
 						</div>
-						<div class="col1 col5">
+                                                <div class="col1 col5">
 						<img src="<c:url value="resources/images/me.png" />" class="img-responsive" alt="">
 						</div>
 						<div class="clearfix"></div>
@@ -209,7 +209,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<li><a href="product">Sweatpants</a></li>
 										<li><a href="product">Swimwear</a></li>
 										<li><a href="product">Trousers & Chinos</a></li>
-																			</ul>	
+										
+									</ul>	
 								
 							</div>							
 						</div>
@@ -227,7 +228,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>							
 						</div>
 						<div class="col1 col5">
-                                                    <img src="<c:url value="resources/images/me1.png"/>" class="img-responsive" alt="">
+						<img src="<c:url value="resources/images/me1.png" />" class="img-responsive" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div>                  
@@ -240,8 +241,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </ul>
      </div><!-- /.navbar-collapse -->
 
-</nav>
-			</div>
+    </nav>
+</div>
 			<div class="col-sm-2 search-right">
 				<ul class="heart">
 				<li>
@@ -301,13 +302,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         
                         <div><img class="img-responsive active" src="<c:url value="resources/images/BPH-checkout-banner.jpg" />"/></div>                        
 <!--banner-->
-<div class="banner-top">
-	<div class="container">
-		<h1>Checkout</h1>
-		<em></em>
-		<h2><a href="index.jsp">Home</a><label>/</label>Checkout</h2>
-	</div>
-</div>
 <!--login-->
 	<script>$(document).ready(function(c) {
 					$('.close1').on('click', function(c){
@@ -482,7 +476,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
 <!-- slide -->
-<script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
+
 <script src="<c:url value="resources/js/popper.min.js" />"></script>
  
 </body>
