@@ -348,9 +348,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="col-2">
 							<span>Hot Deal</span>
-							<h2><a href="single.html">Luxurious &amp; Trendy</a></h2>
+							<h2><a href="single">Luxurious &amp; Trendy</a></h2>
 							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years</p>
-							<a href="single.html" class="buy-now">Buy Now</a>
+							<a href="single" class="buy-now">Buy Now</a>
 						</div>
 					</div>
 					<div class="col-md-6 col-md1">

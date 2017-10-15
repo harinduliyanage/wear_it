@@ -2,7 +2,7 @@ $('#add-New-Size-btn').click(function (){
     var sizes={size:$('#sizes-txt').val(),sizeUK:$('#sizeUK-txt').val(),sizeUS:$('#sizeUS-txt').val(),sizeEU:$('#sizeEU-txt')};
    $.ajax({
       type: 'POST',
-      url : "/wear_it_1.2/addNewSize",
+      url : "/wear_it_1.2/addNewSize/sizes='"+sizes+"'",
       contentType: 'application/json',
       dataType: 'json',
       data: JSON.stringify(sizes),
