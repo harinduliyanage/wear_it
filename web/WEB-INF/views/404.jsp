@@ -302,8 +302,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         
 <!--banner-->
 <div><img src="<c:url value="resources/images/404-banner-slice.png" />" class="img-responsive active "/></div>
-<div class="banner-top">
-</div>
 <!--login-->
 	<div class="container">
 		<div class="four">

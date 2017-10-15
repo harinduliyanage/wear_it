@@ -11,6 +11,7 @@
 <title>Check Out</title>
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
 <link href="<c:url value="resources/css/css-a/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />
+<link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
 <!-- Custom Theme files -->
 <!--theme-style-->
 <link href="<c:url value="resources/css/css-a/style.css" />" rel="stylesheet" type="text/css" media="all" />	
@@ -240,7 +241,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <li ><a class="color6" href="contact">Contact</a></li>
         </ul>
      </div><!-- /.navbar-collapse -->
-
     </nav>
 </div>
 			<div class="col-sm-2 search-right">
