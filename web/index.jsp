@@ -1,5 +1,5 @@
 <%-- 
-    Document   : index
+    Document   : index.jsp
     Created on : Oct 4, 2017, 2:01:51 PM
     Author     : Harindu.sul
 --%>
@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 		<div class="head">
 			<div class=" logo">
-				<a href="index"><img src="resources/images/logo.png" alt=""/></a>	
+				<a href="index.jsp"><img src="resources/images/logo.png" alt=""/></a>	
                                 
 			</div>
 		</div>
@@ -676,7 +676,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer-middle">
 				<div class="container">
 					<div class="col-md-3 footer-middle-in">
-						<a href="index"><img src="resources/images/log.png" alt=""></a>
+						<a href="index.jsp"><img src="resources/images/log.png" alt=""></a>
 						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
 					</div>
 					
