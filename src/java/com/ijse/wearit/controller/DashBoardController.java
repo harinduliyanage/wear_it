@@ -18,4 +18,8 @@ public class DashBoardController {
     public String getItemView(){
         return "Items";
     }
+    @RequestMapping("/contact")
+    public String getContact(){
+        return "contact";
+    }
 }
