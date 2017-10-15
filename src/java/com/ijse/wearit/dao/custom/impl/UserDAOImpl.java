@@ -39,7 +39,7 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        User search = (User)sessionFactory.getCurrentSession().load(User.class, id);
+        User search = (User)sessionFactory.getCurrentSession().get(User.class, id);
         if(search != null){
             sessionFactory.getCurrentSession().delete(search);
             return true;
@@ -50,7 +50,7 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public User search(Integer id) throws Exception {
-        return (User)sessionFactory.getCurrentSession().load(User.class, id);
+        return (User)sessionFactory.getCurrentSession().get(User.class, id);
     }
 
     @Override

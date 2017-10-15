@@ -83,7 +83,7 @@ public class ShoppingCart implements Serializable{
         this.user = user;
     }
     
-    @OneToMany(mappedBy = "primaryKey.shoppingCart",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "shoppingCart",cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
     public Set<ShoppingCartDetails> getShoppingCartDetails() {
         return shoppingCartDetails;
     }

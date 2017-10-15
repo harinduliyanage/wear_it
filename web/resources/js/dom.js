@@ -13,7 +13,4 @@ $('#add-New-Size-btn').click(function (){
         alert('Error is :'+error.toString());
       }
    });
-     
-    
-    
-    });
+});

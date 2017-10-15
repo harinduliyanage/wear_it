@@ -133,7 +133,7 @@ public class UnitTesting {
 //        
 //        item.setItemDetails(all);
 //        result=itemService.add(item);
-            //Create User
+////            //Create User
 ////            User user = new User();
 ////            user.setCustomerFirstName("Kamal");
 ////            user.setCustomerLastName("De silva");
@@ -168,75 +168,77 @@ public class UnitTesting {
 ////            cart.setUser(user);
 ////            result = userService.add(user);
 
-//            User search = userService.getUserByNam("kamal");
-//            System.out.println(search.getCustomerLastName());
-/*          /// System.out.println("====================        "+search.getUserID()+"      "+search.getCustomerFirstName()+"  "+search.getCustomerEmail());
-            //result=userService.delete(search.getUserID());
-*/
-            //add Shopping Cart Details to shopping cart
-    //            Item item = itemService.getItemByDescription("Short top");
-    //            System.out.println(item.getDescription() + ")))))))))))))))))))))))))))))))))))))))");
-    //            Sizes sizeByName = sizeService.getSizeByName("M");
-    //            System.out.println(sizeByName.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
-    //            ItemDetails itemDetail = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName,item);
-    //            System.out.println(itemDetail.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
-    //            ShoppingCart shoppingCart = cartService.search(1);
-    //            System.out.println(shoppingCart.getAddedDate() + ")))))))))))))))))))))))))))))))))))))))");
-    //            //ShoppingCartDetailCompositeId primeryKey = new ShoppingCartDetailCompositeId();
-    //            //primeryKey.setItemDetails(itemDetail);
-    //            //primeryKey.setShoppingCart(search.getShoppingCart());
-    //            ShoppingCartDetails shoppingCartDetail = new ShoppingCartDetails();
-    //            //shoppingCartDetail.setPrimaryKey(primeryKey);
-    //            shoppingCartDetail.setShoppingCart(shoppingCart);
-    //            shoppingCartDetail.setItemDetails(itemDetail);
-    //            shoppingCartDetail.setOrderQty(5);
-    //            //shoppingCart.addShoppingCartDetail(shoppingCartDetail);
-    //            //cartDetailsService.add(shoppingCartDetail);
-    //            //search.getShoppingCart().getShoppingCartDetails().add(shoppingCartDetail);
-    //            result=cartDetailsService.add(shoppingCartDetail);
- 
-/*            ShoppingCartDetails byItemDetailId = cartDetailsService.getByOrderQty(2);
-            System.out.println(byItemDetailId.getOrderQty()+"))))))))))))))))))))))))))))))");
-*/
-
+/*            User search = userService.getUserByNam("kamal");
+            System.out.println(search.getCustomerLastName() + ")))))))))))))))))))))))))))))))))))");
             
-/////////////////////////////////////////////////////////////////////////////////            
-//            // this user is obtained from the database with ID 40
-//            User user = (User) session.get(User.class, new Long(40));
-//
-//            // this group is obtained from the database with ID 26
-//            Group group = (Group) session.get(Group.class, new Long(26));
-//
-//            UserGroup userGroup = new UserGroup();
-//            userGroup.setGroup(group);
-//            userGroup.setUser(user);
-//            userGroup.setActivated(true);
-//            userGroup.setRegisteredDate(new Date());
-//
-//            session.save(userGroup);
-//
-//            ////////////////////////////////////////////////
-//            delete example
-//
-//            UserGroup userGroup = new UserGroup();
-//
-//            User user = new User();
-//            user.setId(39);
-//            userGroup.setUser(user);
-//
-//            Group group = new Group();
-//            group.setId(25);
-//            userGroup.setGroup(group);
-//
-//            session.delete(userGroup);
-//            Item itemByDescription = itemService.getItemByDescription("Short top");//me ganne mn database eke thiyena
-//            //item ekak search karala..hariiii
-//            result=itemService.delete(itemByDescription.getItemCode());//eke item code eken mn item eka delete karanawa
-//            //item eke thiyena item details list ekath delte wenawa ithin :)
+            ShoppingCart cart = cartService.search(search.getShoppingCart().getID());
+            System.out.println(cart.getAddedDate() + ")))))))))))))))))))))))))))))))))))");
+            
+            Item item = itemService.getItemByDescription("Short top");
+            System.out.println(item.getDescription() + ")))))))))))))))))))))))))))))))))))))))");
+            
+            Sizes sizeByName = sizeService.getSizeByName("S");
+            System.out.println(sizeByName.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
+            Sizes sizeByName1 = sizeService.getSizeByName("M");
+            System.out.println(sizeByName.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
+            
+            ItemDetails itemDetail = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName,item);
+            System.out.println(itemDetail.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
+            ItemDetails itemDetail1 = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName1,item);
+            System.out.println(itemDetail1.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
+            
+        //create Shopping Cart Detail 1
+        ShoppingCartDetails shoppingCartDetails = new ShoppingCartDetails();
+        shoppingCartDetails.setOrderQty(2);
+        shoppingCartDetails.setShoppingCart(cart);
+        shoppingCartDetails.setItemDetails(itemDetail);
+        cart.addShoppingCartDetail(shoppingCartDetails);
+        itemDetail.addShoppingCartDetail(shoppingCartDetails);
+        
+        //create Shopping Cart Detail 2
+        ShoppingCartDetails shoppingCartDetails1 = new ShoppingCartDetails();
+        shoppingCartDetails1.setOrderQty(3);
+        shoppingCartDetails1.setShoppingCart(cart);
+        shoppingCartDetails1.setItemDetails(itemDetail1);
+        cart.addShoppingCartDetail(shoppingCartDetails1);
+        itemDetail.addShoppingCartDetail(shoppingCartDetails1);
+
+       
+        Set<ShoppingCartDetails> all=new HashSet<ShoppingCartDetails>();
+        all.add(shoppingCartDetails);
+        all.add(shoppingCartDetails1);
+        
+        cart.setShoppingCartDetails(all);
+        
+        result = cartService.add(cart);
+*/       
+
+//        result = cartDetailsService.delete(1);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+/*            ShoppingCartDetails shoppingCartDetail = new ShoppingCartDetails();
+            //shoppingCartDetail.setPrimaryKey(primeryKey);
+            shoppingCartDetail.setShoppingCart(cart);
+            shoppingCartDetail.setItemDetails(itemDetail);
+            shoppingCartDetail.setOrderQty(5);
+            //shoppingCart.addShoppingCartDetail(shoppingCartDetail);
+            
+            //search.getShoppingCart().getShoppingCartDetails().add(shoppingCartDetail);
+            result=cartDetailsService.add(shoppingCartDetail);
+*/            
 
 
 
-//             
             System.out.println("*****************************");
             System.out.println("*****************************");
             System.out.println("*****************************");

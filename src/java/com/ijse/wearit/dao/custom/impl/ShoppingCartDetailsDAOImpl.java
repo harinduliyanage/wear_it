@@ -39,7 +39,7 @@ public class ShoppingCartDetailsDAOImpl implements ShoppingCartDetailsDAO{
 
     @Override
     public boolean delete(Integer id) throws Exception {
-        ShoppingCartDetails search = (ShoppingCartDetails)sessionFactory.getCurrentSession().load(ShoppingCartDetails.class, id);
+        ShoppingCartDetails search = (ShoppingCartDetails)sessionFactory.getCurrentSession().get(ShoppingCartDetails.class, id);
         if(search != null){
             sessionFactory.getCurrentSession().delete(search);
             return true;
