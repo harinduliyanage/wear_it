@@ -1,5 +1,5 @@
 <%-- 
-    Document   : index
+    Document   : index.jsp
     Created on : Oct 4, 2017, 2:01:51 PM
     Author     : Harindu.sul
 --%>
@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 		<div class="head">
 			<div class=" logo">
-				<a href="index"><img src="resources/images/logo.png" alt=""/></a>	
+				<a href="index.jsp"><img src="resources/images/logo.png" alt=""/></a>	
                                 
 			</div>
 		</div>
@@ -111,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
-            <li><a class="color" href="http://localhost:8084/wear_it_1.2/">Home</a></li>
+            <li><a class="color" href="index.jsp">Home</a></li>
             
     		<li class="dropdown mega-dropdown active">
 			    <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>				
@@ -671,12 +671,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 		</div>
 	<!--//content-->
-	<!--//footer-->
+	<!--//footer--> 
 	<div class="footer">
 	<div class="footer-middle">
 				<div class="container">
 					<div class="col-md-3 footer-middle-in">
-						<a href="index"><img src="resources/images/log.png" alt=""></a>
+						<a href="index.jsp"><img src="resources/images/log.png" alt=""></a>
 						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
 					</div>
 					
