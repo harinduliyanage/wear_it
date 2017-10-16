@@ -107,6 +107,7 @@ public class UnitTesting {
         itemDetails1.setSizes(size11);
         item.getItemDetails().add(itemDetails1);
         size11.getItemDetails().add(itemDetails1);
+        itemDetailsService.add(itemDetails1);
         
        // create ItemDetails 2
         ItemDetails itemDetails2 = new ItemDetails();
@@ -116,6 +117,7 @@ public class UnitTesting {
         itemDetails2.setSizes(size22);
         item.getItemDetails().add(itemDetails2);
         size22.getItemDetails().add(itemDetails2);
+        itemDetailsService.add(itemDetails2);
         
         //create ItemDetails 3
         ItemDetails itemDetails3 = new ItemDetails();
@@ -125,6 +127,7 @@ public class UnitTesting {
         itemDetails3.setSizes(size33);
         item.getItemDetails().add(itemDetails3);
         size33.getItemDetails().add(itemDetails3);
+        itemDetailsService.add(itemDetails3);
         
         Set<ItemDetails> all=new HashSet<ItemDetails>();
         all.add(itemDetails3);
@@ -168,50 +171,50 @@ public class UnitTesting {
 ////            cart.setUser(user);
 ////            result = userService.add(user);
 
-/*            User search = userService.getUserByNam("kamal");
-            System.out.println(search.getCustomerLastName() + ")))))))))))))))))))))))))))))))))))");
-            
-            ShoppingCart cart = cartService.search(search.getShoppingCart().getID());
-            System.out.println(cart.getAddedDate() + ")))))))))))))))))))))))))))))))))))");
-            
-            Item item = itemService.getItemByDescription("Short top");
-            System.out.println(item.getDescription() + ")))))))))))))))))))))))))))))))))))))))");
-            
-            Sizes sizeByName = sizeService.getSizeByName("S");
-            System.out.println(sizeByName.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
-            Sizes sizeByName1 = sizeService.getSizeByName("M");
-            System.out.println(sizeByName.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
-            
-            ItemDetails itemDetail = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName,item);
-            System.out.println(itemDetail.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
-            ItemDetails itemDetail1 = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName1,item);
-            System.out.println(itemDetail1.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
-            
-        //create Shopping Cart Detail 1
-        ShoppingCartDetails shoppingCartDetails = new ShoppingCartDetails();
-        shoppingCartDetails.setOrderQty(2);
-        shoppingCartDetails.setShoppingCart(cart);
-        shoppingCartDetails.setItemDetails(itemDetail);
-        cart.addShoppingCartDetail(shoppingCartDetails);
-        itemDetail.addShoppingCartDetail(shoppingCartDetails);
-        
-        //create Shopping Cart Detail 2
-        ShoppingCartDetails shoppingCartDetails1 = new ShoppingCartDetails();
-        shoppingCartDetails1.setOrderQty(3);
-        shoppingCartDetails1.setShoppingCart(cart);
-        shoppingCartDetails1.setItemDetails(itemDetail1);
-        cart.addShoppingCartDetail(shoppingCartDetails1);
-        itemDetail.addShoppingCartDetail(shoppingCartDetails1);
-
+//////            User search = userService.getUserByNam("kamal");
+//////            System.out.println(search.getCustomerLastName() + ")))))))))))))))))))))))))))))))))))");
+//////            
+//////            ShoppingCart cart = cartService.search(search.getShoppingCart().getID());
+//////            System.out.println(cart.getAddedDate() + ")))))))))))))))))))))))))))))))))))");
+//////            
+//////            Item item = itemService.getItemByDescription("Short top");
+//////            System.out.println(item.getDescription() + ")))))))))))))))))))))))))))))))))))))))");
+//////            
+//////            Sizes sizeByName = sizeService.getSizeByName("S");
+//////            System.out.println(sizeByName.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
+//////            Sizes sizeByName1 = sizeService.getSizeByName("M");
+//////            System.out.println(sizeByName1.getSizeEU() + ")))))))))))))))))))))))))))))))))))))))");
+//////            
+//////            ItemDetails itemDetail = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName,item);
+//////            System.out.println(itemDetail.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
+//////            ItemDetails itemDetail1 = itemDetailsService.getItemDetailsBySizeAndItem(sizeByName1,item);
+//////            System.out.println(itemDetail1.getQtyOnHand() + ")))))))))))))))))))))))))))))))))))))))");
+//////            
+//////        //create Shopping Cart Detail 1
+//////        ShoppingCartDetails shoppingCartDetails = new ShoppingCartDetails();
+//////        shoppingCartDetails.setOrderQty(2);
+//////        shoppingCartDetails.setShoppingCart(cart);
+//////        shoppingCartDetails.setItemDetails(itemDetail);
+//////        cart.addShoppingCartDetail(shoppingCartDetails);
+//////        itemDetail.addShoppingCartDetail(shoppingCartDetails);
+//////        
+//////        //create Shopping Cart Detail 2
+//////        ShoppingCartDetails shoppingCartDetails1 = new ShoppingCartDetails();
+//////        shoppingCartDetails1.setOrderQty(3);
+//////        shoppingCartDetails1.setShoppingCart(cart);
+//////        shoppingCartDetails1.setItemDetails(itemDetail1);
+//////        cart.addShoppingCartDetail(shoppingCartDetails1);
+//////        itemDetail.addShoppingCartDetail(shoppingCartDetails1);
+//////
+//////       
+//////        Set<ShoppingCartDetails> all=new HashSet<ShoppingCartDetails>();
+//////        all.add(shoppingCartDetails);
+//////        all.add(shoppingCartDetails1);
+//////        
+//////        cart.setShoppingCartDetails(all);
+//////        
+//////        result = cartService.add(cart);
        
-        Set<ShoppingCartDetails> all=new HashSet<ShoppingCartDetails>();
-        all.add(shoppingCartDetails);
-        all.add(shoppingCartDetails1);
-        
-        cart.setShoppingCartDetails(all);
-        
-        result = cartService.add(cart);
-*/       
 
 //        result = cartDetailsService.delete(1);
             

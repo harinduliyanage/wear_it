@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 /**
  *
@@ -24,6 +25,7 @@ public class PaymentMethod implements Serializable{
     private Integer id;
     private String paymentMethod;
     
+    @Transient
     @OneToMany(mappedBy = "paymentMethod")
     private List<Payment> payment;
 
