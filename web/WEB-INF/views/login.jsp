@@ -308,7 +308,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<form>
 			<div class="col-md-6 login-do">
 				<div class="login-mail">
-					<input type="text" placeholder="Email" required="">
+					<input type="text" placeholder="Email" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="Enter valid Email Pattern">
 					<i  class="glyphicon glyphicon-envelope"></i>
 				</div>
 				<div class="login-mail">
