@@ -302,20 +302,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>	
 </div>
 <!--banner-->
-<div class="banner-top">
-	<div class="container">
-		<h1>Register</h1>
-		<em></em>
-		<h2><a href="index.jsp">Home</a><label>/</label>Register</h2>
-	</div>
-</div>
+<div style="margin-left: 7vw;"><img src="<c:url value="resources/images/banner_register.jpg" />" class="img-responsive active"/></div>
 <!--login-->
 <div class="container">
 		<div class="login">
 			<form>
 			<div class="col-md-6 login-do">
 			<div class="login-mail">
-					<input type="text" placeholder="Name" required="">
+					<input type="text" placeholder="Name" required=""  autofocus>
 					<i  class="glyphicon glyphicon-user"></i>
 				</div>
 				<div class="login-mail">
