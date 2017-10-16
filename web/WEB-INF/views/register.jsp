@@ -307,28 +307,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 		<div class="login">
 			<form>
-			<div class="col-md-6 login-do">
+			<div class="col-md-6 login-do" id="signUp-1st">
 			<div class="login-mail">
-					<input type="text" placeholder="Name" required=""  autofocus>
+					<input type="text" placeholder="Name" required=""  autofocus id="name-txt">
 					<i  class="glyphicon glyphicon-user"></i>
 				</div>
 				<div class="login-mail">
-					<input type="text" placeholder="Phone Number" required="">
+                                    <input type="text" placeholder="Phone Number" id="phone-txt" required="" pattern="^\d{10}$" title="please enter 10 digits phone number ">
 					<i  class="glyphicon glyphicon-phone"></i>
 				</div>
 				<div class="login-mail">
-					<input type="text" placeholder="Email" required="">
+                                    <input type="text" placeholder="Email" id="email-txt" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="Enter valid Email Pattern">
 					<i  class="glyphicon glyphicon-envelope"></i>
 				</div>
 				<div class="login-mail">
-					<input type="password" placeholder="Password" required="">
+					<input type="password" id="psw-txt" placeholder="Password" required="">
 					<i class="glyphicon glyphicon-lock"></i>
 				</div>
 				   <a class="news-letter " href="#">
 						 <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
 					   </a>
 				<label class="hvr-skew-backward">
-					<input type="submit" value="Submit">
+                                    <input type="submit" value="Next" id="signUp-1st-btn">
 				</label>
 			
 			</div>
@@ -435,6 +435,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
 <!-- slide -->
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
+<script src="<c:url value="resources/js/dom-register.js" />"></script>
  <script type="text/javascript">
     (function () {
         var options = {
