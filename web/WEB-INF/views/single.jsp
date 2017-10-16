@@ -302,15 +302,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>	
 </div>
 <!--banner-->
-<div class="banner-top">
-	<div class="container">
-		<h1>Single</h1>
-		<em></em>
-		<h2><a href="index.jsp">Home</a><label>/</label>Single</h2>
-	</div>
-</div>
 <div class="single">
-
+ <!--Wana Dinamic-->   
 <div class="container">
 <div class="col-md-9">
 	<div class="col-md-5 grid">		
