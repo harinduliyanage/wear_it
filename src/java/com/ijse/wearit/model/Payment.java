@@ -23,8 +23,10 @@ public class Payment  implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)        
     private Integer id;
+    
     @ManyToOne(cascade = CascadeType.ALL)
     private PaymentMethod paymentMethod;
+    
     private String PaymentResponseMessage;
     private String userIdOrSessionId;
 

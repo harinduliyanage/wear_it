@@ -12,7 +12,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -24,119 +26,23 @@ public class ShippingInfo implements Serializable{
     @GeneratedValue(strategy = GenerationType.AUTO)        
     private Integer id;
     
-    private String FName;
-    private String LName;
-    private String AddressLine1;
-    private String City;
-    private String contry;
-    private String PostalCode;
-    private String ContactNum;
+    private String fName;
+    private String lName;
+    private String addressLine1;
+    private String city;
+    private String country;
+    private String postalCode;
+    private String contactNum;
     
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = true)
+    
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
     private User user;
     
     public ShippingInfo(){
         
     }
 
-    /**
-     * @return the FName
-     */
-    public String getFName() {
-        return FName;
-    }
-
-    /**
-     * @param FName the FName to set
-     */
-    public void setFName(String FName) {
-        this.FName = FName;
-    }
-
-    /**
-     * @return the LName
-     */
-    public String getLName() {
-        return LName;
-    }
-
-    /**
-     * @param LName the LName to set
-     */
-    public void setLName(String LName) {
-        this.LName = LName;
-    }
-
-    /**
-     * @return the AddressLine1
-     */
-    public String getAddressLine1() {
-        return AddressLine1;
-    }
-
-    /**
-     * @param AddressLine1 the AddressLine1 to set
-     */
-    public void setAddressLine1(String AddressLine1) {
-        this.AddressLine1 = AddressLine1;
-    }
-
-    /**
-     * @return the City
-     */
-    public String getCity() {
-        return City;
-    }
-
-    /**
-     * @param City the City to set
-     */
-    public void setCity(String City) {
-        this.City = City;
-    }
-
-    /**
-     * @return the contry
-     */
-    public String getContry() {
-        return contry;
-    }
-
-    /**
-     * @param contry the contry to set
-     */
-    public void setContry(String contry) {
-        this.contry = contry;
-    }
-
-    /**
-     * @return the PostalCode
-     */
-    public String getPostalCode() {
-        return PostalCode;
-    }
-
-    /**
-     * @param PostalCode the PostalCode to set
-     */
-    public void setPostalCode(String PostalCode) {
-        this.PostalCode = PostalCode;
-    }
-
-    /**
-     * @return the ContactNum
-     */
-    public String getContactNum() {
-        return ContactNum;
-    }
-
-    /**
-     * @param ContactNum the ContactNum to set
-     */
-    public void setContactNum(String ContactNum) {
-        this.ContactNum = ContactNum;
-    }
-
+    
     /**
      * @return the user
      */
@@ -163,6 +69,62 @@ public class ShippingInfo implements Serializable{
      */
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getfName() {
+        return fName;
+    }
+
+    public void setfName(String fName) {
+        this.fName = fName;
+    }
+
+    public String getlName() {
+        return lName;
+    }
+
+    public void setlName(String lName) {
+        this.lName = lName;
+    }
+
+    public String getAddressLine1() {
+        return addressLine1;
+    }
+
+    public void setAddressLine1(String addressLine1) {
+        this.addressLine1 = addressLine1;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public String getContactNum() {
+        return contactNum;
+    }
+
+    public void setContactNum(String contactNum) {
+        this.contactNum = contactNum;
     }
     
     

@@ -35,7 +35,7 @@ public class Item implements Serializable{
     private String paths;
     
     @Transient
-    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER,cascade = CascadeType.ALL)      
+    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)      
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
     
     public Item(){

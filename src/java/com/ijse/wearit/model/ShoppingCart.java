@@ -36,10 +36,6 @@ public class ShoppingCart implements Serializable{
     public ShoppingCart() {
     }
     
-    public void addShoppingCartDetail(ShoppingCartDetails shoppingCartDetails){
-        this.shoppingCartDetails.add(shoppingCartDetails);
-    }
-    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "CART_ID")
@@ -75,7 +71,7 @@ public class ShoppingCart implements Serializable{
         this.total = total;
     }
     
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER,optional = true)
+    @OneToOne(cascade = CascadeType.PERSIST,orphanRemoval = true,fetch = FetchType.EAGER,optional = true)
     public User getUser() {
         return user;
     }
@@ -85,7 +81,7 @@ public class ShoppingCart implements Serializable{
     }
     
     @Transient
-    @OneToMany(mappedBy = "shoppingCart",cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
+    @OneToMany(mappedBy = "shoppingCart",cascade = CascadeType.PERSIST,fetch = FetchType.EAGER,orphanRemoval = true)
     public Set<ShoppingCartDetails> getShoppingCartDetails() {
         return shoppingCartDetails;
     }

@@ -7,6 +7,7 @@ package com.ijse.wearit.model;
 
 import java.io.Serializable;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,6 +23,7 @@ import javax.persistence.OneToOne;
 public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "USER_ID")
     private Integer userID;
     private String userName;
     private String password;
@@ -29,11 +31,11 @@ public class User implements Serializable{
     private String customerLastName;
     private String customerEmail; 
     
-    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = true)
-    private ShoppingCart shoppingCart;
+//    @OneToOne(mappedBy = "user",cascade = CascadeType.PERSIST,fetch = FetchType.EAGER,optional = true,orphanRemoval = true)
+//    private ShoppingCart shoppingCart;
 
-    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = true)
-    private ShippingInfo shippinInfo;
+//    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = false,orphanRemoval = true)
+//    private ShippingInfo shippinInfo;
     
     public Integer getUserID() {
         return userID;
@@ -83,19 +85,19 @@ public class User implements Serializable{
         this.customerEmail = customerEmail;
     }
 
-    public ShippingInfo getShippinInfo() {
-        return shippinInfo;
-    }
+//    public ShippingInfo getShippinInfo() {
+//        return shippinInfo;
+//    }
+//
+//    public void setShippinInfo(ShippingInfo shippinInfo) {
+//        this.shippinInfo = shippinInfo;
+//    }
 
-    public void setShippinInfo(ShippingInfo shippinInfo) {
-        this.shippinInfo = shippinInfo;
-    }
-
-    public ShoppingCart getShoppingCart() {
-        return shoppingCart;
-    }
-
-    public void setShoppingCart(ShoppingCart shoppingCart) {
-        this.shoppingCart = shoppingCart;
-    }
+//    public ShoppingCart getShoppingCart() {
+//        return shoppingCart;
+//    }
+//
+//    public void setShoppingCart(ShoppingCart shoppingCart) {
+//        this.shoppingCart = shoppingCart;
+//    }
 }

@@ -27,7 +27,7 @@ public class ItemController {
     ItemService itemService;
     
     @RequestMapping(value = "/getAllItems" , method = RequestMethod.GET)
-    public @ResponseBody List<Item>  getAllSizes(){ 
+    public @ResponseBody List<Item>  getAllItemss(){ 
         try {
             List<Item> all = itemService.getAll();
             System.out.println("called................ get All");
