@@ -7,6 +7,7 @@ package com.ijse.wearit.dao.custom.impl;
 
 import com.ijse.wearit.dao.custom.ShoppingCartDAO;
 import com.ijse.wearit.model.ShoppingCart;
+import com.ijse.wearit.model.User;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Criteria;
@@ -61,6 +62,15 @@ public class ShoppingCartDAOImpl implements ShoppingCartDAO{
     public List<ShoppingCart> getAll() throws Exception {
         List<ShoppingCart> shoppingCarts = sessionFactory.getCurrentSession().createCriteria(ShoppingCart.class).list();
         return shoppingCarts;
+    }
+
+    @Override
+    public ShoppingCart getCartByUser(User user) throws Exception {
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ShoppingCart.class);
+        c2.add(Restrictions.eq("user", user));
+        c2.setMaxResults(1);
+        ShoppingCart z = (ShoppingCart) c2.uniqueResult();
+        return z;
     }
     
 }

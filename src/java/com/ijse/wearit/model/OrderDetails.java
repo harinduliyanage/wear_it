@@ -21,11 +21,13 @@ public class OrderDetails {
      @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
      private Integer id;
+     
      @ManyToOne(cascade = CascadeType.ALL)
      private Orders order;
+     
      private int orderQty;
      private String description;
-     private int itemDetailsID;
+     private int cartDetailID;
 
     /**
      * @return the orderQty
@@ -55,18 +57,12 @@ public class OrderDetails {
         this.description = description;
     }
 
-    /**
-     * @return the itemDetailsID
-     */
-    public int getItemDetailsID() {
-        return itemDetailsID;
+    public int getCartDetailID() {
+        return cartDetailID;
     }
 
-    /**
-     * @param itemDetailsID the itemDetailsID to set
-     */
-    public void setItemDetailsID(int itemDetailsID) {
-        this.itemDetailsID = itemDetailsID;
+    public void setCartDetailID(int cartDetailID) {
+        this.cartDetailID = cartDetailID;
     }
 
     /**

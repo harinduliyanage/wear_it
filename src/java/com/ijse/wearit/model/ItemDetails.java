@@ -41,11 +41,7 @@ public class ItemDetails implements Serializable{
     
     public ItemDetails(){    
     }
-    
-    public void addShoppingCartDetail(ShoppingCartDetails shoppingCartDetails){
-        this.shoppingCartDetails.add(shoppingCartDetails);
-    }
-    
+ 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ITEMDETAILS_ID")
@@ -83,7 +79,7 @@ public class ItemDetails implements Serializable{
         this.sizes = sizes;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL,optional = true,fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.PERSIST,optional = true,fetch = FetchType.EAGER)
     @JoinColumn(name = "ITEM_ID")  
     public Item getItem() {
         return item;
@@ -93,14 +89,14 @@ public class ItemDetails implements Serializable{
         this.item = item;
     }
     
-    @Transient
-    @OneToMany(mappedBy = "itemDetails",
-            cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
-    public Set<ShoppingCartDetails> getShoppingCartDetails() {
-        return shoppingCartDetails;
-    }
- 
-    public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
-        this.shoppingCartDetails = shoppingCartDetailses;
-    }
+//    @Transient
+//    @OneToMany(mappedBy = "itemDetails",
+//            cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
+//    public Set<ShoppingCartDetails> getShoppingCartDetails() {
+//        return shoppingCartDetails;
+//    }
+// 
+//    public void setShoppingCartDetails(Set<ShoppingCartDetails> shoppingCartDetailses) {
+//        this.shoppingCartDetails = shoppingCartDetailses;
+//    }
 }

@@ -34,6 +34,7 @@ public class ShoppingCartDetails implements Serializable{
     private ItemDetails itemDetails;
     
     private int orderQty;
+    private double amount;
     
 //    @EmbeddedId
 //    public ShoppingCartDetailCompositeId getPrimaryKey() {
@@ -55,7 +56,7 @@ public class ShoppingCartDetails implements Serializable{
         this.id = id;
     }
     
-    @ManyToOne(cascade = CascadeType.ALL,optional = true,fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.PERSIST,optional = true,fetch = FetchType.EAGER)
     @JoinColumn(name = "SHOPPINGCART_ID",nullable=false)
     public ShoppingCart getShoppingCart() {
         return shoppingCart;
@@ -111,6 +112,14 @@ public class ShoppingCartDetails implements Serializable{
      */
     public void setOrderQty(int orderQty) {
         this.orderQty = orderQty;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
     
 }

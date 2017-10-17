@@ -25,10 +25,13 @@ public class UserDAOImpl implements UserDAO{
     @Autowired
     private SessionFactory sessionFactory;
     
+    static Integer uId = 0;
+    
     @Override
     public boolean add(User t) throws Exception {
         Serializable save = sessionFactory.getCurrentSession().save(t);
         return (save!=null);
+        
     }
 
     @Override
