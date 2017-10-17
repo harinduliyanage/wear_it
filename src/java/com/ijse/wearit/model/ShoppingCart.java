@@ -27,7 +27,6 @@ import javax.persistence.Transient;
 public class ShoppingCart implements Serializable{
     private Integer id;
     private String addedDate;
-    private User user;
     private int numberOfItems;
     private double total;
     
@@ -69,15 +68,6 @@ public class ShoppingCart implements Serializable{
 
     public void setTotal(double total) {
         this.total = total;
-    }
-    
-    @OneToOne(cascade = CascadeType.PERSIST,orphanRemoval = true,fetch = FetchType.EAGER,optional = true)
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
     
     @Transient

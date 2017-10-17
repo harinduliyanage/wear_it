@@ -77,8 +77,9 @@ public class UnitTesting {
         System.out.println("*****************************");
         boolean result = false;
 
-        try {
-/*            //Create Category 1
+        try {                
+/*
+            //Create Category 1
             Category category = new Category();
             category.setName("New Arrivals");
             categoryService.add(category);
@@ -169,15 +170,6 @@ public class UnitTesting {
             all.add(itemDetails1);
             item.setItemDetails(all);
             
-
-            //Create User
-            User user = new User();
-            user.setCustomerFirstName("Kamal");
-            user.setCustomerLastName("De silva");
-            user.setCustomerEmail("Kamal@gmail.com");
-            user.setUserName("kamal");
-            user.setPassword("kamal1234");
-            result = userService.add(user);
             
 
             //create shipping info
@@ -189,8 +181,16 @@ public class UnitTesting {
             shippingInfo.setCity("Mathara");
             shippingInfo.setCountry("Sri Lanka");
             shippingInfo.setContactNum("07762655");
-            shippingInfo.setUser(user);
-            result = shippingInfoService.add(shippingInfo);
+            
+            //Create User
+            User user = new User();
+            user.setCustomerFirstName("Kamal");
+            user.setCustomerLastName("De silva");
+            user.setCustomerEmail("Kamal@gmail.com");
+            user.setUserName("kamal");
+            user.setPassword("kamal1234");
+            user.setShippinInfo(shippingInfo);
+            ////result = userService.add(user);
             
 
             //Create ShoppingCart
@@ -198,15 +198,17 @@ public class UnitTesting {
             cart.setAddedDate("2017/10/11");
             cart.setNumberOfItems(0);
             cart.setTotal(0.00);
-            cart.setUser(user);
-            result = cartService.add(cart);
-
+            user.setShoppingCart(cart);
+            
+            result = userService.add(user);
+  
+            
             //Search User by Name
             User search = userService.getUserByNam("kamal");
             System.out.println(search.getCustomerLastName() + ")))))))))))))))))))))))))))))))))))");
 
             //Search Cart by User
-            ShoppingCart cart1 = cartService.getCartByUser(search);
+            ShoppingCart cart1 = search.getShoppingCart();
             System.out.println(cart1.getAddedDate() + ")))))))))))))))))))))))))))))))))))");
 
             //Search Item by Decription
@@ -240,10 +242,12 @@ public class UnitTesting {
             shoppingCartDetail1.setItemDetails(itemDetail1);
             cart1.getShoppingCartDetails().add(shoppingCartDetail1);
             result = cartDetailsService.add(shoppingCartDetail1);
+
 */
+
             
-            
-/*            //Delete Item Details
+/*  
+            //Delete Item Details
             List<ItemDetails> itemdetailList = itemDetailsService.getAll();
             for(ItemDetails itemDetails : itemdetailList){
                 if(itemDetails.getItem().getItemCode().equals(1)){
@@ -255,7 +259,8 @@ public class UnitTesting {
 */           
 
 
-/*            //Delete Shopping Cart Details
+/*          
+            //Delete Shopping Cart Details
             List<ShoppingCartDetails> cartdetailList = cartDetailsService.getAll();
             for(ShoppingCartDetails cartDetails : cartdetailList){
                 if(cartDetails.getShoppingCart().getID().equals(1)){
@@ -267,6 +272,7 @@ public class UnitTesting {
 */            
 
 
+/*
             //Create Payment Method 1
             PaymentMethod paymentMethod = new PaymentMethod();
             paymentMethod.setPaymentMethod("Debit Cards");
@@ -294,12 +300,18 @@ public class UnitTesting {
             //Create Payment 1
             Payment payment = new Payment();
             //payment.set
+*/
+
+
+/*
+            User getUser = userService.getUserByNam("Kamal");
 
             //Creat Order 1 
             Orders orders = new Orders();
             orders.setOrderAmount(20000);
             orders.setDiscount(1000);
             orders.setOrderDate("2017/10/11");
+            orders.setUser(getUser);
             ordersService.add(orders);
             
             OrderDetails orderDetails = new  OrderDetails();
@@ -308,29 +320,9 @@ public class UnitTesting {
             orderDetails.setCartDetailID(1);
             orderDetails.setDescription("Aaaaaaaaaa");
             orderDetailsService.add(orderDetails);
-            
-            
-            
-            
-            
-            
-            
-            /*        List<ShoppingCartDetails> cartDetailSet = cartDetailsService.getAll();
-            for(ShoppingCartDetails cartDetail : cartDetailSet){
-            System.out.println(cartDetail.getId()+ "  )))))))))))))))))))))))))))))))))))");
-            }
-             */
-            //result = userService.delete(1);
-            /*            ShoppingCartDetails shoppingCartDetail = new ShoppingCartDetails();
-            //shoppingCartDetail.setPrimaryKey(primeryKey);
-            shoppingCartDetail.setShoppingCart(cart);
-            shoppingCartDetail.setItemDetails(itemDetail);
-            shoppingCartDetail.setOrderQty(5);
-            //shoppingCart.addShoppingCartDetail(shoppingCartDetail);
-            
-            //search.getShoppingCart().getShoppingCartDetails().add(shoppingCartDetail);
-            result=cartDetailsService.add(shoppingCartDetail);
-             */
+
+*/            
+
             System.out.println("*****************************");
             System.out.println("*****************************");
             System.out.println("*****************************");
@@ -349,263 +341,3 @@ public class UnitTesting {
     }
 
 }
-/*
-Category categoryByName = categoryService.getCategoryByName("Sport");
-if(categoryByName!=null){
-                
-                item.setCategory(categoryByName);
-                add=itemService.add(item);
-                System.out.println(categoryByName.getCategoryid()+""+categoryByName.getName());
-            }
- */
-
-//        Size size = new Size();
-//        size.setSize("XL");
-//        size.setSizeEU("66");
-//        size.setSizeUK("22");
-//        size.setSizeUS("12");
-//        sizeService.add(size);
-//
-//        ItemDetails itemDetails = new ItemDetails();
-//        itemDetails.setQtyOnHand(10);
-//        itemDetails.setUnitPrice(1200);
-//
-//        Category category = categoryService.getCategoryByName("Party");
-//        int categoryID = category.getCategoryid();
-//        //List<Item> itemList = (List<Item>) category.getItems();
-//        System.out.println(categoryID + "    yeyeyyeyeyyeyeyeyyeyeyeyyeyeyyeyyeyeyeyey");
-//        List<Item> itemList = itemService.getAll();
-//
-//        for (Item searchItem : itemList) {
-//            if (searchItem.getCategory().getCategoryid().equals(categoryID)) {
-//                System.out.println(searchItem.getCategory().getCategoryid()+"   YYYYYYYYYYYYYYYYYYYYYYYYYYY");
-//
-//                if (searchItem.getDescription().equalsIgnoreCase("Frock")) {
-//                    System.out.println(searchItem.getDescription()+"      PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP");
-//                    //Item item = itemService.getItemByDescription("Frock");
-//                    searchItem.getItemDetails().add(itemDetails);
-//                    itemDetails.setItem(searchItem);
-//                    //itemService.
-//                }
-//            }
-//        }
-//
-//        //itemService.add(item);
-//        itemDetails.setSize(size);
-//
-//        boolean ifAdded = false;
-//        ifAdded = itemDetailsService.add(itemDetails);
-/*
-//example for composite relations all new entities (User, Group and UserGroup):
-
-User user = new User("sam", "mas", "sam@gmail.com");
- 
-Group group = new Group("Designer");
-session.save(group);
- 
-UserGroup userGroup = new UserGroup();
-userGroup.setGroup(group);
-userGroup.setUser(user);
-userGroup.setActivated(true);
-userGroup.setRegisteredDate(new Date());
- 
-user.addUserGroup(userGroup);
- 
-session.save(user);
-
-
-// this user is obtained from the database with ID 40
-User user = (User) session.get(User.class, new Long(40));
- 
-// this group is obtained from the database with ID 26
-Group group = (Group) session.get(Group.class, new Long(26));
- 
-UserGroup userGroup = new UserGroup();
-userGroup.setGroup(group);
-userGroup.setUser(user);
-userGroup.setActivated(true);
-userGroup.setRegisteredDate(new Date());
- 
-session.save(userGroup);
-
-////////////////////////////////////////////////
-delete example
-
-UserGroup userGroup = new UserGroup();
- 
-User user = new User();
-user.setId(39);
-userGroup.setUser(user);
- 
-Group group = new Group();
-group.setId(25);
-userGroup.setGroup(group);
- 
-session.delete(userGroup);
-
-
- */
-//////////////////---Continue----/////////////////////////////////
-/*    //Create New Item
-        boolean ifAdded = false;
-        Item item = new Item();
-        item.setDescription("Short top");
-        item.setPath("Image/Tops/ss1.jpg");
-        Category category1 = categoryService.getCategoryByName("Casual");
-        item.setCategory(category1);
-        category1.getItems().add(item);
-        //itemService.add(item);
-        //search Size//
-        Size size1 = sizeService.getSizeByName("M");
-        Size size2 = sizeService.getSizeByName("S");
-        Size size3 = sizeService.getSizeByName("XL");
-        
-        //create ItemDetails 1
-        ItemDetails itemDetails1 = new ItemDetails();
-        itemDetails1.setQtyOnHand(10);
-        itemDetails1.setUnitPrice(750.00);
-        itemDetails1.setItem(item);
-        itemDetails1.setSize(size1);
-        item.getItemDetails().add(itemDetails1);
-        size1.getItemDetails().add(itemDetails1);
-        
-        //create ItemDetails 2
-        ItemDetails itemDetails2 = new ItemDetails();
-        itemDetails2.setQtyOnHand(12);
-        itemDetails2.setUnitPrice(1250.00);
-        itemDetails2.setItem(item);
-        itemDetails2.setSize(size2);
-        item.getItemDetails().add(itemDetails2);
-        size2.getItemDetails().add(itemDetails2);
-        
-        //create ItemDetails 3
-        ItemDetails itemDetails3 = new ItemDetails();
-        itemDetails3.setQtyOnHand(8);
-        itemDetails3.setUnitPrice(1150.00);
-        itemDetails3.setItem(item);
-        itemDetails3.setSize(size3);
-        item.getItemDetails().add(itemDetails3);
-        size3.getItemDetails().add(itemDetails3);
-        
-        Set<ItemDetails> all=new HashSet<ItemDetails>();
-        all.add(itemDetails3);
-        all.add(itemDetails2);
-        all.add(itemDetails1);
-        
-        item.setItemDetails(all);
-        
-        
-        //itemDetailsService.add(itemDetails);
-        
-        ifAdded = itemService.add(item); */
-
- /* ///////////////////-------- Add New Data ------------/////////////////////
-        //Create new Category
-        boolean ifAdded = false;
-        
-        Category category = new Category();
-        category.setName("Pure white");
-        ifAdded = categoryService.add(category);
-        
-        //Create new Items
-        Item item = new Item();
-        item.setDescription("SSDress");
-        item.setPath("Image/SSDress/ssdresses.jpg");
-        item.setCategory(category);
-        category.getItems().add(item);
-        if(ifAdded != false){
-            ifAdded = itemService.add(item);
-        }
-        
-        Item item1 = new Item();
-        item1.setDescription("SCLaced");
-        item1.setPath("Image/SCLaced/sclaced.jpg");
-        item1.setCategory(category);
-        category.getItems().add(item1);
-        if(ifAdded != false){
-            ifAdded = itemService.add(item1);
-        }
-        
-        Item item2 = new Item();
-        item2.setDescription("GFlared");
-        item2.setPath("Image/GFlared/gflared.jpg");
-        item2.setCategory(category);
-        category.getItems().add(item2);
-        if(ifAdded != false){
-            ifAdded = itemService.add(item2);
-        }
-        
-        //Get Sizes
-        Size size = sizeService.getSizeByName("M");
-        Size size1 = sizeService.getSizeByName("S");
-        
-        //Create new ItemDetails for 1st item
-        ItemDetails itemDetails = new ItemDetails();
-        itemDetails.setQtyOnHand(5);
-        itemDetails.setUnitPrice(2000);
-        itemDetails.setItem(item);
-        itemDetails.setSize(size);
-        item.getItemDetails().add(itemDetails);
-        size.getItemDetails().add(itemDetails);
-        if(ifAdded != false){
-            ifAdded = itemDetailsService.add(itemDetails);
-        }
-        
-        ItemDetails itemDetails1 = new ItemDetails();
-        itemDetails1.setQtyOnHand(4);
-        itemDetails1.setUnitPrice(1900);
-        itemDetails1.setItem(item);
-        itemDetails1.setSize(size1);
-        item.getItemDetails().add(itemDetails);
-        size1.getItemDetails().add(itemDetails);
-        if(ifAdded != false){
-            ifAdded = itemDetailsService.add(itemDetails1);
-        }
-        
-        //Create new ItemDetails for 2nd item
-        ItemDetails itemDetails2 = new ItemDetails();
-        itemDetails2.setQtyOnHand(10);
-        itemDetails2.setUnitPrice(900);
-        itemDetails2.setItem(item1);
-        itemDetails2.setSize(size);
-        item1.getItemDetails().add(itemDetails);
-        size.getItemDetails().add(itemDetails);
-        if(ifAdded != false){
-            ifAdded = itemDetailsService.add(itemDetails2);
-        }
-        
-        ItemDetails itemDetails3 = new ItemDetails();
-        itemDetails3.setQtyOnHand(4);
-        itemDetails3.setUnitPrice(850);
-        itemDetails3.setItem(item1);
-        itemDetails3.setSize(size1);
-        item1.getItemDetails().add(itemDetails);
-        size1.getItemDetails().add(itemDetails);
-        if(ifAdded != false){
-            ifAdded = itemDetailsService.add(itemDetails3);
-        }
-        
-        //Create new ItemDetails for 3rd item
-        ItemDetails itemDetails4 = new ItemDetails();
-        itemDetails4.setQtyOnHand(40);
-        itemDetails4.setUnitPrice(1100);
-        itemDetails4.setItem(item2);
-        itemDetails4.setSize(size);
-        item2.getItemDetails().add(itemDetails);
-        size.getItemDetails().add(itemDetails);
-        if(ifAdded != false){
-            ifAdded = itemDetailsService.add(itemDetails4);
-        }
-        
-        ItemDetails itemDetails5 = new ItemDetails();
-        itemDetails5.setQtyOnHand(10);
-        itemDetails5.setUnitPrice(1000);
-        itemDetails5.setItem(item2);
-        itemDetails5.setSize(size1);
-        item2.getItemDetails().add(itemDetails);
-        size1.getItemDetails().add(itemDetails);
-        if(ifAdded != false){
-            ifAdded = itemDetailsService.add(itemDetails5);
-        }
-        
- */

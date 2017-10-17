@@ -63,14 +63,5 @@ public class ShoppingCartDAOImpl implements ShoppingCartDAO{
         List<ShoppingCart> shoppingCarts = sessionFactory.getCurrentSession().createCriteria(ShoppingCart.class).list();
         return shoppingCarts;
     }
-
-    @Override
-    public ShoppingCart getCartByUser(User user) throws Exception {
-        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ShoppingCart.class);
-        c2.add(Restrictions.eq("user", user));
-        c2.setMaxResults(1);
-        ShoppingCart z = (ShoppingCart) c2.uniqueResult();
-        return z;
-    }
     
 }
