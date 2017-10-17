@@ -20,6 +20,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -92,6 +93,7 @@ public class ItemDetails implements Serializable{
         this.item = item;
     }
     
+    @Transient
     @OneToMany(mappedBy = "itemDetails",
             cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     public Set<ShoppingCartDetails> getShoppingCartDetails() {

@@ -16,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -29,6 +30,7 @@ public class Category  implements Serializable{
     private Integer id;
     private String name;
     
+    @Transient
     @OneToMany(mappedBy = "category",fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     private Set<Item> items = new HashSet<Item>();
 

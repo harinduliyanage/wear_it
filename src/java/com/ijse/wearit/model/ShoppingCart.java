@@ -17,6 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -83,6 +84,7 @@ public class ShoppingCart implements Serializable{
         this.user = user;
     }
     
+    @Transient
     @OneToMany(mappedBy = "shoppingCart",cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
     public Set<ShoppingCartDetails> getShoppingCartDetails() {
         return shoppingCartDetails;

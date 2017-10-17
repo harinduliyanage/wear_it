@@ -15,6 +15,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 /**
  *
@@ -30,6 +31,7 @@ public class Sizes implements Serializable{
     private String sizeUS;
     private String sizeEU;
     
+    @Transient
     @OneToMany(mappedBy = "sizes",fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
 
