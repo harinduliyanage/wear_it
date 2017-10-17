@@ -20,7 +20,6 @@ $('#signUp-1st-btn').click(function (){
 $('#signUp-1st-btn').submit(function (event){
     event.stopPropagation();
     event.preventDefault();
-    alert("called");
      $.ajax({
       type: 'POST',
       url : "/wear_it_1.2/registeUser",
@@ -36,8 +35,10 @@ $('#signUp-1st-btn').submit(function (event){
       success:function(data){
            if(data.code ===200){
                 $('#success-alert').css('display','block');
+                $('#danger-alert').css('display','none');
            }else{
             $('#danger-alert').css('display','block');
+             $('#success-alert').css('display','none');
             }
         
       },
