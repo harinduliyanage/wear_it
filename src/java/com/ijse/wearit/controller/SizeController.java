@@ -30,8 +30,7 @@ public class SizeController {
     SizeService sizeService;
     
     @RequestMapping(value = "/addNewSize",method = RequestMethod.POST)
-    public @ResponseBody Status addNewSize12(HttpServletRequest request,@RequestParam("sizes") String sizes){//methana param dala ne eka nisa call wenawa
-//        Sizes size = new Sizes();
+    public @ResponseBody Status addNewSize12(HttpServletRequest request,@RequestParam("sizes") String sizes){//        Sizes size = new Sizes();
 //        size.setSizeEU("40");
 //        size.setSizeUK("8");
 //        size.setSizeUS("6");

@@ -306,22 +306,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--login-->
 <div class="container">
 		<div class="login">
-			<form>
+                    <form action="registeUser">
 			<div class="col-md-6 login-do" id="signUp-1st">
 			<div class="login-mail">
-					<input type="text" placeholder="Name" required=""  autofocus id="name-txt">
+					<input type="text" placeholder="Name" required="" name="name" autofocus id="name-txt">
 					<i  class="glyphicon glyphicon-user"></i>
 				</div>
 				<div class="login-mail">
-                                    <input type="text" placeholder="Phone Number" id="phone-txt" required="" pattern="^\d{10}$" title="please enter 10 digits phone number ">
+                                    <input type="text" placeholder="Phone Number" name="phone" id="phone-txt" required="" pattern="^\d{10}$" title="please enter 10 digits phone number ">
 					<i  class="glyphicon glyphicon-phone"></i>
 				</div>
 				<div class="login-mail">
-                                    <input type="text" placeholder="Email" id="email-txt" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="Enter valid Email Pattern">
+                                    <input type="text" placeholder="Email" name="mail" id="email-txt" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="Enter valid Email Pattern">
 					<i  class="glyphicon glyphicon-envelope"></i>
 				</div>
 				<div class="login-mail">
-					<input type="password" id="psw-txt" placeholder="Password" required="">
+					<input type="password" id="psw-txt" name="pw" placeholder="Password" required="">
 					<i class="glyphicon glyphicon-lock"></i>
 				</div>
 				   <a class="news-letter " href="#">
@@ -439,11 +439,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <script type="text/javascript">
     (function () {
         var options = {
-            facebook: "wearyourownstorys/?ref=page_internal", // Facebook page ID
+            facebook: "wearyourownstorys/?ref=page_internal",
             company_logo_url: "//scontent.xx.fbcdn.net/v/t1.0-1/p50x50/22552778_1989154664707640_6925793142617653314_n.png?oh=4d49540b2ac89984e245f34be6063ef2&oe=5A81E171", // URL of company logo (png, jpg, gif)
             greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
-            call_to_action: "Message us", // Call to action
-            position: "right", // Position may be 'right' or 'left'
+            call_to_action: "Message us",
+            position: "right", 
         };
         var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';

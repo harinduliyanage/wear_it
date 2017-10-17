@@ -1,12 +1,17 @@
 $(document).ready(function (){
     getTreadingIems();
 });
-        
+
 
 function getTreadingIems(){
     var price="$90";
     var description="short Top";
-    var fragment='<div class="col-md-3 item-grid simpleCart_shelfItem"><!--//Item Start-->\n\
+    var fragment;
+    //Trading Item To Add Row class
+    $('#trading-Items').append('<div class="mid-popular" id="myRow"><!--//Row Started--></div><!--//Row End-->');
+    
+    for(var i=0;i<20;i++){
+        fragment='<div class="col-md-3 item-grid simpleCart_shelfItem"><!--//Item Start-->\n\
                         <div class=" mid-pop">\n\
                             <div class="pro-img">\n\
                                 <img src="resources/images/pc4.jpg" class="img-responsive" alt="">\n\
@@ -36,12 +41,7 @@ function getTreadingIems(){
                 </div>\n\
                 </div>\n\
                 </div>';
-    //Trading Item To Add Row class
-    $('#trading-Items').append('<div class="mid-popular" id="myRow"><!--//Row Started--></div><!--//Row End-->');
-    for(var i=0;i<20;i++){
-        
         $("#trading-Items").append(fragment);     
-        
         
     }
 }
