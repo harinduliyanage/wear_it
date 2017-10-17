@@ -58,7 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="container">
 		<div class="head">
 			<div class=" logo">
-				<a href="index.jsp.jsp"><img src="images/logo.png" alt=""></a>	
+                            <a href="index.jsp"><img src="<c:url value="resources/images/logo.png"/>" alt=""></a>	
 			</div>
 		</div>
 	</div>
@@ -165,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>							
 						</div>
 						<div class="col1 col5">
-						<img src="images/me.png" class="img-responsive" alt="">
+						<img src="<c:url value="resources/images/me.png"/>" class="img-responsive" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div>                  
@@ -230,7 +230,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>							
 						</div>
 						<div class="col1 col5">
-						<img src="images/me1.png" class="img-responsive" alt="">
+						<img src="<c:url value="resources/images/me1.png"/>" class="img-responsive" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div>                  
@@ -257,7 +257,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="checkout">
 						<h3> <div class="total">
 							<span class="simpleCart_total"></span></div>
-							<img src="images/cart.png" alt=""/></h3>
+							<img src="<c:url value="resources/images/cart.png"/>" alt=""/></h3>
 						</a>
 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 
@@ -302,28 +302,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>	
 </div>
 <!--banner-->
-<div class="banner-top">
-	<div class="container">
-		<h1>Single</h1>
-		<em></em>
-		<h2><a href="index.jsp.jsp">Home</a><label>/</label>Single</h2>
-	</div>
-</div>
 <div class="single">
-
+ <!--Wana Dinamic-->   
 <div class="container">
 <div class="col-md-9">
 	<div class="col-md-5 grid">		
 		<div class="flexslider">
 			  <ul class="slides">
-			    <li data-thumb="images/si.jpg">
-			        <div class="thumb-image"> <img src="images/si.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb="<c:url value="resources/images/si.jpg"/>">
+			        <div class="thumb-image"> <img src="<c:url value="resources/images/si.jpg"/>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    <li data-thumb="images/si1.jpg">
-			         <div class="thumb-image"> <img src="images/si1.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb="<c:url value="resources/images/si1.jpg"/>">
+			         <div class="thumb-image"> <img src="<c:url value="resources/images/si1.jpg"/>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    <li data-thumb="images/si2.jpg">
-			       <div class="thumb-image"> <img src="images/si2.jpg" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb="<c:url value="resources/images/si2.jpg"/>">
+			       <div class="thumb-image"> <img src="<c:url value="resources/images/si2.jpg"/>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li> 
 			  </ul>
 		</div>
@@ -554,16 +547,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="brand">
 				<div class="col-md-3 brand-grid">
-					<img src="images/ic.png" class="img-responsive" alt="">
+					<img src="<c:url value="resources/images/ic.png"/>" class="img-responsive" alt="">
 				</div>
 				<div class="col-md-3 brand-grid">
-					<img src="images/ic1.png" class="img-responsive" alt="">
+					<img src="<c:url value="resources/images/ic1.png"/>" class="img-responsive" alt="">
 				</div>
 				<div class="col-md-3 brand-grid">
-					<img src="images/ic2.png" class="img-responsive" alt="">
+					<img src="<c:url value="resources/images/ic2.png"/>" class="img-responsive" alt="">
 				</div>
 				<div class="col-md-3 brand-grid">
-					<img src="images/ic3.png" class="img-responsive" alt="">
+					<img src="<c:url value="resources/images/ic3.png"/>" class="img-responsive" alt="">
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -577,7 +570,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer-middle">
 				<div class="container">
 					<div class="col-md-3 footer-middle-in">
-						<a href="index.jsp.jsp"><img src="images/log.png" alt=""></a>
+						<a href="index.jsp"><img src="<c:url value="resources/images/log.png"/>" alt=""></a>
 						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
 					</div>
 					
@@ -622,9 +615,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="footer-bottom">
 				<div class="container">
 					<ul class="footer-bottom-top">
-						<li><a href="#"><img src="images/f1.png" class="img-responsive" alt=""></a></li>
-						<li><a href="#"><img src="images/f2.png" class="img-responsive" alt=""></a></li>
-						<li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
+						<li><a href="#"><img src="<c:url value="resources/images/f1.png"/>" class="img-responsive" alt=""></a></li>
+						<li><a href="#"><img src="<c:url value="resources/images/f2.png"/>" class="img-responsive" alt=""></a></li>
+						<li><a href="#"><img src="<c:url value="resources/images/f3.png"/>" class="img-responsive" alt=""></a></li>
 					</ul>
 					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/amandi-imasha-7427a6145/">Amandi Imasha</a></strong> </p>
 					<div class="clearfix"> </div>

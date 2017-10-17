@@ -383,273 +383,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"></div>
 				</div>
 				<!--products-->
-			<div class="content-mid">
-				<h3>Trending Items</h3>
-				<label class="line"></label>
-				<div class="mid-popular">
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
-					<div class=" mid-pop">
-					<div class="pro-img">
-						<img src="resources/images/pc.jpg" class="img-responsive" alt="">
-						<div class="zoom-icon ">
-						<a class="picture" href="resources/images/pc.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="single"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-						</div>
-						</div>
-						<div class="mid-1">
-						<div class="women">
-						<div class="women-top">
-							<span>Women</span>
-							<h6><a href="single">Sed ut perspiciati</a></h6>
-							</div>
-							<div class="img item_add">
-								<a href="#"><img src="resources/images/ca.png" alt=""></a>
-							</div>
-							<div class="clearfix"></div>
-							</div>
-							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
-								  <div class="block">
-									<div class="starbox small ghosting"> </div>
-								</div>
-								
-								<div class="clearfix"></div>
-							</div>
-							
-						</div>
-					</div>
-					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
-					<div class=" mid-pop">
-					<div class="pro-img">
-						<img src="resources/images/pc1.jpg" class="img-responsive" alt="">
-						<div class="zoom-icon ">
-						<a class="picture" href="resources/images/pc1.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="single"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-						</div>
-						</div>
-						<div class="mid-1">
-						<div class="women">
-						<div class="women-top">
-							<span>Women</span>
-							<h6><a href="single">At vero eos</a></h6>
-							</div>
-							<div class="img item_add">
-								<a href="#"><img src="resources/images/ca.png" alt=""></a>
-							</div>
-							<div class="clearfix"></div>
-							</div>
-							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
-								  <div class="block">
-									<div class="starbox small ghosting"> </div>
-								</div>
-								
-								<div class="clearfix"></div>
-							</div>
-							
-						</div>
-					</div>
-					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
-					<div class=" mid-pop">
-					<div class="pro-img">
-						<img src="resources/images/pc2.jpg" class="img-responsive" alt="">
-						<div class="zoom-icon ">
-						<a class="picture" href="resources/images/pc2.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="single"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-						</div>
-						</div>
-						<div class="mid-1">
-						<div class="women">
-						<div class="women-top">
-							<span>Men</span>
-							<h6><a href="single">Sed ut perspiciati</a></h6>
-							</div>
-							<div class="img item_add">
-								<a href="#"><img src="resources/images/ca.png" alt=""></a>
-							</div>
-							<div class="clearfix"></div>
-							</div>
-							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
-								  <div class="block">
-									<div class="starbox small ghosting"> </div>
-								</div>
-								
-								<div class="clearfix"></div>
-							</div>
-							
-						</div>
-					</div>
-					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
-					<div class=" mid-pop">
-					<div class="pro-img">
-						<img src="resources/images/pc3.jpg" class="img-responsive" alt="">
-						<div class="zoom-icon ">
-						<a class="picture" href="resources/images/pc3.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="single"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-						</div>
-						</div>
-						<div class="mid-1">
-						<div class="women">
-						<div class="women-top">
-							<span>Women</span>
-							<h6><a href="single">On the other</a></h6>
-							</div>
-							<div class="img item_add">
-								<a href="#"><img src="resources/images/ca.png" alt=""></a>
-							</div>
-							<div class="clearfix"></div>
-							</div>
-							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
-								  <div class="block">
-									<div class="starbox small ghosting"> </div>
-								</div>
-								
-								<div class="clearfix"></div>
-							</div>
-							
-						</div>
-					</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-								<div class="mid-popular">
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
-					<div class=" mid-pop">
-					<div class="pro-img">
-						<img src="resources/images/pc4.jpg" class="img-responsive" alt="">
-						<div class="zoom-icon ">
-						<a class="picture" href="resources/images/pc4.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="single"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-						</div>
-						</div>
-						<div class="mid-1">
-						<div class="women">
-						<div class="women-top">
-							<span>Men</span>
-							<h6><a href="single">On the other</a></h6>
-							</div>
-							<div class="img item_add">
-								<a href="#"><img src="resources/images/ca.png" alt=""></a>
-							</div>
-							<div class="clearfix"></div>
-							</div>
-							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
-								  <div class="block">
-									<div class="starbox small ghosting"> </div>
-								</div>
-								
-								<div class="clearfix"></div>
-							</div>
-							
-						</div>
-					</div>
-					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
-					<div class=" mid-pop">
-					<div class="pro-img">
-						<img src="resources/images/pc5.jpg" class="img-responsive" alt="">
-						<div class="zoom-icon ">
-						<a class="picture" href="resources/images/pc5.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="single"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-						</div>
-						</div>
-						<div class="mid-1">
-						<div class="women">
-						<div class="women-top">
-							<span>Men</span>
-							<h6><a href="single">Sed ut perspiciati</a></h6>
-							</div>
-							<div class="img item_add">
-								<a href="#"><img src="resources/images/ca.png" alt=""></a>
-							</div>
-							<div class="clearfix"></div>
-							</div>
-							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
-								  <div class="block">
-									<div class="starbox small ghosting"> </div>
-								</div>
-								
-								<div class="clearfix"></div>
-							</div>
-							
-						</div>
-					</div>
-					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
-					<div class=" mid-pop">
-					<div class="pro-img">
-						<img src="resources/images/pc6.jpg" class="img-responsive" alt="">
-						<div class="zoom-icon ">
-						<a class="picture" href="resources/images/pc6.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="single"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-						</div>
-						</div>
-						<div class="mid-1">
-						<div class="women">
-						<div class="women-top">
-							<span>Women</span>
-							<h6><a href="single">At vero eos</a></h6>
-							</div>
-							<div class="img item_add">
-								<a href="#"><img src="resources/images/ca.png" alt=""></a>
-							</div>
-							<div class="clearfix"></div>
-							</div>
-							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
-								  <div class="block">
-									<div class="starbox small ghosting"> </div>
-								</div>
-								
-								<div class="clearfix"></div>
-							</div>
-							
-						</div>
-					</div>
-					</div>
-					<div class="col-md-3 item-grid simpleCart_shelfItem">
-					<div class=" mid-pop">
-					<div class="pro-img">
-						<img src="resources/images/pc7.jpg" class="img-responsive" alt="">
-						<div class="zoom-icon ">
-						<a class="picture" href="resources/images/pc7.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-						<a href="single"><i class="glyphicon glyphicon-menu-right icon"></i></a>
-						</div>
-						</div>
-						<div class="mid-1">
-						<div class="women">
-						<div class="women-top">
-							<span>Men</span>
-							<h6><a href="single">Sed ut perspiciati</a></h6>
-							</div>
-							<div class="img item_add">
-								<a href="#"><img src="resources/images/ca.png" alt=""></a>
-							</div>
-							<div class="clearfix"></div>
-							</div>
-							<div class="mid-2">
-								<p ><label>$100.00</label><em class="item_price">$70.00</em></p>
-								  <div class="block">
-									<div class="starbox small ghosting"> </div>
-								</div>
-								
-								<div class="clearfix"></div>
-							</div>
-							
-						</div>
-					</div>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-			<!--//products--><!--> look here</-->
+                                <div class="content-mid" id="trading-Items">
+                                    <h3>Trending Items</h3>
+                                    <label class="line"></label>
+                                </div><!--products End-->
+                    
 			<!--brand-->
 			<div class="brand">
 				<div class="col-md-3 brand-grid">
@@ -711,7 +449,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h6>Newsletter</h6>
 						<span>Sign up for News Letter</span>
 							<form>
-								<input type="text" value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
+								<input type="text"  value="Enter your E-mail" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Enter your E-mail';}">
 								<input type="submit" value="Subscribe">	
 							</form>
 					</div>
@@ -736,6 +474,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- slide -->
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
+<script src="<c:url value="resources/js/dom-home.js" />"></script>
 <!--light-box-files -->
                 <script src="<c:url value="resources/js/js-a/jquery.chocolat.js" />" type="text/javascript"></script>
 		<!--light-box-files -->
@@ -750,7 +489,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript">
     (function () {
         var options = {
-            facebook: "wearyourownstorys/?ref=page_internal", // Facebook page ID
+            facebook: "wearyourownstorys/?ref=page_internal", 
             company_logo_url: "//scontent.xx.fbcdn.net/v/t1.0-1/p50x50/22552778_1989154664707640_6925793142617653314_n.png?oh=4d49540b2ac89984e245f34be6063ef2&oe=5A81E171", // URL of company logo (png, jpg, gif)
             greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
             call_to_action: "Message us", // Call to action

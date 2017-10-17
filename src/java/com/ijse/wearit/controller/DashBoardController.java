@@ -50,5 +50,9 @@ public class DashBoardController {
     public String getRegister(){
         return "register";
     }
+    @RequestMapping("/single")
+    public String getSingle(){
+        return "single";
+    }
     
 }
