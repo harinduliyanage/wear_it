@@ -16,3 +16,33 @@ $('#signUp-1st-btn').click(function (){
 //        $('#signUp-1st').css('display','none'); 
 //    }    
 });
+
+$('#signUp-1st-btn').submit(function (event){
+    event.stopPropagation();
+    event.preventDefault();
+    alert("called");
+     $.ajax({
+      type: 'POST',
+      url : "/wear_it_1.2/registeUser",
+      data: {Fname:$('#Fname-txt').val(),
+          Lname:$('#Lname-txt').val(),
+          pw:$('#psw-txt').val(),
+          postal:$('#postal-txt').val(),
+          phone:$('#phone-txt').val(),
+          address:$('#address-txt').val(),
+          city:$('#city-txt').val(),
+          country:$('#country-txt').val(),
+          mail:$('#email-txt').val()},
+      success:function(data){
+           if(data.code ===200){
+                $('#success-alert').css('display','block');
+           }else{
+            $('#danger-alert').css('display','block');
+            }
+        
+      },
+      error: function (error) {
+        alert('Error is :'+error.toString());
+      }
+   });
+});
