@@ -6,6 +6,7 @@
 package com.ijse.wearit.service.custom.impl;
 
 import com.ijse.wearit.dao.custom.UserDAO;
+import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.User;
 import com.ijse.wearit.service.custom.UserService;
 import java.util.List;
@@ -52,6 +53,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public User getUserByNam(String userName) throws Exception {
         return userDAOImpl.getUserByUserName(userName);
+    }
+
+    @Override
+    public ShoppingCart getShoppingCartByUserId(Integer userId) throws Exception {
+        return userDAOImpl.getShoppingCartByUserId(userId);
     }
     
 }

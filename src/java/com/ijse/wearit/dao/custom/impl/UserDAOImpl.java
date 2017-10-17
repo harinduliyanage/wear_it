@@ -6,6 +6,7 @@
 package com.ijse.wearit.dao.custom.impl;
 
 import com.ijse.wearit.dao.custom.UserDAO;
+import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.User;
 import java.io.Serializable;
 import java.util.List;
@@ -25,10 +26,13 @@ public class UserDAOImpl implements UserDAO{
     @Autowired
     private SessionFactory sessionFactory;
     
+    static Integer uId = 0;
+    
     @Override
     public boolean add(User t) throws Exception {
         Serializable save = sessionFactory.getCurrentSession().save(t);
         return (save!=null);
+        
     }
 
     @Override
@@ -66,6 +70,15 @@ public class UserDAOImpl implements UserDAO{
         c2.setMaxResults(1);
         User z = (User) c2.uniqueResult();
         return z;
+    }
+
+    @Override
+    public ShoppingCart getShoppingCartByUserId(Integer userId) throws Exception {
+        Criteria c2 = sessionFactory.getCurrentSession().createCriteria(User.class);
+        c2.add(Restrictions.eq("userID", userId));
+        c2.setMaxResults(1);
+        User z = (User) c2.uniqueResult();
+        return z.getShoppingCart();
     }
     
 }

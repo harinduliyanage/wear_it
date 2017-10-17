@@ -303,13 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>	
 </div>
 <!--banner-->
-<div class="banner-top">
-	<div class="container">
-		<h1>Products</h1>
-		<em></em>
-		<h2><a href="index.jsp">Home</a><label>/</label>Products</h2>
-	</div>
-</div>
+<div><img src="<c:url value="resources/images/paulgauntfurniture.jpg" />" class="img-responsive active"/></div>
 	<!--content-->
 		<div class="product">
 			<div class="container">
@@ -756,7 +750,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer-middle">
 				<div class="container">
 					<div class="col-md-3 footer-middle-in">
-						<a href="index.jsp"><img src="<c:url value="resources/images/logo.png" />" alt=""></a>
+						<a href="index.jsp.jsp"><img src="<c:url value="resources/images/logo.png" />" alt=""></a>
 						<p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
 					</div>
 					

@@ -28,21 +28,12 @@ import javax.persistence.Transient;
 @Entity
 @Table(name = "SHOPPINGCART_DETAILS")
 public class ShoppingCartDetails implements Serializable{
-    //private ShoppingCartDetailCompositeId primaryKey = new ShoppingCartDetailCompositeId();
     private int id;
     private ShoppingCart shoppingCart;
     private ItemDetails itemDetails;
     
     private int orderQty;
-    
-//    @EmbeddedId
-//    public ShoppingCartDetailCompositeId getPrimaryKey() {
-//        return primaryKey;
-//    }
-// 
-//    public void setPrimaryKey(ShoppingCartDetailCompositeId primaryKey) {
-//        this.primaryKey = primaryKey;
-//    }
+    private double amount;
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -55,7 +46,7 @@ public class ShoppingCartDetails implements Serializable{
         this.id = id;
     }
     
-    @ManyToOne(cascade = CascadeType.ALL,optional = true,fetch = FetchType.EAGER)
+    @ManyToOne(cascade = CascadeType.PERSIST,optional = true,fetch = FetchType.EAGER)
     @JoinColumn(name = "SHOPPINGCART_ID",nullable=false)
     public ShoppingCart getShoppingCart() {
         return shoppingCart;
@@ -75,30 +66,6 @@ public class ShoppingCartDetails implements Serializable{
         this.itemDetails = itemDetails;
     }
     
-    
-    
-//    public String getDescription() {
-//        return getPrimaryKey().getItemDetails().getItem().getDescription();
-//    }
-// 
-//    public void setDescription(String description) {
-//        getPrimaryKey().getItemDetails().getItem().setDescription(description);
-//    }
-//    
-//    public String getPath() {
-//        return getPrimaryKey().getItemDetails().getItem().getPaths();
-//    }
-// 
-//    public void setPath(String path) {
-//        getPrimaryKey().getItemDetails().getItem().setPaths(path);
-//    }
-//    public double getUnitPrice(){
-//       return getPrimaryKey().getItemDetails().getUnitPrice();
-//    }
-//    public void setUnitPrice(double unitPrice){
-//        getPrimaryKey().getItemDetails().setUnitPrice(unitPrice);
-//    }
-
     /**
      * @return the orderQty
      */
@@ -111,6 +78,14 @@ public class ShoppingCartDetails implements Serializable{
      */
     public void setOrderQty(int orderQty) {
         this.orderQty = orderQty;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
     
 }

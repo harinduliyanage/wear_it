@@ -17,6 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -26,17 +27,12 @@ import javax.persistence.OneToOne;
 public class ShoppingCart implements Serializable{
     private Integer id;
     private String addedDate;
-    private User user;
     private int numberOfItems;
     private double total;
     
     private Set<ShoppingCartDetails> shoppingCartDetails = new HashSet<ShoppingCartDetails>();
 
     public ShoppingCart() {
-    }
-    
-    public void addShoppingCartDetail(ShoppingCartDetails shoppingCartDetails){
-        this.shoppingCartDetails.add(shoppingCartDetails);
     }
     
     @Id
@@ -74,16 +70,8 @@ public class ShoppingCart implements Serializable{
         this.total = total;
     }
     
-    @OneToOne(cascade = CascadeType.ALL,orphanRemoval = true,fetch = FetchType.EAGER,optional = true)
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-    
-    @OneToMany(mappedBy = "shoppingCart",cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
+    @Transient
+    @OneToMany(mappedBy = "shoppingCart",cascade = CascadeType.PERSIST,fetch = FetchType.EAGER,orphanRemoval = true)
     public Set<ShoppingCartDetails> getShoppingCartDetails() {
         return shoppingCartDetails;
     }

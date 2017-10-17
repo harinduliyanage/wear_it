@@ -7,6 +7,7 @@ package com.ijse.wearit.model;
 
 import java.io.Serializable;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,17 +23,18 @@ import javax.persistence.OneToOne;
 public class User implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "USER_ID")
     private Integer userID;
     private String userName;
     private String password;
     private String customerFirstName;
     private String customerLastName;
     private String customerEmail; 
-    
-    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = true)
-    private ShoppingCart shoppingCart;
 
-    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = true)
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
+    private ShoppingCart shoppingCart;
+    
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = false,orphanRemoval = true)
     private ShippingInfo shippinInfo;
     
     public Integer getUserID() {

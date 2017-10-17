@@ -22,11 +22,18 @@ public class ShippingInfoDAOImpl implements ShippingInfoDAO{
     
     @Autowired
     private SessionFactory sessionFactory;
+    
+    static Integer uId = 0;
 
     @Override
     public boolean add(ShippingInfo t) throws Exception {
-        Serializable save = sessionFactory.getCurrentSession().save(t);
-        return (save!=null);
+        if(t.getId() != uId){
+            Serializable save = sessionFactory.getCurrentSession().save(t);
+            uId = t.getId();
+            return (save!=null);
+        }else{
+            return false;
+        }
     }
 
     @Override

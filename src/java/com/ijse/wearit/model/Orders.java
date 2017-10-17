@@ -6,14 +6,17 @@
 package com.ijse.wearit.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -27,12 +30,17 @@ public class Orders implements Serializable {
     private String orderDate;
     private double orderAmount;
     private double discount;
+    
     @OneToOne(cascade = CascadeType.ALL)
     private Payment payment;
     
-    @OneToMany
-    private Set<OrderDetails> orderDetails;
+    @Transient
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private Set<OrderDetails> orderDetails = new HashSet<OrderDetails>();
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private User user;
+    
     /**
      * @return the id
      */
@@ -117,4 +125,13 @@ public class Orders implements Serializable {
     public void setOrderDetails(Set<OrderDetails> orderDetails) {
         this.orderDetails = orderDetails;
     } 
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
 }

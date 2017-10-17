@@ -7,6 +7,7 @@ package com.ijse.wearit.dao.custom.impl;
 
 import com.ijse.wearit.dao.custom.ShoppingCartDAO;
 import com.ijse.wearit.model.ShoppingCart;
+import com.ijse.wearit.model.User;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Criteria;

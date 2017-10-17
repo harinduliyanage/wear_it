@@ -18,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  *
@@ -33,7 +34,8 @@ public class Item implements Serializable{
     private String description;
     private String paths;
     
-    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER,cascade = CascadeType.ALL)      
+    @Transient
+    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)      
     Set<ItemDetails> itemDetails=new HashSet<ItemDetails>();
     
     public Item(){

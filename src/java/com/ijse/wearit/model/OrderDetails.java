@@ -7,6 +7,7 @@ package com.ijse.wearit.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,11 +22,13 @@ public class OrderDetails {
      @Id
      @GeneratedValue(strategy = GenerationType.AUTO)
      private Integer id;
-     @ManyToOne(cascade = CascadeType.ALL)
+     
+     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
      private Orders order;
+     
      private int orderQty;
      private String description;
-     private int itemDetailsID;
+     private int cartDetailID;
 
     /**
      * @return the orderQty
@@ -55,18 +58,12 @@ public class OrderDetails {
         this.description = description;
     }
 
-    /**
-     * @return the itemDetailsID
-     */
-    public int getItemDetailsID() {
-        return itemDetailsID;
+    public int getCartDetailID() {
+        return cartDetailID;
     }
 
-    /**
-     * @param itemDetailsID the itemDetailsID to set
-     */
-    public void setItemDetailsID(int itemDetailsID) {
-        this.itemDetailsID = itemDetailsID;
+    public void setCartDetailID(int cartDetailID) {
+        this.cartDetailID = cartDetailID;
     }
 
     /**

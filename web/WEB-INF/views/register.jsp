@@ -302,39 +302,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>	
 </div>
 <!--banner-->
-<div class="banner-top">
-	<div class="container">
-		<h1>Register</h1>
-		<em></em>
-		<h2><a href="index.jsp">Home</a><label>/</label>Register</h2>
-	</div>
-</div>
+<div style="margin-left: 7vw;"><img src="<c:url value="resources/images/banner_register.jpg" />" class="img-responsive active"/></div>
 <!--login-->
 <div class="container">
 		<div class="login">
-			<form>
-			<div class="col-md-6 login-do">
+                    <form action="registeUser">
+			<div class="col-md-6 login-do" id="signUp-1st">
 			<div class="login-mail">
-					<input type="text" placeholder="Name" required="">
+					<input type="text" placeholder="Name" required="" name="name" autofocus id="name-txt">
 					<i  class="glyphicon glyphicon-user"></i>
 				</div>
 				<div class="login-mail">
-					<input type="text" placeholder="Phone Number" required="">
+                                    <input type="text" placeholder="Phone Number" name="phone" id="phone-txt" required="" pattern="^\d{10}$" title="please enter 10 digits phone number ">
 					<i  class="glyphicon glyphicon-phone"></i>
 				</div>
 				<div class="login-mail">
-					<input type="text" placeholder="Email" required="">
+                                    <input type="text" placeholder="Email" name="mail" id="email-txt" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="Enter valid Email Pattern">
 					<i  class="glyphicon glyphicon-envelope"></i>
 				</div>
 				<div class="login-mail">
-					<input type="password" placeholder="Password" required="">
+					<input type="password" id="psw-txt" name="pw" placeholder="Password" required="">
 					<i class="glyphicon glyphicon-lock"></i>
 				</div>
 				   <a class="news-letter " href="#">
 						 <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
 					   </a>
 				<label class="hvr-skew-backward">
-					<input type="submit" value="Submit">
+                                    <input type="submit" value="Next" id="signUp-1st-btn">
 				</label>
 			
 			</div>
@@ -441,14 +435,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
 <!-- slide -->
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
+<script src="<c:url value="resources/js/dom-register.js" />"></script>
  <script type="text/javascript">
     (function () {
         var options = {
-            facebook: "wearyourownstorys/?ref=page_internal", // Facebook page ID
+            facebook: "wearyourownstorys/?ref=page_internal",
             company_logo_url: "//scontent.xx.fbcdn.net/v/t1.0-1/p50x50/22552778_1989154664707640_6925793142617653314_n.png?oh=4d49540b2ac89984e245f34be6063ef2&oe=5A81E171", // URL of company logo (png, jpg, gif)
             greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
-            call_to_action: "Message us", // Call to action
-            position: "right", // Position may be 'right' or 'left'
+            call_to_action: "Message us",
+            position: "right", 
         };
         var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
         var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
