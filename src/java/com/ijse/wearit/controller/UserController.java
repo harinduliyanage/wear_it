@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -107,6 +108,32 @@ public class UserController {
             System.out.println("called................ get All");
             return all;
             
+        } catch (Exception ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    @RequestMapping(value = "/userLogIn" , method = RequestMethod.POST)
+    public @ResponseBody Status  navigatesToLogin(HttpServletRequest request, HttpServletResponse response,
+            @RequestParam("userName") String userName,
+            @RequestParam("password")String pw){ 
+        try {
+           boolean result = false;
+           Status status = new Status();
+           User user = userService.getUserByNam(userName);
+           if(user != null ){
+               result = user.getPassword().equalsIgnoreCase(pw);  
+               if(result){
+                   HttpSession session = request.getSession();
+                   session.setAttribute("currentUser", user);
+                   response.sendRedirect("index.jsp");
+               }else{
+                   status= new Status(401, "Bad Request", "User Name and Password incorrect");
+                   return status;
+               }
+           }
+           
         } catch (Exception ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
         }
