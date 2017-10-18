@@ -50,7 +50,7 @@ public class ItemController {
         return null;
     }
     
-    @RequestMapping(value = "/image", method = RequestMethod.POST)
+    @RequestMapping(value = "/addNewItem", method = RequestMethod.POST)
     public @ResponseBody Status addNewItem(@RequestParam("file")MultipartFile file ,
             @RequestParam("name")String name,
             @RequestParam("description")String description,
