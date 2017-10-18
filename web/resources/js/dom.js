@@ -5,7 +5,14 @@ $(document).ready(function (){
       success:function(data){
             for (var i = 0; i < data.length; i++) {
                 var option = new Option(data[i].sizes, data[i].sizes); 
+                var option1 = new Option(data[i].sizes, data[i].sizes); 
                 $('#update-size-combo').append($(option));
+                $('#delete-size-combo').append($(option1));
+                if(i===0){
+                    $('#update-sizeUK-txt').val(data[i].sizeUK);
+                    $('#update-sizeUS-txt').val(data[i].sizeUS);
+                    $('#update-sizeEU-txt').val(data[i].sizeEU);
+                }
             }
       },
       error: function (error) {
@@ -72,6 +79,19 @@ $('#update-size-form').submit(function (event){
    });
 });
 
+$('#delete-size-btn').click(function (){
+    $.ajax({
+      type: 'POST',
+      url : "/wear_it_1.2/deleteSize",
+      data: {size:$('#delete-size-combo').val()},
+      success:function(data){
+            alert(data.msg);
+      },
+      error: function (error) {
+        alert('Error is :'+error.toString());
+      }
+   });
+});
 
 
 
