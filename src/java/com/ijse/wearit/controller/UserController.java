@@ -50,7 +50,7 @@ public class UserController {
             
                 System.out.println("called..."+fName+"////"+lName+"////"+password+"////"+postalCode+"///"+phoneNum);
                 System.out.println("called..."+city+"////"+address+"////"+country+"///////"+mail+"***");
-        Status status = new Status();
+        Status status = new Status(200, "Ok", "added...");
         return status;
     }
     

@@ -332,7 +332,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--login-->
 <div class="container">
 		<div class="login">
-                    <form action="registeUser">
+                    <form id="signUp-1st-btn">
 			<div class="col-md-6 login-do" id="signUp-1st">
                                 <div class="login-mail">
 					<input type="text" placeholder="First Name" required="" name="Fname" autofocus id="Fname-txt">
@@ -343,23 +343,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<i  class="glyphicon glyphicon-user"></i>
                                 </div>
                                 <div class="login-mail">
-					<input type="text"  name="address" placeholder="Address Line 1" required="">
+					<input type="text"  id="address-txt" placeholder="Address Line 1" required="">
 					<i class="glyphicon glyphicon-user"></i>
 				</div>
                                 <div class="login-mail">
-                                    <input type="text" name="city" placeholder="City" required="" >
+                                    <input type="text" id="city-txt" placeholder="City" required="" >
 					<i class="glyphicon glyphicon-user"></i>
 				</div>
                                 <div class="login-mail">
-                                    <input type="text" name="country" placeholder="country" required="" >
+                                    <input type="text" id="country-txt" placeholder="country" required="" >
 					<i class="glyphicon glyphicon-user"></i>
 				</div>
                                 <div class="login-mail">
-                                    <input type="text"  name="postal" placeholder="Postal Code" required="" pattern="^\d{5}$">
+                                    <input type="text"  id="postal-txt" placeholder="Postal Code" required="" pattern="^\d{5}$">
 					<i class="glyphicon glyphicon-user"></i>
 				</div>
                                 <div class="login-mail">
-                                    <input type="text" placeholder="Phone Number" name="phone" id="phone-txt" required="" pattern="^\d{10}$" title="please enter 10 digits phone number ">
+                                    <input type="text" placeholder="Phone Number"  id="phone-txt" required="" pattern="^\d{10}$" title="please enter 10 digits phone number ">
 					<i  class="glyphicon glyphicon-phone"></i>
 				</div>
 				<div class="login-mail">
@@ -374,7 +374,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						 <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
 					   </a>
 				<label class="hvr-skew-backward">
-                                    <input type="submit" value="Next" id="signUp-1st-btn">
+                                    <input type="submit" value="Sign Up">
 				</label>
                                 
                                 <div style="margin-top: 7px;"></div>
