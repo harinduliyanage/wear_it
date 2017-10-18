@@ -39,14 +39,14 @@ public class UserController {
             @RequestParam("city")String city,
             @RequestParam("country")String country,
             @RequestParam("mail")String mail,
-            @RequestParam("pw")String pw,
+            @RequestParam("pw")String password,
             @RequestParam("postal")String postalCode){
             // Code Here for add User And Shipping infor to database;
             //Please check email by user Already Exits ..
             //If user Already Exits you have to set new Staus (401,bad request, user Alrady Exits); and return it ;
             //else return new Status(200,ok,user sign Up successfully..); return it
             
-                System.out.println("called..."+fName+"////"+lName+"////"+pw+"////"+postalCode+"///"+phoneNum);
+                System.out.println("called..."+fName+"////"+lName+"////"+password+"////"+postalCode+"///"+phoneNum);
                 System.out.println("called..."+city+"////"+address+"////"+country+"///////"+mail+"***"+pw);
         Status status = new Status();
         return status;
