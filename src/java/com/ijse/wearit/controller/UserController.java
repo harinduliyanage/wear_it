@@ -47,7 +47,7 @@ public class UserController {
             //else return new Status(200,ok,user sign Up successfully..); return it
             
                 System.out.println("called..."+fName+"////"+lName+"////"+password+"////"+postalCode+"///"+phoneNum);
-                System.out.println("called..."+city+"////"+address+"////"+country+"///////"+mail+"***"+pw);
+                System.out.println("called..."+city+"////"+address+"////"+country+"///////"+mail+"***");
         Status status = new Status();
         return status;
     }
