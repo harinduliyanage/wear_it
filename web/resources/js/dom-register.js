@@ -39,7 +39,6 @@ $('#signUp-1st-btn').submit(function (event){
            }else{
             $('#danger-alert').css('display','block');
             }
-        
       },
       error: function (error) {
         alert('Error is :'+error.toString());
