@@ -32,7 +32,7 @@ $('#signUp-1st-btn').submit(function (event){
           city:$('#city-txt').val(),
           country:$('#country-txt').val(),
           mail:$('#email-txt').val()},
-      success:function(data){
+          success:function(data){
            if(data.code ===200){
                 $('#success-alert').css('display','block');
                 $('#danger-alert').css('display','none');
@@ -44,29 +44,5 @@ $('#signUp-1st-btn').submit(function (event){
       error: function (error) {
         alert('Error is :'+error.toString());
       }
-   });
-});
-
-
-$('#login-form').submit(function (event){
-    alert("called....");
-   event.stopPropagation();
-   event.preventDefault(); 
-   $.ajax({
-        type: 'POST',
-        url: "/wear_it_1.2/userLogIn",
-        data: {
-            userName:('#login-userName').val(),
-            password:('#login-pw').val()
-        },
-      success:function(data){
-           if(data.code ===401){
-                alert(data.msg);
-           }
-      },
-      error: function (error) {
-        alert('Error is :'+error.toString());
-      }
-        
    });
 });

@@ -425,9 +425,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<script src="<c:url value="resources/js/js-a/jquery.magnific-popup.js" />"> </script>
 	<script src="<c:url value="resources/js/jquery-2.1.3.min.js" />"> </script>
-	<script src="<c:url value="resources/js/dom-register.js" />"> </script>
+	<script src="<c:url value="resources/js/dom-login.js" />"> </script>
 <!-- slide -->
-<script src="<c:url value="resources/js/jquery.magnific-popup.js" />"></script>
+<script src="<c:url value="resources/js/js-a/jquery.magnific-popup.js" />"></script>
  <script type="text/javascript">
     (function () {
         var options = {

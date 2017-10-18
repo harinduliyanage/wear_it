@@ -118,6 +118,7 @@ public class UserController {
     public @ResponseBody Status  navigatesToLogin(HttpServletRequest request, HttpServletResponse response,
             @RequestParam("userName") String userName,
             @RequestParam("password")String pw){ 
+            System.out.println("called.........................*************************************");
         try {
            boolean result = false;
            Status status = new Status();
@@ -125,10 +126,12 @@ public class UserController {
            if(user != null ){
                result = user.getPassword().equalsIgnoreCase(pw);  
                if(result){
+                   System.out.println("user and password correct");
                    HttpSession session = request.getSession();
                    session.setAttribute("currentUser", user);
-                   response.sendRedirect("index.jsp");
+                   response.sendRedirect("/index.jsp");
                }else{
+                   System.out.println("password incorrect");
                    status= new Status(401, "Bad Request", "User Name and Password incorrect");
                    return status;
                }
