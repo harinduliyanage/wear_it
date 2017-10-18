@@ -47,7 +47,7 @@
                     <a href="/wear_it_1.2/" target="internal">Re-Order Level</a>
                 </li>
                 <li>
-                    <a href="/wear_it_1.2/ajaxTest" target="internal">Add New Category</a>
+                    <a id="SizeNav" href="/wear_it_1.2/category" target="internal">Category Manage</a>
                 </li>
                 
             </ul>

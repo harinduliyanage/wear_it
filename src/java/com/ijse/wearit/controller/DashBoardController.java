@@ -54,5 +54,9 @@ public class DashBoardController {
     public String getSingle(){
         return "single";
     }
+    @RequestMapping("/category")
+    public String getCategoryManageView(){
+        return "addNewCategory";
+    }
     
 }
