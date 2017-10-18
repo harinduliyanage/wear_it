@@ -41,6 +41,8 @@ public class UserController {
             @RequestParam("mail")String mail,
             @RequestParam("pw")String password,
             @RequestParam("postal")String postalCode){
+        
+            //set User Name to email... 
             // Code Here for add User And Shipping infor to database;
             //Please check email by user Already Exits ..
             //If user Already Exits you have to set new Staus (401,bad request, user Alrady Exits); and return it ;
