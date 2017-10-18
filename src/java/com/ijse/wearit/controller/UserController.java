@@ -31,14 +31,24 @@ public class UserController {
     UserService userService;
     
     @RequestMapping(value = "/registeUser")
-    public @ResponseBody Status addNewUser(HttpServletRequest request,@RequestParam("name") String name,
+    public @ResponseBody Status addNewUser(HttpServletRequest request,
+            @RequestParam("Fname") String fName,
+            @RequestParam("Lname")String lName,
             @RequestParam("phone")String phoneNum,
+            @RequestParam("address")String address,
+            @RequestParam("city")String city,
+            @RequestParam("country")String country,
             @RequestParam("mail")String mail,
-            @RequestParam("pw")String pw){
-        HttpSession session = request.getSession();
-                System.out.println("called..."+name+"////"+mail+"////"+pw+"///////"+phoneNum);
+            @RequestParam("pw")String pw,
+            @RequestParam("postal")String postalCode){
+            // Code Here for add User And Shipping infor to database;
+            //Please check email by user Already Exits ..
+            //If user Already Exits you have to set new Staus (401,bad request, user Alrady Exits); and return it ;
+            //else return new Status(200,ok,user sign Up successfully..); return it
+            
+                System.out.println("called..."+fName+"////"+lName+"////"+pw+"////"+postalCode+"///"+phoneNum);
+                System.out.println("called..."+city+"////"+address+"////"+country+"///////"+mail+"***"+pw);
         Status status = new Status();
-        
         return status;
     }
     
