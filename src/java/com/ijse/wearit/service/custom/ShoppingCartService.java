@@ -14,5 +14,5 @@ import com.ijse.wearit.service.SuperService;
  * @author ABC
  */
 public interface ShoppingCartService extends SuperService<ShoppingCart>{
-    public ShoppingCart getCartByUser(User user)throws Exception;
+    
 }

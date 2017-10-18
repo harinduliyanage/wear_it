@@ -30,12 +30,12 @@ public class User implements Serializable{
     private String customerFirstName;
     private String customerLastName;
     private String customerEmail; 
-    
-//    @OneToOne(mappedBy = "user",cascade = CascadeType.PERSIST,fetch = FetchType.EAGER,optional = true,orphanRemoval = true)
-//    private ShoppingCart shoppingCart;
 
-//    @OneToOne(mappedBy = "user",cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = false,orphanRemoval = true)
-//    private ShippingInfo shippinInfo;
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER,orphanRemoval = true)
+    private ShoppingCart shoppingCart;
+    
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER,optional = false,orphanRemoval = true)
+    private ShippingInfo shippinInfo;
     
     public Integer getUserID() {
         return userID;
@@ -85,19 +85,19 @@ public class User implements Serializable{
         this.customerEmail = customerEmail;
     }
 
-//    public ShippingInfo getShippinInfo() {
-//        return shippinInfo;
-//    }
-//
-//    public void setShippinInfo(ShippingInfo shippinInfo) {
-//        this.shippinInfo = shippinInfo;
-//    }
+    public ShippingInfo getShippinInfo() {
+        return shippinInfo;
+    }
 
-//    public ShoppingCart getShoppingCart() {
-//        return shoppingCart;
-//    }
-//
-//    public void setShoppingCart(ShoppingCart shoppingCart) {
-//        this.shoppingCart = shoppingCart;
-//    }
+    public void setShippinInfo(ShippingInfo shippinInfo) {
+        this.shippinInfo = shippinInfo;
+    }
+
+    public ShoppingCart getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart) {
+        this.shoppingCart = shoppingCart;
+    }
 }

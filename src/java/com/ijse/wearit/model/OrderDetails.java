@@ -7,6 +7,7 @@ package com.ijse.wearit.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,7 +23,7 @@ public class OrderDetails {
      @GeneratedValue(strategy = GenerationType.AUTO)
      private Integer id;
      
-     @ManyToOne(cascade = CascadeType.ALL)
+     @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
      private Orders order;
      
      private int orderQty;

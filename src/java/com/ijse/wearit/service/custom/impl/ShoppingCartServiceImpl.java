@@ -52,9 +52,4 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
         return shoppingCartDAOImpl.getAll();
     }
 
-    @Override
-    public ShoppingCart getCartByUser(User user) throws Exception {
-        return shoppingCartDAOImpl.getCartByUser(user);
-    }
-    
 }

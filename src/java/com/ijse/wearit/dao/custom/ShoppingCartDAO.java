@@ -14,5 +14,4 @@ import com.ijse.wearit.model.User;
  * @author ABC
  */
 public interface ShoppingCartDAO extends SuperDAO<ShoppingCart>{
-    public ShoppingCart getCartByUser(User user)throws Exception;
 }

@@ -15,7 +15,5 @@ import com.ijse.wearit.service.SuperService;
  * @author Harindu.sul
  */
 public interface ItemDetailsService extends SuperService<ItemDetails>{
-
-    public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;
-    
+    public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;  
 }

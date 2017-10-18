@@ -5,6 +5,7 @@
  */
 package com.ijse.wearit.service.custom;
 
+import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.User;
 import com.ijse.wearit.service.SuperService;
 
@@ -14,4 +15,5 @@ import com.ijse.wearit.service.SuperService;
  */
 public interface UserService extends SuperService<User>{
     public  User getUserByNam(String userName)throws Exception;
+    public ShoppingCart getShoppingCartByUserId(Integer userId)throws Exception;
 }
