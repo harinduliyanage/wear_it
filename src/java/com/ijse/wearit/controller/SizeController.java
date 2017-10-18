@@ -30,34 +30,19 @@ public class SizeController {
     SizeService sizeService;
     
     @RequestMapping(value = "/addNewSize",method = RequestMethod.POST)
-    public @ResponseBody Status addNewSize12(HttpServletRequest request,@RequestParam("sizes") String sizes){
-//        Sizes size = new Sizes();
-//        size.setSizeEU("40");
-//        size.setSizeUK("8");
-//        size.setSizeUS("6");
-//        size.setSizes("XSXXX");
-//        try {
-//            boolean add = sizeService.add(size);
-//        } catch (Exception ex) {
-//            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
-
-//        }
-            doSomething(request);
+    public @ResponseBody Status addNewSize12(HttpServletRequest request,
+            @RequestParam("size") String sizes,
+            @RequestParam("sizeUK") String sizeUK,
+            @RequestParam("sizeUS") String sizeUS,
+            @RequestParam("sizeEU") String sizeEU){
+        //code here add size to database
+           
         
     
         Status status = new Status(200, "ok", "added Successfull..");
-        System.out.println("called...........//" +sizes);
+        System.out.println("called...........//" +sizes+"////////"+sizeEU+"/////////////"+sizeUK+
+                "///////////////"+sizeEU);
         return status;
-    }
-    
-    public void doSomething(HttpServletRequest request) {
-//        try {
-//            String jsonBody;
-//            // do stuff
-//            //jsonBody = IOUtils.toString( request.getInputStream());
-//        } catch (IOException ex) {
-//            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }
     
     @RequestMapping(value = "/admin")
