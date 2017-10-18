@@ -375,7 +375,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 	<!--//content-->
 		<!--//footer-->
-	<div class="footer">
+                <div class="footer">
 	<div class="footer-middle">
 				<div class="container">
 					<div class="col-md-3 footer-middle-in">
@@ -396,13 +396,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href="wishlist">Wish List</a></li>
 							<li><a href="login">Login</a></li>
 						</ul>
-		 				<div class="clearfix"></div>
+						<div class="clearfix"></div>
 					</div>
 					<div class="col-md-3 footer-middle-in">
 						<h6>Tags</h6>
 						<ul class="tag-in">
 							<li><a href="#">Lorem</a></li>
-			 				<li><a href="#">Sed</a></li>
+							<li><a href="#">Sed</a></li>
 							<li><a href="#">Ipsum</a></li>
 							<li><a href="#">Contrary</a></li>
 							<li><a href="#">Chunk</a></li>

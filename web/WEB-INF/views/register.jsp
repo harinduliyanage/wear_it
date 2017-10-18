@@ -427,8 +427,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 	<!--//content-->
 		<!--//footer-->
-	<div class="footer">
-	<div class="footer-middle">
+                    <div class="footer">
+                    <div class="footer-middle">
 				<div class="container">
 					<div class="col-md-3 footer-middle-in">
 						<a href="index.jsp"><img src="<c:url value="resources/images/log.png" />" alt=""></a>

@@ -47,7 +47,7 @@
                     <a href="/wear_it_1.2/" target="internal">Re-Order Level</a>
                 </li>
                 <li>
-                    <a href="/wear_it_1.2/ajaxTest" target="internal">Add New Category</a>
+                    <a id="SizeNav" href="/wear_it_1.2/category" target="internal">Category Manage</a>
                 </li>
                 
             </ul>
@@ -60,8 +60,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
-                        <div class="container" id="main-content">
-                            
+                        <div style="height: 10px;"></div>
+                        <div class="container-fluid embed-responsive embed-responsive-16by9">
+                            <iframe name="internal" style="border: none;" class="embed-responsive-item" ></iframe>    
                         </div>
                     </div>
                 </div>
@@ -75,7 +76,6 @@
     <!-- jQuery -->
     <script src="<c:url value="/resources/js/jquery.js" />"></script>    
     <script src="<c:url value="/resources/js/jquery-2.1.3.min.js" />"></script> 
-    <script src="<c:url value="/resources/js/dom.js" />"></script> 
 
     <!-- Bootstrap Core JavaScript -->
      <script src="<c:url value="/resources/js/bootstrap.js" />"></script>    

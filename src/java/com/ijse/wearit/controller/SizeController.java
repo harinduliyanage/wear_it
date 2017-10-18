@@ -30,34 +30,41 @@ public class SizeController {
     SizeService sizeService;
     
     @RequestMapping(value = "/addNewSize",method = RequestMethod.POST)
-    public @ResponseBody Status addNewSize12(HttpServletRequest request,@RequestParam("sizes") String sizes){
-//        Sizes size = new Sizes();
-//        size.setSizeEU("40");
-//        size.setSizeUK("8");
-//        size.setSizeUS("6");
-//        size.setSizes("XSXXX");
-//        try {
-//            boolean add = sizeService.add(size);
-//        } catch (Exception ex) {
-//            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
-
-//        }
-            doSomething(request);
+    public @ResponseBody Status addNewSize12(HttpServletRequest request,
+            @RequestParam("size") String sizes,
+            @RequestParam("sizeUK") String sizeUK,
+            @RequestParam("sizeUS") String sizeUS,
+            @RequestParam("sizeEU") String sizeEU){
         
-    
-        Status status = new Status(200, "ok", "added Successfull..");
-        System.out.println("called...........//" +sizes);
+        boolean result = false;
+        Status status = new  Status();
+        
+        //Create Size
+        Sizes size = new Sizes();
+        size.setSizes(sizes);
+        size.setSizeUS(sizeUS);
+        size.setSizeUK(sizeUK);
+        size.setSizeEU(sizeEU);
+        
+        try {
+            Sizes searchedSize = sizeService.getSizeByName(sizes);
+            if(searchedSize == null){
+                result = sizeService.add(size);
+                if(result){
+                    status  = new Status(200, "Ok", "Added Successfully...");
+                        return status;
+                    }else{
+                        status = new Status(500, "Internal Server Error", "Added Faild..");
+                        return status;
+                }
+            }else{
+                status = new Status(401,"bad request", "Size Alrady Exits"); 
+                return status;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return status;
-    }
-    
-    public void doSomething(HttpServletRequest request) {
-//        try {
-//            String jsonBody;
-//            // do stuff
-//            //jsonBody = IOUtils.toString( request.getInputStream());
-//        } catch (IOException ex) {
-//            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
-//        }
     }
     
     @RequestMapping(value = "/admin")
@@ -81,6 +88,70 @@ public class SizeController {
             Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
+    }
+    
+    @RequestMapping(value = "/getSizeByName" , method = RequestMethod.GET)
+    public @ResponseBody Sizes getSizeByName(HttpServletRequest request, 
+            @RequestParam("size") String sizes){
+        
+        Sizes searchedSize = null;
+        try {
+            searchedSize = sizeService.getSizeByName(sizes);
+            return searchedSize;
+        } catch (Exception ex) {
+            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return searchedSize;
+    }
+    
+    @RequestMapping(value = "/updateSize", method = RequestMethod.POST)
+    public @ResponseBody Status updateSize(HttpServletRequest request,
+            @RequestParam("size") String sizes,
+            @RequestParam("sizeUK") String sizeUK,
+            @RequestParam("sizeUS") String sizeUS,
+            @RequestParam("sizeEU") String sizeEU){
+        
+        Status status = new Status();
+        try {
+            Sizes searchedSize = sizeService.getSizeByName(sizes);
+            searchedSize.setSizes(sizes);
+            searchedSize.setSizeUS(sizeUS);
+            searchedSize.setSizeUK(sizeUK);
+            searchedSize.setSizeEU(sizeEU);
+            
+            boolean result = sizeService.update(searchedSize);
+            if(result){
+                status  = new Status(200, "Ok", "Updated Successfully...");
+                return status;
+            }else{
+                status = new Status(500, "Internal Server Error", "Updating Faild..");
+                return status;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return status;
+    }
+    
+    @RequestMapping(value = "/deleteSize", method = RequestMethod.POST)
+    public @ResponseBody Status deleteSize(HttpServletRequest request,
+            @RequestParam("size") String sizes ){
+        
+        Status status = new Status();
+        try {
+            Sizes searchedSize = sizeService.getSizeByName(sizes);
+            boolean result = sizeService.delete(searchedSize.getId());
+            if(result){
+                status  = new Status(200, "Ok", "Size : "+sizes+" deleted...");
+                return status;
+            }else{
+                status = new Status(500, "Internal Server Error", "delete Faild..");
+                return status;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return status;
     }
     
 }
