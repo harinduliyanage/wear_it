@@ -21,9 +21,9 @@ $('#update-size-combo').change(function (){
       url : "/wear_it_1.2/getSizeByName",
       data:{size:$('#update-size-combo').val()},
       success:function(data){
-         $('#update-sizeUK-txt').val(data.sizeUK)
-         $('#update-sizeUS-txt').val(data.sizeUS)
-         $('#update-sizeEU-txt').val(data.sizeEU)
+         $('#update-sizeUK-txt').val(data.sizeUK);
+         $('#update-sizeUS-txt').val(data.sizeUS);
+         $('#update-sizeEU-txt').val(data.sizeEU);
       },
       error: function (error) {
         alert('Error is :'+error.toString());

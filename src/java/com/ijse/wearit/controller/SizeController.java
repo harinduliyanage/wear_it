@@ -90,4 +90,47 @@ public class SizeController {
         return null;
     }
     
+    @RequestMapping(value = "/getSizeByName" , method = RequestMethod.GET)
+    public @ResponseBody Sizes getSizeByName(HttpServletRequest request, 
+            @RequestParam("size") String sizes){
+        
+        Sizes searchedSize = null;
+        try {
+            searchedSize = sizeService.getSizeByName(sizes);
+            return searchedSize;
+        } catch (Exception ex) {
+            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return searchedSize;
+    }
+    
+    @RequestMapping(value = "/updateSize", method = RequestMethod.POST)
+    public @ResponseBody Status updateSize(HttpServletRequest request,
+            @RequestParam("size") String sizes,
+            @RequestParam("sizeUK") String sizeUK,
+            @RequestParam("sizeUS") String sizeUS,
+            @RequestParam("sizeEU") String sizeEU){
+        
+        Status status = new Status();
+        try {
+            Sizes searchedSize = sizeService.getSizeByName(sizes);
+            searchedSize.setSizes(sizes);
+            searchedSize.setSizeUS(sizeUS);
+            searchedSize.setSizeUK(sizeUK);
+            searchedSize.setSizeEU(sizeEU);
+            
+            boolean result = sizeService.update(searchedSize);
+            if(result){
+                status  = new Status(200, "Ok", "Updated Successfully...");
+                        return status;
+            }else{
+                status = new Status(500, "Internal Server Error", "Updating Faild..");
+                return status;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return status;
+    }
+    
 }
