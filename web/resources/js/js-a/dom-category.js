@@ -39,7 +39,9 @@ $('#create-new-Category-form').submit(function (event){
       url : "/wear_it_1.2/addNewCategory",
       data: {categoryName:$('#category-name-txt').val()},
       success:function(data){
+           getAllCategory();
             alert(data.msg);
+           
       },
       error: function (error) {
         alert('Error is :'+error.toString());
@@ -56,6 +58,7 @@ $('#update-Category-form').submit(function (event){
       data: {category:$('#update-category-combo').val(),
           newValue:$('#update-categoryName-txt').val()},
       success:function(data){
+             getAllCategory();
             alert(data.msg);
       },
       error: function (error) {
@@ -70,8 +73,9 @@ $('#delete-category-btn').click(function (){
       url : "/wear_it_1.2/deleteCategory",
       data: {category:$('#delete-category-combo').val()},
       success:function(data){
+           getAllCategory();
             alert(data.msg);
-            getAllCategory();
+           
       },
       error: function (error) {
         alert('Error is :'+error.toString());

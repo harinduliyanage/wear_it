@@ -57,8 +57,9 @@ $('#create-new-size-form').submit(function (event){
           sizeUS:$('#sizeUS-txt').val(),
           sizeEU:$('#sizeEU-txt').val()},
       success:function(data){
+            getAllSizes();  
             alert(data.msg);
-            getAllSizes();
+            
       },
       error: function (error) {
         alert('Error is :'+error.toString());
@@ -77,6 +78,7 @@ $('#update-size-form').submit(function (event){
           sizeUS:$('#update-sizeUS-txt').val(),
           sizeEU:$('#update-sizeEU-txt').val()},
       success:function(data){
+            getAllSizes();  
             alert(data.msg);
       },
       error: function (error) {
@@ -91,6 +93,7 @@ $('#delete-size-btn').click(function (){
       url : "/wear_it_1.2/deleteSize",
       data: {size:$('#delete-size-combo').val()},
       success:function(data){
+            getAllSizes();  
             alert(data.msg);
       },
       error: function (error) {
