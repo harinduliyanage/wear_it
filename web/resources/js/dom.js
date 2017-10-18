@@ -1,4 +1,10 @@
 $(document).ready(function (){
+    getAllSizes();   
+});
+
+function getAllSizes(){
+    $('#update-size-combo').empty();
+    $('#delete-size-combo').empty();
     $.ajax({
       type: 'GET',
       url : "/wear_it_1.2/getAllSizes",
@@ -19,8 +25,7 @@ $(document).ready(function (){
         alert('Error is :'+error.toString());
       }
    });
-    
-});
+}
 
 $('#update-size-combo').change(function (){
     $.ajax({
@@ -53,6 +58,7 @@ $('#create-new-size-form').submit(function (event){
           sizeEU:$('#sizeEU-txt').val()},
       success:function(data){
             alert(data.msg);
+            getAllSizes();
       },
       error: function (error) {
         alert('Error is :'+error.toString());
