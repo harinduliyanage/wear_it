@@ -78,7 +78,7 @@ public class UnitTesting {
         boolean result = false;
 
         try {
-/*            //Create Category 1
+            //Create Category 1
             Category category = new Category();
             category.setName("New Arrivals");
             categoryService.add(category);
@@ -240,7 +240,7 @@ public class UnitTesting {
             shoppingCartDetail1.setItemDetails(itemDetail1);
             cart1.getShoppingCartDetails().add(shoppingCartDetail1);
             result = cartDetailsService.add(shoppingCartDetail1);
-*/
+
             
             
 /*            //Delete Item Details
