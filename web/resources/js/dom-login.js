@@ -17,6 +17,9 @@ $('#login-form').submit(function (event){
            if(data.code ===401){
                 alert(data.msg);
            }
+           if(data.code===200){
+               location.href = "http://localhost:8084/wear_it_1.2/index.jsp";
+           }
       },
       error: function (error) {
         alert('Error is :'+error.toString());

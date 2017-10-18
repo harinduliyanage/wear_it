@@ -129,7 +129,6 @@ public class UserController {
                    System.out.println("user and password correct");
                    HttpSession session = request.getSession();
                    session.setAttribute("currentUser", user);
-                   //response.sendRedirect("/index.jsp");
                    return new Status(200, "OK", "login successfully");
                }else{
                    System.out.println("password incorrect");
