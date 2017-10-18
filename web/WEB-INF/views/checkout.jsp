@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             if(user!=null){
                                             %>
 						<li><a><%=user.getUserName() %></a></li>
-						<li><a href="userLogOut">Log Out</a></li>
+						<li><a id="log-out-btn">Log Out</a></li>
                                                 
                                               <% }else{%>
                                                     <li><a href="login">Log In</a></li>
@@ -490,6 +490,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
 <!-- slide -->
+<script src="<c:url value="resources/js/dom-login.js" />"> </script>
 
 <script src="<c:url value="resources/js/popper.min.js" />"></script>
  <script type="text/javascript">

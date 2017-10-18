@@ -492,6 +492,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- slide -->
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
 <script src="<c:url value="resources/js/dom-register.js" />"></script>
+<script src="<c:url value="resources/js/dom-login.js" />"> </script>
  <script type="text/javascript">
     (function () {
         var options = {

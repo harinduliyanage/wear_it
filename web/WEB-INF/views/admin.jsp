@@ -60,9 +60,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
-                        <iframe src="front.html" style="margin-left: 4vw; height: 40vw;overflow:hidden; border: none; "   class="col-md-11" name="internal">
-
-                        </iframe>
+                        <div class="container" id="main-content">
+                            
+                        </div>
                     </div>
                 </div>
             </div>

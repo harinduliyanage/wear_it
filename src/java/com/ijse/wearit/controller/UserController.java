@@ -143,7 +143,7 @@ public class UserController {
         return null;
     }
     
-    @RequestMapping(value = "/userLogOut" , method = RequestMethod.GET)
+    @RequestMapping(value = "/userLogOut" , method = RequestMethod.POST)
     public @ResponseBody Status  navigatesToLogOut(HttpServletRequest request, HttpServletResponse response){
         HttpSession session = request.getSession();
         session.setAttribute("currentUser", null);
