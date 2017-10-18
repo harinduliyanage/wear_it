@@ -35,13 +35,35 @@ public class SizeController {
             @RequestParam("sizeUK") String sizeUK,
             @RequestParam("sizeUS") String sizeUS,
             @RequestParam("sizeEU") String sizeEU){
-        //code here add size to database
-           
         
-    
-        Status status = new Status(200, "ok", "added Successfull..");
-        System.out.println("called...........//" +sizes+"////////"+sizeEU+"/////////////"+sizeUK+
-                "///////////////"+sizeEU);
+        boolean result = false;
+        Status status = new  Status();
+        
+        //Create Size
+        Sizes size = new Sizes();
+        size.setSizes(sizes);
+        size.setSizeUS(sizeUS);
+        size.setSizeUK(sizeUK);
+        size.setSizeEU(sizeEU);
+        
+        try {
+            Sizes searchedSize = sizeService.getSizeByName(sizes);
+            if(searchedSize == null){
+                result = sizeService.add(size);
+                if(result){
+                    status  = new Status(200, "Ok", "Added Successfully...");
+                        return status;
+                    }else{
+                        status = new Status(500, "Internal Server Error", "Added Faild..");
+                        return status;
+                }
+            }else{
+                status = new Status(401,"bad request", "Size Alrady Exits"); 
+                return status;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return status;
     }
     
