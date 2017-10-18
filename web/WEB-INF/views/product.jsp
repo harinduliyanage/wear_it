@@ -4,6 +4,7 @@
     Author     : Harindu.sul
 --%>
 
+<%@page import="com.ijse.wearit.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -53,6 +54,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="<c:url value="resources/css/css-a/form.css" />" rel="stylesheet" type="text/css" media="all" />
 </head>
 <body>
+<%
+    User user=(User) session.getAttribute("currentUser");
+%>
 <!--header-->
 <div class="header">
 <div class="container">
@@ -65,9 +69,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-top">
 		<div class="container">
 		<div class="col-sm-5 col-md-offset-2  header-login">
-					<ul >
-						<li><a href="login">Login</a></li>
-						<li><a href="register">Register</a></li>
+					<ul ><% 
+                                            if(user!=null){
+                                            %>
+						<li><a><%=user.getUserName() %></a></li>
+						<li><a id="log-out-btn">Log Out</a></li>
+                                                
+                                              <% }else{%>
+                                                    <li><a href="login">Log In</a></li>
+                                                    <li><a href="register">Register</a></li>
+                                              <%
+                                                }
+                                               %>         
+						
 						<li><a href="checkout">Checkout</a></li>
 					</ul>
 				</div>
@@ -812,6 +826,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
  <!--light-box-files -->
 		<script src="<c:url value="resources/js/js-a/jquery.chocolat.js" />"></script> 
+                <script src="<c:url value="resources/js/dom-login.js" />"> </script>
 		<link rel="stylesheet" href="<c:url value="resources/css/css-a/chocolat.css" />" type="text/css" media="screen" charset="utf-8">
 		<!--light-box-files -->
 		<script type="text/javascript" charset="utf-8">

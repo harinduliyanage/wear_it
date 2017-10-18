@@ -49,6 +49,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		});
 		</script>
+                 <style>
+                    .alert {
+                        padding: 20px;
+                        background-color: #f44336;
+                        color: white;
+                    }
+
+                    .closebtn {
+                        margin-left: 15px;
+                        color: white;
+                        font-weight: bold;
+                        float: right;
+                        font-size: 22px;
+                        line-height: 20px;
+                        cursor: pointer;
+                        transition: 0.3s;
+                    }
+
+                    .closebtn:hover {
+                        color: black;
+                    }
+                    .alert.success {
+                        padding: 20px;
+                        background-color: #4CAF50;
+                    }
+</style>
 <!---//End-rate---->
 </head>
 <body>
@@ -165,7 +191,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>							
 						</div>
 						<div class="col1 col5">
-						<img src="<c:url value="resources/images/me.png" />" class="img-responsive" alt="">
+						<img src="<c:url value="resources/images/me.png" />" class="img-responsive active" alt="">
 						</div>
 						<div class="clearfix"></div>
 					</div>                  
@@ -306,14 +332,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--login-->
 <div class="container">
 		<div class="login">
-                    <form action="registeUser">
+                    <form id="signUp-1st-btn">
 			<div class="col-md-6 login-do" id="signUp-1st">
-			<div class="login-mail">
-					<input type="text" placeholder="Name" required="" name="name" autofocus id="name-txt">
+                                <div class="login-mail">
+					<input type="text" placeholder="First Name" required="" name="Fname" autofocus id="Fname-txt">
 					<i  class="glyphicon glyphicon-user"></i>
 				</div>
-				<div class="login-mail">
-                                    <input type="text" placeholder="Phone Number" name="phone" id="phone-txt" required="" pattern="^\d{10}$" title="please enter 10 digits phone number ">
+                                <div class="login-mail">
+					<input type="text" placeholder="Last Name" required="" name="Lname" autofocus id="Lname-txt">
+					<i  class="glyphicon glyphicon-user"></i>
+                                </div>
+                                <div class="login-mail">
+					<input type="text"  id="address-txt" placeholder="Address Line 1" required="">
+					<i class="glyphicon glyphicon-user"></i>
+				</div>
+                                <div class="login-mail">
+                                    <input type="text" id="city-txt" placeholder="City" required="" >
+					<i class="glyphicon glyphicon-user"></i>
+				</div>
+                                <div class="login-mail">
+                                    <input type="text" id="country-txt" placeholder="country" required="" >
+					<i class="glyphicon glyphicon-user"></i>
+				</div>
+                                <div class="login-mail">
+                                    <input type="text"  id="postal-txt" placeholder="Postal Code" required="" pattern="^\d{5}$">
+					<i class="glyphicon glyphicon-user"></i>
+				</div>
+                                <div class="login-mail">
+                                    <input type="text" placeholder="Phone Number"  id="phone-txt" required="" pattern="^\d{10}$" title="please enter 10 digits phone number ">
 					<i  class="glyphicon glyphicon-phone"></i>
 				</div>
 				<div class="login-mail">
@@ -323,13 +369,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="login-mail">
 					<input type="password" id="psw-txt" name="pw" placeholder="Password" required="">
 					<i class="glyphicon glyphicon-lock"></i>
-				</div>
+                                </div>
 				   <a class="news-letter " href="#">
 						 <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
 					   </a>
 				<label class="hvr-skew-backward">
-                                    <input type="submit" value="Next" id="signUp-1st-btn">
+                                    <input type="submit" value="Sign Up">
 				</label>
+                                
+                                <div style="margin-top: 7px;"></div>
+                                <div class="alert" id="danger-alert" style="display: none">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Sign up Faild!</strong> Already user exits.... please try in different user name
+                                </div>
+                                <div class="alert-success" id="success-alert" style="display: none">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Sign up Successfully..!</strong> 
+                                </div>
 			
 			</div>
 			<div class="col-md-6 login-right">
@@ -436,6 +492,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- slide -->
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
 <script src="<c:url value="resources/js/dom-register.js" />"></script>
+<script src="<c:url value="resources/js/dom-login.js" />"> </script>
  <script type="text/javascript">
     (function () {
         var options = {

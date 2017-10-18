@@ -3,6 +3,7 @@
     Created on : Oct 4, 2017, 7:21:58 PM
     Author     : Harindu.sul
 --%>
+<%@page import="com.ijse.wearit.model.User"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -52,6 +53,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!---//End-rate---->
 </head>
 <body>
+<%
+    User user=(User) session.getAttribute("currentUser");
+%>
 <!--header-->
 <div class="header">
 <div class="container">
@@ -64,9 +68,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-top">
 		<div class="container">
 		<div class="col-sm-5 col-md-offset-2  header-login">
-					<ul >
-						<li><a href="login">Login</a></li>
-						<li><a href="register">Register</a></li>
+					<ul ><% 
+                                            if(user!=null){
+                                            %>
+						<li><a><%=user.getUserName() %></a></li>
+						<li><a id="log-out-btn">Log Out</a></li>
+                                                
+                                              <% }else{%>
+                                                    <li><a href="login">Log In</a></li>
+                                                    <li><a href="register">Register</a></li>
+                                              <%
+                                                }
+                                               %>         
+						
 						<li><a href="checkout">Checkout</a></li>
 					</ul>
 				</div>
@@ -476,6 +490,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
 <!-- slide -->
+<script src="<c:url value="resources/js/dom-login.js" />"> </script>
 
 <script src="<c:url value="resources/js/popper.min.js" />"></script>
  <script type="text/javascript">

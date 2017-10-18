@@ -320,7 +320,6 @@ public class UnitTesting {
             orderDetails.setCartDetailID(1);
             orderDetails.setDescription("Aaaaaaaaaa");
             orderDetailsService.add(orderDetails);
-
 */            
 
             System.out.println("*****************************");
