@@ -380,7 +380,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div style="margin-top: 7px;"></div>
                                 <div class="alert" id="danger-alert" style="display: none">
                                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                                    <strong>Sign up Faild!</strong> 
+                                    <strong>Sign up Faild!</strong> Already user exits.... please try in different user name
                                 </div>
                                 <div class="alert-success" id="success-alert" style="display: none">
                                     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 

@@ -20,7 +20,6 @@ $('#signUp-1st-btn').click(function (){
 $('#signUp-1st-btn').submit(function (event){
     event.stopPropagation();
     event.preventDefault();
-    alert("called");
      $.ajax({
       type: 'POST',
       url : "/wear_it_1.2/registeUser",
@@ -36,12 +35,38 @@ $('#signUp-1st-btn').submit(function (event){
       success:function(data){
            if(data.code ===200){
                 $('#success-alert').css('display','block');
+                $('#danger-alert').css('display','none');
            }else{
             $('#danger-alert').css('display','block');
+             $('#success-alert').css('display','none');
             }
       },
       error: function (error) {
         alert('Error is :'+error.toString());
       }
+   });
+});
+
+
+$('#login-form').submit(function (event){
+    alert("called....");
+   event.stopPropagation();
+   event.preventDefault(); 
+   $.ajax({
+        type: 'POST',
+        url: "/wear_it_1.2/userLogIn",
+        data: {
+            userName:('#login-userName').val(),
+            password:('#login-pw').val()
+        },
+      success:function(data){
+           if(data.code ===401){
+                alert(data.msg);
+           }
+      },
+      error: function (error) {
+        alert('Error is :'+error.toString());
+      }
+        
    });
 });

@@ -5,13 +5,19 @@
  */
 package com.ijse.wearit.controller;
 
+import com.ijse.wearit.model.ShippingInfo;
+import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.Status;
 import com.ijse.wearit.model.User;
 import com.ijse.wearit.service.custom.UserService;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,16 +47,57 @@ public class UserController {
             @RequestParam("mail")String mail,
             @RequestParam("pw")String password,
             @RequestParam("postal")String postalCode){
-        
-            //set User Name to email... 
-            // Code Here for add User And Shipping infor to database;
-            //Please check email by user Already Exits ..
-            //If user Already Exits you have to set new Staus (401,bad request, user Alrady Exits); and return it ;
-            //else return new Status(200,ok,user sign Up successfully..); return it
             
-                System.out.println("called..."+fName+"////"+lName+"////"+password+"////"+postalCode+"///"+phoneNum);
-                System.out.println("called..."+city+"////"+address+"////"+country+"///////"+mail+"***");
-        Status status = new Status(200, "Ok", "added...");
+            boolean result = false;
+            Status status=new Status();
+            
+            //create shipping info
+            ShippingInfo shippingInfo = new ShippingInfo();
+            shippingInfo.setAddressLine1(address);
+            shippingInfo.setPostalCode(postalCode);
+            shippingInfo.setfName(fName);
+            shippingInfo.setlName(lName);
+            shippingInfo.setCity(city);
+            shippingInfo.setCountry(country);
+            shippingInfo.setContactNum(phoneNum);
+            
+            //Create User
+            User user = new User();
+            user.setCustomerFirstName(fName);
+            user.setCustomerLastName(lName);
+            user.setCustomerEmail(mail);
+            user.setUserName(mail);
+            user.setPassword(password);
+            user.setShippinInfo(shippingInfo);
+            
+            //Create ShoppingCart
+            ShoppingCart cart = new ShoppingCart();    
+            Date date =new Date();
+            SimpleDateFormat newFormat = new SimpleDateFormat("MM-dd-yyyy");
+            String finalString = newFormat.format(date);
+            cart.setAddedDate(finalString);
+            cart.setNumberOfItems(0);
+            cart.setTotal(0.00);
+            user.setShoppingCart(cart);
+            
+        try {
+            User searchedUser = userService.getUserByNam(mail);
+            if(searchedUser == null){
+                result = userService.add(user);
+                if(result){
+                    status  = new Status(200, "Ok", "Added Successfully...");
+                    return status;
+                }else{
+                    status = new Status(500, "Internal Server Error", "Added Faild..");
+                    return status;
+                }
+            }else{
+                status = new Status(401,"bad request", "user Alrady Exits"); 
+                return status;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return status;
     }
     
@@ -61,6 +108,32 @@ public class UserController {
             System.out.println("called................ get All");
             return all;
             
+        } catch (Exception ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    @RequestMapping(value = "/userLogIn" , method = RequestMethod.POST)
+    public @ResponseBody Status  navigatesToLogin(HttpServletRequest request, HttpServletResponse response,
+            @RequestParam("userName") String userName,
+            @RequestParam("password")String pw){ 
+        try {
+           boolean result = false;
+           Status status = new Status();
+           User user = userService.getUserByNam(userName);
+           if(user != null ){
+               result = user.getPassword().equalsIgnoreCase(pw);  
+               if(result){
+                   HttpSession session = request.getSession();
+                   session.setAttribute("currentUser", user);
+                   response.sendRedirect("index.jsp");
+               }else{
+                   status= new Status(401, "Bad Request", "User Name and Password incorrect");
+                   return status;
+               }
+           }
+           
         } catch (Exception ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
         }
