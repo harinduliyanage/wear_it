@@ -46,11 +46,11 @@
                         <br style="clear:both">
                                     <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Update Category</h4>
                                                 <div class="form-group">
-                                                    <select id="update-category-combo" class="form-control inputdefault">
+                                                    <select id="update-category-combo" class="form-control">
                                                     </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <lable>Enter New Value Here</lable><input type="text" class="form-control" id="update-categoryName-txt" name="sizeUK" placeholder="New Name"  required="">
+                                                            <lable>Enter New Value Here</lable><input type="text" class="form-control" id="update-categoryName-txt" required="">
                                                         </div>
                                                         <button type="submit" name="submit" class="btn btn-primary pull-left">Update</button>
                                                 </form>
@@ -79,6 +79,6 @@
     <!-- Bootstrap Core JavaScript -->
      <script src="<c:url value="/resources/js/bootstrap.js" />"></script>    
      <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>    
-     <script src="<c:url value="/resources/js/dom.js" />"></script>   
+     <script src="<c:url value="/resources/js/js-a/dom-category.js" />"></script>   
     </body>
 </html>

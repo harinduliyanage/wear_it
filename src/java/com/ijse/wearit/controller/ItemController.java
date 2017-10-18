@@ -60,6 +60,7 @@ public class ItemController {
                     byte[] bytes = file.getBytes();
                     String path = context.getRealPath("/resources/images/Item") + File.separator +
                         "tempFile";
+                    System.out.println(path);
                     File dir = new File(path);
                     if (!dir.exists()){
 			dir.mkdirs();

@@ -122,9 +122,30 @@ public class SizeController {
             boolean result = sizeService.update(searchedSize);
             if(result){
                 status  = new Status(200, "Ok", "Updated Successfully...");
-                        return status;
+                return status;
             }else{
                 status = new Status(500, "Internal Server Error", "Updating Faild..");
+                return status;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return status;
+    }
+    
+    @RequestMapping(value = "/deleteSize", method = RequestMethod.POST)
+    public @ResponseBody Status deleteSize(HttpServletRequest request,
+            @RequestParam("size") String sizes ){
+        
+        Status status = new Status();
+        try {
+            Sizes searchedSize = sizeService.getSizeByName(sizes);
+            boolean result = sizeService.delete(searchedSize.getId());
+            if(result){
+                status  = new Status(200, "Ok", "Size : "+sizes+" deleted...");
+                return status;
+            }else{
+                status = new Status(500, "Internal Server Error", "delete Faild..");
                 return status;
             }
         } catch (Exception ex) {

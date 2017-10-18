@@ -14,7 +14,7 @@ $(document).ready(function (){
                 $('#update-category-combo').append($(option));
                 $('#delete-category-combo').append($(option1));
                 if(i===0){
-                    $('#update-sizeUK-txt').val(data[i].name);
+                    $('#update-categoryName-txt').val(data[i].name);
                     
                 }
             }
@@ -77,7 +77,7 @@ $('#update-category-combo').change(function (){
     $.ajax({
       type: 'GET',
       url : "/wear_it_1.2/getCategoryByName",
-      data:{size:$('#update-size-combo').val()},
+      data:{size:$('#update-category-combo').val()},
       success:function(data){
          $('#update-categoryName-txt').val(data.name);
       },
