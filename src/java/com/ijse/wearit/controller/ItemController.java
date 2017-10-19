@@ -128,17 +128,27 @@ public class ItemController {
         public @ResponseBody Status addItemDetailsToItem(
                 @RequestParam("itemDetailsArray")String itemDetailsArray,
                 @RequestParam("itemDescription") String description){
-            System.out.println("called****************Gson");
-            System.out.println(itemDetailsArray);
-            Gson gson=new Gson();
-            String yourJson = itemDetailsArray;
-            Type listType = new TypeToken<List<ItemDetailsDTO>>(){}.getType();
-            List<ItemDetailsDTO> itemDetailsList = gson.fromJson(yourJson, listType);
-            for (ItemDetailsDTO itemDetailsDTO : itemDetailsList) {
-                System.out.println(itemDetailsDTO.getItemDescription());
-            }
             
-            return new Status();
+            boolean result = false;
+            Status status = new Status();
+            try {
+                System.out.println(itemDetailsArray);
+                Gson gson=new Gson();
+                String yourJson = itemDetailsArray;
+                Type listType = new TypeToken<List<ItemDetailsDTO>>(){}.getType();
+                List<ItemDetailsDTO> itemDetailsList = gson.fromJson(yourJson, listType);
+
+                result = itemDetailsService.addItemDetailsToItem(description, itemDetailsList);
+                if(result){
+                    status = new Status(200,"OK","successfully....");
+                }else{
+                    status = new Status(500, "Internal Server Error", "Added Faild..");
+                }
+
+            } catch (Exception ex) {
+                Logger.getLogger(ItemController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return status;
         }
 
 }

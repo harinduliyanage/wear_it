@@ -5,6 +5,7 @@
  */
 package com.ijse.wearit.service.custom;
 
+import com.ijse.wearit.dto.ItemDetailsDTO;
 import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
 import com.ijse.wearit.model.Sizes;
@@ -17,5 +18,6 @@ import java.util.List;
  */
 public interface ItemDetailsService extends SuperService<ItemDetails>{
     public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;
-    public List<ItemDetails> searchByItemID(Item item);
+    public List<ItemDetails> searchByItemID(Item item)throws Exception;
+    public boolean addItemDetailsToItem(String description, List<ItemDetailsDTO> itemdetailsList)throws Exception;
 }

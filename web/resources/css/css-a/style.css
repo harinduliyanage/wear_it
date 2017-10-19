@@ -545,7 +545,7 @@ a.buy-now:hover{
     padding: 10px;
 }
 .zoom-icon {
-	    position: absolute;
+    position: absolute;
     opacity: 0;
     filter: alpha(opacity=0);
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
