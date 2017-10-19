@@ -83,10 +83,10 @@ public class ItemController {
             try {
                 result=itemService.deleteItemByDescription(description);
                 if(result){
-                    status  = new Status(200, "Ok", "Added Successfully...");
+                    status  = new Status(200, "Ok", "Deleted Successfully...");
                     return status;
                 }else{
-                    status = new Status(500, "Internal Server Error", "Added Faild..");
+                    status = new Status(500, "Internal Server Error", "Deleted Faild..");
                     return status;
                 }
             } catch (Exception ex) {
@@ -121,8 +121,5 @@ public class ItemController {
                 Logger.getLogger(ItemController.class.getName()).log(Level.SEVERE, null, ex);
             }
             return itemDetailsList;
-        }
-        
-        
-    
+        }   
 }

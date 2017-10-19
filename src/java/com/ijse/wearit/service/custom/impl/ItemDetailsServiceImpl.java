@@ -56,5 +56,11 @@ public class ItemDetailsServiceImpl implements ItemDetailsService{
         ItemDetails itemDetails = itemDetailsDAOImpl.getItemDetailsBySizeAndItem(sizeByName,item);
         return itemDetails;
     }
+
+    @Override
+    public List<ItemDetails> searchByItemID(Integer itemId) {
+        List<ItemDetails> itemDetailsList = itemDetailsDAOImpl.searchByItemID(itemId);
+        return itemDetailsList;
+    }
     
 }

@@ -63,7 +63,7 @@ public class ShoppingCartDetailsDAOImpl implements ShoppingCartDetailsDAO{
     @Override
     public ShoppingCartDetails getByItemDetail(Integer id) throws Exception {
         Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ShoppingCartDetails.class);
-        c2.add(Restrictions.eq("ITEMDETAILS_ID", id));//eka nisa ara description ekai size ekai e tika cmt anin karala e deka methenta parse karan search karanam hari baba apata wena karanna deyak ne id ekak nethi nisa mekata
+        c2.add(Restrictions.eq("ITEMDETAILS_ID", id));
         c2.setMaxResults(1);
         ShoppingCartDetails z = (ShoppingCartDetails) c2.uniqueResult();
         return z;
@@ -72,7 +72,7 @@ public class ShoppingCartDetailsDAOImpl implements ShoppingCartDetailsDAO{
     @Override
     public ShoppingCartDetails getByOrderQty(Integer orderQty) throws Exception {
         Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ShoppingCartDetails.class);
-        c2.add(Restrictions.eq("orderQty", orderQty));//eka nisa ara description ekai size ekai e tika cmt anin karala e deka methenta parse karan search karanam hari baba apata wena karanna deyak ne id ekak nethi nisa mekata
+        c2.add(Restrictions.eq("orderQty", orderQty));
         c2.setMaxResults(1);
         ShoppingCartDetails z = (ShoppingCartDetails) c2.uniqueResult();
         return z;

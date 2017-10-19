@@ -67,4 +67,15 @@ public class ItemDAOImpl implements ItemDAO {
         Item i = (Item) c2.uniqueResult();
         return i;
     }
+
+    @Override
+    public boolean deleteItemByDescription(String description) throws Exception {
+        Item search = (Item) sessionFactory.getCurrentSession().load(Item.class, description);
+        if (search != null) {
+            sessionFactory.getCurrentSession().delete(search);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

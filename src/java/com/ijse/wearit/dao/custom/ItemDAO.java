@@ -14,5 +14,6 @@ import com.ijse.wearit.model.Item;
  */
 public interface ItemDAO extends SuperDAO<Item>{
     public Item getItemByDescription(String description)throws Exception;
+    public boolean deleteItemByDescription(String description)throws Exception;
     
 }

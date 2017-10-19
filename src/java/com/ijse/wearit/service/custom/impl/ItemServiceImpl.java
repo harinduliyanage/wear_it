@@ -7,9 +7,11 @@ package com.ijse.wearit.service.custom.impl;
 
 import com.ijse.wearit.dao.custom.CategoryDAO;
 import com.ijse.wearit.dao.custom.ItemDAO;
+import com.ijse.wearit.dao.custom.ItemDetailsDAO;
 import com.ijse.wearit.dto.ItemDTO;
 import com.ijse.wearit.model.Category;
 import com.ijse.wearit.model.Item;
+import com.ijse.wearit.model.ItemDetails;
 import com.ijse.wearit.model.Status;
 import com.ijse.wearit.service.custom.ItemService;
 import java.io.BufferedOutputStream;
@@ -34,10 +36,14 @@ public class ItemServiceImpl  implements ItemService{
     private ItemDAO itemDAOImpl;
     
     @Autowired
+    private ItemDetailsDAO itemDetailsDAOImpl;
+    
+    @Autowired
     private CategoryDAO categoryDAOImpl;
     
     @Autowired
     ServletContext context;
+    
     
     @Override
     public boolean add(Item t) throws Exception {
@@ -103,4 +109,50 @@ public class ItemServiceImpl  implements ItemService{
         return result; 
     }
 
+    @Override
+    public boolean deleteItemByDescription(String description) throws Exception {
+        boolean result = false;
+        String staticPath="C:\\Users\\Harindu.sul\\Documents\\Project\\wear_it\\build\\web\\";
+        Item searchedItem = itemDAOImpl.getItemByDescription(description);
+        
+        String givenDeletedPath=staticPath+searchedItem.getPaths();
+        File file = new File(givenDeletedPath);
+        if(file.delete()){
+            result = itemDAOImpl.deleteItemByDescription(description);
+            if(result){
+                List<ItemDetails> itemDetailsList = itemDetailsDAOImpl.searchByItemID(searchedItem.getItemCode());
+                for(ItemDetails itemDetails : itemDetailsList){
+                    result = itemDetailsDAOImpl.delete(itemDetails.getId());
+                }
+            }else{
+                System.out.println("Delete operation is failed.");
+            }
+        }else{
+            System.out.println("Delete operation is failed.");
+        }
+               
+        return  result;
+    }
+    
+    
+
 }
+
+
+/*
+    
+            try{
+                //you should use transacton delete 
+                //code here to search item by description
+                //then get Item have any item details and delete itemDetails
+                //then searchitem.getPath();
+                
+                
+
+
+
+            }catch(Exception e){
+                System.out.println(e);
+
+            }
+*/
