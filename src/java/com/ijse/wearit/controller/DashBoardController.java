@@ -58,5 +58,9 @@ public class DashBoardController {
     public String getCategoryManageView(){
         return "addNewCategory";
     }
+    @RequestMapping("/A")
+    public String getAAAAAAAAAAAA(){
+        return "Error";
+    }
     
 }
