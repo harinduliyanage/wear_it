@@ -52,7 +52,9 @@ public class ItemController {
     
     @RequestMapping(value = "/image", method = RequestMethod.POST)
     public @ResponseBody Status addNewItem(@RequestParam("file")MultipartFile file ,
-            @RequestParam("name")String name,HttpServletRequest request) {
+            @RequestParam("name")String name,
+            @RequestParam("description")String description,
+            HttpServletRequest request) {
             if (!file.isEmpty()) {
                 try {
                     byte[] bytes = file.getBytes();
@@ -61,10 +63,10 @@ public class ItemController {
                     File dir = new File(path);
                     if (!dir.exists()){
 			dir.mkdirs();
-                        System.out.println("make dir runnig...");
                     }
                     File destinationFile = new File(dir.getAbsolutePath()+File.separator+name);
                     String complexPath=dir.getAbsolutePath()+File.separator+name;
+                    //
                     BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(destinationFile));
                     stream.write(bytes);
                     stream.close();
