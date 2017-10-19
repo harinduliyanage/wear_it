@@ -61,8 +61,8 @@
                     <div class="col-lg-12">
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                         <div style="height: 10px;"></div>
-                        <div class="container-fluid">
-                            <iframe name="internal" style="border: none;" width=560 height="700"></iframe>    
+                        <div class="container-fluid embed-responsive embed-responsive-16by9">
+                            <iframe name="internal" style="border: none;" class="embed-responsive-item" ></iframe>    
                         </div>
                     </div>
                 </div>
