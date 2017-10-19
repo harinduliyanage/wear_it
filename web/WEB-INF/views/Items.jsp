@@ -20,7 +20,7 @@
             <div class="container">
                 <h3 style="text-align: left;  color: #337ab7">Item Manage Panel</h3><div>
                 <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Create New Item First</h4>
-                <form id="item-adding-form" method="POST" action="image" enctype="multipart/form-data" class="form-horizontal">
+                <form action="addNewItem" id="item-adding-form" method="POST" enctype="multipart/form-data" class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-2">Upload :</label>
                 <div class="col-sm-10">
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Description:</label>
                 <div class="col-sm-10"> 
-                    <input type="text" class="form-control" id="item-desc-txt" required=""/>
+                    <input type="text" class="form-control" name="description" id="item-desc-txt" required=""/>
                 </div>
             </div>
             <div class="form-group"> 

@@ -67,10 +67,6 @@ public class ItemDetailsDTO extends SuperDTO{
         return shoppingCartDetails;
     }
 
-    public void setShoppingCartDetails(Set<ShoppingCartDetailsDTO> shoppingCartDetails) {
-        this.shoppingCartDetails = shoppingCartDetails;
-    }
-
     
     
 }
