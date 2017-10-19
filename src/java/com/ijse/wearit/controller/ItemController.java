@@ -5,6 +5,8 @@
  */
 package com.ijse.wearit.controller;
 
+import com.ijse.wearit.dto.Arr;
+import com.ijse.wearit.dto.ItemDetailsDTO;
 import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.Status;
 import com.ijse.wearit.service.custom.ItemService;
@@ -18,6 +20,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,6 +58,9 @@ public class ItemController {
             @RequestParam("name")String name,
             @RequestParam("description")String description,
             HttpServletRequest request) {
+        
+        String staticPath="resources\\images\\Item\\tempFile\\";
+        String savedPath=staticPath+name;//Use to Item model path feeld... 
             if (!file.isEmpty()) {
                 try {
                     byte[] bytes = file.getBytes();
@@ -66,11 +72,11 @@ public class ItemController {
 			dir.mkdirs();
                     }
                     File destinationFile = new File(dir.getAbsolutePath()+File.separator+name);
-                    String complexPath=dir.getAbsolutePath()+File.separator+name;
-                    //
                     BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(destinationFile));
                     stream.write(bytes);
                     stream.close();
+                    //Code here add to item database
+                    //Use Item model path feeld to savedPath attribute... 
                    
                     
  
@@ -81,5 +87,40 @@ public class ItemController {
         return new Status(200, "OK", "Upload succesfully..."); 
     
 	}
+    
+        @RequestMapping(value = "/deleteItem", method = RequestMethod.POST)
+        public @ResponseBody Status deleteItem(@RequestParam("description") String description){
+            Status status=null;
+            String staticPath="C:\\Users\\Harindu.sul\\Documents\\Project\\wear_it\\build\\web\\";
+            try{
+                //you should use transacton delete 
+                //code here to search item by description
+                //then get Item have any item details and delete itemDetails
+                //then searchitem.getPath();
+                
+                String givenDeletedPath=staticPath+searchitem.getPath;//database eke thiyena path eka mekata concat karanna + operator eka use karanna me widihata
+    		File file = new File(givenDeletedPath);
+                if(file.delete()){
+                   // code here delete item object
+                   //System.out.println(file.getName() + " is deleted!");
+                   //return OK status
+                }else{
+                    System.out.println("Delete operation is failed.");
+                }
+
+
+            }catch(Exception e){
+                System.out.println(e);
+
+            }
+            return status;
+        }
+        
+    
+        //create method getItemByDescription 
+    
+    
+        //create method getItemDetailsList by item description
+        
     
 }
