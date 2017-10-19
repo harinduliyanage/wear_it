@@ -23,7 +23,7 @@ public class ItemServiceImpl  implements ItemService{
     
     @Autowired
     private ItemDAO itemDAOImpl;
-
+    
     @Override
     public boolean add(Item t) throws Exception {
         return itemDAOImpl.add(t);
@@ -53,5 +53,5 @@ public class ItemServiceImpl  implements ItemService{
     public Item getItemByDescription(String description) throws Exception {
         return itemDAOImpl.getItemByDescription(description);
     }
-    
+
 }
