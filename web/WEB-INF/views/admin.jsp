@@ -60,34 +60,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
-                        <div class="container" id="main-content">
-                            <h3>Size Manage Panel</h3>
-                            <div class="row">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-5">
-                                <div class="form-area">  
-                                    <form role="form" id="create-new-size-form">
-                                    <br style="clear:both">
-                                                <h4 style="margin-bottom: 25px; text-align: center;">Create New Size</h4>
-                                                            <div class="form-group">
-                                                                            <input type="text" class="form-control" id="sizes-txt" name="size" placeholder="Size Name" >
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                            <input type="text" class="form-control" id="sizeUK-txt" name="sizeUK" placeholder="UK Size" >
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                            <input type="text" class="form-control" id="sizeUS-txt" name="sizeUS" placeholder="UK Size" >
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                            <input type="text" class="form-control" id="sizeEU-txt" name="sizeEU" placeholder="EU Size" >
-                                                                    </div>
-
-
-                                    <button type="button" id="add-New-Size-btn" name="submit" class="btn btn-primary pull-left">Submit</button>
-                                    </form>
-                                </div>
-                             </div>
-                            </div>
+                        <div style="height: 10px;"></div>
+                        <div class="container-fluid">
+                            <iframe name="internal" style="border: none;" width=560 height="700"></iframe>    
                         </div>
                     </div>
                 </div>
@@ -101,7 +76,6 @@
     <!-- jQuery -->
     <script src="<c:url value="/resources/js/jquery.js" />"></script>    
     <script src="<c:url value="/resources/js/jquery-2.1.3.min.js" />"></script> 
-    <script src="<c:url value="/resources/js/dom.js" />"></script> 
 
     <!-- Bootstrap Core JavaScript -->
      <script src="<c:url value="/resources/js/bootstrap.js" />"></script>    

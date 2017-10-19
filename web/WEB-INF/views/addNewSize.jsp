@@ -25,30 +25,57 @@
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-5">
-                    <div class="form-area">  
+                    <div class="form-area col-md-5">  
                         <form role="form" id="create-new-size-form">
                         <br style="clear:both">
                                     <h4 style="margin-bottom: 25px; text-align: center;">Create New Size</h4>
                                                 <div class="form-group">
-                                                                <input type="text" class="form-control" id="sizes-txt" name="size" placeholder="Size Name" >
+                                                                <input type="text" class="form-control" id="sizes-txt" name="size" placeholder="Size Name" required="" >
                                                         </div>
                                                         <div class="form-group">
-                                                                <input type="text" class="form-control" id="sizeUK-txt" name="sizeUK" placeholder="UK Size" >
+                                                            <input type="text" class="form-control" id="sizeUK-txt" name="sizeUK" placeholder="UK Size"  required="">
                                                         </div>
                                                         <div class="form-group">
-                                                                <input type="text" class="form-control" id="sizeUS-txt" name="sizeUS" placeholder="UK Size" >
+                                                            <input type="text" class="form-control" id="sizeUS-txt" name="sizeUS" placeholder="UK Size" required="">
                                                         </div>
                                                         <div class="form-group">
-                                                                <input type="text" class="form-control" id="sizeEU-txt" name="sizeEU" placeholder="EU Size" >
+                                                            <input type="text" class="form-control" id="sizeEU-txt" name="sizeEU" placeholder="EU Size" required="">
                                                         </div>
 
 
-                        <button type="button" id="add-New-Size-btn" name="submit" class="btn btn-primary pull-left">Submit</button>
+                                    <button type="submit" id="add-New-Size-btn" name="submit" class="btn btn-primary pull-left">Submit</button>
                         </form>
                     </div>
                  </div>
             </div>
-            
+            <!-- >Update Size </-->
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <div class="form-area col-md-5">  
+                        <form role="form" id="update-size-form">
+                        <br style="clear:both">
+                                    <h4 style="margin-bottom: 25px; text-align: center;">Create New Size</h4>
+                                                <div class="form-group">
+                                                    <select id="update-size-combo" class="form-control inputdefault">
+                                                    </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="update-sizeUK-txt" name="sizeUK" placeholder="UK Size"  required="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="update-sizeUS-txt" name="sizeUS" placeholder="UK Size" required="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" id="update-sizeEU-txt" name="sizeEU" placeholder="EU Size" required="">
+                                                        </div>
+
+
+                                    <button type="submit" id="add-New-Size-btn" name="submit" class="btn btn-primary pull-left">Update</button>
+                        </form>
+                    </div>
+                 </div>
+            </div>
             
     </div>
           <!-- jQuery -->
