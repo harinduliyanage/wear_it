@@ -14,49 +14,49 @@ import org.springframework.stereotype.Component;
 @Component
 public class ItemDetailsDTO extends SuperDTO{
 
-    private Integer id;
-    private String sizeName;
-    private String itemDescription;
-    private double unitPrice;
-    private int qtyOnHand;
+    private Integer _id;
+    private String _sizeName;
+    private String _itemDescription;
+    private double _unitPrice;
+    private int _qtyOnHand;
 
     public Integer getId() {
-        return id;
+        return _id;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this._id = id;
     }
 
     public String getSizeName() {
-        return sizeName;
+        return _sizeName;
     }
 
     public void setSizeName(String sizeName) {
-        this.sizeName = sizeName;
+        this._sizeName = sizeName;
     }
 
     public String getItemDescription() {
-        return itemDescription;
+        return _itemDescription;
     }
 
     public void setItemDescription(String itemDescription) {
-        this.itemDescription = itemDescription;
+        this._itemDescription = itemDescription;
     }
 
     public double getUnitPrice() {
-        return unitPrice;
+        return _unitPrice;
     }
 
     public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
+        this._unitPrice = unitPrice;
     }
 
     public int getQtyOnHand() {
-        return qtyOnHand;
+        return _qtyOnHand;
     }
 
     public void setQtyOnHand(int qtyOnHand) {
-        this.qtyOnHand = qtyOnHand;
+        this._qtyOnHand = qtyOnHand;
     }  
 }

@@ -2,6 +2,7 @@ $(document).ready(function (){
     getAllCategory();
     getAllItem();
     getAllSizes();
+    $('#numOfItem').val(0);
 });
 
 function getAllSizes(){
@@ -76,62 +77,77 @@ function getAllCategory(){
    });
 }
 
-$('#add-itemDetails-btn').click(function (){
+$('#itemDetails-adding-form').submit(function (e){
+    e.stopPropagation();
+    e.preventDefault();
     var unitPrice=$('#unitPrice-txt').val();
     var qtyOnHand=$('#qtyOnHand-txt').val();
     var sizeName=$('#size-name-combo-itemDetails').val();
     var itemDescription=$('#item-desc-combo').val();
-    alert(unitPrice+"//"+qtyOnHand+"//"+sizeName+"///"+itemDescription);
+    var markup = "<tr><td><input type='checkbox' name='record'></td><td>"+itemDescription
+           +"</td><td>" +sizeName
+           + "</td><td>" + unitPrice
+           + "</td><td>"+qtyOnHand
+           +"</td></tr>";
+    $("table tbody").append(markup);
+    var h=$('#numOfItem').val();
+    $('#numOfItem').val(Number(h)+Number(1));
+    
 });
 
-//$('#pp').click(function (){
-//    var list=[{
-//       "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.05,
-//       "qtyOnHand":50
-//            
-//    },{
-//      "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.01,
-//       "qtyOnHand":10  
-//    },{
-//      "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.02,
-//       "qtyOnHand":20  
-//    },{
-//      "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.03,
-//       "qtyOnHand":30  
-//    },{
-//       "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.04,
-//       "qtyOnHand":40 
-//    }];
-//    $.ajax({
-//    url : '/wear_it_1.2/addItemDetailsToItem',
-//    data : $.toJSON(list),
-//    type : 'POST', //<== not 'GET',
-//    contentType : "application/json; charset=utf-8",
-//    dataType : 'json',
-//    error : function() {
-//        console.log("error");
-//    },
-//    success : function(arr) {
-//            alert();
-//        var testArray = arr.testArray;
-//         $.each(function(i,e) {
-//             document.writeln(e);
-//         });
-//    }
-//  });
-//});
+$("#btn-delete").click(function(){
+    var i=0;
+    $("table tbody").find('input[name="record"]').each(function(){
+        if($(this).is(":checked")){
+            i++;
+            $(this).parents("tr").remove();
+        }
+    });
+    var h=$('#numOfItem').val();
+    $('#numOfItem').val(Number(h)-Number(i));
+});
+
+$("#btn-addItemDetails").click(function(){
+    var i=$('#numOfItem').val();
+    if(i==0){
+        alert("Add ItemDetails Frist");
+    }else{
+            var unitPrice;
+            var qtyOnHand;
+            var sizeName;
+            var itemDescription;
+            var itemDetailsArray=[];
+        for (var j=0 ; j< i ; j++){
+            var itemDetail=new ItemDetailsDTO();
+            unitPrice=document.getElementById("putTable").rows[j+1].cells[3].innerHTML;
+            qtyOnHand=document.getElementById("putTable").rows[j+1].cells[4].innerHTML;
+            sizeName=document.getElementById("putTable").rows[j+1].cells[2].innerHTML;
+            itemDescription=document.getElementById("putTable").rows[j+1].cells[1].innerHTML;
+            itemDetail.setItemDescription(itemDescription);
+            itemDetail.setSizeName(sizeName);
+            itemDetail.setQtyOnHand(qtyOnHand);
+            itemDetail.setUnitPrice(unitPrice);
+            itemDetailsArray.push(itemDetail);   
+            alert(unitPrice+qtyOnHand+sizeName+itemDescription);
+        }
+        var a=JSON.stringify(itemDescription);
+        var b=JSON.stringify(itemDetailsArray);
+        sendDataBaseToData(a,b);  
+    }  
+});
+
+function sendDataBaseToData(itemDescription,itemDetailsArray){
+     $.ajax({
+        type: "POST",
+        url: '/wear_it_1.2/addItemDetalsToItem',
+        data: ({ itemDescription : itemDescription , itemDetailsArray :itemDetailsArray}),
+        async: false,
+        success: function(data) {
+            alert(data.msg);
+        },
+        error: function(error) {
+            alert('Error occured :'+error);
+        }
+    });
+}
+
