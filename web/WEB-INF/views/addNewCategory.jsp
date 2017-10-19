@@ -50,7 +50,7 @@
                                                     </select>
                                                         </div>
                                                         <div class="form-group">
-                                                            <lable>Enter New Value Here</lable><input type="text" class="form-control" id="update-categoryName-txt" name="sizeUK" placeholder="Category Name"  required="">
+                                                            <lable>Enter New Value Here</lable><input type="text" class="form-control" id="update-categoryName-txt" name="sizeUK" placeholder="New Name"  required="">
                                                         </div>
                                                         <button type="submit" name="submit" class="btn btn-primary pull-left">Update</button>
                                                 </form>
