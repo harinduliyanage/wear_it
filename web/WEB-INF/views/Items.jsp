@@ -54,6 +54,61 @@
             </div>
             </div>
         </div>
+        <div class="row">
+            <div class="container">
+                <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Add Item Details To Item</h4>
+                <form id="itemDetails-adding-form"  method="POST">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Item :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="item-desc-combo"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Size:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="size-name-combo-itemDetails" ></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Unit Price</label>
+                <div class="col-sm-10"> 
+                    <input type="text" class="form-control"  id="unitPrice-txt" pattern="[0-9]+(\.[0-9][0-9]?)?" title="Input tow decimel point number please"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">QtyOnHand</label>
+                <div class="col-sm-10"> 
+                    <input type="text" class="form-control"  id="qtyOnHand-txt" required=""/>
+                </div>
+            </div>        
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button id="add-itemDetails-btn" type="button" class="btn warning">Put Item Details Table</button>
+                </div>
+            </div>
+        </form>
+            </div>
+            </div>
+        <!--Item details putting Table -->
+        <div class="row">
+            
+        </div>
+        <!-- Item Delete by description -->
+        <div class="row">
+                <div class="col-md-2"></div>
+                    <div class="form-area col-md-5">  
+                        <form role="form">
+                        <br style="clear:both">
+                            <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Delete Item</h4>
+                                <div class="form-group">
+                                    <select id="delete-item-combo" class="form-control inputdefault">
+                                    </select>
+                                </div>
+                            <button type="button" id="delete-item-btn"  class="btn btn-warning pull-left">Delete</button>
+                        </form>
+                    </div>
+            </div>
         <script src="<c:url value="/resources/js/jquery.js" />"></script>    
     <script src="<c:url value="/resources/js/jquery-2.1.3.min.js" />"></script> 
 

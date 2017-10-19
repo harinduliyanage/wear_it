@@ -5,12 +5,16 @@
  */
 package com.ijse.wearit.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ijse.wearit.dto.ItemDTO;
+import com.ijse.wearit.dto.ItemDetailsDTO;
 import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
 import com.ijse.wearit.model.Status;
 import com.ijse.wearit.service.custom.ItemDetailsService;
 import com.ijse.wearit.service.custom.ItemService;
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -96,19 +100,17 @@ public class ItemController {
         }
     
         @RequestMapping(value = "/getItemByDescription", method = RequestMethod.POST)
-        public @ResponseBody Item getItemByDescription(
-                @RequestParam("description") String description){
-        
+        public @ResponseBody Item getItemByDescription(@RequestParam("description") String description){
             Item item = null;
-        try {
-            item = itemService.getItemByDescription(description);
-        } catch (Exception ex) {
-            Logger.getLogger(ItemController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            try {
+                item = itemService.getItemByDescription(description);
+            } catch (Exception ex) {
+                Logger.getLogger(ItemController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             return item;
-        
+
         }
-    
+
         @RequestMapping(value = "/getItemDetailsList", method = RequestMethod.GET)
         public @ResponseBody List<ItemDetails> getItemDetailsList(
                 @RequestParam("description") String description){
@@ -122,4 +124,18 @@ public class ItemController {
             }
             return itemDetailsList;
         }   
+        
+        @RequestMapping(value = "/addItemDetalsToItem", method = RequestMethod.POST)
+        public @ResponseBody Status addItemDetailsToItem(
+                @RequestParam("itemDetailsArray")String itemDetailsArray,
+                @RequestParam("itemDescription") String description){
+            
+            Gson gson=new Gson();
+            String yourJson = itemDetailsArray;
+            Type listType = new TypeToken<List<ItemDetailsDTO>>(){}.getType();
+            List<ItemDetailsDTO> itemDetailsList = gson.fromJson(yourJson, listType);
+            
+            return new Status();
+        }
+
 }
