@@ -19,6 +19,7 @@ $('#update-size-combo').change(function (){
     $.ajax({
       type: 'GET',
       url : "/wear_it_1.2/getSizeByName",
+      data:{size:$('#update-size-combo').val()},
       success:function(data){
          $('#update-sizeUK-txt').val(data.sizeUK)
          $('#update-sizeUS-txt').val(data.sizeUS)
