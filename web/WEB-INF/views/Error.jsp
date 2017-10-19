@@ -22,3 +22,16 @@
 	</form>
     </body>
 </html>
+
+ <div class="form-group">
+                <label class="control-label col-sm-2">Size:</label>
+                <div class="col-sm-10"> 
+                    <select  class="form-control"  id="item-size-combo"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Category:</label>
+                <div class="col-sm-10"> 
+                    <select  class="form-control" id="item-category-combo"></select>
+                </div>
+            </div>

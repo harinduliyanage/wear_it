@@ -4,6 +4,12 @@
  * and open the template in the editor.
  */
 $(document).ready(function (){
+    getAllCategory(); 
+});
+
+function getAllCategory(){
+    $('#update-category-combo').empty();
+    $('#delete-category-combo').empty();
     $.ajax({
       type: 'GET',
       url : "/wear_it_1.2/getAllCategory",
@@ -23,8 +29,7 @@ $(document).ready(function (){
         alert('Error is :'+error.toString());
       }
    });
-    
-});
+}
 
 $('#create-new-Category-form').submit(function (event){
     event.stopPropagation();
@@ -66,6 +71,7 @@ $('#delete-category-btn').click(function (){
       data: {category:$('#delete-category-combo').val()},
       success:function(data){
             alert(data.msg);
+            getAllCategory();
       },
       error: function (error) {
         alert('Error is :'+error.toString());
