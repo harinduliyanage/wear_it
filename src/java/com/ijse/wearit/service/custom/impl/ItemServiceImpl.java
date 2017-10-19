@@ -112,22 +112,25 @@ public class ItemServiceImpl  implements ItemService{
     @Override
     public boolean deleteItemByDescription(String description) throws Exception {
         boolean result = false;
-        String staticPath="C:\\Users\\Harindu.sul\\Documents\\Project\\wear_it\\build\\web\\";
         Item searchedItem = itemDAOImpl.getItemByDescription(description);
         
-        String givenDeletedPath=staticPath+searchedItem.getPaths();
-        File file = new File(givenDeletedPath);
-        if(file.delete()){
-            result = itemDAOImpl.deleteItemByDescription(description);
-            if(result){
-                List<ItemDetails> itemDetailsList = itemDetailsDAOImpl.searchByItemID(searchedItem.getItemCode());
+        result = itemDAOImpl.delete(searchedItem.getItemCode());
+        if(result){
+            List<ItemDetails> itemDetailsList = itemDetailsDAOImpl.searchByItemID(searchedItem);
+            if(itemDetailsList == null){
+                System.out.println("Delete operation is success");
+                return result;
+            }else{
                 for(ItemDetails itemDetails : itemDetailsList){
+                    System.out.println(itemDetails.getId()+"   ***************************");
                     result = itemDetailsDAOImpl.delete(itemDetails.getId());
                 }
-            }else{
-                System.out.println("Delete operation is failed.");
+                System.out.println("Delete operation is success");
+                return  result;
             }
+            
         }else{
+            result = false;
             System.out.println("Delete operation is failed.");
         }
                

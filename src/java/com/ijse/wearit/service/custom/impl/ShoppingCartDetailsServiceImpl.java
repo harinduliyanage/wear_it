@@ -6,6 +6,7 @@
 package com.ijse.wearit.service.custom.impl;
 
 import com.ijse.wearit.dao.custom.ShoppingCartDetailsDAO;
+import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.ShoppingCartDetails;
 import com.ijse.wearit.service.custom.ShoppingCartDetailsService;
 import java.util.List;
@@ -55,9 +56,9 @@ public class ShoppingCartDetailsServiceImpl implements ShoppingCartDetailsServic
     }
 
     @Override
-    public ShoppingCartDetails getByOrderQty(Integer orderQty) throws Exception {
-        return  shoppingCartDetailsDAOImpl.getByOrderQty(orderQty);
+    public List<ShoppingCartDetails> getDetailsByCart(ShoppingCart shoppingCart) throws Exception {
+        List<ShoppingCartDetails> shoppingCartDetailses = shoppingCartDetailsDAOImpl.getDetailsByCart(shoppingCart);
+        return shoppingCartDetailses;
     }
 
-    
 }

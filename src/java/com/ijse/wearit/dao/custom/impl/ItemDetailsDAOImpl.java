@@ -65,9 +65,9 @@ public class ItemDetailsDAOImpl implements ItemDetailsDAO{
     }
 
     @Override
-    public List<ItemDetails> searchByItemID(Integer itemId) {
+    public List<ItemDetails> searchByItemID(Item item) {
         Criteria c2 = sessionFactory.getCurrentSession().createCriteria(ItemDetails.class);
-        c2.add(Restrictions.eq("ITEM_ID", itemId));
+        c2.add(Restrictions.eq("item", item));
         List<ItemDetails> list = c2.list();
         return list;
     }

@@ -17,5 +17,5 @@ import java.util.List;
  */
 public interface ItemDetailsService extends SuperService<ItemDetails>{
     public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;
-    public List<ItemDetails> searchByItemID(Integer itemId);
+    public List<ItemDetails> searchByItemID(Item item);
 }

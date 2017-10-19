@@ -118,7 +118,7 @@ public class ItemController {
             List<ItemDetails> itemDetailsList = null;
             try {
                 Item searchedItem = itemService.getItemByDescription(description);
-                itemDetailsList = itemDetailsService.searchByItemID(searchedItem.getItemCode());
+                itemDetailsList = itemDetailsService.searchByItemID(searchedItem);
             } catch (Exception ex) {
                 Logger.getLogger(ItemController.class.getName()).log(Level.SEVERE, null, ex);
             }

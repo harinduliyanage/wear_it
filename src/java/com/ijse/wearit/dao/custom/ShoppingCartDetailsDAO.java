@@ -6,7 +6,9 @@
 package com.ijse.wearit.dao.custom;
 
 import com.ijse.wearit.dao.SuperDAO;
+import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.ShoppingCartDetails;
+import java.util.List;
 
 /**
  *
@@ -14,5 +16,5 @@ import com.ijse.wearit.model.ShoppingCartDetails;
  */
 public interface ShoppingCartDetailsDAO extends SuperDAO<ShoppingCartDetails>{
     public ShoppingCartDetails getByItemDetail(Integer id) throws Exception ;
-    public ShoppingCartDetails getByOrderQty(Integer orderQty) throws Exception ;
+    public List<ShoppingCartDetails> getDetailsByCart(ShoppingCart shoppingCart) throws Exception ;
 }

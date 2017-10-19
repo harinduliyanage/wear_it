@@ -58,8 +58,8 @@ public class ItemDetailsServiceImpl implements ItemDetailsService{
     }
 
     @Override
-    public List<ItemDetails> searchByItemID(Integer itemId) {
-        List<ItemDetails> itemDetailsList = itemDetailsDAOImpl.searchByItemID(itemId);
+    public List<ItemDetails> searchByItemID(Item item) {
+        List<ItemDetails> itemDetailsList = itemDetailsDAOImpl.searchByItemID(item);
         return itemDetailsList;
     }
     
