@@ -5,8 +5,6 @@
  */
 package com.ijse.wearit.dto;
 
-import java.util.HashSet;
-import java.util.Set;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,61 +14,49 @@ import org.springframework.stereotype.Component;
 @Component
 public class ItemDetailsDTO extends SuperDTO{
 
-    private Integer id;
-    private SizeDTO sizeDTO;
-    private ItemDTO itemDTO;
-    private double unitPrice;
-    private int qtyOnHand;
-    private Set<ShoppingCartDetailsDTO> shoppingCartDetails = new HashSet<ShoppingCartDetailsDTO>();
+    private Integer _id;
+    private String _sizeName;
+    private String _itemDescription;
+    private double _unitPrice;
+    private int _qtyOnHand;
 
     public Integer getId() {
-        return id;
+        return _id;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this._id = id;
     }
 
-    public SizeDTO getSizeDTO() {
-        return sizeDTO;
+    public String getSizeName() {
+        return _sizeName;
     }
 
-    public void setSizeDTO(SizeDTO sizeDTO) {
-        this.sizeDTO = sizeDTO;
+    public void setSizeName(String sizeName) {
+        this._sizeName = sizeName;
     }
 
-    public ItemDTO getItemDTO() {
-        return itemDTO;
+    public String getItemDescription() {
+        return _itemDescription;
     }
 
-    public void setItemDTO(ItemDTO itemDTO) {
-        this.itemDTO = itemDTO;
+    public void setItemDescription(String itemDescription) {
+        this._itemDescription = itemDescription;
     }
 
     public double getUnitPrice() {
-        return unitPrice;
+        return _unitPrice;
     }
 
     public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
+        this._unitPrice = unitPrice;
     }
 
     public int getQtyOnHand() {
-        return qtyOnHand;
+        return _qtyOnHand;
     }
 
     public void setQtyOnHand(int qtyOnHand) {
-        this.qtyOnHand = qtyOnHand;
-    }
-
-    public Set<ShoppingCartDetailsDTO> getShoppingCartDetails() {
-        return shoppingCartDetails;
-    }
-
-    public void setShoppingCartDetails(Set<ShoppingCartDetailsDTO> shoppingCartDetails) {
-        this.shoppingCartDetails = shoppingCartDetails;
-    }
-
-    
-    
+        this._qtyOnHand = qtyOnHand;
+    }  
 }

@@ -38,7 +38,7 @@
                     <a href="#">Dashboard</a>
                 </li>
                 <li>
-                    <a href="newCustomer.jsp" target="internal">Add New Item</a>
+                    <a href="/wear_it_1.2/items" target="internal">Add New Item</a>
                 </li>
                 <li>
                     <a id="SizeNav" href="/wear_it_1.2/size" target="internal">Sizes Manage</a>

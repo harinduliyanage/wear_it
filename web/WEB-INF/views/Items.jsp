@@ -12,15 +12,37 @@
         
         <link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css" />" media="all" />
-        <title>JSP Page</title>
+        <style>
+            .scrollToTop{
+	width:100px; 
+	height:130px;
+	padding:10px; 
+	text-align:center; 
+	background: whiteSmoke;
+	font-weight: bold;
+	color: #444;
+	text-decoration: none;
+	position:fixed;
+	top:75px;
+	right:40px;
+	display:none;
+	background: url('arrow_up.png') no-repeat 0px 20px;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
+</style>
+        <title>Item Manage</title>
     </head>
     <body>
+        <a href="#" class="scrollToTop">Scroll To Top</a>
         <div class="row">
             <div class="container">
-                <h3 style="text-align: left;  color: #337ab7">Item Manage Panel</h3><div>
+                <h3 style="text-align: left;  color: #ffff; background-color:Gray;">Item Manage Panel</h3><div>
                 <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Create New Item First</h4>
-                <form id="item-adding-form" method="POST" action="image" enctype="multipart/form-data" class="form-horizontal">
+                <form action="addNewItem" id="item-adding-form" method="POST" enctype="multipart/form-data" class="form-horizontal">
             <div class="form-group">
                 <label class="control-label col-sm-2">Upload :</label>
                 <div class="col-sm-10">
@@ -30,13 +52,19 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Set File Name :</label>
                 <div class="col-sm-10">
-                  <input type="text" name="name" class="form-control" required="" />
+                  <input type="text" name="fileName" class="form-control" required="" />
                 </div>
             </div>
             <div class="form-group">
+                <label class="control-label col-sm-2">All Category:</label>
+                <div class="col-sm-10">
+                    <select name="category" id="category-combo" class="form-control" ></select>
+                </div>
+            </div>       
+            <div class="form-group">
                 <label class="control-label col-sm-2">Description:</label>
                 <div class="col-sm-10"> 
-                    <input type="text" class="form-control" id="item-desc-txt" required=""/>
+                    <input type="text" class="form-control" name="description" id="item-desc-txt" required=""/>
                 </div>
             </div>
             <div class="form-group"> 
@@ -48,8 +76,111 @@
             </div>
             </div>
         </div>
-        <script src="<c:url value="resources/js/bootstrap.min.js"/>" ><script>
-        <script src="<c:url value="resources/js/js-a/dom-items.js"/>" ><script>
-    </body>
+        <div class="row">
+            <div class="container">
+                <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Add Item Details To Item</h4>
+                <form id="itemDetails-adding-form">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Item :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="item-desc-combo"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Size:</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="size-name-combo-itemDetails" ></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Unit Price</label>
+                <div class="col-sm-10"> 
+                    <input type="text" class="form-control"  id="unitPrice-txt" pattern="[0-9]+(\.[0-9][0-9]?)?" title="Input tow decimel point number please"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">QtyOnHand</label>
+                <div class="col-sm-10"> 
+                    <input type="text" class="form-control"  id="qtyOnHand-txt" pattern="^0*(?:[1-9][0-9]?|100)$" title="Enter valid range number (0-100)"/>
+                </div>
+            </div>        
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button id="add-itemDetails-btn" type="submit" class="btn warning">Put Item Details Table</button>
+                </div>
+            </div>
+        </form>
+            </div>
+            </div>
+        <!--Item details putting Table -->
+        <div class="row">
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table" id="putTable">
+                    <thead>
+                      <tr>
+                        <th>select</th>
+                        <th class="itemdescCell">Item Description</th>
+                        <th>Size Name</th>
+                        <th>Unit Price</th>
+                        <th>Qty On Hand </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                    <div>
+                        <button id="btn-delete" class="btn btn-danger">Remove Selected Item</button>
+                        <button id="btn-addItemDetails" class="btn btn-success">Add Item Details</button>
+                        <input id="numOfItem" type="text" readonly="" disabled="" class="form-control" style="width: 50px;" />
+                    </div>    
+            </div>  
+            </div>
+        </div>
+        <!-- Item Delete by description -->
+        <div class="row">
+                <div class="col-md-2"></div>
+                    <div class="form-area col-md-5">  
+                        <form role="form">
+                        <br style="clear:both">
+                            <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Delete Item</h4>
+                                <div class="form-group">
+                                    <select id="delete-item-combo" class="form-control inputdefault">
+                                    </select>
+                                </div>
+                            <button type="button" id="delete-item-btn"  class="btn btn-warning pull-left">Delete</button>
+                        </form>
+                    </div>
+            </div>
+        <script src="<c:url value="/resources/js/jquery.js" />"></script>    
+    <script src="<c:url value="/resources/js/jquery-2.1.3.min.js" />"></script> 
+
+    <!-- Bootstrap Core JavaScript -->
+     <script src="<c:url value="/resources/js/bootstrap.js" />"></script>    
+     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>    
+     <script src="<c:url value="/resources/js/js-a/ItemDetailsDTO.js" />"></script>  
+     <script src="<c:url value="/resources/js/js-a/dom-items.js" />"></script>  
+      <script>
+$(document).ready(function(){
+	
+	//Check to see if the window is top if not then display button
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.scrollToTop').fadeIn();
+		} else {
+			$('.scrollToTop').fadeOut();
+		}
+	});
+	
+	//Click event to scroll to top
+	$('.scrollToTop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
+	
+});
+</script>
+    </body> 
 </html>
 

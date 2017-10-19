@@ -5,8 +5,10 @@
  */
 package com.ijse.wearit.service.custom;
 
+import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.ShoppingCartDetails;
 import com.ijse.wearit.service.SuperService;
+import java.util.List;
 
 /**
  *
@@ -14,5 +16,5 @@ import com.ijse.wearit.service.SuperService;
  */
 public interface ShoppingCartDetailsService extends SuperService<ShoppingCartDetails>{
     public ShoppingCartDetails getByItemDetail(Integer id) throws Exception ;
-    public ShoppingCartDetails getByOrderQty(Integer orderQty) throws Exception ;
+    public List<ShoppingCartDetails> getDetailsByCart(ShoppingCart shoppingCart) throws Exception ;
 }

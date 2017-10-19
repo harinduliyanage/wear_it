@@ -6,6 +6,7 @@
 package com.ijse.wearit.dto;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -13,65 +14,44 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ItemDTO extends SuperDTO{
-    private Integer id;
     private String description;
-    private String path;
-    private CategoryDTO categoryDTO;
+    private String fileName;
+    private MultipartFile file;
+    private String categoryName;
 
-    /**
-     * @return the id
-     */
-    public Integer getId() {
-        return id;
+    public ItemDTO() {
     }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the description
-     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * @param description the description to set
-     */
     public void setDescription(String description) {
         this.description = description;
     }
 
-    /**
-     * @return the path
-     */
-    public String getPath() {
-        return path;
+    public String getFileName() {
+        return fileName;
     }
 
-    /**
-     * @param path the path to set
-     */
-    public void setPath(String path) {
-        this.path = path;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
     }
 
-    /**
-     * @return the categoryDTO
-     */
-    public CategoryDTO getCategoryDTO() {
-        return categoryDTO;
+    public MultipartFile getFile() {
+        return file;
     }
 
-    /**
-     * @param categoryDTO the categoryDTO to set
-     */
-    public void setCategoryDTO(CategoryDTO categoryDTO) {
-        this.categoryDTO = categoryDTO;
+    public void setFile(MultipartFile file) {
+        this.file = file;
     }
-    
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
 }
