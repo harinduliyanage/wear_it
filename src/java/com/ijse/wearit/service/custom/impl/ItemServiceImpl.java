@@ -5,13 +5,22 @@
  */
 package com.ijse.wearit.service.custom.impl;
 
+import com.ijse.wearit.dao.custom.CategoryDAO;
 import com.ijse.wearit.dao.custom.ItemDAO;
+import com.ijse.wearit.dto.ItemDTO;
+import com.ijse.wearit.model.Category;
 import com.ijse.wearit.model.Item;
+import com.ijse.wearit.model.Status;
 import com.ijse.wearit.service.custom.ItemService;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
+import javax.servlet.ServletContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -23,6 +32,12 @@ public class ItemServiceImpl  implements ItemService{
     
     @Autowired
     private ItemDAO itemDAOImpl;
+    
+    @Autowired
+    private CategoryDAO categoryDAOImpl;
+    
+    @Autowired
+    ServletContext context;
     
     @Override
     public boolean add(Item t) throws Exception {
@@ -52,6 +67,40 @@ public class ItemServiceImpl  implements ItemService{
     @Override
     public Item getItemByDescription(String description) throws Exception {
         return itemDAOImpl.getItemByDescription(description);
+    }
+
+    @Override
+    public boolean addItem(ItemDTO itemDTO) throws Exception {
+        boolean result = false;
+        MultipartFile file = itemDTO.getFile();
+        String staticPath="resources\\images\\Item\\tempFile\\";
+        String savedPath=staticPath+itemDTO.getFileName();//Use to Item model path feeld... 
+            if (!file.isEmpty()) {
+                try {
+                    byte[] bytes = file.getBytes();
+                    String path = context.getRealPath("/resources/images/Item") + File.separator +
+                        "tempFile";
+                    File dir = new File(path);
+                    if (!dir.exists()){
+			dir.mkdirs();
+                    }
+                    File destinationFile = new File(dir.getAbsolutePath()+File.separator+itemDTO.getFileName());
+                    BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(destinationFile));
+                    stream.write(bytes);
+                    stream.close();
+                    
+                    Category category = categoryDAOImpl.getCategoryByName(itemDTO.getCategoryName());
+                    
+                    Item item = new Item();
+                    item.setDescription(itemDTO.getDescription());
+                    item.setPaths(savedPath); 
+                    item.setCategory(category);
+                    result = itemDAOImpl.add(item);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+            }
+        return result; 
     }
 
 }

@@ -1,4 +1,32 @@
-//$('#item-adding-form').submit(function (event){
+$(document).ready(function (){
+    getAllCategory(); 
+});
+
+function getAllCategory(){
+    $('#category-combo').empty();
+    $.ajax({
+      type: 'GET',
+      url : "/wear_it_1.2/getAllCategory",
+      success:function(data){
+            for (var i = 0; i < data.length; i++) {
+                var option = new Option(data[i].name, data[i].name); 
+                $('#category-combo').append($(option));
+                if(i===0){
+                    $('#category-txt').val(data[i].name);
+                }
+            }
+      },
+      error: function (error) {
+        alert('Error is :'+error.toString());
+      }
+   });
+}
+
+$('#category-combo').change(function (){
+   $('#category-txt').val($('#category-combo').val());
+});
+//
+////$('#item-adding-form').submit(function (event){
 //        event.stopPropagation();
 //        event.preventDefault();
 //        var form = document.forms[0];

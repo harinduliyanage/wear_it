@@ -30,9 +30,15 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Set File Name :</label>
                 <div class="col-sm-10">
-                  <input type="text" name="name" class="form-control" required="" />
+                  <input type="text" name="fileName" class="form-control" required="" />
                 </div>
             </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">All Category:</label>
+                <div class="col-sm-10">
+                    <select name="category" id="category-combo" class="form-control" ></select>
+                </div>
+            </div>       
             <div class="form-group">
                 <label class="control-label col-sm-2">Description:</label>
                 <div class="col-sm-10"> 
@@ -48,8 +54,13 @@
             </div>
             </div>
         </div>
-        <script src="<c:url value="resources/js/bootstrap.min.js"/>" ><script>
-        <script src="<c:url value="resources/js/js-a/dom-items.js"/>" ><script>
-    </body>
+        <script src="<c:url value="/resources/js/jquery.js" />"></script>    
+    <script src="<c:url value="/resources/js/jquery-2.1.3.min.js" />"></script> 
+
+    <!-- Bootstrap Core JavaScript -->
+     <script src="<c:url value="/resources/js/bootstrap.js" />"></script>    
+     <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>    
+     <script src="<c:url value="/resources/js/js-a/dom-items.js" />"></script>  
+    </body> 
 </html>
 
