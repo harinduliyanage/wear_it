@@ -138,6 +138,7 @@
     <!-- Bootstrap Core JavaScript -->
      <script src="<c:url value="/resources/js/bootstrap.js" />"></script>    
      <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>    
+     <script src="<c:url value="/resources/js/js-a/ItemDetailsDTO.js" />"></script>  
      <script src="<c:url value="/resources/js/js-a/dom-items.js" />"></script>  
     </body> 
 </html>
