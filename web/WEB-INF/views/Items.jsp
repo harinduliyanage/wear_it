@@ -48,6 +48,46 @@
             </div>
             </div>
         </div>
+        <!--ItemDetailsAddROW-->
+        <div class="row">
+            <div class="container">
+                <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Add Item Details To Item</h4>
+                <form id="itemDetails-adding-form"  method="POST">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Item :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="item-desc-combo" ><option value="A">A</option></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Size :</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="size-name-combo" ><option value="B">B</option></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Unit Price</label>
+                <div class="col-sm-10"> 
+                    <input type="text" class="form-control"  id="unitPrice-txt" pattern="[0-9]+(\.[0-9][0-9]?)?" title="Input tow decimel point number please"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">QtyOnHand</label>
+                <div class="col-sm-10"> 
+                    <input type="text" class="form-control"  id="unitPrice-txt" required=""/>
+                </div>
+            </div>        
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button id="add-itemDetails-btn" type="button" class="btn warning">Submit</button>
+                </div>
+            </div>
+        </form>
+            </div>
+            </div>
+      
+        
+        <script src="<c:url value="resources/js/jquery-2.1.3.min.js"/>" ><script>
         <script src="<c:url value="resources/js/bootstrap.min.js"/>" ><script>
         <script src="<c:url value="resources/js/js-a/dom-items.js"/>" ><script>
     </body>

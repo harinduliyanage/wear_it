@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 public class CategoryDTO extends SuperDTO{
     private Integer id;
     private String name;
-    private Set<ItemDTO> itemsDTO;
+    private Set<String> itemsDTO;
 
     /**
      * @return the id
@@ -47,11 +47,11 @@ public class CategoryDTO extends SuperDTO{
         this.name = name;
     }
 
-    public Set<ItemDTO> getItemsDTO() {
+    public Set<String> getItemsDTO() {
         return itemsDTO;
     }
 
-    public void setItemsDTO(Set<ItemDTO> itemsDTO) {
+    public void setItemsDTO(Set<String> itemsDTO) {
         this.itemsDTO = itemsDTO;
     }
 

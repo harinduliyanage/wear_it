@@ -5,7 +5,8 @@
  */
 package com.ijse.wearit.controller;
 
-import com.ijse.wearit.dto.Arr;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ijse.wearit.dto.ItemDetailsDTO;
 import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.Status;
@@ -13,6 +14,7 @@ import com.ijse.wearit.service.custom.ItemService;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,7 +22,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -88,39 +89,49 @@ public class ItemController {
     
 	}
     
-        @RequestMapping(value = "/deleteItem", method = RequestMethod.POST)
-        public @ResponseBody Status deleteItem(@RequestParam("description") String description){
-            Status status=null;
-            String staticPath="C:\\Users\\Harindu.sul\\Documents\\Project\\wear_it\\build\\web\\";
-            try{
-                //you should use transacton delete 
-                //code here to search item by description
-                //then get Item have any item details and delete itemDetails
-                //then searchitem.getPath();
-                
-                String givenDeletedPath=staticPath+searchitem.getPath;//database eke thiyena path eka mekata concat karanna + operator eka use karanna me widihata
-    		File file = new File(givenDeletedPath);
-                if(file.delete()){
-                   // code here delete item object
-                   //System.out.println(file.getName() + " is deleted!");
-                   //return OK status
-                }else{
-                    System.out.println("Delete operation is failed.");
-                }
-
-
-            }catch(Exception e){
-                System.out.println(e);
-
-            }
-            return status;
-        }
+//        @RequestMapping(value = "/deleteItem", method = RequestMethod.POST)
+//        public @ResponseBody Status deleteItem(@RequestParam("description") String description){
+//            Status status=null;
+//            String staticPath="C:\\Users\\Harindu.sul\\Documents\\Project\\wear_it\\build\\web\\";
+//            try{
+//                //you should use transacton delete 
+//                //code here to search item by description
+//                //then get Item have any item details and delete itemDetails
+//                //then searchitem.getPath();
+//                
+//                String givenDeletedPath=staticPath+searchitem.getPath;//database eke thiyena path eka mekata concat karanna + operator eka use karanna me widihata
+//    		File file = new File(givenDeletedPath);
+//                if(file.delete()){
+//                   // code here delete item object
+//                   //System.out.println(file.getName() + " is deleted!");
+//                   //return OK status
+//                }else{
+//                    System.out.println("Delete operation is failed.");
+//                }
+//
+//
+//            }catch(Exception e){
+//                System.out.println(e);
+//
+//            }
+//            return status;
+//        }
         
     
         //create method getItemByDescription 
     
     
         //create method getItemDetailsList by item description
-        
     
+        @RequestMapping(value = "/addItemDetalsToItem", method = RequestMethod.POST)
+        public @ResponseBody Status addItemDetailsToItem(
+                @RequestParam("itemDetailsArray")String itemDetailsArray,
+                @RequestParam("itemDescription") String description){
+            Gson gson=new Gson();
+            String yourJson = itemDetailsArray;
+            Type listType = new TypeToken<List<ItemDetailsDTO>>(){}.getType();
+            List<ItemDetailsDTO> itemDetailsList = gson.fromJson(yourJson, listType);
+            
+            return new Status();
+        }
 }

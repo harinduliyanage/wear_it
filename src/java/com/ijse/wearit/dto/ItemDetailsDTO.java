@@ -5,8 +5,6 @@
  */
 package com.ijse.wearit.dto;
 
-import java.util.HashSet;
-import java.util.Set;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,11 +15,10 @@ import org.springframework.stereotype.Component;
 public class ItemDetailsDTO extends SuperDTO{
 
     private Integer id;
-    private SizeDTO sizeDTO;
-    private ItemDTO itemDTO;
+    private String sizeName;
+    private String itemDescription;
     private double unitPrice;
     private int qtyOnHand;
-    private Set<ShoppingCartDetailsDTO> shoppingCartDetails = new HashSet<ShoppingCartDetailsDTO>();
 
     public Integer getId() {
         return id;
@@ -31,20 +28,20 @@ public class ItemDetailsDTO extends SuperDTO{
         this.id = id;
     }
 
-    public SizeDTO getSizeDTO() {
-        return sizeDTO;
+    public String getSizeName() {
+        return sizeName;
     }
 
-    public void setSizeDTO(SizeDTO sizeDTO) {
-        this.sizeDTO = sizeDTO;
+    public void setSizeName(String sizeName) {
+        this.sizeName = sizeName;
     }
 
-    public ItemDTO getItemDTO() {
-        return itemDTO;
+    public String getItemDescription() {
+        return itemDescription;
     }
 
-    public void setItemDTO(ItemDTO itemDTO) {
-        this.itemDTO = itemDTO;
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
     }
 
     public double getUnitPrice() {
@@ -61,12 +58,5 @@ public class ItemDetailsDTO extends SuperDTO{
 
     public void setQtyOnHand(int qtyOnHand) {
         this.qtyOnHand = qtyOnHand;
-    }
-
-    public Set<ShoppingCartDetailsDTO> getShoppingCartDetails() {
-        return shoppingCartDetails;
-    }
-
-    
-    
+    }  
 }
