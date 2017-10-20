@@ -344,7 +344,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
 			    <div class="price_single">
                                 <div class="login-mail">
-                                    <select></select>
+                                    <select class="form-control"></select>
 				</div>
 				  <span class="reducedfrom item_price">$140.00</span>
 				 <a href="#">click for offer</a>
