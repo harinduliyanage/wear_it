@@ -93,7 +93,9 @@ public class ShoppingCartDetailsServiceImpl implements ShoppingCartDetailsServic
         Item item = itemDAOImpl.getItemByDescription(description);
         Sizes sizes = sizeDAOImpl.getSizeByName(size);
         ItemDetails itemDetails = itemDetailsDAOImpl.getItemDetailsBySizeAndItem(sizes, item);
-        
+        System.out.println(")))))))))))))))");
+        System.out.println(itemDetails.getItem().getDescription()+")))))))))))))))");
+        System.out.println(itemDetails.getSizes().getSizes()+")))))))))))))))");
         double amount = unitPrice * orderQty;
         
         ShoppingCartDetails shoppingCartDetails = new ShoppingCartDetails();

@@ -5,13 +5,18 @@
  */
 package com.ijse.wearit.controller;
 
+import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.ShoppingCartDetails;
 import com.ijse.wearit.model.Status;
+import com.ijse.wearit.model.User;
 import com.ijse.wearit.service.custom.ShoppingCartDetailsService;
+import com.ijse.wearit.service.custom.UserService;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +34,9 @@ public class ShoppingCartDetailController {
     @Autowired
     ShoppingCartDetailsService cartDetailsService;
     
+    @Autowired
+    UserService userService;
+    
     @RequestMapping(value = "/getAllcartdetails" , method = RequestMethod.GET)
     public @ResponseBody List<ShoppingCartDetails>  getShoppingCartDetailsTest(){ 
         try {
@@ -42,19 +50,26 @@ public class ShoppingCartDetailController {
         return null;
     }
     
-    @RequestMapping(value = "", method = RequestMethod.POST)
-    public @ResponseBody Status addShoppingCartDetail(
+    @RequestMapping(value = "/addShoppingCartDetailss", method = RequestMethod.POST)
+    public @ResponseBody Status addShoppingCartDetailss(
             @RequestParam("description")String description,
             @RequestParam("userName")String userName,
             @RequestParam("size")String size,
             @RequestParam("orderQty")int orderQty,
-            @RequestParam("unitPrice")double unitPrice){
+            @RequestParam("unitPrice")double unitPrice,
+            HttpServletRequest request){
         
         Status status = new Status();
         boolean result = false;
         try {
             result = cartDetailsService.addShoppingCartDetail(description, userName, size, orderQty, unitPrice);
+            HttpSession session = request.getSession();
             if(result){
+                User user = userService.getUserByNam(userName);
+                ShoppingCart shoppingCart = userService.getShoppingCartByUserId(user.getUserID());
+                
+                List<ShoppingCartDetails> shoppingCartDetails = cartDetailsService.getDetailsByCart(shoppingCart);
+                session.setAttribute("shoppingCartDetails", shoppingCartDetails);
                 status  = new Status(200, "Ok", "Added Successfully...");
                 return status;
             }else{

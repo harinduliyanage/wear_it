@@ -36,23 +36,27 @@ $('#addToCartButton').click(function (){
     alert(unitPrice);
     alert(log);
     if(sizeName!==null && orderQty!==null && description!==null && unitPrice!==null){
-        alert("Successs");
-    }
- 
-//    $.ajax({
-//      type: 'POST',
-//      url : "/wear_it_1.2/getItemDetails",
-//      data:{
-//          size:sizeName,
-//          orderQty:orderQty,
-//          description:description,
-//          unitPrice:unitPrice
-//      },
-//      success:function(data){
-//          location.href = "http://localhost:8084/wear_it_1.2/checkout";
-//      },
-//      error: function (error) {
-//        alert('Error is :'+error.toString());
-//      }
-//   });
+        if(log !== "Log In" ){
+            $.ajax({
+            type: 'POST',
+            url : "/wear_it_1.2/addShoppingCartDetailss",
+            data:{
+                size:sizeName,
+                orderQty:orderQty,
+                description:description,
+                unitPrice:unitPrice,
+                userName : log
+            },
+            success:function(data){
+                location.href = "http://localhost:8084/wear_it_1.2/checkout";
+            },
+            error: function (error) {
+              alert('Error is :'+error.toString());
+            }
+         });
+        
+        }else{
+            alert('User Log In First');
+        }
+    }  
 });
