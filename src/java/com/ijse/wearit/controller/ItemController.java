@@ -7,18 +7,15 @@ package com.ijse.wearit.controller;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.ijse.wearit.dto.ItemDTO;
 import com.ijse.wearit.dto.ItemDetailsDTO;
 import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.Status;
 import com.ijse.wearit.service.custom.ItemService;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.lang.reflect.Type;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,9 +35,6 @@ public class ItemController {
     @Autowired
     ItemService itemService;
     
-    @Autowired
-    ServletContext context;
-    
     @RequestMapping(value = "/getAllItems" , method = RequestMethod.GET)
     public @ResponseBody List<Item>  getAllItemss(){ 
         try {
@@ -56,37 +50,28 @@ public class ItemController {
     
     @RequestMapping(value = "/addNewItem", method = RequestMethod.POST)
     public @ResponseBody Status addNewItem(@RequestParam("file")MultipartFile file ,
-            @RequestParam("name")String name,
+            @RequestParam("fileName")String FileName,
             @RequestParam("description")String description,
-            HttpServletRequest request) {
+            @RequestParam("category")String categoryName,
+            HttpServletRequest request) throws Exception {
         
-        String staticPath="resources\\images\\Item\\tempFile\\";
-        String savedPath=staticPath+name;//Use to Item model path feeld... 
-            if (!file.isEmpty()) {
-                try {
-                    byte[] bytes = file.getBytes();
-                    String path = context.getRealPath("/resources/images/Item") + File.separator +
-                        "tempFile";
-                    System.out.println(path);
-                    File dir = new File(path);
-                    if (!dir.exists()){
-			dir.mkdirs();
-                    }
-                    File destinationFile = new File(dir.getAbsolutePath()+File.separator+name);
-                    BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(destinationFile));
-                    stream.write(bytes);
-                    stream.close();
-                    //Code here add to item database
-                    //Use Item model path feeld to savedPath attribute... 
-                   
-                    
- 
-                } catch (Exception e) {
-                    System.out.println(e.getMessage());
-                }
+            ItemDTO itemDTO = new ItemDTO();
+            itemDTO.setDescription(description);
+            itemDTO.setFileName(FileName);
+            itemDTO.setCategoryName(categoryName);
+            itemDTO.setFile(file);
+
+            Status status = new Status();
+            boolean result = false;
+
+            result=itemService.addItem(itemDTO);
+            if(result){
+                status  = new Status(200, "Ok", "Added Successfully...");
+                return status;
+            }else{
+                status = new Status(500, "Internal Server Error", "Added Faild..");
+                return status;
             }
-        return new Status(200, "OK", "Upload succesfully..."); 
-    
 	}
     
 //        @RequestMapping(value = "/deleteItem", method = RequestMethod.POST)
@@ -127,6 +112,7 @@ public class ItemController {
         public @ResponseBody Status addItemDetailsToItem(
                 @RequestParam("itemDetailsArray")String itemDetailsArray,
                 @RequestParam("itemDescription") String description){
+            
             Gson gson=new Gson();
             String yourJson = itemDetailsArray;
             Type listType = new TypeToken<List<ItemDetailsDTO>>(){}.getType();
