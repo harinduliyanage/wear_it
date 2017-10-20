@@ -14,9 +14,30 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css" />" media="all" />
+        <style>
+            .scrollToTop{
+	width:100px; 
+	height:130px;
+	padding:10px; 
+	text-align:center; 
+	background: whiteSmoke;
+	font-weight: bold;
+	color: #444;
+	text-decoration: none;
+	position:fixed;
+	top:75px;
+	right:40px;
+	display:none;
+	background: url('arrow_up.png') no-repeat 0px 20px;
+}
+.scrollToTop:hover{
+	text-decoration:none;
+}
+</style>
         <title>Item Manage</title>
     </head>
     <body>
+        <a href="#" class="scrollToTop">Scroll To Top</a>
         <div class="row">
             <div class="container">
                 <h3 style="text-align: left;  color: #ffff; background-color:Gray;">Item Manage Panel</h3><div>
@@ -140,6 +161,26 @@
      <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>    
      <script src="<c:url value="/resources/js/js-a/ItemDetailsDTO.js" />"></script>  
      <script src="<c:url value="/resources/js/js-a/dom-items.js" />"></script>  
+      <script>
+$(document).ready(function(){
+	
+	//Check to see if the window is top if not then display button
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 100) {
+			$('.scrollToTop').fadeIn();
+		} else {
+			$('.scrollToTop').fadeOut();
+		}
+	});
+	
+	//Click event to scroll to top
+	$('.scrollToTop').click(function(){
+		$('html, body').animate({scrollTop : 0},800);
+		return false;
+	});
+	
+});
+</script>
     </body> 
 </html>
 
