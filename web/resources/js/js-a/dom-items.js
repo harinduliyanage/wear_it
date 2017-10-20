@@ -82,7 +82,6 @@ $('#add-itemDetails-btn').click(function (){
     var qtyOnHand=$('#qtyOnHand-txt').val();
     var sizeName=$('#size-name-combo-itemDetails').val();
     var itemDescription=$('#item-desc-combo').val();
-    alert(unitPrice+"//"+qtyOnHand+"//"+sizeName+"///"+itemDescription);
     var markup = "<tr><td><input type='checkbox' name='record'></td><td>"+itemDescription
            +"</td><td>" +sizeName
            + "</td><td>" + unitPrice
@@ -111,22 +110,40 @@ $("#btn-addItemDetails").click(function(){
     if(i==0){
         alert("Add ItemDetails Frist");
     }else{
+            var unitPrice;
+            var qtyOnHand;
+            var sizeName;
+            var itemDescription;
+            var itemDetailsArray=[];
         for (var j=0 ; j< i ; j++){
-            var orderDetail=new OrderDetailsDTO();
-            itemCode=document.getElementById("checkOut").rows[j+1].cells[1].innerHTML;
-            itemSearch=searchItem(itemCode);
-            taxRate=itemSearch._taxRate;
-            discountRate=itemSearch._discountRate;
-            orderQty=document.getElementById("checkOut").rows[j+1].cells[7].innerHTML;
-            orderDetail.setInvoiceID(invoceId);
-            orderDetail.setDiscountRate(discountRate);
-            orderDetail.setItemCode(itemCode);
-            orderDetail.setTaxRate(taxRate);
-            orderDetails.push(orderDetail);
+            var itemDetail=new ItemDetailsDTO();
+            unitPrice=document.getElementById("putTable").rows[j+1].cells[3].innerHTML;
+            qtyOnHand=document.getElementById("putTable").rows[j+1].cells[4].innerHTML;
+            sizeName=document.getElementById("putTable").rows[j+1].cells[2].innerHTML;
+            itemDescription=document.getElementById("putTable").rows[j+1].cells[1].innerHTML;
+            itemDetail.setItemDescription(itemDescription);
+            itemDetail.setSizeName(sizeName);
+            itemDetail.setQtyOnHand(qtyOnHand);
+            itemDetail.setUnitPrice(unitPrice);
+            itemDetailsArray.push(itemDetail);   
+            alert(unitPrice+qtyOnHand+sizeName+itemDescription);
         }
-        
-    }
-    
-    
+        sendDataBaseToData(itemDescription,itemDetailsArray);  
+    }  
 });
+
+function sendDataBaseToData(itemDescription,itemDetailsArray){
+     $.ajax({
+        type: "POST",
+        url: '/wear_it_1.2/addItemDetalsToItem',
+        data: ({ itemDescription : itemDescription , itemDetailsArray :itemDetailsArray}),
+        async: false,
+        success: function(data) {
+            alert(data.msg);
+        },
+        error: function(error) {
+            alert('Error occured :'+error);
+        }
+    });
+}
 
