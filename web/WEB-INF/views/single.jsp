@@ -327,8 +327,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="flexslider">
 			  <ul class="slides">
 			    <li data-thumb="<c:url value="<%=item.getPaths()%>"/>">
-			        <div class="thumb-image"> <img src="<%=item.getPaths()%>"/>" data-imagezoom="true" class="img-responsive"> </div>
-			    </li>
+			       <div class="thumb-image"> <img src="<c:url value="<%=item.getPaths()%>"/>" data-imagezoom="true" class="img-responsive"> </div>
+			    </li> 
 			    <li data-thumb="<c:url value="<%=item.getPaths()%>"/>">
 			         <div class="thumb-image"> <img src="<c:url value="<%=item.getPaths()%>"/>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
