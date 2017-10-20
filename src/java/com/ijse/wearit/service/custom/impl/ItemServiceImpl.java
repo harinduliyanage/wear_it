@@ -12,7 +12,6 @@ import com.ijse.wearit.dto.ItemDTO;
 import com.ijse.wearit.model.Category;
 import com.ijse.wearit.model.Item;
 import com.ijse.wearit.model.ItemDetails;
-import com.ijse.wearit.model.Status;
 import com.ijse.wearit.service.custom.ItemService;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -79,8 +78,8 @@ public class ItemServiceImpl  implements ItemService{
     public boolean addItem(ItemDTO itemDTO) throws Exception {
         boolean result = false;
         MultipartFile file = itemDTO.getFile();
-        String staticPath="resources\\images\\Item\\tempFile\\";
-        String savedPath=staticPath+itemDTO.getFileName();//Use to Item model path feeld... 
+        String staticPath="resources/images/Item/tempFile/";
+        String savedPath=staticPath+itemDTO.getFileName();
             if (!file.isEmpty()) {
                 try {
                     byte[] bytes = file.getBytes();

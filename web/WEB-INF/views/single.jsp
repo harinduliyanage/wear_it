@@ -4,6 +4,7 @@
     Author     : Harindu.sul
 --%>
 
+<%@page import="com.ijse.wearit.model.Item"%>
 <%@page import="com.ijse.wearit.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -56,6 +57,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <%
     User user=(User) session.getAttribute("currentUser");
+    Item item=(Item) session.getAttribute("currentItem");
+    
 %>
 <!--header-->
 <div class="header">
@@ -120,7 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
-            <li><a class="color" href="index.jsp.jsp">Home</a></li>
+            <li><a class="color" href="index.jsp">Home</a></li>
           <li class="dropdown mega-dropdown active">
 			    <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>				
 				<div class="dropdown-menu ">
@@ -323,23 +326,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="col-md-5 grid">		
 		<div class="flexslider">
 			  <ul class="slides">
-			    <li data-thumb="<c:url value="resources/images/si.jpg"/>">
-			        <div class="thumb-image"> <img src="<c:url value="resources/images/si.jpg"/>" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb="<c:url value="<%=item.getPaths()%>"/>">
+			        <div class="thumb-image"> <img src="<%=item.getPaths()%>"/>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    <li data-thumb="<c:url value="resources/images/si1.jpg"/>">
-			         <div class="thumb-image"> <img src="<c:url value="resources/images/si1.jpg"/>" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb="<c:url value="<%=item.getPaths()%>"/>">
+			         <div class="thumb-image"> <img src="<c:url value="<%=item.getPaths()%>"/>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    <li data-thumb="<c:url value="resources/images/si2.jpg"/>">
-			       <div class="thumb-image"> <img src="<c:url value="resources/images/si2.jpg"/>" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb="<c:url value="<%=item.getPaths()%>"/>">
+			       <div class="thumb-image"> <img src="<c:url value="<%=item.getPaths()%>"/>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li> 
 			  </ul>
 		</div>
 	</div>	
 <div class="col-md-7 single-top-in">
 						<div class="span_2_of_a1 simpleCart_shelfItem">
-				<h3>Nam liber tempor cum</h3>
+				<h3><%=item.getDescription() %></h3>
 				<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
 			    <div class="price_single">
+                                <div class="login-mail">
+                                    <select></select>
+				</div>
 				  <span class="reducedfrom item_price">$140.00</span>
 				 <a href="#">click for offer</a>
 				 <div class="clearfix"></div>

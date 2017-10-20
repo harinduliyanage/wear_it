@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,7 +46,6 @@ public class ItemController {
         try {
             List<Item> all = itemService.getAll();
             return all;
-            
         } catch (Exception ex) {
             Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -128,8 +128,6 @@ public class ItemController {
         public @ResponseBody Status addItemDetailsToItem(
                 @RequestParam("itemDetailsArray")String itemDetailsArray,
                 @RequestParam("itemDescription") String description){
-            System.out.println("called****************Gson");
-            System.out.println(itemDetailsArray);
             Gson gson=new Gson();
             String yourJson = itemDetailsArray;
             Type listType = new TypeToken<List<ItemDetailsDTO>>(){}.getType();
@@ -139,6 +137,20 @@ public class ItemController {
             }
             
             return new Status();
+        }
+        @RequestMapping(value = "/singleItem")
+        public String getSingleItemView(@RequestParam("description") String description,HttpServletRequest request){
+            
+            String status = "";
+            try {
+                Item item = itemService.getItemByDescription(description);
+                HttpSession session = request.getSession();
+                session.setAttribute("currentItem", item);
+                status = "single";
+            } catch (Exception ex) {
+                Logger.getLogger(ItemController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return status;
         }
 
 }

@@ -20,7 +20,7 @@
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/simple-sidebar.css" />" media="all" />
-       
+
         <title>admin</title>
     </head>
     <body>

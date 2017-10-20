@@ -21,7 +21,7 @@
 					<div class="pro-img">
 						<img src="resources/images/pc.jpg" class="img-responsive" alt="">
 						<div class="zoom-icon ">
-						<a class="picture" href="resources/images/pc.jpg" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
+						<a class="picture" href="resources/images/pc.jpg" rel="title" class="b-link-stripe b-animate-go thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
 						<a href="single"><i class="glyphicon glyphicon-menu-right icon"></i></a>
 						</div>
 						</div>

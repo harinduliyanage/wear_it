@@ -290,6 +290,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<!---pop-up-box---->					  
                                                 <link href="resources/css/css-a/jstarbox.css" rel="stylesheet" type="text/css"/>
                         <link href="resources/css/css-a/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+                        <script src="resources/js/js-a/jquery.min.js" type="text/javascript"></script>
                         <script src="resources/js/js-a/jquery.magnific-popup.js" type="text/javascript"></script>
 			<!---//pop-up-box---->
 			<div id="small-dialog" class="mfp-hide">
@@ -301,6 +302,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<p>Shopin</p>
 				</div>				
 			</div>
+                        <script src="https://getbootstrap.com/dist/js/bootstrap.min.js">
 		 <script>
 			$(document).ready(function() {
 			$('.popup-with-zoom-anim').magnificPopup({
@@ -400,24 +402,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="content-mid" id="trading-Items">
                                     <h3>Trending Items</h3>
                                     <label class="line"></label>
+                                    
                                 </div><!--products End-->
-                    
+                                
 			<!--brand-->
-			<div class="brand">
-				<div class="col-md-3 brand-grid">
-					<img src="resources/images/ic.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="resources/images/ic1.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="resources/images/ic2.png" class="img-responsive" alt="">
-				</div>
-				<div class="col-md-3 brand-grid">
-					<img src="resources/images/ic3.png" class="img-responsive" alt="">
-				</div>
-				<div class="clearfix"></div>
-			</div>
+                            <div class="brand">
+                                    <div class="col-md-3 brand-grid">
+                                            <img src="resources/images/ic.png" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="col-md-3 brand-grid">
+                                            <img src="resources/images/ic1.png" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="col-md-3 brand-grid">
+                                            <img src="resources/images/ic2.png" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="col-md-3 brand-grid">
+                                            <img src="resources/images/ic3.png" class="img-responsive" alt="">
+                                    </div>
+                                    <div class="clearfix"></div>
+                            </div>
 			<!--//brand-->
 			</div>
 			
@@ -484,7 +487,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!--//footer-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
+<script src="<c:url value="resources/js/js-a/jquery.min.js" />"> </script>
+<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />" type="text/javascript"> </script>
 
 <!-- slide -->
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
@@ -499,6 +503,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 		</script>
                 <script src="<c:url value="resources/js/js-a/classie.js" />" type="text/javascript"></script>
+                <script src="<c:url value="resources/js/js-a/jquery.magnific-popup.js" />"></script>
                 <!-- WhatsHelp.io widget -->
 <script type="text/javascript">
     (function () {
