@@ -2,6 +2,7 @@ $(document).ready(function (){
     getAllCategory();
     getAllItem();
     getAllSizes();
+    $('#numOfItem').val(0);
 });
 
 function getAllSizes(){
@@ -82,56 +83,50 @@ $('#add-itemDetails-btn').click(function (){
     var sizeName=$('#size-name-combo-itemDetails').val();
     var itemDescription=$('#item-desc-combo').val();
     alert(unitPrice+"//"+qtyOnHand+"//"+sizeName+"///"+itemDescription);
+    var markup = "<tr><td><input type='checkbox' name='record'></td><td>"+itemDescription
+           +"</td><td>" +sizeName
+           + "</td><td>" + unitPrice
+           + "</td><td>"+qtyOnHand
+           +"</td></tr>";
+    $("table tbody").append(markup);
+    var h=$('#numOfItem').val();
+    $('#numOfItem').val(Number(h)+Number(1));
+    
 });
 
-//$('#pp').click(function (){
-//    var list=[{
-//       "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.05,
-//       "qtyOnHand":50
-//            
-//    },{
-//      "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.01,
-//       "qtyOnHand":10  
-//    },{
-//      "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.02,
-//       "qtyOnHand":20  
-//    },{
-//      "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.03,
-//       "qtyOnHand":30  
-//    },{
-//       "id":"001",
-//       "sizeDTO":"",
-//       "itemDTO":"",
-//       "unitPrice":0.04,
-//       "qtyOnHand":40 
-//    }];
-//    $.ajax({
-//    url : '/wear_it_1.2/addItemDetailsToItem',
-//    data : $.toJSON(list),
-//    type : 'POST', //<== not 'GET',
-//    contentType : "application/json; charset=utf-8",
-//    dataType : 'json',
-//    error : function() {
-//        console.log("error");
-//    },
-//    success : function(arr) {
-//            alert();
-//        var testArray = arr.testArray;
-//         $.each(function(i,e) {
-//             document.writeln(e);
-//         });
-//    }
-//  });
-//});
+$("#btn-delete").click(function(){
+    var i=0;
+    $("table tbody").find('input[name="record"]').each(function(){
+        if($(this).is(":checked")){
+            i++;
+            $(this).parents("tr").remove();
+        }
+    });
+    var h=$('#numOfItem').val();
+    $('#numOfItem').val(Number(h)-Number(i));
+});
+
+$("#btn-addItemDetails").click(function(){
+    var i=$('#numOfItem').val();
+    if(i==0){
+        alert("Add ItemDetails Frist");
+    }else{
+        for (var j=0 ; j< i ; j++){
+            var orderDetail=new OrderDetailsDTO();
+            itemCode=document.getElementById("checkOut").rows[j+1].cells[1].innerHTML;
+            itemSearch=searchItem(itemCode);
+            taxRate=itemSearch._taxRate;
+            discountRate=itemSearch._discountRate;
+            orderQty=document.getElementById("checkOut").rows[j+1].cells[7].innerHTML;
+            orderDetail.setInvoiceID(invoceId);
+            orderDetail.setDiscountRate(discountRate);
+            orderDetail.setItemCode(itemCode);
+            orderDetail.setTaxRate(taxRate);
+            orderDetails.push(orderDetail);
+        }
+        
+    }
+    
+    
+});
+

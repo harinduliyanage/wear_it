@@ -12,6 +12,7 @@
         
         <link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css" />" media="all" />
         <title>JSP Page</title>
     </head>
@@ -92,7 +93,29 @@
             </div>
         <!--Item details putting Table -->
         <div class="row">
-            
+            <div class="container">
+                <div class="table-responsive">
+                    <table class="table" id="putTable">
+                    <thead>
+                      <tr>
+                        <th>select</th>
+                        <th class="itemdescCell">Item Description</th>
+                        <th>Size Name</th>
+                        <th>Unit Price</th>
+                        <th>Qty On Hand </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                    <div>
+                        <button id="btn-delete" class="btn btn-danger">Delete Selected Item</button>
+                        <button id="btn-addItemDetails" class="btn btn-success">Add Item Details</button>
+                        <input id="numOfItem" type="text" readonly="" disabled="" class="form-control" style="width: 50px;" />
+                    </div>    
+            </div>  
+            </div>
         </div>
         <!-- Item Delete by description -->
         <div class="row">
