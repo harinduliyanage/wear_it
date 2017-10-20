@@ -183,6 +183,4 @@ public class ItemController {
             }
             return itemDetailsList;
         }
-
-        
 }
