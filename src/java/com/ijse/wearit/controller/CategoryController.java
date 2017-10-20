@@ -12,9 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
-import org.apache.catalina.ant.StartTask;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -34,7 +32,6 @@ public class CategoryController {
     public @ResponseBody List<Category>  getAllCategorys(){ 
         try {
             List<Category> all = categoryService.getAll();
-            System.out.println("called................ get All");
             return all;
             
         } catch (Exception ex) {
