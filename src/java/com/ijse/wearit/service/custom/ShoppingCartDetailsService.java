@@ -17,4 +17,5 @@ import java.util.List;
 public interface ShoppingCartDetailsService extends SuperService<ShoppingCartDetails>{
     public ShoppingCartDetails getByItemDetail(Integer id) throws Exception ;
     public List<ShoppingCartDetails> getDetailsByCart(ShoppingCart shoppingCart) throws Exception ;
+    public boolean addShoppingCartDetailTShopin(String description,String custName,String size,int orderQty,double unitPrice) throws Exception;
 }

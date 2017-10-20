@@ -3,6 +3,8 @@
     Created on : Oct 4, 2017, 7:21:58 PM
     Author     : Harindu.sul
 --%>
+<%@page import="com.ijse.wearit.model.ShoppingCartDetails"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.ijse.wearit.model.User"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -55,6 +57,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <%
     User user=(User) session.getAttribute("currentUser");
+    ArrayList<ShoppingCartDetails> shoppingCartDetails=(ArrayList<ShoppingCartDetails>) session.getAttribute("shoppingCartDetails");
 %>
 <!--header-->
 <div class="header">
@@ -98,7 +101,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 		</div>
 		</div>
-		
+                 <%if(shoppingCartDetails!=null) {%>                              
+                    <% for(ShoppingCartDetails s:shoppingCartDetails){ %>
+                    <p><%=s.getAmount() %></p>            
+                    <p><%=s.getItemDetails() %></p>            
+                    <p><%=s.getOrderQty() %></p>            
+                    <p><%=s.getId()%></p>            
+                  <% }%>
+		<%}%>
 		<div class="container">
 		
 			<div class="head-top">
@@ -491,6 +501,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
 <!-- slide -->
 <script src="<c:url value="resources/js/dom-login.js" />"> </script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <script src="<c:url value="resources/js/popper.min.js" />"></script>
  <script type="text/javascript">

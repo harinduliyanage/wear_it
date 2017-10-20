@@ -5,27 +5,33 @@
  */
 
 $('#login-form').submit(function (event){
-    alert("called....");
+    $('#loaderDiv').css("display","block");
    event.stopPropagation();
    event.preventDefault(); 
-   $.ajax({
-        type: 'POST',
-        url: "/wear_it_1.2/userLogIn",
-        data: {userName:$('#login-userName').val(),
-            password:$('#login-pw').val()},
-      success:function(data){
-           if(data.code ===401){
-                alert(data.msg);
-           }
-           if(data.code===200){
-               location.href = "http://localhost:8084/wear_it_1.2/index.jsp";
-           }
-      },
-      error: function (error) {
-        alert('Error is :'+error.toString());
-      }
-        
-   });
+   setTimeout(function(){
+        $.ajax({
+           type: 'POST',
+           url: "/wear_it_1.2/userLogIn",
+           data: {userName:$('#login-userName').val(),
+               password:$('#login-pw').val()},
+         success:function(data){
+              if(data.code ===401){
+                  $('#loaderDiv').css("display","none");
+                  $('#danger-alert').css("display","block");
+              }
+              if(data.code===200){
+                  $('#loaderDiv').css("display","none");
+                  $('#success-alert').css("display","block");
+                  location.href = "http://localhost:8084/wear_it_1.2/index.jsp";
+              }
+         },
+         error: function (error) {
+           alert('Error is :'+error.toString());
+         }
+
+      });
+    }, 3000);
+  
 });
 
 $('#log-out-btn').click(function (){

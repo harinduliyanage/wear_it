@@ -4,6 +4,9 @@
     Author     : Harindu.sul
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.ijse.wearit.model.ItemDetails"%>
+<%@page import="com.ijse.wearit.model.Item"%>
 <%@page import="com.ijse.wearit.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -56,6 +59,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <%
     User user=(User) session.getAttribute("currentUser");
+    Item item=(Item) session.getAttribute("currentItem");
+    ArrayList<ItemDetails> itemDetatailList = (ArrayList<ItemDetails>)session.getAttribute("currentItemDetails");
+    
 %>
 <!--header-->
 <div class="header">
@@ -72,11 +78,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul ><% 
                                             if(user!=null){
                                             %>
-						<li><a><%=user.getUserName() %></a></li>
+						<li><a id="userLog"><%=user.getUserName() %></a></li>
 						<li><a id="log-out-btn">Log Out</a></li>
                                                 
                                               <% }else{%>
-                                                    <li><a href="login">Log In</a></li>
+                                                    <li><a id="userLog" href="login">Log In</a></li>
                                                     <li><a href="register">Register</a></li>
                                               <%
                                                 }
@@ -120,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
         <ul class="nav navbar-nav nav_1">
-            <li><a class="color" href="index.jsp.jsp">Home</a></li>
+            <li><a class="color" href="index.jsp">Home</a></li>
           <li class="dropdown mega-dropdown active">
 			    <a class="color1" href="#" class="dropdown-toggle" data-toggle="dropdown">Women<span class="caret"></span></a>				
 				<div class="dropdown-menu ">
@@ -323,39 +329,51 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="col-md-5 grid">		
 		<div class="flexslider">
 			  <ul class="slides">
-			    <li data-thumb="<c:url value="resources/images/si.jpg"/>">
-			        <div class="thumb-image"> <img src="<c:url value="resources/images/si.jpg"/>" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb="<c:url value="<%=item.getPaths()%>"/>">
+			       <div class="thumb-image"> <img src="<c:url value="<%=item.getPaths()%>"/>" data-imagezoom="true" class="img-responsive"> </div>
+			    </li> 
+			    <li data-thumb="<c:url value="<%=item.getPaths()%>"/>">
+			         <div class="thumb-image"> <img src="<c:url value="<%=item.getPaths()%>"/>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    <li data-thumb="<c:url value="resources/images/si1.jpg"/>">
-			         <div class="thumb-image"> <img src="<c:url value="resources/images/si1.jpg"/>" data-imagezoom="true" class="img-responsive"> </div>
-			    </li>
-			    <li data-thumb="<c:url value="resources/images/si2.jpg"/>">
-			       <div class="thumb-image"> <img src="<c:url value="resources/images/si2.jpg"/>" data-imagezoom="true" class="img-responsive"> </div>
+			    <li data-thumb="<c:url value="<%=item.getPaths()%>"/>">
+			       <div class="thumb-image"> <img src="<c:url value="<%=item.getPaths()%>"/>" data-imagezoom="true" class="img-responsive"> </div>
 			    </li> 
 			  </ul>
 		</div>
 	</div>	
 <div class="col-md-7 single-top-in">
-						<div class="span_2_of_a1 simpleCart_shelfItem">
-				<h3>Nam liber tempor cum</h3>
-				<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
+	<div class="span_2_of_a1 simpleCart_shelfItem">
+				<h3><%=item.getDescription() %></h3>
+				<p class="in-para">Select Size</p>
 			    <div class="price_single">
-				  <span class="reducedfrom item_price">$140.00</span>
+                                <div class="login-mail">
+                                    <select id="combo-sizeName" class="form-control">
+                                        <% if(itemDetatailList != null){ %>
+                                            <%for(ItemDetails itemDetails : itemDetatailList){%>
+                                            <option value="<%=itemDetails.getSizes().getSizes() %>"> <%=itemDetails.getSizes().getSizes() %></option>
+                                            <%}%>
+                                        <% }%>
+                                    </select>
+				</div>
+                                    <div class="login-mail"><label>Available Qty</label>
+                                    <input id="text-qtyOnHand" type="text" class="form-control" readonly=""/>    
+                                </div>    
+                                        <span class="reducedfrom item_price">Price:Rs<label id="unitPrice-txt-size"></label></span>
 				 <a href="#">click for offer</a>
 				 <div class="clearfix"></div>
 				</div>
 				<h4 class="quick">Quick Overview:</h4>
-				<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
+				<p id="aaaaaaaa" class="quick_desc"> <%=item.getDescription() %></p>
 			    <div class="wish-list">
 				 	<ul>
-				 		<li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
+                                            <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
 				 	    <li class="compare"><a href="#"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>Add to Compare</a></li>
 				 	</ul>
 				 </div>
 				 <div class="quantity"> 
 								<div class="quantity-select">                           
 									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
+									<div class="entry value"><span id="orderQty">1</span></div>
 									<div class="entry value-plus active">&nbsp;</div>
 								</div>
 							</div>
@@ -373,7 +391,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!--quantity-->
 				 
-			    <a href="#" class="add-to item_add hvr-skew-backward">Add to cart</a>
+        <button type="button" id="addToCartButton" class="add-to item_add hvr-skew-backward">Add to cart</button>
 			<div class="clearfix"> </div>
 			</div>
 		
@@ -644,6 +662,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script defer src="<c:url value="resources/js/js-a/jquery.flexslider.js" />"></script>
 <link rel="stylesheet" href="<c:url value="resources/css/css-a/flexslider.css" />" type="text/css" media="screen" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- MyLoginModel -->
+<div style="display: none;"><button type="button" id="myModelLoad-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button></div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">You Have to Log In your Account Or Sign Up First</h4>
+        </div>
+          <form id="model-form">
+              <div class="col-md-6 login-do">
+            <div class="login-mail">
+                <input type="text" id="login-userName" placeholder="Email" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="Enter valid Email Pattern">
+                    <i  class="glyphicon glyphicon-envelope"></i>
+            </div>
+            <div class="login-mail">
+                <input type="password" id="login-pw" placeholder="Password" required="">
+                <i class="glyphicon glyphicon-lock"></i>
+            </div>
+            <a class="news-letter " href="#">
+            <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
+            </a>
+            <button type="submit" value="login" class="btn btn-info">LogIn</button>
+            <div style="margin-top: 7px;"></div>
+                                <div class="alert" id="danger-alert" style="display: none; color: white;background-color: #F22613;">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Sign up Faild!</strong> User Name and Password Incorrect...!
+                                </div>
+                                <div class="alert-success" id="success-alert" style="display: none; color: white;background-color: #26A65B;">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Log In Successfully..!</strong> 
+                                </div>
+                    </div>    
+          </form>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-info" id="signUp-model-btn">SignUp</button>
+            </label><button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
 
 <script>
 // Can also be used with $(document).ready()
@@ -657,6 +724,7 @@ $(window).load(function() {
 
 	<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
         <script src="<c:url value="resources/js/dom-login.js" />"> </script>
+        <script src="<c:url value="resources/js/js-a/dom-single.js" />"> </script>
         
 <!-- slide -->
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
@@ -664,7 +732,7 @@ $(window).load(function() {
 <script type="text/javascript">
     (function () {
         var options = {
-            facebook: "wearyourownstorys/?ref=page_internal", // Facebook page ID
+            facebook: "wearyourownstorys/?ref=page_internal", 
             company_logo_url: "//scontent.xx.fbcdn.net/v/t1.0-1/p50x50/22552778_1989154664707640_6925793142617653314_n.png?oh=4d49540b2ac89984e245f34be6063ef2&oe=5A81E171", // URL of company logo (png, jpg, gif)
             greeting_message: "Hello, how may we help you? Just send us a message now to get assistance.", // Text of greeting message
             call_to_action: "Message us", // Call to action

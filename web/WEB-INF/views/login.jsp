@@ -24,12 +24,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--theme-style-->
 <link href="<c:url value="resources/css/css-a/style4.css" />" rel="stylesheet" type="text/css" media="all" />	
+<link href="<c:url value="resources/css/css-a/bootstrap.css" />" rel="stylesheet" type="text/css" media="all" />	
 <!--//theme-style-->
 <script src="<c:url value="resources/js/js-a/jquery.min.js" />"></script>
 <!--- start-rate---->
 <script src="<c:url value="resources/js/js-a/jstarbox.js" />"></script>
 	<link rel="stylesheet" href="<c:url value="resources/css/css-a/jstarbox.css" />" type="text/css" media="screen" charset="utf-8" />
-		<script type="text/javascript">
+	 <style>
+                            .loader {
+                                border: 7px solid #f3f3f3; /* Light grey */
+                                border-top: 7px solid #F47983; /* Blue */
+                                border-radius: 50%;
+                                width: 40px;
+                                height: 40px;
+                                animation: spin 2s linear infinite;
+                            }
+
+                                @keyframes spin {
+                                    0% { transform: rotate(0deg); }
+                                    100% { transform: rotate(360deg); }
+                                }
+                        </style>	
+        
+        <script type="text/javascript">
 			jQuery(function() {
 			jQuery('.starbox').each(function() {
 				var starbox = jQuery(this);
@@ -313,7 +330,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="clearfix"></div>
 		</div>	
-	</div>	
+	</div>	                      
 </div>
 <!--login-->
 <div class="container">
@@ -331,10 +348,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				   <a class="news-letter " href="#">
 						 <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
-					   </a>
-				<label class="hvr-skew-backward">
+				 </a>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label class="hvr-skew-backward">
 					<input type="submit" value="login">
-				</label>
+                                    </label>
+                                </div>
+                                <div id="loaderDiv" style="margin-left: 100px; display: none" class="loader"></div>
+                            </div>
+                            <div style="margin-top: 7px;"></div>
+                                <div class="alert" id="danger-alert" style="display: none; color: white;background-color: #F22613;">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Sign up Faild!</strong> User Name and Password Incorrect...!
+                                </div>
+                                <div class="alert-success" id="success-alert" style="display: none; color: white;background-color: #26A65B;">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Log In Successfully..!</strong> 
+                                </div>
+				
+                                
 			</div>
 			<div class="col-md-6 login-right">
 				 <h3>Completely Free Account</h3>
@@ -432,6 +465,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"> </div>
 				</div>
 			</div>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		</div>
 		<!--//footer-->
 

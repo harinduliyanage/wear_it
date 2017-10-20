@@ -20,7 +20,7 @@
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/simple-sidebar.css" />" media="all" />
-       
+
         <title>admin</title>
     </head>
     <body>
@@ -35,7 +35,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="https://www.facebook.com/wearyourownstorys/" target="internal">Dashboard</a>
                 </li>
                 <li>
                     <a href="/wear_it_1.2/items" target="internal">Add New Item</a>
@@ -62,7 +62,7 @@
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Menu</a>
                         <div style="height: 10px;"></div>
                         <div class="container-fluid embed-responsive embed-responsive-16by9">
-                            <iframe name="internal" style="border: none;" class="embed-responsive-item" ></iframe>    
+                            <iframe name="internal" style="border: none;" class="embed-responsive-item"></iframe>    
                         </div>
                     </div>
                 </div>
