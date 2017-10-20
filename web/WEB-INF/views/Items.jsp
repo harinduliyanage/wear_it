@@ -110,7 +110,7 @@
                     </tbody>
                 </table>
                     <div>
-                        <button id="btn-delete" class="btn btn-danger">Delete Selected Item</button>
+                        <button id="btn-delete" class="btn btn-danger">Remove Selected Item</button>
                         <button id="btn-addItemDetails" class="btn btn-success">Add Item Details</button>
                         <input id="numOfItem" type="text" readonly="" disabled="" class="form-control" style="width: 50px;" />
                     </div>    
