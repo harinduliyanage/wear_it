@@ -61,13 +61,13 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">Item :</label>
                 <div class="col-sm-10">
-                    <select class="form-control" id="item-desc-combo" ><option value="A">A</option></select>
+                    <select class="form-control" id="item-desc-combo"></select>
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label col-sm-2">Size :</label>
+                <label class="control-label col-sm-2">Size:</label>
                 <div class="col-sm-10">
-                    <select class="form-control" id="size-name-combo" ><option value="B">B</option></select>
+                    <select class="form-control" id="size-name-combo-itemDetails" ></select>
                 </div>
             </div>
             <div class="form-group">

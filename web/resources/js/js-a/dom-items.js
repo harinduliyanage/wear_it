@@ -1,6 +1,25 @@
 $(document).ready(function (){
     getAllCategory(); 
+    getAllSizes();
 });
+
+function getAllSizes(){
+    $.ajax({
+      type: 'GET',
+      url : "/wear_it_1.2/getAllSizes",
+      success:function(data){
+            for (var i = 0; i < data.length; i++) {
+                var option = new Option(data[i].sizes, data[i].sizes); 
+                $('#size-name-combo-itemDetails').append($(option));
+               
+            }
+      },
+      error: function (error) {
+        alert('Error is :'+error.toString());
+      }
+   });
+    
+}
 
 function getAllCategory(){
     $('#category-combo').empty();
