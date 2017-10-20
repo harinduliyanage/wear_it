@@ -363,7 +363,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <div class="clearfix"></div>
 				</div>
 				<h4 class="quick">Quick Overview:</h4>
-				<p id="aaaaaaaa" class="quick_desc"> <%=item.getDescription() %></p>
+				<p id="aaaaaaaa" class="quick_desc"><%=item.getDescription() %></p>
 			    <div class="wish-list">
 				 	<ul>
                                             <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>

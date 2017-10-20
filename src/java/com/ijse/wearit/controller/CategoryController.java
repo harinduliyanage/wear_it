@@ -33,7 +33,6 @@ public class CategoryController {
         try {
             List<Category> all = categoryService.getAll();
             return all;
-            
         } catch (Exception ex) {
             Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
         }
