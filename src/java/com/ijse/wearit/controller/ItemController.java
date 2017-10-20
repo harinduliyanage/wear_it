@@ -15,6 +15,7 @@ import com.ijse.wearit.model.Status;
 import com.ijse.wearit.service.custom.ItemDetailsService;
 import com.ijse.wearit.service.custom.ItemService;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -169,14 +170,12 @@ public class ItemController {
         }
         
         @RequestMapping(value = "/getItemDetails", method = RequestMethod.POST)
-        public @ResponseBody List<ItemDetails> getItemDetails(@RequestParam("description") String description,HttpServletRequest request){
+        public @ResponseBody ArrayList<ItemDetails> getItemDetails(HttpServletRequest request){
             
-            List<ItemDetails> itemDetailsList = null;
+            ArrayList<ItemDetails> itemDetailsList = null;
             try {
-                Item item = itemService.getItemByDescription(description);
-                itemDetailsList = itemDetailsService.searchByItemID(item);
                 HttpSession session = request.getSession();
-                session.setAttribute("currentItemDetails", itemDetailsList);
+                itemDetailsList=(ArrayList<ItemDetails>) session.getAttribute("currentItemDetails");
                 
             } catch (Exception ex) {
                 Logger.getLogger(ItemController.class.getName()).log(Level.SEVERE, null, ex);
