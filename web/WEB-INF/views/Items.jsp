@@ -79,16 +79,35 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">QtyOnHand</label>
                 <div class="col-sm-10"> 
-                    <input type="text" class="form-control"  id="unitPrice-txt" required=""/>
+                    <input type="text" class="form-control"  id="qtyOnHand-txt" required=""/>
                 </div>
             </div>        
             <div class="form-group"> 
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button id="add-itemDetails-btn" type="button" class="btn warning">Submit</button>
+                    <button id="add-itemDetails-btn" type="button" class="btn warning">Put Item Details Table</button>
                 </div>
             </div>
         </form>
             </div>
+            </div>
+        <!--Item details putting Table -->
+        <div class="row">
+            
+        </div>
+        <!-- Item Delete by description -->
+        <div class="row">
+                <div class="col-md-2"></div>
+                    <div class="form-area col-md-5">  
+                        <form role="form">
+                        <br style="clear:both">
+                            <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Delete Item</h4>
+                                <div class="form-group">
+                                    <select id="delete-item-combo" class="form-control inputdefault">
+                                    </select>
+                                </div>
+                            <button type="button" id="delete-item-btn"  class="btn btn-warning pull-left">Delete</button>
+                        </form>
+                    </div>
             </div>
         <script src="<c:url value="/resources/js/jquery.js" />"></script>    
     <script src="<c:url value="/resources/js/jquery-2.1.3.min.js" />"></script> 

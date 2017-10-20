@@ -1,5 +1,6 @@
 $(document).ready(function (){
-    getAllCategory(); 
+    getAllCategory();
+    getAllItem();
     getAllSizes();
 });
 
@@ -19,6 +20,40 @@ function getAllSizes(){
       }
    });
     
+}
+
+$('#delete-item-btn').click(function (){
+    $.ajax({
+      type: 'POST',
+      url : "/wear_it_1.2/deleteItem",
+      data: {description:$('#delete-item-combo').val()},
+      success:function(data){
+            getAllItem();  
+            alert(data.msg);
+      },
+      error: function (error) {
+        alert('Error is :'+error.toString());
+      }
+   });
+});
+
+function getAllItem(){
+    $.ajax({
+      type: 'GET',
+      url : "/wear_it_1.2/getAllItems",
+      success:function(data){
+            for (var i = 0; i < data.length; i++) {
+                var option = new Option(data[i].description, data[i].description); 
+                var option1 = new Option(data[i].description, data[i].description); 
+                $('#item-desc-combo').append($(option));
+                $('#delete-item-combo').append($(option1));
+               
+            }
+      },
+      error: function (error) {
+        alert('Error is :'+error.toString());
+      }
+   });
 }
 
 function getAllCategory(){
@@ -41,30 +76,13 @@ function getAllCategory(){
    });
 }
 
-$('#category-combo').change(function (){
-   $('#category-txt').val($('#category-combo').val());
+$('#add-itemDetails-btn').click(function (){
+    var unitPrice=$('#unitPrice-txt').val();
+    var qtyOnHand=$('#qtyOnHand-txt').val();
+    var sizeName=$('#size-name-combo-itemDetails').val();
+    var itemDescription=$('#item-desc-combo').val();
+    alert(unitPrice+"//"+qtyOnHand+"//"+sizeName+"///"+itemDescription);
 });
-//
-////$('#item-adding-form').submit(function (event){
-//        event.stopPropagation();
-//        event.preventDefault();
-//        var form = document.forms[0];
-//        var formData = new FormData(form);
-//        $.ajax({
-//        type: 'POST',
-//        url : "/wear_it_1.2/addNewItem",
-//        data: formData,
-//        cache : false,
-//        contentType : false,
-//        processData : false,
-//        success:function(data){
-//            alert(data.msg);
-//        },
-//      error: function (error) {
-//        alert('Error is :'+error.toString());
-//      }
-//  });
-//});
 
 //$('#pp').click(function (){
 //    var list=[{
