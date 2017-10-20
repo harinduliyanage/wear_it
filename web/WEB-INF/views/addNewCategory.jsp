@@ -11,7 +11,7 @@
     <head>
         <link rel="shortcut icon" href="<c:url value="resources/images/titleIcon.ico" /> "/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Size Manage</title>
+        <title>Category Manage</title>
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/css-a/lol.css" />" media="all" />
@@ -20,7 +20,7 @@
     </head>
     <body>
        
-        <h3 style="text-align: left;  color: #337ab7">Category Manage Panel</h3>
+        <h3 style="text-align: left;  color: #ffff; background-color:Gray;">Category Manage Panel</h3>
         <div class="container">
             <div class="row">
                 <div class="col-md-2"></div>

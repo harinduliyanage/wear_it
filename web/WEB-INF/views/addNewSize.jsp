@@ -20,7 +20,7 @@
     </head>
     <body>
        
-        <h3 style="text-align: left;  color: #337ab7">Size Manage Panel</h3>
+        <h3 style="text-align: left;  color: #ffff; background-color:Gray;">Size Manage Panel</h3>
         <div class="container">
             <div class="row">
                 <div class="col-md-2"></div>

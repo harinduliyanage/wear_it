@@ -14,12 +14,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.css" />" media="all" />
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap.min.css" />" media="all" />
-        <title>JSP Page</title>
+        <title>Item Manage</title>
     </head>
     <body>
         <div class="row">
             <div class="container">
-                <h3 style="text-align: left;  color: #337ab7">Item Manage Panel</h3><div>
+                <h3 style="text-align: left;  color: #ffff; background-color:Gray;">Item Manage Panel</h3><div>
                 <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Create New Item First</h4>
                 <form action="addNewItem" id="item-adding-form" method="POST" enctype="multipart/form-data" class="form-horizontal">
             <div class="form-group">
@@ -58,7 +58,7 @@
         <div class="row">
             <div class="container">
                 <h4 style="margin-bottom: 25px; text-align: center; color: #009688">Add Item Details To Item</h4>
-                <form id="itemDetails-adding-form"  method="POST">
+                <form id="itemDetails-adding-form">
             <div class="form-group">
                 <label class="control-label col-sm-2">Item :</label>
                 <div class="col-sm-10">
@@ -80,12 +80,12 @@
             <div class="form-group">
                 <label class="control-label col-sm-2">QtyOnHand</label>
                 <div class="col-sm-10"> 
-                    <input type="text" class="form-control"  id="qtyOnHand-txt" required=""/>
+                    <input type="text" class="form-control"  id="qtyOnHand-txt" pattern="^0*(?:[1-9][0-9]?|100)$" title="Enter valid range number (0-100)"/>
                 </div>
             </div>        
             <div class="form-group"> 
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button id="add-itemDetails-btn" type="button" class="btn warning">Put Item Details Table</button>
+                    <button id="add-itemDetails-btn" type="submit" class="btn warning">Put Item Details Table</button>
                 </div>
             </div>
         </form>

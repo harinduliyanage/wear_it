@@ -77,7 +77,9 @@ function getAllCategory(){
    });
 }
 
-$('#add-itemDetails-btn').click(function (){
+$('#itemDetails-adding-form').submit(function (e){
+    e.stopPropagation();
+    e.preventDefault();
     var unitPrice=$('#unitPrice-txt').val();
     var qtyOnHand=$('#qtyOnHand-txt').val();
     var sizeName=$('#size-name-combo-itemDetails').val();
