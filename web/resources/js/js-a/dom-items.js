@@ -128,7 +128,9 @@ $("#btn-addItemDetails").click(function(){
             itemDetailsArray.push(itemDetail);   
             alert(unitPrice+qtyOnHand+sizeName+itemDescription);
         }
-        sendDataBaseToData(itemDescription,itemDetailsArray);  
+        var a=JSON.stringify(itemDescription);
+        var b=JSON.stringify(itemDetailsArray);
+        sendDataBaseToData(a,b);  
     }  
 });
 
