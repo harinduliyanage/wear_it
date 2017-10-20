@@ -156,8 +156,10 @@ public class ItemController {
             String status = "";
             try {
                 Item item = itemService.getItemByDescription(description);
+                List<ItemDetails> itemDetailsList = itemDetailsService.searchByItemID(item);
                 HttpSession session = request.getSession();
                 session.setAttribute("currentItem", item);
+                session.setAttribute("currentItemDetails", itemDetailsList);
                 status = "single";
             } catch (Exception ex) {
                 Logger.getLogger(ItemController.class.getName()).log(Level.SEVERE, null, ex);

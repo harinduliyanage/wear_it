@@ -4,6 +4,8 @@
     Author     : Harindu.sul
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.ijse.wearit.model.ItemDetails"%>
 <%@page import="com.ijse.wearit.model.Item"%>
 <%@page import="com.ijse.wearit.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -58,6 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <%
     User user=(User) session.getAttribute("currentUser");
     Item item=(Item) session.getAttribute("currentItem");
+    ArrayList<ItemDetails> itemDetatailList = (ArrayList<ItemDetails>)session.getAttribute("currentItemDetails");
     
 %>
 <!--header-->
@@ -344,17 +347,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
 			    <div class="price_single">
                                 <div class="login-mail">
-                                    <select class="form-control"></select>
+                                    <select class="form-control">
+                                        <% if(itemDetatailList != null){ %>
+                                            <%for(ItemDetails itemDetails : itemDetatailList){%>
+                                                <option> <%=itemDetails.getSizes().getSizes() %></option>
+                                            <%}%>
+                                        <% }%>
+                                    </select>
 				</div>
 				  <span class="reducedfrom item_price">$140.00</span>
 				 <a href="#">click for offer</a>
 				 <div class="clearfix"></div>
 				</div>
 				<h4 class="quick">Quick Overview:</h4>
-				<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
+				<p class="quick_desc"> <%=item.getDescription() %></p>
 			    <div class="wish-list">
 				 	<ul>
-				 		<li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
+                                            <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
 				 	    <li class="compare"><a href="#"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>Add to Compare</a></li>
 				 	</ul>
 				 </div>
