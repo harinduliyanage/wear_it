@@ -101,13 +101,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 		</div>
 		</div>
-                 <% for(ShoppingCartDetails s:shoppingCartDetails){ %>
-                 <p><%=s.getAmount() %></p>            
-                 <p><%=s.getItemDetails() %></p>            
-                 <p><%=s.getOrderQty() %></p>            
-                 <p><%=s.getId()%></p>            
-               <% }%>
-		
+                 <%if(shoppingCartDetails!=null) {%>                              
+                    <% for(ShoppingCartDetails s:shoppingCartDetails){ %>
+                    <p><%=s.getAmount() %></p>            
+                    <p><%=s.getItemDetails() %></p>            
+                    <p><%=s.getOrderQty() %></p>            
+                    <p><%=s.getId()%></p>            
+                  <% }%>
+		<%}%>
 		<div class="container">
 		
 			<div class="head-top">

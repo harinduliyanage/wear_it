@@ -51,7 +51,7 @@ public class ShoppingCartDetailController {
     }
     
     @RequestMapping(value = "/addShoppingCartDetailss", method = RequestMethod.POST)
-    public @ResponseBody Status addShoppingCartDetailss(
+    public @ResponseBody Status addShoppingCartDetailssTShoppingCart(
             @RequestParam("description")String description,
             @RequestParam("userName")String userName,
             @RequestParam("size")String size,
@@ -62,7 +62,7 @@ public class ShoppingCartDetailController {
         Status status = new Status();
         boolean result = false;
         try {
-            result = cartDetailsService.addShoppingCartDetail(description, userName, size, orderQty, unitPrice);
+            result = cartDetailsService.addShoppingCartDetailTShopin(description, userName, size, orderQty, unitPrice);
             HttpSession session = request.getSession();
             if(result){
                 User user = userService.getUserByNam(userName);

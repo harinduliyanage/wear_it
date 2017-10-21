@@ -86,7 +86,7 @@ public class ShoppingCartDetailsServiceImpl implements ShoppingCartDetailsServic
     }
 
     @Override
-    public boolean addShoppingCartDetail(String description, String custName, String size, int orderQty, double unitPrice) throws Exception {
+    public boolean addShoppingCartDetailTShopin(String description, String custName, String size, int orderQty, double unitPrice) throws Exception {
         User user = userDAOImpl.getUserByUserName(custName);
         ShoppingCart shoppingCart = userDAOImpl.getShoppingCartByUserId(user.getUserID());
         
