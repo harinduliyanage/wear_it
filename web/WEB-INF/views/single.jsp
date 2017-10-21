@@ -342,7 +342,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>	
 <div class="col-md-7 single-top-in">
-						<div class="span_2_of_a1 simpleCart_shelfItem">
+	<div class="span_2_of_a1 simpleCart_shelfItem">
 				<h3><%=item.getDescription() %></h3>
 				<p class="in-para">Select Size</p>
 			    <div class="price_single">
@@ -350,20 +350,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <select id="combo-sizeName" class="form-control">
                                         <% if(itemDetatailList != null){ %>
                                             <%for(ItemDetails itemDetails : itemDetatailList){%>
-                                            <option value="<%=itemDetails.getUnitPrice() %>"> <%=itemDetails.getSizes().getSizes() %></option>
+                                            <option value="<%=itemDetails.getSizes().getSizes() %>"> <%=itemDetails.getSizes().getSizes() %></option>
                                             <%}%>
                                         <% }%>
                                     </select>
 				</div>
-                                <div class="login-mail">
-                                    <input id="text-qtyOnHand" type="text" class="form-control" style="display: none"/>    
+                                    <div class="login-mail"><label>Available Qty</label>
+                                    <input id="text-qtyOnHand" type="text" class="form-control" readonly=""/>    
                                 </div>    
-                                        <span class="reducedfrom item_price">Price:Rs<label id="unitPrice-txt-size"><%=itemDetatailList.get(0).getUnitPrice()%></label></span>
+                                        <span class="reducedfrom item_price">Price:Rs<label id="unitPrice-txt-size"></label></span>
 				 <a href="#">click for offer</a>
 				 <div class="clearfix"></div>
 				</div>
 				<h4 class="quick">Quick Overview:</h4>
-				<p class="quick_desc"> <%=item.getDescription() %></p>
+				<p id="aaaaaaaa" class="quick_desc"> <%=item.getDescription() %></p>
 			    <div class="wish-list">
 				 	<ul>
                                             <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
@@ -373,7 +373,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <div class="quantity"> 
 								<div class="quantity-select">                           
 									<div class="entry value-minus">&nbsp;</div>
-									<div class="entry value"><span>1</span></div>
+									<div class="entry value"><span id="orderQty">1</span></div>
 									<div class="entry value-plus active">&nbsp;</div>
 								</div>
 							</div>
@@ -391,7 +391,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!--quantity-->
 				 
-			    <a href="#" class="add-to item_add hvr-skew-backward">Add to cart</a>
+        <button type="button" id="addToCartButton" class="add-to item_add hvr-skew-backward">Add to cart</button>
 			<div class="clearfix"> </div>
 			</div>
 		
