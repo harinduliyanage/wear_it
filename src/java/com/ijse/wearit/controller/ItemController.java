@@ -150,6 +150,7 @@ public class ItemController {
             }
             return status;
         }
+        
         @RequestMapping(value = "/singleItem")
         public String getSingleItemView(@RequestParam("description") String description,HttpServletRequest request){
             
@@ -166,5 +167,20 @@ public class ItemController {
             }
             return status;
         }
-
+        
+        @RequestMapping(value = "/getItemDetails", method = RequestMethod.POST)
+        public @ResponseBody List<ItemDetails> getItemDetails(@RequestParam("description") String description,HttpServletRequest request){
+            
+            List<ItemDetails> itemDetailsList = null;
+            try {
+                Item item = itemService.getItemByDescription(description);
+                itemDetailsList = itemDetailsService.searchByItemID(item);
+                HttpSession session = request.getSession();
+                session.setAttribute("currentItemDetails", itemDetailsList);
+                
+            } catch (Exception ex) {
+                Logger.getLogger(ItemController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return itemDetailsList;
+        }
 }
