@@ -344,7 +344,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="col-md-7 single-top-in">
 						<div class="span_2_of_a1 simpleCart_shelfItem">
 				<h3><%=item.getDescription() %></h3>
-				<p class="in-para"> There are many variations of passages of Lorem Ipsum.</p>
+				<p class="in-para">Select Size</p>
 			    <div class="price_single">
                                 <div class="login-mail">
                                     <select id="combo-sizeName" class="form-control">
@@ -355,7 +355,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <% }%>
                                     </select>
 				</div>
-                                        <span class="reducedfrom item_price"><label id="unitPrice-txt-size"><%=itemDetatailList.get(0).getUnitPrice()%></label></span>
+                                <div class="login-mail">
+                                    <input id="text-qtyOnHand" type="text" class="form-control" style="display: none"/>    
+                                </div>    
+                                        <span class="reducedfrom item_price">Price:Rs<label id="unitPrice-txt-size"><%=itemDetatailList.get(0).getUnitPrice()%></label></span>
 				 <a href="#">click for offer</a>
 				 <div class="clearfix"></div>
 				</div>

@@ -36,8 +36,7 @@ function getTreadingIems(){
 "							<div class=\"clearfix\"></div>\n" +
 "							</div>\n" +
 "							<div class=\"mid-2\">\n" +
-"								<p ><label>$100.00</label><em class=\"item_price\">$70.00</em></p>\n" +
-"								  <div class=\"block\">\n" +
+"								<div class=\"block\">\n" +
 "									<div class=\"starbox small ghosting\"> </div>\n" +
 "								</div>\n" +
 "								\n" +
