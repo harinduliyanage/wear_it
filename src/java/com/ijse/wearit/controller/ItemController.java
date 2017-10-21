@@ -43,9 +43,11 @@ public class ItemController {
     ItemDetailsService itemDetailsService;
     
     @RequestMapping(value = "/getAllItems" , method = RequestMethod.GET)
-    public @ResponseBody List<Item>  getAllItemss(){ 
+    public @ResponseBody List<Item>  getAllItemss(HttpServletRequest request){ 
         try {
             List<Item> all = itemService.getAll();
+            HttpSession session = request.getSession();
+            session.setAttribute("allProduct", all);
             return all;
         } catch (Exception ex) {
             Logger.getLogger(SizeController.class.getName()).log(Level.SEVERE, null, ex);
