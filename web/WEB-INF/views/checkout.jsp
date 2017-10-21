@@ -76,15 +76,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             %>
 						<li><a><%=user.getUserName() %></a></li>
 						<li><a id="log-out-btn">Log Out</a></li>
-                                                
+                                                <li><a href="checkout?userName=<%=user.getUserName() %>">Checkout</a></li>
                                               <% }else{%>
                                                     <li><a href="login">Log In</a></li>
                                                     <li><a href="register">Register</a></li>
+						
                                               <%
                                                 }
-                                               %>         
-						
-						<li><a href="checkout">Checkout</a></li>
+                                               %>      
 					</ul>
 				</div>
 				
@@ -304,22 +303,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div><img class="img-responsive active" src="<c:url value="resources/images/BPH-checkout-banner.jpg" />"/></div>                        
 <!--banner-->
 <!--login-->
-	<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-					});
-			   </script>
-<script>$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-						$('.cart-header1').fadeOut('slow', function(c){
-							$('.cart-header1').remove();
-						});
-						});	  
-					});
-			   </script>
+	
 			   <script>$(document).ready(function(c) {
 					$('.close3').on('click', function(c){
 						$('.cart-header2').fadeOut('slow', function(c){
@@ -334,17 +318,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="table-responsive">
     	    <table class="table-heading simpleCart_shelfItem">
 		  <tr>
+                        
 			<th class="table-grid">Item</th>		
 			<th>Prices</th>
 			<th >Shipping </th>
 			<th >Order Qty </th>
 			<th>Subtotal</th>
+                        <th>Select Remove</th>
                   </tr>
                   <tbody>
                        <% if(shoppingCartDetails!=null){ %>
                           <% for(ShoppingCartDetails s:shoppingCartDetails){ %>
                                 <tr class="cart-header">
-
                                     <td class="ring-in"><a href='singleItem?description=<%=s.getItemDetails().getItem().getDescription() %>' class="at-in"><img src='<%=s.getItemDetails().getItem().getPaths() %>' class="img-responsive" alt=""></a>
                                       <div class="sed">
                                               <h5><a href='singleItem?description=<%=s.getItemDetails().getItem().getDescription() %>'></a><%=s.getItemDetails().getItem().getDescription() %></h5>
@@ -357,6 +342,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                       <td>FREE SHIPPING</td>
                                       <td class="item_price"><%=s.getOrderQty() %></td>
                                       <td><%=s.getAmount() %></td>
+                                       <td><input type='checkbox' name='record'></td>
                                 </tr>
                           
                           <% } %>
@@ -365,6 +351,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   </tbody>
 		  
 	</table>
+                      <button type="button" id="btn-delete" class="btn btn-warning" >Remove Selected Item From Cart</button>            
 	</div>
 	</div>
 	<div class="produced">
@@ -491,6 +478,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
 <!-- slide -->
 <script src="<c:url value="resources/js/dom-login.js" />"> </script>
+<script src="<c:url value="resources/js/js-a/dom-checkOut.js" />"> </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 

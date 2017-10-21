@@ -85,20 +85,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-top">
 		<div class="container">
 		<div class="col-sm-5 col-md-offset-2  header-login">
-					<ul ><% 
+					<ul><% 
                                             if(user!=null){
                                             %>
 						<li><a><%=user.getUserName() %></a></li>
 						<li><a id="log-out-btn">Log Out</a></li>
-                                                
+                                                <li><a href="checkout?userName=<%=user.getUserName() %>">Checkout</a></li>
                                               <% }else{%>
                                                     <li><a href="login">Log In</a></li>
                                                     <li><a href="register">Register</a></li>
+						
                                               <%
                                                 }
-                                               %>         
-						
-						<li><a href="checkout">Checkout</a></li>
+                                               %>      
 					</ul>
 				</div>
 				
