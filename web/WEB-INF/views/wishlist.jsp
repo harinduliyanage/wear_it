@@ -416,6 +416,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!--//footer-->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="<c:url value="resources/js/js-a/simpleCart.min.js" />" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>   
 	
 <!-- slide -->
 <script src="<c:url value="resources/js/bootstrap.min.js" />" type="text/javascript"></script>

@@ -662,25 +662,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script defer src="<c:url value="resources/js/js-a/jquery.flexslider.js" />"></script>
 <link rel="stylesheet" href="<c:url value="resources/css/css-a/flexslider.css" />" type="text/css" media="screen" />
-
-<div class="modal">
-    <div class="col-md-6 login-do">
-	<div class="login-mail">
-            <input type="text" id="login-userName" placeholder="Email" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="Enter valid Email Pattern">
-		<i  class="glyphicon glyphicon-envelope"></i>
-	</div>
-    <div class="login-mail">
-	<input type="password" id="login-pw" placeholder="Password" required="">
-	<i class="glyphicon glyphicon-lock"></i>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- MyLoginModel -->
+<div style="display: none;"><button type="button" id="myModelLoad-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button></div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">You Have to Log In your Account Or Sign Up First</h4>
+        </div>
+          <form id="model-form">
+              <div class="col-md-6 login-do">
+            <div class="login-mail">
+                <input type="text" id="login-userName" placeholder="Email" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="Enter valid Email Pattern">
+                    <i  class="glyphicon glyphicon-envelope"></i>
+            </div>
+            <div class="login-mail">
+                <input type="password" id="login-pw" placeholder="Password" required="">
+                <i class="glyphicon glyphicon-lock"></i>
+            </div>
+            <a class="news-letter " href="#">
+            <label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
+            </a>
+            <button type="submit" value="login" class="btn btn-info">LogIn</button>
+            <div style="margin-top: 7px;"></div>
+                                <div class="alert" id="danger-alert" style="display: none; color: white;background-color: #F22613;">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Sign up Faild!</strong> User Name and Password Incorrect...!
+                                </div>
+                                <div class="alert-success" id="success-alert" style="display: none; color: white;background-color: #26A65B;">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Log In Successfully..!</strong> 
+                                </div>
+                    </div>    
+          </form>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-info" id="signUp-model-btn">SignUp</button>
+            </label><button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
     </div>
-	<a class="news-letter " href="#">
-	<label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
-	</a>
-	<label class="hvr-skew-backward">
-            <input type="submit" value="login">
-	</label>
-    </div>
+  </div>
+  
 </div>
+
 
 <script>
 // Can also be used with $(document).ready()

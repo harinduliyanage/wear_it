@@ -317,7 +317,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>	
 </div>
 <!--banner-->
-<div><img src="<c:url value="resources/images/paulgauntfurniture.jpg" />" class="img-responsive active"/></div>
 	<!--content-->
 		<div class="product">
 			<div class="container">
@@ -829,6 +828,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <script src="<c:url value="resources/js/dom-login.js" />"> </script>
 		<link rel="stylesheet" href="<c:url value="resources/css/css-a/chocolat.css" />" type="text/css" media="screen" charset="utf-8">
 		<!--light-box-files -->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script type="text/javascript" charset="utf-8">
 		$(function() {
 			$('a.picture').Chocolat();
