@@ -3,27 +3,7 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-@font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('http://localhost:8084/wear_it_1.2/fonts/glyphicons-halflings-regular.eot');
-    src: url('http://localhost:8084/wear_it_1.2/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('http://localhost:8084/wear_it_1.2/fonts/glyphicons-halflings-regular.woff') format('woff'), url('http://localhost:8084/wear_it_1.2/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('http://localhost:8084/wear_it_1.2/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
-}
-@font-face {
-    font-family: 'Oxygen-Bold';
-    src:url('http://localhost:8084/wear_it_1.2/resources/fonts/Oxygen-Bold.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Ubuntu-Regular';
-    src:url('http://localhost:8084/wear_it_1.2/resources/fonts/Ubuntu-Regular.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Ubuntu-Bold';
-    src:url('http://localhost:8084/wear_it_1.2/resources/fonts/Ubuntu-Bold.ttf') format('truetype');
-}
-@font-face{
-	font-family:'Oxygen-Regular';
-	src:url('http://localhost:8084/wear_it_1.2/resources/fonts/Oxygen-Regular.ttf') format('truetype');
-}
+
 html,body{
 	background:#fff;
 	font-size: 100%;

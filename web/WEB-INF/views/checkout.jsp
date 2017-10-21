@@ -101,14 +101,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 		</div>
 		</div>
-                 <%if(shoppingCartDetails!=null) {%>                              
-                    <% for(ShoppingCartDetails s:shoppingCartDetails){ %>
-                    <p><%=s.getAmount() %></p>            
-                    <p><%=s.getItemDetails() %></p>            
-                    <p><%=s.getOrderQty() %></p>            
-                    <p><%=s.getId()%></p>            
-                  <% }%>
-		<%}%>
 		<div class="container">
 		
 			<div class="head-top">
@@ -301,22 +293,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<p>Shopin</p>
 				</div>				
 			</div>
-		 <script>
-			$(document).ready(function() {
-			$('.popup-with-zoom-anim').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in'
-			});
-																						
-			});
-		</script>		
+		 		
 						<!----->
 			</div>
 			<div class="clearfix"></div>
@@ -353,58 +330,39 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   </script>
 <div class="check-out">
 <div class="container">
-	
-	<div class="bs-example4" data-example-id="simple-responsive-table">
+    <div class="bs-example4" data-example-id="simple-responsive-table">
     <div class="table-responsive">
     	    <table class="table-heading simpleCart_shelfItem">
 		  <tr>
-			<th class="table-grid">Item</th>
-					
+			<th class="table-grid">Item</th>		
 			<th>Prices</th>
-			<th >Delivery </th>
+			<th >Shipping </th>
+			<th >Order Qty </th>
 			<th>Subtotal</th>
-		  </tr>
-		  <tr class="cart-header">
+                  </tr>
+                  <tbody>
+                       <% if(shoppingCartDetails!=null){ %>
+                          <% for(ShoppingCartDetails s:shoppingCartDetails){ %>
+                                <tr class="cart-header">
 
-                      <td class="ring-in"><a href="single" class="at-in"><img src="<c:url value="resources/images/pc1.jpg"/>" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close1"> </div></td>
-			<td>$100.00</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
-		  </tr>
-		  <tr class="cart-header1">
-		  <td class="ring-in"><a href="single.html" class="at-in"><img src="<c:url value="resources/images/pc2.jpg"/>" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close2"> </div></td>
-			<td>$100.00</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
-		  </tr>
-		  <tr class="cart-header2">
-		  <td class="ring-in"><a href="single" class="at-in"><img src="<c:url value="resources/images/pc3.jpg"/>" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close3"> </div></td>
-			<td>$100.00</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
-		  </tr>
+                                    <td class="ring-in"><a href='singleItem?description=<%=s.getItemDetails().getItem().getDescription() %>' class="at-in"><img src='<%=s.getItemDetails().getItem().getPaths() %>' class="img-responsive" alt=""></a>
+                                      <div class="sed">
+                                              <h5><a href='singleItem?description=<%=s.getItemDetails().getItem().getDescription() %>'></a><%=s.getItemDetails().getItem().getDescription() %></h5>
+                                              <p>(<%=s.getItemDetails().getItem().getCategory().getName() %>) </p>
+
+                                      </div>
+                                      <div class="clearfix"> </div>
+                                      <div class="close1"> </div></td>
+                                      <td><%=s.getItemDetails().getUnitPrice() %></td>
+                                      <td>FREE SHIPPING</td>
+                                      <td class="item_price"><%=s.getOrderQty() %></td>
+                                      <td><%=s.getAmount() %></td>
+                                </tr>
+                          
+                          <% } %>
+                      <% } %>
+                      
+                  </tbody>
 		  
 	</table>
 	</div>
@@ -414,6 +372,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	 </div>
 </div>
 </div>
+                      <script>
+			$(document).ready(function() {
+			$('.popup-with-zoom-anim').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+			});
+																						
+			});
+		</script>
+                       <script>
+			$(document).ready(function() {
+			$('.popup-with-zoom-anim').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+			});
+																						
+			});
+		</script>	
 
 <!--//login-->
                 <!--brand-->
