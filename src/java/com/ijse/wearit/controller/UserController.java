@@ -147,6 +147,7 @@ public class UserController {
     public @ResponseBody Status  navigatesToLogOut(HttpServletRequest request, HttpServletResponse response){
         HttpSession session = request.getSession();
         session.setAttribute("currentUser", null);
+        session.setAttribute("shoppingCartDetails", null);
         return new Status(200, "OK", "Log out");
     }
     

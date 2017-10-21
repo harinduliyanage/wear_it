@@ -663,6 +663,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script defer src="<c:url value="resources/js/js-a/jquery.flexslider.js" />"></script>
 <link rel="stylesheet" href="<c:url value="resources/css/css-a/flexslider.css" />" type="text/css" media="screen" />
 
+<div class="modal">
+    <div class="col-md-6 login-do">
+	<div class="login-mail">
+            <input type="text" id="login-userName" placeholder="Email" required="" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" title="Enter valid Email Pattern">
+		<i  class="glyphicon glyphicon-envelope"></i>
+	</div>
+    <div class="login-mail">
+	<input type="password" id="login-pw" placeholder="Password" required="">
+	<i class="glyphicon glyphicon-lock"></i>
+    </div>
+	<a class="news-letter " href="#">
+	<label class="checkbox1"><input type="checkbox" name="checkbox" ><i> </i>Forget Password</label>
+	</a>
+	<label class="hvr-skew-backward">
+            <input type="submit" value="login">
+	</label>
+    </div>
+</div>
+
 <script>
 // Can also be used with $(document).ready()
 $(window).load(function() {
