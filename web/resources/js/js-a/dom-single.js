@@ -28,11 +28,13 @@ $('#addToCartButton').click(function (){
     var orderQty=$('#orderQty').text();
     var description=$('#aaaaaaaa').text();
     var unitPrice=$('#unitPrice-txt-size').text();
+    var log=$('#userLog').text();
     
     alert(sizeName);
     alert(orderQty);
     alert(description);
     alert(unitPrice);
+    alert(log);
     if(sizeName!==null && orderQty!==null && description!==null && unitPrice!==null){
         alert("Successs");
     }

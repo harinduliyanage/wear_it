@@ -78,11 +78,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul ><% 
                                             if(user!=null){
                                             %>
-						<li><a><%=user.getUserName() %></a></li>
+						<li><a id="userLog"><%=user.getUserName() %></a></li>
 						<li><a id="log-out-btn">Log Out</a></li>
                                                 
                                               <% }else{%>
-                                                    <li><a href="login">Log In</a></li>
+                                                    <li><a id="userLog" href="login">Log In</a></li>
                                                     <li><a href="register">Register</a></li>
                                               <%
                                                 }
