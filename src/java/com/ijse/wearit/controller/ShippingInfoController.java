@@ -6,7 +6,6 @@
 package com.ijse.wearit.controller;
 
 import com.ijse.wearit.model.ShippingInfo;
-import com.ijse.wearit.model.Sizes;
 import com.ijse.wearit.service.custom.ShippingInfoService;
 import java.util.List;
 import java.util.logging.Level;
@@ -17,10 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- *
- * @author ABC
- */
+
 @Controller
 public class ShippingInfoController {
     

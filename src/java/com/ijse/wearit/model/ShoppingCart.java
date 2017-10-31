@@ -19,10 +19,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
-/**
- *
- * @author Harindu.sul
- */
+
 @Entity
 public class ShoppingCart implements Serializable{
     private Integer id;

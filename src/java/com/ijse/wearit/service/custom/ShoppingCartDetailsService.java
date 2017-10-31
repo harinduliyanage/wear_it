@@ -10,10 +10,7 @@ import com.ijse.wearit.model.ShoppingCartDetails;
 import com.ijse.wearit.service.SuperService;
 import java.util.List;
 
-/**
- *
- * @author ABC
- */
+
 public interface ShoppingCartDetailsService extends SuperService<ShoppingCartDetails>{
     public ShoppingCartDetails getByItemDetail(Integer id) throws Exception ;
     public List<ShoppingCartDetails> getDetailsByCart(ShoppingCart shoppingCart) throws Exception ;

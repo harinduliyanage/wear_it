@@ -9,10 +9,7 @@ import com.ijse.wearit.dao.SuperDAO;
 import com.ijse.wearit.model.ShippingInfo;
 import com.ijse.wearit.service.SuperService;
 
-/**
- *
- * @author ABC
- */
+
 public interface ShippingInfoService extends SuperService<ShippingInfo>{
     
 }

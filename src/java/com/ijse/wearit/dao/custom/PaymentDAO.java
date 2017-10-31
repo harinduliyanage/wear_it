@@ -9,10 +9,7 @@ import com.ijse.wearit.dao.SuperDAO;
 import com.ijse.wearit.model.Payment;
 
 
-/**
- *
- * @author Harindu.sul
- */
+
 public interface PaymentDAO extends SuperDAO<Payment>{
     
 }

@@ -74,16 +74,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul ><% 
                                             if(user!=null){
                                             %>
-						<li><a><%=user.getUserName() %></a></li>
+						<li><a id="userName"><%=user.getUserName() %></a></li>
 						<li><a id="log-out-btn">Log Out</a></li>
-                                                <li><a href="checkout?userName=<%=user.getUserName() %>">Checkout</a></li>
+                                                
                                               <% }else{%>
                                                     <li><a href="login">Log In</a></li>
                                                     <li><a href="register">Register</a></li>
-						
                                               <%
                                                 }
-                                               %>      
+                                               %>         
+						
+						<li><a href="checkout">Checkout</a></li>
 					</ul>
 				</div>
 				
@@ -292,7 +293,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<p>Shopin</p>
 				</div>				
 			</div>
-		 		
+		 <script>
+			$(document).ready(function() {
+			$('.popup-with-zoom-anim').magnificPopup({
+			type: 'inline',
+			fixedContentPos: false,
+			fixedBgPos: true,
+			overflowY: 'auto',
+			closeBtnInside: true,
+			preloader: false,
+			midClick: true,
+			removalDelay: 300,
+			mainClass: 'my-mfp-zoom-in'
+			});
+																						
+			});
+		</script>		
 						<!----->
 			</div>
 			<div class="clearfix"></div>
@@ -303,7 +319,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div><img class="img-responsive active" src="<c:url value="resources/images/BPH-checkout-banner.jpg" />"/></div>                        
 <!--banner-->
 <!--login-->
-	
+	<script>$(document).ready(function(c) {
+					$('.close1').on('click', function(c){
+						$('.cart-header').fadeOut('slow', function(c){
+							$('.cart-header').remove();
+						});
+						});	  
+					});
+			   </script>
+<script>$(document).ready(function(c) {
+					$('.close2').on('click', function(c){
+						$('.cart-header1').fadeOut('slow', function(c){
+							$('.cart-header1').remove();
+						});
+						});	  
+					});
+			   </script>
 			   <script>$(document).ready(function(c) {
 					$('.close3').on('click', function(c){
 						$('.cart-header2').fadeOut('slow', function(c){
@@ -314,19 +345,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   </script>
 <div class="check-out">
 <div class="container">
-    <div class="bs-example4" data-example-id="simple-responsive-table">
+	
+	<div class="bs-example4" data-example-id="simple-responsive-table">
     <div class="table-responsive">
     	    <table class="table-heading simpleCart_shelfItem">
 		  <tr>
-                        
-			<th class="table-grid">Item</th>		
+			<th class="table-grid">Item</th>
+					
 			<th>Prices</th>
 			<th >Shipping </th>
 			<th >Order Qty </th>
 			<th>Subtotal</th>
                         <th>Select Remove</th>
-                  </tr>
-                  <tbody>
+		  </tr>
+		  <tbody>
                        <% if(shoppingCartDetails!=null){ %>
                           <% for(ShoppingCartDetails s:shoppingCartDetails){ %>
                                 <tr class="cart-header">
@@ -337,12 +369,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                       </div>
                                       <div class="clearfix"> </div>
-                                      <div class="close1"> </div></td>
+                                      </td>
                                       <td><%=s.getItemDetails().getUnitPrice() %></td>
                                       <td>FREE SHIPPING</td>
                                       <td class="item_price"><%=s.getOrderQty() %></td>
                                       <td><%=s.getAmount() %></td>
-                                       <td><input type='checkbox' name='record'></td>
+                                      <td><%=s.getId() %><input type='checkbox' name='record'></td>
                                 </tr>
                           
                           <% } %>
@@ -351,46 +383,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                   </tbody>
 		  
 	</table>
-                      <button type="button" id="btn-delete" class="btn btn-warning" >Remove Selected Item From Cart</button>            
 	</div>
 	</div>
 	<div class="produced">
-	<a href="single" class="hvr-skew-backward">Produced To Buy</a>
+            <button type="button" id="btn-delete" class="btn btn-warning">Remove</button>
+            <button type="button" id="buy-btn" class="btn btn-dark">Produced To Buy</button><input style="width: 10px;" type="text" class="form-control" readonly=""/>
 	 </div>
 </div>
 </div>
-                      <script>
-			$(document).ready(function() {
-			$('.popup-with-zoom-anim').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in'
-			});
-																						
-			});
-		</script>
-                       <script>
-			$(document).ready(function() {
-			$('.popup-with-zoom-anim').magnificPopup({
-			type: 'inline',
-			fixedContentPos: false,
-			fixedBgPos: true,
-			overflowY: 'auto',
-			closeBtnInside: true,
-			preloader: false,
-			midClick: true,
-			removalDelay: 300,
-			mainClass: 'my-mfp-zoom-in'
-			});
-																						
-			});
-		</script>	
 
 <!--//login-->
                 <!--brand-->
@@ -467,11 +467,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><img src="<c:url value="resources/images/f2.png" />" class="img-responsive" alt=""></a></li>
 						<li><a href="#"><img src="<c:url value="resources/images/f3.png" />" class="img-responsive" alt=""></a></li>
 					</ul>
-					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/amandi-imasha-7427a6145/">Amandi Imasha</a></strong> </p>
+					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/harindu-sulochana-5b4799119/">Harindu Sulochana Liyanage</a></strong> </p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
+                <style>
+                            .loader {
+                                border: 7px solid #f3f3f3; /* Light grey */
+                                border-top: 7px solid #F47983; /* Blue */
+                                border-radius: 50%;
+                                width: 40px;
+                                height: 40px;
+                                animation: spin 2s linear infinite;
+                            }
+
+                                @keyframes spin {
+                                    0% { transform: rotate(0deg); }
+                                    100% { transform: rotate(360deg); }
+                                }
+                        </style>	                        
+                 <div style="display: none;"><button type="button" id="myModelLoad-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button></div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Placing Your Order</h4>
+        </div>
+          <div id="loaderDiv" style="margin-left: 100px; display: block" class="loader"></div>
+          <div style="margin-top: 7px;"></div>
+                                <div class="alert" id="danger-alert" style="display: none; color: white;background-color: #2ecc71;">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Your Order Placed successfully...!</strong>
+                                </div>
+        <div class="modal-footer">
+            <p id="someTxt" style="color: gray; font-size: 23px;"> Please wait few miniute for transaction.... </p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 		<!--//footer-->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 

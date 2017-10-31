@@ -9,10 +9,7 @@ import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.User;
 import com.ijse.wearit.service.SuperService;
 
-/**
- *
- * @author ABC
- */
+
 public interface UserService extends SuperService<User>{
     public  User getUserByNam(String userName)throws Exception;
     public ShoppingCart getShoppingCartByUserId(Integer userId)throws Exception;

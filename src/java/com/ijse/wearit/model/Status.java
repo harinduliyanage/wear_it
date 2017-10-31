@@ -5,10 +5,7 @@
  */
 package com.ijse.wearit.model;
 
-/**
- *
- * @author Harindu.sul
- */
+
 public class Status {
     private int code;
     private String status;

@@ -8,10 +8,7 @@ package com.ijse.wearit.dao.custom;
 import com.ijse.wearit.dao.SuperDAO;
 import com.ijse.wearit.model.Item;
 
-/**
- *
- * @author Harindu.sul
- */
+
 public interface ItemDAO extends SuperDAO<Item>{
     public Item getItemByDescription(String description)throws Exception;
     public boolean deleteItemByDescription(String description)throws Exception;

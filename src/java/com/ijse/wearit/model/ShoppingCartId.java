@@ -11,10 +11,7 @@ import javax.persistence.Embeddable;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
-/**
- *
- * @author Harindu.sul
- */
+
 @Embeddable
 public class ShoppingCartId implements Serializable{
     private ItemDetails itemDetails;

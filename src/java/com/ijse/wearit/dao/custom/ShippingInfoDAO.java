@@ -8,10 +8,7 @@ package com.ijse.wearit.dao.custom;
 import com.ijse.wearit.dao.SuperDAO;
 import com.ijse.wearit.model.ShippingInfo;
 
-/**
- *
- * @author ABC
- */
+
 public interface ShippingInfoDAO extends SuperDAO<ShippingInfo>{
    
 }

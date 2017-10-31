@@ -7,17 +7,13 @@ package com.ijse.wearit.service.custom.impl;
 
 import com.ijse.wearit.dao.custom.ShoppingCartDAO;
 import com.ijse.wearit.model.ShoppingCart;
-import com.ijse.wearit.model.User;
 import com.ijse.wearit.service.custom.ShoppingCartService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- *
- * @author ABC
- */
+
 
 @Service
 @Transactional

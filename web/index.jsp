@@ -74,19 +74,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-top">
 		<div class="container">
 		<div class="col-sm-5 col-md-offset-2  header-login">
-					<ul><% 
+					<ul ><% 
                                             if(user!=null){
                                             %>
 						<li><a><%=user.getUserName() %></a></li>
 						<li><a id="log-out-btn">Log Out</a></li>
-                                                <li><a href="checkout?userName=<%=user.getUserName() %>">Checkout</a></li>
+                                                
                                               <% }else{%>
                                                     <li><a href="login">Log In</a></li>
                                                     <li><a href="register">Register</a></li>
-						
                                               <%
                                                 }
-                                               %>      
+                                               %>         
+						
+						<li><a href="checkout">Checkout</a></li>
 					</ul>
 				</div>
 				
@@ -479,7 +480,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><img src="resources/images/f2.png" class="img-responsive" alt=""></a></li>
 						<li><a href="#"><img src="resources/images/f3.png" class="img-responsive" alt=""></a></li>
 					</ul>
-                                    <p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/amandi-imasha-7427a6145/">Amandi Imasha</a></strong> </p>
+                                    <p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/harindu-sulochana-5b4799119/">Harindu Sulochana Liyanage</a></strong> </p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>

@@ -6,13 +6,9 @@
 package com.ijse.wearit.service.custom;
 
 import com.ijse.wearit.model.ShoppingCart;
-import com.ijse.wearit.model.User;
 import com.ijse.wearit.service.SuperService;
 
-/**
- *
- * @author ABC
- */
+
 public interface ShoppingCartService extends SuperService<ShoppingCart>{
     
 }

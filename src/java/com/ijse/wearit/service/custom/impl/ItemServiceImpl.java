@@ -23,10 +23,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
-/**
- *
- * @author Harindu.sul
- */
+
 @Service
 @Transactional
 public class ItemServiceImpl  implements ItemService{

@@ -7,10 +7,7 @@ package com.ijse.wearit.dao;
 
 import java.util.List;
 
-/**
- *
- * @author Harindu.sul
- */
+
 public interface SuperDAO <T> {
     public boolean add(T t) throws Exception;
     public boolean update(T t) throws Exception;

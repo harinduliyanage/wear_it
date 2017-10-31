@@ -78,14 +78,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             %>
 						<li><a><%=user.getUserName() %></a></li>
 						<li><a id="log-out-btn">Log Out</a></li>
-                                                <li><a href="checkout?userName=<%=user.getUserName() %>">Checkout</a></li>
+                                                
                                               <% }else{%>
                                                     <li><a href="login">Log In</a></li>
                                                     <li><a href="register">Register</a></li>
-						
                                               <%
                                                 }
-                                               %>      
+                                               %>         
+						
+						<li><a href="checkout">Checkout</a></li>
 					</ul>
 				</div>
 				
@@ -558,7 +559,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><img src="<c:url value="resources/images/f2.png" />" class="img-responsive" alt=""></a></li>
 						<li><a href="#"><img src="<c:url value="resources/images/f3.png" />" class="img-responsive" alt=""></a></li>
 					</ul>
-					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/amandi-imasha-7427a6145/">Amandi Imasha</a></strong> </p>
+					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/harindu-sulochana-5b4799119/">Harindu Sulochana Liyanage</a></strong> </p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
@@ -571,11 +572,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="<c:url value="resources/js/bootstrap.min.js" />"></script>
  <!--light-box-files -->
 		<script src="<c:url value="resources/js/js-a/jquery.chocolat.js" />"></script> 
-		<script src="<c:url value="resources/js/jquery-2.1.3.min.js" />"></script> 
                 <script src="<c:url value="resources/js/dom-login.js" />"> </script>
-               
-                
-		<link rel="stylesheet" href="<c:url value="resources/css/css-a/chocolat.css" />" type="text/css">
+		<link rel="stylesheet" href="<c:url value="resources/css/css-a/chocolat.css" />" type="text/css" media="screen" charset="utf-8">
 		<!--light-box-files -->
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

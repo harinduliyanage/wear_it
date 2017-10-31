@@ -13,10 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-/**
- *
- * @author Harindu.sul
- */
+
 @Entity
 public class Payment  implements Serializable{
     

@@ -8,10 +8,7 @@ package com.ijse.wearit.service.custom;
 import com.ijse.wearit.model.Payment;
 import com.ijse.wearit.service.SuperService;
 
-/**
- *
- * @author ABC
- */
+
 public interface PaymentService extends SuperService<Payment>{
     
 }

@@ -18,10 +18,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
 
-/**
- *
- * @author Harindu.sul
- */
+
 @Entity
 public class Orders implements Serializable {
     @Id
