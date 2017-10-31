@@ -8,10 +8,7 @@ package com.ijse.wearit.dao.custom;
 import com.ijse.wearit.dao.SuperDAO;
 import com.ijse.wearit.model.Orders;
 
-/**
- *
- * @author ABC
- */
+
 public interface OrdersDAO extends SuperDAO<Orders>{
     
 }

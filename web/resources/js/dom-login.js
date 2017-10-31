@@ -21,7 +21,6 @@ $('#login-form').submit(function (event){
               }
               if(data.code===200){
                   $('#loaderDiv').css("display","none");
-                  $('#success-alert').css("display","block");
                   location.href = "http://localhost:8084/wear_it_1.2/index.jsp";
               }
          },

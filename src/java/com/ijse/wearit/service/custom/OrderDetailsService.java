@@ -8,10 +8,7 @@ package com.ijse.wearit.service.custom;
 import com.ijse.wearit.model.OrderDetails;
 import com.ijse.wearit.service.SuperService;
 
-/**
- *
- * @author Harindu.sul
- */
+
 public interface OrderDetailsService extends SuperService<OrderDetails>{
     
 }

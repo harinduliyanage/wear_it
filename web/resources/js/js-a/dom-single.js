@@ -29,7 +29,10 @@ $('#addToCartButton').click(function (){
     var description=$('#aaaaaaaa').text();
     var unitPrice=$('#unitPrice-txt-size').text();
     var log=$('#userLog').text();
-    
+    alert(sizeName);
+    alert(orderQty);
+    alert(description);
+    alert(log);
     if(sizeName!==null && orderQty!==null && description!==null && unitPrice!==null){
         if(log !== "Log In" ){
             $.ajax({

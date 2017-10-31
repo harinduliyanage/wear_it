@@ -10,10 +10,6 @@ import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.ShoppingCartDetails;
 import java.util.List;
 
-/**
- *
- * @author ABC
- */
 public interface ShoppingCartDetailsDAO extends SuperDAO<ShoppingCartDetails>{
     public ShoppingCartDetails getByItemDetail(Integer id) throws Exception ;
     public List<ShoppingCartDetails> getDetailsByCart(ShoppingCart shoppingCart) throws Exception ;

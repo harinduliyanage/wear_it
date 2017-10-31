@@ -20,10 +20,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-/**
- *
- * @author Harindu.sul
- */
+
 @Entity
 @Table(name = "Item")
 public class Item implements Serializable{

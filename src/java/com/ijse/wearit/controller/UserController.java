@@ -10,7 +10,6 @@ import com.ijse.wearit.model.ShoppingCart;
 import com.ijse.wearit.model.Status;
 import com.ijse.wearit.model.User;
 import com.ijse.wearit.service.custom.UserService;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -26,10 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- *
- * @author Harindu.sul
- */
+
 @Controller
 public class UserController {
     

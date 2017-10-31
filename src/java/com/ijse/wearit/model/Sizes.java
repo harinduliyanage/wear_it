@@ -17,10 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
-/**
- *
- * @author Harindu.sul
- */
+
 @Entity
 public class Sizes implements Serializable{ 
     @Id

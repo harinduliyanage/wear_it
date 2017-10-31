@@ -24,10 +24,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-/**
- *
- * @author ABC
- */
 @Controller
 public class ShoppingCartDetailController {
     
@@ -75,6 +71,31 @@ public class ShoppingCartDetailController {
             }else{
                 status = new Status(500, "Internal Server Error", "Added Faild..");
                 return status;
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(ShoppingCartDetailController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return status;
+    }
+    
+    @RequestMapping(value = "/deleteShoppingCartDetailsById")
+    public @ResponseBody Status deleteShoppingCartDetail(@RequestParam("id") String id,HttpServletRequest request){
+        
+        Status status=new Status(500,"Internal Error","Deleted Fail");
+        try {
+            int shoppingCartDetailsId = Integer.parseInt(id);
+            boolean delete = cartDetailsService.delete(shoppingCartDetailsId);
+            HttpSession session = request.getSession();
+            ArrayList<ShoppingCartDetails> sessionCart=(ArrayList<ShoppingCartDetails>) session.getAttribute("shoppingCartDetails");
+            
+            if (delete) {
+                for (ShoppingCartDetails s : sessionCart) {
+                    if(s.getId() == shoppingCartDetailsId){
+                        sessionCart.remove(s);
+                    }
+                }
+                session.setAttribute("shoppingCartDetails", sessionCart);
+                status=new Status(200, "Ok", "deleted...");
             }
         } catch (Exception ex) {
             Logger.getLogger(ShoppingCartDetailController.class.getName()).log(Level.SEVERE, null, ex);

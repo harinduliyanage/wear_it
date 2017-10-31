@@ -20,10 +20,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-/**
- *
- * @author Harindu.sul
- */
+
 @Entity
 @Table(name = "ITEM_DETAILS")
 public class ItemDetails implements Serializable{

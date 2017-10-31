@@ -4,6 +4,9 @@
     Author     : Harindu.sul
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.ijse.wearit.model.Item"%>
+<%@page import="com.ijse.wearit.model.Item"%>
 <%@page import="com.ijse.wearit.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -56,6 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 <%
     User user=(User) session.getAttribute("currentUser");
+    ArrayList<Item> allItem=(ArrayList<Item>)session.getAttribute("allProduct");
 %>
 <!--header-->
 <div class="header">
@@ -321,8 +325,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="product">
 			<div class="container">
 			<div class="col-md-9">
-				<div class="mid-popular" id="Lmid-popular">
-					
+				<div class="mid-popular">
+					<% if(allItem!=null){ %>
+                                            <%for(Item i :allItem){%>
+                                                <div class="col-md-4 item-grid1 simpleCart_shelfItem">
+                                                    <div class=" mid-pop">
+                                                        <div class="pro-img">
+                                                            <img src="<c:url value="<%=i.getPaths()%>" />" class="img-responsive" alt="" />
+                                                                <div class="zoom-icon ">
+                                                                    <a class="picture" href="<c:url value="<%=i.getPaths()%>" />" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
+                                                                    <a href='singleItem?description=<%=i.getDescription()%>'><i class="glyphicon glyphicon-menu-right icon"></i></a>
+                                                                </div>
+                                                        </div>
+                                                        <div class="mid-1">
+                                                            <div class="women">
+                                                                <div class="women-top">
+                                                                <span><%=i.getCategory().getName() %></span>
+                                                                <h6><a href='singleItem?description=<%=i.getDescription()%>'></a><%=i.getDescription()%></h6>
+                                                                    </div>
+                                                                <div class="img item_add">
+                                                                    <a href='singleItem?description=<%=i.getDescription()%>'><img src="<c:url value="resources/images/ca.png" />" alt=""></a>
+                                                                </div>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                            <div class="mid-2">
+                                                                <div class="block">
+                                                                    <div class="starbox small ghosting"> </div>
+                                                                </div>   
+                                                                <div class="clearfix"></div>
+                                                            </div>				
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <%}%>
+                                        <%}%>
 				</div>
 			</div>
 			<div class="col-md-3 product-bottom">
@@ -523,7 +559,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><img src="<c:url value="resources/images/f2.png" />" class="img-responsive" alt=""></a></li>
 						<li><a href="#"><img src="<c:url value="resources/images/f3.png" />" class="img-responsive" alt=""></a></li>
 					</ul>
-					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/amandi-imasha-7427a6145/">Amandi Imasha</a></strong> </p>
+					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/harindu-sulochana-5b4799119/">Harindu Sulochana Liyanage</a></strong> </p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>

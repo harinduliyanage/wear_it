@@ -74,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<ul ><% 
                                             if(user!=null){
                                             %>
-						<li><a><%=user.getUserName() %></a></li>
+						<li><a id="userName"><%=user.getUserName() %></a></li>
 						<li><a id="log-out-btn">Log Out</a></li>
                                                 
                                               <% }else{%>
@@ -101,14 +101,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 		</div>
 		</div>
-                 <%if(shoppingCartDetails!=null) {%>                              
-                    <% for(ShoppingCartDetails s:shoppingCartDetails){ %>
-                    <p><%=s.getAmount() %></p>            
-                    <p><%=s.getItemDetails() %></p>            
-                    <p><%=s.getOrderQty() %></p>            
-                    <p><%=s.getId()%></p>            
-                  <% }%>
-		<%}%>
 		<div class="container">
 		
 			<div class="head-top">
@@ -361,56 +353,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<th class="table-grid">Item</th>
 					
 			<th>Prices</th>
-			<th >Delivery </th>
+			<th >Shipping </th>
+			<th >Order Qty </th>
 			<th>Subtotal</th>
+                        <th>Select Remove</th>
 		  </tr>
-		  <tr class="cart-header">
+		  <tbody>
+                       <% if(shoppingCartDetails!=null){ %>
+                          <% for(ShoppingCartDetails s:shoppingCartDetails){ %>
+                                <tr class="cart-header">
+                                    <td class="ring-in"><a href='singleItem?description=<%=s.getItemDetails().getItem().getDescription() %>' class="at-in"><img src='<%=s.getItemDetails().getItem().getPaths() %>' class="img-responsive" alt=""></a>
+                                      <div class="sed">
+                                              <h5><a href='singleItem?description=<%=s.getItemDetails().getItem().getDescription() %>'></a><%=s.getItemDetails().getItem().getDescription() %></h5>
+                                              <p>(<%=s.getItemDetails().getItem().getCategory().getName() %>) </p>
 
-                      <td class="ring-in"><a href="single" class="at-in"><img src="<c:url value="resources/images/pc1.jpg"/>" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close1"> </div></td>
-			<td>$100.00</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
-		  </tr>
-		  <tr class="cart-header1">
-		  <td class="ring-in"><a href="single.html" class="at-in"><img src="<c:url value="resources/images/pc2.jpg"/>" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single.html">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close2"> </div></td>
-			<td>$100.00</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
-		  </tr>
-		  <tr class="cart-header2">
-		  <td class="ring-in"><a href="single" class="at-in"><img src="<c:url value="resources/images/pc3.jpg"/>" class="img-responsive" alt=""></a>
-			<div class="sed">
-				<h5><a href="single">Sed ut perspiciatis unde</a></h5>
-				<p>(At vero eos et accusamus et iusto odio dignissimos ducimus ) </p>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="close3"> </div></td>
-			<td>$100.00</td>
-			<td>FREE SHIPPING</td>
-			<td class="item_price">$100.00</td>
-			<td class="add-check"><a class="item_add hvr-skew-backward" href="#">Add To Cart</a></td>
-		  </tr>
+                                      </div>
+                                      <div class="clearfix"> </div>
+                                      </td>
+                                      <td><%=s.getItemDetails().getUnitPrice() %></td>
+                                      <td>FREE SHIPPING</td>
+                                      <td class="item_price"><%=s.getOrderQty() %></td>
+                                      <td><%=s.getAmount() %></td>
+                                      <td><%=s.getId() %><input type='checkbox' name='record'></td>
+                                </tr>
+                          
+                          <% } %>
+                      <% } %>
+                      
+                  </tbody>
 		  
 	</table>
 	</div>
 	</div>
 	<div class="produced">
-	<a href="single" class="hvr-skew-backward">Produced To Buy</a>
+            <button type="button" id="btn-delete" class="btn btn-warning">Remove</button>
+            <button type="button" id="buy-btn" class="btn btn-dark">Produced To Buy</button><input style="width: 10px;" type="text" class="form-control" readonly=""/>
 	 </div>
 </div>
 </div>
@@ -490,17 +467,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="#"><img src="<c:url value="resources/images/f2.png" />" class="img-responsive" alt=""></a></li>
 						<li><a href="#"><img src="<c:url value="resources/images/f3.png" />" class="img-responsive" alt=""></a></li>
 					</ul>
-					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/amandi-imasha-7427a6145/">Amandi Imasha</a></strong> </p>
+					<p class="footer-class">&copy; 2017 Shopin. All Rights Reserved | Design by  <strong><a href="https://www.linkedin.com/in/harindu-sulochana-5b4799119/">Harindu Sulochana Liyanage</a></strong> </p>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
+                <style>
+                            .loader {
+                                border: 7px solid #f3f3f3; /* Light grey */
+                                border-top: 7px solid #F47983; /* Blue */
+                                border-radius: 50%;
+                                width: 40px;
+                                height: 40px;
+                                animation: spin 2s linear infinite;
+                            }
+
+                                @keyframes spin {
+                                    0% { transform: rotate(0deg); }
+                                    100% { transform: rotate(360deg); }
+                                }
+                        </style>	                        
+                 <div style="display: none;"><button type="button" id="myModelLoad-btn" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button></div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Placing Your Order</h4>
+        </div>
+          <div id="loaderDiv" style="margin-left: 100px; display: block" class="loader"></div>
+          <div style="margin-top: 7px;"></div>
+                                <div class="alert" id="danger-alert" style="display: none; color: white;background-color: #2ecc71;">
+                                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                                    <strong>Your Order Placed successfully...!</strong>
+                                </div>
+        <div class="modal-footer">
+            <p id="someTxt" style="color: gray; font-size: 23px;"> Please wait few miniute for transaction.... </p>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 		<!--//footer-->
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
 	<script src="<c:url value="resources/js/js-a/simpleCart.min.js" />"> </script>
 <!-- slide -->
 <script src="<c:url value="resources/js/dom-login.js" />"> </script>
+<script src="<c:url value="resources/js/js-a/dom-checkOut.js" />"> </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 

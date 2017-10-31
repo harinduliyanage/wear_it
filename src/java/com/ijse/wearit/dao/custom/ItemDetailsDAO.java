@@ -11,10 +11,7 @@ import com.ijse.wearit.model.ItemDetails;
 import com.ijse.wearit.model.Sizes;
 import java.util.List;
 
-/**
- *
- * @author ABC
- */
+
 public interface ItemDetailsDAO extends SuperDAO<ItemDetails>{
     public List<ItemDetails> searchByItemID(Item item);
     public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;

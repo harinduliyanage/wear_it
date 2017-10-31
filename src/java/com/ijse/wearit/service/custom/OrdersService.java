@@ -8,10 +8,7 @@ package com.ijse.wearit.service.custom;
 import com.ijse.wearit.model.Orders;
 import com.ijse.wearit.service.SuperService;
 
-/**
- *
- * @author Harindu.sul
- */
+
 public interface OrdersService extends SuperService<Orders>{
-    
+    public boolean addOrderss(String userName)throws Exception;
 }

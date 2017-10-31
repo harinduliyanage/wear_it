@@ -5,15 +5,29 @@
  */
 package com.ijse.wearit.controller;
 
+import com.ijse.wearit.model.ShoppingCart;
+import com.ijse.wearit.model.ShoppingCartDetails;
+import com.ijse.wearit.model.User;
+import com.ijse.wearit.service.custom.ShoppingCartDetailsService;
+import com.ijse.wearit.service.custom.UserService;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- *
- * @author Harindu.sul
- */
 @Controller
 public class DashBoardController {
+    
+    @Autowired
+    UserService userService;
+    
+    @Autowired
+    ShoppingCartDetailsService shoppingCartDetailsService;
+    
     @RequestMapping("/items")
     public String getItemView(){
         return "Items";
@@ -23,7 +37,17 @@ public class DashBoardController {
         return "contact";
     }
     @RequestMapping("/checkout")
-    public String getCheckOut(){
+    public String getCheckOut(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        User user=(User) session.getAttribute("currentUser");
+        ShoppingCart shoppingCart;
+        try {
+            shoppingCart = userService.getShoppingCartByUserId(user.getUserID());
+            List<ShoppingCartDetails> shoppingCartDetails = shoppingCartDetailsService.getDetailsByCart(shoppingCart);
+            session.setAttribute("shoppingCartDetails", shoppingCartDetails);
+        } catch (Exception ex) {
+            Logger.getLogger(DashBoardController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return "checkout";
     }
     @RequestMapping("/404")

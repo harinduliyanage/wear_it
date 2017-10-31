@@ -12,10 +12,7 @@ import com.ijse.wearit.model.Sizes;
 import com.ijse.wearit.service.SuperService;
 import java.util.List;
 
-/**
- *
- * @author Harindu.sul
- */
+
 public interface ItemDetailsService extends SuperService<ItemDetails>{
     public ItemDetails getItemDetailsBySizeAndItem(Sizes sizeByName, Item item)throws Exception;
     public List<ItemDetails> searchByItemID(Item item)throws Exception;
